@@ -8,7 +8,7 @@ export default function Navbar({ className = '' }) {
     <nav className={`w-full z-50 ${className}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 text-white">
         <Link href="/" className="flex items-center">
-          <Image src={logo} alt="Rezydencja Zawoja Logo" width={150} height={40} priority />
+          <Image src={logo} alt="Rezydencja Zawoja Logo" width={200} priority />
         </Link>
         <ul className="flex gap-6 font-medium">
           <li>
