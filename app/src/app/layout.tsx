@@ -1,19 +1,21 @@
 import './globals.css'
 
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Lato, Playfair_Display } from 'next/font/google'
 import React from 'react'
 
-import Navbar from '@/components/Navbar'
+import NavbarClient from '@/components/NavbarClient'
 
-const geistSans = Geist({
+const lato = Lato({
   subsets: ['latin'],
-  variable: '--font-geist-sans',
+  variable: '--font-lato',
+  weight: ['300', '400', '700'],
 })
 
-const geistMono = Geist_Mono({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-geist-mono',
+  variable: '--font-playfair',
+  weight: ['400', '700'],
 })
 
 export const metadata: Metadata = {
@@ -28,9 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${playfair.variable} ${lato.variable} antialiased`}>
         <div className="relative">
-          <Navbar className="absolute top-0 left-0 w-full z-30" />
+          <NavbarClient />
           <main>{children}</main>
         </div>
       </body>

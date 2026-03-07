@@ -17,9 +17,9 @@ export default function HeroOverlay() {
     <div className="relative z-20 h-full w-full flex flex-col justify-center text-white text-left">
       <div className="w-full px-6 sm:px-[24px] lg:px-[48px] max-w-7xl mx-auto">
         <div className="max-w-2xl">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-wider drop-shadow-xl font-serif text-[#E5BD6D]">
-            <span className="block text-white/90">Rezydencja</span>
-            <span className="block text-[#E5BD6D]">Zawoja</span>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-wider drop-shadow-xl text-[#E5BD6D]">
+            <span className="block text-white/90 font-lato">Rezydencja</span>
+            <span className="block text-[#E5BD6D] font-playfair">Zawoja</span>
           </h1>
 
           <AnimatePresence mode="wait">
