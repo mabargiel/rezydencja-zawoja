@@ -34,5 +34,5 @@
 - [x] 6.1 Compare each section at 1440px and 390px in PL, EN and DE with the Pencil screenshots of its desktop and mobile frames, and fix drift
 - [x] 6.2 Hero: poster is the LCP, the video autoplays muted, and with reduced motion there's no video; check the booking bar submit URL with and without JavaScript
 - [x] 6.3 Pricing: seeded values and units in all 3 languages; the table semantics; the Cennik nav link from a subpage lands on `#pricing` below the navbar
-- [ ] 6.4 Run format:check, lint, lint:styles, typecheck, typegen freshness and build; scan for comments; open a PR and confirm CI and the Vercel preview are green
+- [x] 6.4 Run format:check, lint, lint:styles, typecheck, typegen freshness and build; scan for comments; open a PR and confirm CI and the Vercel preview are green
 - [ ] 6.5 Send the new EN/DE copy to the user for review
