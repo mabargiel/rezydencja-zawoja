@@ -51,11 +51,15 @@ Every page SHALL end with the Footer from design node `vgRjs` (desktop) and `O6E
 - **THEN** "+48 500 290 390" links to `tel:+48500290390` and "biuro@rezydencjazawoja.pl" links to `mailto:biuro@rezydencjazawoja.pl`
 
 ### Requirement: Page Header
-Subpages SHALL open with the Page Header from design node `E3j9wx` (460px tall on desktop) and `V8PYt` (400px on mobile). It shows a translated eyebrow, title and intro, with an optional background image under the design's dark gradient, and falls back to `bg-dark` when there's no image.
+Subpages SHALL open with the Page Header from design node `E3j9wx` (460px tall on desktop) and `V8PYt` (400px on mobile). It shows a translated eyebrow, title and intro over the page's header photo from the CMS, resolved for the current season, under the design's dark gradient. It SHALL fall back to `bg-dark` only when the page's header slot is empty.
 
 #### Scenario: Interiors header copy
 - **WHEN** `/pl/interiors` renders
 - **THEN** the header shows the eyebrow "WNĘTRZA", the title "Dom z duszą, pokój po pokoju" and the intro from `q2jEWP`
+
+#### Scenario: Header photo from the CMS
+- **WHEN** `/en/surroundings` renders with the seeded dataset in summer
+- **THEN** the header background is the photo made from `zimowy-widok2-800x800.jpg`, with English alt text, and it loads with priority
 
 ### Requirement: Shared typography and actions
 The app SHALL provide `SectionHeading` in light and dark variants (`znsFD` / `iZvba`), and `ButtonPrimary` (`Fw8hs`), `ButtonOutline` (`Asguq`) and `TextLink` (`rZiGf`) with the Lucide `arrow-right` icon where the design shows one. Each renders as a link when given `href`. Each has a visible focus style.
