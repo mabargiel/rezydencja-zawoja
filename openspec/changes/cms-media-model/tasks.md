@@ -34,4 +34,4 @@
 - [x] 6.1 Season check: publish `season: winter` with a winter photo on one header, confirm that page switches and a page without a variant doesn't, then set the season back to summer
 - [x] 6.2 Check that alt text is localized in the rendered HTML of `/de/interiors` and falls back to Polish on a photo without English alt text
 - [x] 6.3 Run format:check, lint, lint:styles, typecheck, typegen freshness and build; open a PR and confirm CI and the Vercel preview are green
-- [ ] 6.4 Ask the user to review the drafted alt texts and pricing in the Studio
+- [x] 6.4 Ask the user to review the drafted alt texts and pricing in the Studio
