@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { pagePaths, type PageKey } from '@/config/site'
+import { type PageKey, pagePaths } from '@/config/site'
 import { defaultLanguage, languages } from '@/i18n/config'
 import { getLanguage, getT } from '@/i18n/server'
 
