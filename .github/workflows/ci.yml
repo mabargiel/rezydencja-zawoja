@@ -25,6 +25,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      - name: Sanity types are up to date
+        run: npm run typegen && git diff --exit-code app/src/sanity/types.ts
       - run: npm run format:check
       - run: npm run lint
       - run: npm run lint:styles

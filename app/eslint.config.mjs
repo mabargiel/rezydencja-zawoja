@@ -9,7 +9,7 @@ import pluginUnusedImports from 'eslint-plugin-unused-imports'
 export default defineConfig([
   ...nextVitals,
   ...nextTypescript,
-  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
+  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'src/sanity/types.ts']),
   {
     files: ['**/*.{js,mjs,ts,tsx}'],
     plugins: {

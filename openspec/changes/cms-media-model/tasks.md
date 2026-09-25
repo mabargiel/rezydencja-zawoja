@@ -19,15 +19,15 @@
 
 ## 4. App data layer
 
-- [ ] 4.1 Configure TypeGen in `cms/sanity.cli.ts` (scan `../app/src`, output `../app/src/sanity/types.ts`); add a root `typegen` script and a CI step that fails on a stale diff
-- [ ] 4.2 Add `app/src/sanity/`: `client.ts`, `live.ts` (`defineLive`), `image.ts` (`urlFor`), and `queries.ts` with a shared `resolvedPhoto` fragment (season-aware, alt in `$lng` falling back to `pl`); move `lib/sanity.ts` and `lib/env.ts` into it
-- [ ] 4.3 Render `<SanityLive />` in `[lng]/layout.tsx`, and restrict `remotePatterns` to `/images/oavmm529/**`
-- [ ] 4.4 Add a `SanityImage` component (hotspot crop at the rendered size, `auto('format')`, LQIP blur, localized alt), and change `PageHeader`'s `image` prop to take a resolved photo
+- [x] 4.1 Configure TypeGen in `cms/sanity.cli.ts` (scan `../app/src`, output `../app/src/sanity/types.ts`); add a root `typegen` script and a CI step that fails on a stale diff
+- [x] 4.2 Add `app/src/sanity/`: `client.ts`, `live.ts` (`defineLive`), `image.ts` (`urlFor`), and `queries.ts` with a shared `resolvedPhoto` fragment (season-aware, alt in `$lng` falling back to `pl`); move `lib/sanity.ts` and `lib/env.ts` into it
+- [x] 4.3 Render `<SanityLive />` in `[lng]/layout.tsx`, and replace `remotePatterns` with a global `loaderFile` that sizes `cdn.sanity.io` images (a loader function can't be passed from a Server Component)
+- [x] 4.4 Add a `SanityImage` component (hotspot crop at the rendered size, `auto('format')`, LQIP blur, localized alt), and change `PageHeader`'s `image` prop to take a resolved photo
 
 ## 5. Wire Page Headers
 
-- [ ] 5.1 Add a header query for each subpage and pass the photo to `PageHeader` on interiors, surroundings, gallery and contact (`E3j9wx` / `V8PYt` with the image under the scrim), with `priority` loading
-- [ ] 5.2 Check in the browser at 390px and 1440px against the design's header screenshots (`qf7cQ`, `z1yziP`, `V6NL6`, `McNXT` headers)
+- [x] 5.1 Add a header query for each subpage and pass the photo to `PageHeader` on interiors, surroundings, gallery and contact (`E3j9wx` / `V8PYt` with the image under the scrim), with `priority` loading
+- [x] 5.2 Check in the browser at 390px and 1440px against the design's header screenshots (`qf7cQ`, `z1yziP`, `V6NL6`, `McNXT` headers)
 
 ## 6. Verification
 

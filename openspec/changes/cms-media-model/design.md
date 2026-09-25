@@ -101,7 +101,7 @@ Singletons use `S.document().documentId(...)` and are hidden from the "new docum
 - *Alternative: time-based ISR, or a webhook to `revalidateTag`.* ISR delays the season switch. A webhook needs a secret, a route and Sanity webhook setup. `defineLive` is the documented default with no extra infrastructure. Chosen.
 
 ### D8. `SanityImage` component
-It wraps `next/image`: `src` from `urlFor(photo).width(w).height(h).fit('crop').auto('format')`, which respects hotspots; `alt` in the current language; and a blur placeholder from `asset->metadata.lqip`. `PageHeader`'s `image` prop becomes this photo type. `next.config` `remotePatterns` is limited to `/images/oavmm529/**`.
+It wraps `next/image` with `fill`: `src` is `urlFor(photo)`, which keeps the editor's crop; the hotspot becomes `object-position`; `alt` is in the current language; and there's a blur placeholder from `asset->metadata.lqip`. Server Components can't pass a `loader` function to `next/image`, so `next.config` sets a global `loaderFile`. It adds `w`, `q` and `auto=format` to `cdn.sanity.io` URLs and returns every other `src` unchanged (local SVGs are marked `unoptimized`). `PageHeader`'s `image` prop becomes this photo type.
 
 ### D9. Seed script
 `cms/scripts/seed.ts`, run with `npx sanity exec scripts/seed.ts --with-user-token`:

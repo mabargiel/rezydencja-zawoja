@@ -9,6 +9,7 @@ import { Navbar } from '@/components/Navbar'
 import { languages } from '@/i18n/config'
 import { getLanguage, getT } from '@/i18n/server'
 import { metadataBase } from '@/lib/metadata'
+import { SanityLive } from '@/sanity/live'
 
 const cormorant = Cormorant_Garamond({
   display: 'swap',
@@ -48,6 +49,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <Navbar />
         {children}
         <Footer />
+        <SanityLive />
       </body>
     </html>
   )

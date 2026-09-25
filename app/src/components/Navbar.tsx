@@ -21,6 +21,7 @@ export async function Navbar() {
       <Link href={`/${language}`} aria-label={t('nav.homeLink')}>
         <Image
           src="/brand/logo-light.svg"
+          unoptimized
           alt=""
           width={78}
           height={50}
