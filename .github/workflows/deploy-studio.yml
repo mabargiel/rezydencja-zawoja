@@ -1,0 +1,32 @@
+name: Deploy Studio
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cms/**'
+      - 'package-lock.json'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-studio
+  cancel-in-progress: false
+
+env:
+  SANITY_STUDIO_PROJECT_ID: oavmm529
+  SANITY_STUDIO_DATASET: production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npx sanity deploy --yes
+        working-directory: cms
+        env:
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}

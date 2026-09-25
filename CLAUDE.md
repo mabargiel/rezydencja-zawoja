@@ -17,16 +17,17 @@ npm workspaces; one lockfile at the root. Node version is pinned in `.nvmrc`.
 
 Run from the repo root:
 
-| Command | What it does |
-| --- | --- |
-| `npm run dev` | app on :3000 and Studio on :3333 |
-| `npm run dev:app` / `npm run dev:cms` | one of them |
-| `npm run lint` | ESLint in both workspaces |
-| `npm run typecheck` | `tsc --noEmit` in both workspaces |
-| `npm run build` | production build of both |
-| `npm run format` | Prettier over the repo |
+| Command                               | What it does                      |
+| ------------------------------------- | --------------------------------- |
+| `npm run dev`                         | app on :3000 and Studio on :3333  |
+| `npm run dev:app` / `npm run dev:cms` | one of them                       |
+| `npm run lint`                        | ESLint in both workspaces         |
+| `npm run typecheck`                   | `tsc --noEmit` in both workspaces |
+| `npm run build`                       | production build of both          |
+| `npm run format`                      | Prettier over the repo            |
+| `npm run format:check`                | Prettier check without writing    |
 
-Before committing, `lint`, `typecheck` and `build` must pass; CI runs the same three.
+Before committing, `format:check`, `lint`, `typecheck` and `build` must pass; CI runs the same four.
 
 Environment: copy `app/.env.example` → `app/.env.local` and `cms/.env.example` → `cms/.env`.
 
@@ -81,6 +82,7 @@ Allowed:
 ```
 
 Also:
+
 - No dead code, no commented-out code, no unused exports.
 - Descriptive names over abbreviations. Booleans read as questions (`isOpen`, `hasVideo`).
 - Early returns over nested conditionals.
@@ -97,48 +99,48 @@ Also:
 
 ### Tokens
 
-| Token | Value |
-| --- | --- |
-| `bg` | `#F4F1EA` |
-| `bg-dark` | `#1E241F` |
-| `surface` | `#FFFFFF` |
-| `text-primary` | `#22271F` |
-| `text-secondary` | `#565A4E` |
-| `text-inverse` | `#F7F5EF` |
-| `text-inverse-dim` | `#F7F5EFC7` |
-| `accent` | `#3E4F41` |
-| `accent-warm` | `#B99A5F` |
-| `accent-warm-deep` | `#7A5D2E` |
-| `line` | `#DDD8CC` |
-| `font-display` | Cormorant Garamond |
-| `font-body` | Jost |
+| Token              | Value              |
+| ------------------ | ------------------ |
+| `bg`               | `#F4F1EA`          |
+| `bg-dark`          | `#1E241F`          |
+| `surface`          | `#FFFFFF`          |
+| `text-primary`     | `#22271F`          |
+| `text-secondary`   | `#565A4E`          |
+| `text-inverse`     | `#F7F5EF`          |
+| `text-inverse-dim` | `#F7F5EFC7`        |
+| `accent`           | `#3E4F41`          |
+| `accent-warm`      | `#B99A5F`          |
+| `accent-warm-deep` | `#7A5D2E`          |
+| `line`             | `#DDD8CC`          |
+| `font-display`     | Cormorant Garamond |
+| `font-body`        | Jost               |
 
 ### Reusable components
 
-| Component | Node ID |
-| --- | --- |
-| Navbar | `uR0N6` |
-| Button Primary | `Fw8hs` |
-| Button Outline | `Asguq` |
-| Button Text Link | `rZiGf` |
-| Section Heading | `znsFD`, `iZvba` |
-| Booking Bar | `MB8Pv` |
-| Feature Card | `p9n20A` |
-| Pricing Table | `m4W0t2` |
-| Amenity Row | `O7P7qP`, `Ofbwp` |
-| Footer | `vgRjs` |
+| Component        | Node ID           |
+| ---------------- | ----------------- |
+| Navbar           | `uR0N6`           |
+| Button Primary   | `Fw8hs`           |
+| Button Outline   | `Asguq`           |
+| Button Text Link | `rZiGf`           |
+| Section Heading  | `znsFD`, `iZvba`  |
+| Booking Bar      | `MB8Pv`           |
+| Feature Card     | `p9n20A`          |
+| Pricing Table    | `m4W0t2`          |
+| Amenity Row      | `O7P7qP`, `Ofbwp` |
+| Footer           | `vgRjs`           |
 
 The component board is `FWOuz`.
 
 ### Screens
 
-| Page | Desktop | Mobile |
-| --- | --- | --- |
-| Home | `iq1tP` | `YCfBW` |
-| Wnętrza | `qf7cQ` | `qTweU` |
-| Galeria | `V6NL6` | `PfDER` |
-| Okolica | `z1yziP` | `QNeFv` |
-| Kontakt | `McNXT` | `a7yX5j` |
+| Page    | Desktop  | Mobile   |
+| ------- | -------- | -------- |
+| Home    | `iq1tP`  | `YCfBW`  |
+| Wnętrza | `qf7cQ`  | `qTweU`  |
+| Galeria | `V6NL6`  | `PfDER`  |
+| Okolica | `z1yziP` | `QNeFv`  |
+| Kontakt | `McNXT`  | `a7yX5j` |
 
 ## i18n
 
