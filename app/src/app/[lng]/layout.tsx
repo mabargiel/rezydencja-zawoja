@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { Cormorant_Garamond, Jost } from 'next/font/google'
 import type { ReactNode } from 'react'
 
+import { Footer } from '@/components/Footer'
+import { Navbar } from '@/components/Navbar'
 import { languages } from '@/i18n/config'
 import { getLanguage, getT } from '@/i18n/server'
 import { metadataBase } from '@/lib/metadata'
@@ -42,7 +44,11 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
 
   return (
     <html lang={language} className={`${cormorant.variable} ${jost.variable}`}>
-      <body>{children}</body>
+      <body className="relative">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

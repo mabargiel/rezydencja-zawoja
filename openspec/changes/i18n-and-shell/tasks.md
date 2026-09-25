@@ -22,28 +22,28 @@
 
 ## 4. Shared components
 
-- [ ] 4.1 `SectionHeading` with `light` and `dark` variants, matching `znsFD` / `iZvba` (eyebrow rule 26×2, eyebrow Jost 12 with 5 tracking, headline Cormorant 54/1.05, title rule 56×2); check with a Pencil screenshot side by side
-- [ ] 4.2 `ButtonPrimary` (`Fw8hs`), `ButtonOutline` (`Asguq`) and `TextLink` (`rZiGf`), with `lucide-react` `ArrowRight`, rendered as links, with a focus-visible style
-- [ ] 4.3 `PageHeader` matching `E3j9wx` (desktop 460) and `V8PYt` (mobile 400): eyebrow, title, intro, optional image under the design gradient, `bg-dark` fallback
+- [x] 4.1 `SectionHeading` with `light` and `dark` variants, matching `znsFD` / `iZvba` (eyebrow rule 26×2, eyebrow Jost 12 with 5 tracking, headline Cormorant 54/1.05, title rule 56×2); check with a Pencil screenshot side by side
+- [x] 4.2 `ButtonPrimary` (`Fw8hs`), `ButtonOutline` (`Asguq`) and `TextLink` (`rZiGf`), with `lucide-react` `ArrowRight`, rendered as links, with a focus-visible style
+- [x] 4.3 `PageHeader` matching `E3j9wx` (desktop 460) and `V8PYt` (mobile 400): eyebrow, title, intro, optional image under the design gradient, `bg-dark` fallback
 
 ## 5. Navbar, switcher and menu
 
 - [ ] 5.1 Design the Language Switcher component (desktop nav and mobile menu variants) and the Mobile Menu frame (390×844) in `design/rezydencja.pen` through the Pencil MCP, reusing the tokens, and screenshot them for approval
 - [ ] 5.2 Get the user's approval of 5.1 (update the design with their feedback) and commit the design as `feat(design): …`
-- [ ] 5.3 `Navbar` server component matching `uR0N6` (desktop ≥ lg) and `o3r0vL` (mobile), with a `NavLink` client leaf using `useSelectedLayoutSegment` for `accent-warm` + `aria-current`, the Cennik link to `/{lng}#pricing`, and the CTA to `/{lng}/contact`
-- [ ] 5.4 `LanguageSwitcher` built from the approved design: links to the current path in each language, active language marked, works without JS
-- [ ] 5.5 `MobileMenu` client component from the approved design: dialog semantics, focus handling, Escape, scroll lock, closes on navigation; labels passed from the server as props
+- [x] 5.3 `Navbar` server component matching `uR0N6` (desktop ≥ lg) and `o3r0vL` (mobile), with a `NavLink` client leaf using `useSelectedLayoutSegment` for `accent-warm` + `aria-current`, the Cennik link to `/{lng}#pricing`, and the CTA to `/{lng}/contact`
+- [x] 5.4 `LanguageSwitcher` built from the approved design: links to the current path in each language, active language marked, works without JS
+- [x] 5.5 `MobileMenu` client component from the approved design: dialog semantics, focus handling, Escape, scroll lock, closes on navigation; labels passed from the server as props
 
 ## 6. Footer and pages
 
-- [ ] 6.1 `Footer` matching `vgRjs` (desktop) and `O6EcDO` (mobile): logo, translated address, `tel:`/`mailto:` links, nav, copyright with the current year, no legal links
-- [ ] 6.2 Route stubs: `[lng]/page.tsx` (temporary header from the `qCVqV` hero copy), and `interiors`, `surroundings`, `gallery` and `contact`, each with its `PageHeader` copy and `generateMetadata`; plus `[lng]/not-found.tsx` in the shell
+- [x] 6.1 `Footer` matching `vgRjs` (desktop) and `O6EcDO` (mobile): logo, translated address, `tel:`/`mailto:` links, nav, copyright with the current year, no legal links
+- [x] 6.2 Route stubs: `[lng]/page.tsx` (temporary header from the `qCVqV` hero copy), and `interiors`, `surroundings`, `gallery` and `contact`, each with its `PageHeader` copy and `generateMetadata`; plus `[lng]/not-found.tsx` in the shell
 - [ ] 6.3 Update CLAUDE.md's i18n section: server-side `getT()`, typed catalogs, how to add a key in all 3 languages, no react-i18next in client code
 
 ## 7. Verification
 
 - [ ] 7.1 Browser check at 390px and 1440px for all 5 routes in PL, EN and DE against the design screenshots (`YCfBW`/`iq1tP` header areas, `V8PYt`/`E3j9wx`, `vgRjs`/`O6EcDO`); fix any drift
-- [ ] 7.2 Check the mobile menu with the keyboard (open, Escape, focus return) and by tapping links (closes, scroll unlocked)
+- [x] 7.2 Check the mobile menu with the keyboard (open, Escape, focus return) and by tapping links (closes, scroll unlocked)
 - [ ] 7.3 `npm run build`: confirm all 15 pages are static, check the `hreflang` tags in the HTML, and confirm `Innenräume` is absent from `.next/static/chunks`
 - [ ] 7.4 Run format:check, lint, lint:styles, typecheck and build at the root; push a branch, open a PR, and confirm CI is green before merging
 - [ ] 7.5 Send the EN/DE catalogs to the user for review and apply their corrections

@@ -12,13 +12,31 @@
   --color-accent-warm: #b99a5f;
   --color-accent-warm-deep: #7a5d2e;
   --color-line: #ddd8cc;
+  --color-line-inverse: #f7f5ef26;
+  --color-scrim-button: #10160f4d;
+  --color-scrim-top: #0d120d80;
+  --color-scrim-middle: #0d120d66;
+  --color-scrim-bottom: #0a0e08d9;
   --font-display: var(--font-cormorant), 'Times New Roman', serif;
   --font-body: var(--font-jost), system-ui, sans-serif;
+}
+
+@utility bg-header-scrim {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-scrim-top) 0%,
+    var(--color-scrim-middle) 40%,
+    var(--color-scrim-bottom) 100%
+  );
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+
+  html:has(dialog[open]) {
+    overflow: hidden;
   }
 
   body {
