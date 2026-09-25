@@ -4,3 +4,5 @@
 *.jpg binary
 *.mp4 binary
 *.ico binary
+*.jpeg binary
+*.svg -text
