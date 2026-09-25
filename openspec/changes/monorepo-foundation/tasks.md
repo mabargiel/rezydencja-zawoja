@@ -59,4 +59,4 @@
 - [x] 9.2 Add the `SANITY_AUTH_TOKEN` secret; confirm the Studio deploy workflow succeeds
 - [x] 9.3a Add the Vercel production and preview domains and `https://rezydencja-zawoja.sanity.studio` to the new project's CORS origins
 - [x] 9.3 Reconnect the Vercel project to the new repo with Root Directory `app/` and the Sanity env vars; confirm a PR preview renders `/`
-- [ ] 9.4 After the user confirms, archive `mabargiel/rezydencja-zawoja-ui` and `mabargiel/rezydencja-zawoja-cms` delete `../_premerge-backup/`, and delete the old Sanity project `r9qn2ra2` (old owner's account)
+- [x] 9.4 After the user confirms, archive `mabargiel/rezydencja-zawoja-ui` and `mabargiel/rezydencja-zawoja-cms` delete `../_premerge-backup/`, (the old Sanity project `r9qn2ra2` is deleted by the user from the old account)
