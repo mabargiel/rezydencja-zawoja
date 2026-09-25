@@ -1,15 +1,15 @@
 ## 1. Studio foundation
 
-- [ ] 1.1 Install `@sanity/locale-pl-pl` and `sanity-plugin-internationalized-array` (languages `pl`, `en`, `de`; field types `string`, `text`) in `cms/`, and register both in `sanity.config.ts`
-- [ ] 1.2 Add shared schema types: `mediaSlot` (photo + optional winterPhoto refs) and `videoSlot` (video file + optional winterVideo + poster `mediaSlot`), with Polish titles and previews
-- [ ] 1.3 Add the `photo` document: image with hotspot, `alt` (internationalized string; `pl` required, `en`/`de` warning), `category` list; the preview shows the image, Polish alt and category
+- [x] 1.1 Install `@sanity/locale-pl-pl` and `sanity-plugin-internationalized-array` (languages `pl`, `en`, `de`; field type `string`; every localized field is short text) in `cms/`, and register both in `sanity.config.ts`
+- [x] 1.2 Add shared schema types: `mediaSlot` (photo + optional winterPhoto refs) and `videoSlot` (video file + optional winterVideo + poster `mediaSlot`), with Polish titles and previews
+- [x] 1.3 Add the `photo` document: image with hotspot, `alt` (internationalized string; `pl` required, `en`/`de` warning), `category` list; the preview shows the image, Polish alt and category
 
 ## 2. Content schemas
 
-- [ ] 2.1 Add the `siteSettings` singleton (`season`: summer/winter, default summer) and the `pricing` singleton (year, rates, addOns, facts) per design D4, with number-only amounts and unit lists
-- [ ] 2.2 Add `homePage`, `interiorsPage`, `surroundingsPage`, `galleryPage` and `contactPage` with the named slots from design D3, including the exact-length validation on `relaxation` (2) and `details` (4) and the max 4 on `galleryPreview`
-- [ ] 2.3 Add the custom structure (Sezon, Strony ▸ 5 pages, Cennik, Biblioteka zdjęć), with singletons pinned to fixed IDs and filtered out of "new document"
-- [ ] 2.4 Run `npx sanity schema validate`, then `sanity schema deploy`; open the Studio and check that every label is Polish and that only `photo` can be created
+- [x] 2.1 Add the `siteSettings` singleton (`season`: summer/winter, default summer) and the `pricing` singleton (year, rates, addOns, facts) per design D4, with number-only amounts and unit lists
+- [x] 2.2 Add `homePage`, `interiorsPage`, `surroundingsPage`, `galleryPage` and `contactPage` with the named slots from design D3, including the exact-length validation on `relaxation` (2) and `details` (4) and the max 4 on `galleryPreview`
+- [x] 2.3 Add the custom structure (Sezon, Strony ▸ 5 pages, Cennik, Biblioteka zdjęć), with singletons pinned to fixed IDs and filtered out of "new document"
+- [x] 2.4 Run `npx sanity schema validate`, then `sanity schema deploy`; open the Studio and check that every label is Polish and that only `photo` can be created
 
 ## 3. Seed
 

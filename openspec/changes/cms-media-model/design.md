@@ -76,7 +76,7 @@ Amounts are numbers, formatted in PLN with `Intl.NumberFormat`. Units come from 
 - *Alternative: free-text price strings ("1500 zł / doba").* Easy to type, but each price has to be edited three times, and there are no numbers to validate. Rejected.
 
 ### D5. Localized text: `sanity-plugin-internationalized-array`
-Configured with a static list `pl`, `en`, `de` and field types `string` and `text`. Validation requires `pl` and warns when `en` or `de` are missing. Queries pick `alt[_key == $lng][0].value` and fall back to `pl`.
+Configured with a static list `pl`, `en`, `de` and field types `string` and `text`. Validation requires `pl` and warns when `en` or `de` are missing. The plugin (v5) stores the language code in each item's `language` field, so queries pick `alt[language == $lng][0].value` and fall back to `pl`.
 - *Alternative: an object with `pl`, `en` and `de` fields.* Sanity's own guidance advises against it because of attribute limits at scale. It's fine at this size, but the plugin gives a better editing UI and is the documented pattern. Chosen: the plugin.
 
 ### D6. Studio in Polish with a custom structure
