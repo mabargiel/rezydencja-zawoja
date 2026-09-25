@@ -23,11 +23,11 @@
 
 ## 4. New Sanity project and environment variables
 
-- [ ] 4.1 Create the Sanity project `rezydencja-zawoja` in the btopservice organization with a public `production` dataset; add CORS origins `http://localhost:3000` and `http://localhost:3333`
-- [ ] 4.2 Download the 3 MP4s and 3 images from the old project's public CDN into the scratch dir, for possible reuse in cms-media-model
-- [ ] 4.3 Replace the hardcoded `projectId`/`dataset` in `app/src/lib/sanity.ts` with `NEXT_PUBLIC_SANITY_PROJECT_ID`/`NEXT_PUBLIC_SANITY_DATASET`, validated at startup
-- [ ] 4.4 Do the same in `cms/sanity.config.ts` and `cms/sanity.cli.ts` with `SANITY_STUDIO_PROJECT_ID`/`SANITY_STUDIO_DATASET`
-- [ ] 4.5 Add `.env.example` to `app/` and `cms/` and create local `.env.local` / `.env` (gitignored); point both at the new project ID; confirm the ID appears only in `.env.example`
+- [x] 4.1 Create the Sanity project `rezydencja-zawoja` in the btopservice organization with a public `production` dataset; add CORS origins `http://localhost:3000` and `http://localhost:3333`
+- [x] 4.2 Download the 3 MP4s and 3 images from the old project's public CDN into the scratch dir, for possible reuse in cms-media-model
+- [x] 4.3 Replace the hardcoded `projectId`/`dataset` in `app/src/lib/sanity.ts` with `NEXT_PUBLIC_SANITY_PROJECT_ID`/`NEXT_PUBLIC_SANITY_DATASET`, validated at startup
+- [x] 4.4 Do the same in `cms/sanity.config.ts` and `cms/sanity.cli.ts` with `SANITY_STUDIO_PROJECT_ID`/`SANITY_STUDIO_DATASET`
+- [x] 4.5 Add `.env.example` to `app/` and `cms/` and create local `.env.local` / `.env` (gitignored); point both at the new project ID; confirm the ID appears only in `.env.example`
 
 ## 5. Upgrade Next.js
 
