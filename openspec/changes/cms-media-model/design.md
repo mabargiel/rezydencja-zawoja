@@ -76,7 +76,7 @@ Amounts are numbers, formatted in PLN with `Intl.NumberFormat`. Units come from 
 - *Alternative: free-text price strings ("1500 zł / doba").* Easy to type, but each price has to be edited three times, and there are no numbers to validate. Rejected.
 
 ### D5. Localized text: `sanity-plugin-internationalized-array`
-Configured with a static list `pl`, `en`, `de` and field types `string` and `text`. Validation requires `pl` and warns when `en` or `de` are missing. Queries pick `alt[_key == $lng][0].value` and fall back to `pl`.
+Configured with a static list `pl`, `en`, `de` and field types `string` and `text`. Validation requires `pl` and warns when `en` or `de` are missing. The plugin (v5) stores the language code in each item's `language` field, so queries pick `alt[language == $lng][0].value` and fall back to `pl`.
 - *Alternative: an object with `pl`, `en` and `de` fields.* Sanity's own guidance advises against it because of attribute limits at scale. It's fine at this size, but the plugin gives a better editing UI and is the documented pattern. Chosen: the plugin.
 
 ### D6. Studio in Polish with a custom structure
@@ -101,7 +101,7 @@ Singletons use `S.document().documentId(...)` and are hidden from the "new docum
 - *Alternative: time-based ISR, or a webhook to `revalidateTag`.* ISR delays the season switch. A webhook needs a secret, a route and Sanity webhook setup. `defineLive` is the documented default with no extra infrastructure. Chosen.
 
 ### D8. `SanityImage` component
-It wraps `next/image`: `src` from `urlFor(photo).width(w).height(h).fit('crop').auto('format')`, which respects hotspots; `alt` in the current language; and a blur placeholder from `asset->metadata.lqip`. `PageHeader`'s `image` prop becomes this photo type. `next.config` `remotePatterns` is limited to `/images/oavmm529/**`.
+It wraps `next/image` with `fill`: `src` is `urlFor(photo)`, which keeps the editor's crop; the hotspot becomes `object-position`; `alt` is in the current language; and there's a blur placeholder from `asset->metadata.lqip`. Server Components can't pass a `loader` function to `next/image`, so `next.config` sets a global `loaderFile`. It adds `w`, `q` and `auto=format` to `cdn.sanity.io` URLs and returns every other `src` unchanged (local SVGs are marked `unoptimized`). `PageHeader`'s `image` prop becomes this photo type.
 
 ### D9. Seed script
 `cms/scripts/seed.ts`, run with `npx sanity exec scripts/seed.ts --with-user-token`:

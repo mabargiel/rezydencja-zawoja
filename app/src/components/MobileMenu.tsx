@@ -50,7 +50,7 @@ export function MobileMenu({ language, links, labels }: MobileMenuProps) {
         <div className="flex min-h-full flex-col px-5 pt-[22px] pb-10">
           <div className="flex items-center justify-between">
             <Link href={`/${language}`} aria-label={labels.homeLink} onClick={close}>
-              <Image src="/brand/logo-light.svg" alt="" width={63} height={40} />
+              <Image src="/brand/logo-light.svg" unoptimized alt="" width={63} height={40} />
             </Link>
             <button type="button" aria-label={labels.close} onClick={close}>
               <X aria-hidden size={24} strokeWidth={1.5} />

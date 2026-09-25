@@ -21,3 +21,5 @@ next-env.d.ts
 !.vscode/extensions.json
 
 .claude/settings.local.json
+
+cms/schema.json

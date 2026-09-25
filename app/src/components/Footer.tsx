@@ -16,6 +16,7 @@ export async function Footer() {
         <div className="flex flex-col gap-8 lg:gap-6">
           <Image
             src="/brand/logo-light.svg"
+            unoptimized
             alt={t('meta.siteName')}
             width={91}
             height={58}

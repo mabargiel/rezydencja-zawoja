@@ -1,25 +1,17 @@
-import Image from 'next/image'
+import { SanityImage } from '@/components/SanityImage'
+import type { ResolvedPhoto } from '@/sanity/photo'
 
 type PageHeaderProps = {
   eyebrow: string
   title: string
   intro: string
-  image?: { src: string; alt: string }
+  image?: ResolvedPhoto | null
 }
 
 export function PageHeader({ eyebrow, title, intro, image }: PageHeaderProps) {
   return (
     <header className="relative isolate flex h-[400px] flex-col justify-end overflow-hidden bg-bg-dark lg:h-[460px]">
-      {image && (
-        <Image
-          src={image.src}
-          alt={image.alt}
-          fill
-          priority
-          sizes="100vw"
-          className="-z-20 object-cover"
-        />
-      )}
+      {image && <SanityImage photo={image} sizes="100vw" priority className="-z-20" />}
       <div aria-hidden className="absolute inset-0 -z-10 bg-header-scrim" />
       <div className="flex flex-col gap-3.5 px-5 pb-8 lg:max-w-[820px] lg:gap-[18px] lg:px-16 lg:pb-14">
         <p className="flex items-center gap-2.5 font-body text-[10.5px] tracking-[3px] text-accent-warm uppercase lg:gap-3 lg:text-[13px] lg:tracking-[6px]">
