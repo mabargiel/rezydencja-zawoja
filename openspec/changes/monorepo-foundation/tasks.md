@@ -15,11 +15,11 @@
 
 ## 3. Workspace and hygiene
 
-- [ ] 3.1 Add a root `package.json` with `"workspaces": ["app", "cms"]`, `engines.node`, and scripts `dev`, `build`, `lint`, `typecheck`, `format`; add `typecheck` (`tsc --noEmit`) to both packages
-- [ ] 3.2 Delete the package lockfiles, run `npm install` at the root, and commit the single root `package-lock.json`
-- [ ] 3.3 Add root `.gitignore`, `.editorconfig`, `.nvmrc` (24), and `.gitattributes` (`*.pen binary`); move `.prettierrc` to the root and delete the package copies
-- [ ] 3.4 `git rm -r --cached` for `.idea/`, `.next/` and `.sanity/` in both packages; verify with the ignored-paths check from the spec
-- [ ] 3.5 Run `npm run lint`, `npm run typecheck` and `npm run build` at the root and fix anything the move broke
+- [x] 3.1 Add a root `package.json` with `"workspaces": ["app", "cms"]`, `engines.node`, and scripts `dev`, `build`, `lint`, `typecheck`, `format`; add `typecheck` (`tsc --noEmit`) to both packages
+- [x] 3.2 Delete the package lockfiles, run `npm install` at the root, and commit the single root `package-lock.json`
+- [x] 3.3 Add root `.gitignore`, `.editorconfig`, `.nvmrc` (24), and `.gitattributes` (`*.pen binary`); move `.prettierrc` to the root and delete the package copies
+- [x] 3.4 `git rm -r --cached` for `.idea/`, `.next/` and `.sanity/` in both packages; verify with the ignored-paths check from the spec
+- [x] 3.5 Run `npm run lint`, `npm run typecheck` and `npm run build` at the root and fix anything the move broke
 
 ## 4. New Sanity project and environment variables
 

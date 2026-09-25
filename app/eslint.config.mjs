@@ -41,16 +41,7 @@ export default [
             'sort-keys-fix': pluginSortKeysFix,
         },
         rules: {
-            'prettier/prettier': [
-                'error',
-                {
-                    semi: false,
-                    singleQuote: true,
-                    trailingComma: 'es5',
-                    printWidth: 100,
-                    arrowParens: 'avoid',
-                },
-            ],
+            'prettier/prettier': 'error',
 
             'unused-imports/no-unused-imports': 'error',
             'unused-imports/no-unused-vars': [

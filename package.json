@@ -1,0 +1,31 @@
+{
+  "name": "rezydencja-zawoja",
+  "private": true,
+  "workspaces": [
+    "app",
+    "cms"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "concurrently -n app,cms -c green,magenta \"npm run dev -w app\" \"npm run dev -w cms\"",
+    "dev:app": "npm run dev -w app",
+    "dev:cms": "npm run dev -w cms",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "prettier": "^3.6.2"
+  },
+  "allowScripts": {
+    "esbuild@0.25.6": true,
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.12.2": true,
+    "fsevents@2.3.3": true
+  }
+}
