@@ -29,7 +29,7 @@
 ## 5. Navbar, switcher and menu
 
 - [x] 5.1 Design the Language Switcher component (desktop nav and mobile menu variants) and the Mobile Menu frame (390×844) in `design/rezydencja.pen` through the Pencil MCP, reusing the tokens, and screenshot them for approval
-- [ ] 5.2 Get the user's approval of 5.1 (update the design with their feedback) and commit the design as `feat(design): …`
+- [x] 5.2 Get the user's approval of 5.1 (update the design with their feedback) and commit the design as `feat(design): …`
 - [x] 5.3 `Navbar` server component matching `uR0N6` (desktop ≥ lg) and `o3r0vL` (mobile), with a `NavLink` client leaf using `useSelectedLayoutSegment` for `accent-warm` + `aria-current`, the Cennik link to `/{lng}#pricing`, and the CTA to `/{lng}/contact`
 - [x] 5.4 `LanguageSwitcher` built from the approved design: links to the current path in each language, active language marked, works without JS
 - [x] 5.5 `MobileMenu` client component from the approved design: dialog semantics, focus handling, Escape, scroll lock, closes on navigation; labels passed from the server as props
@@ -46,4 +46,4 @@
 - [x] 7.2 Check the mobile menu with the keyboard (open, Escape, focus return) and by tapping links (closes, scroll unlocked)
 - [x] 7.3 `npm run build`: confirm all 15 pages are static, check the `hreflang` tags in the HTML, and confirm `Innenräume` is absent from `.next/static/chunks`
 - [x] 7.4 Run format:check, lint, lint:styles, typecheck and build at the root; push a branch, open a PR, and confirm CI is green before merging
-- [ ] 7.5 Send the EN/DE catalogs to the user for review and apply their corrections
+- [x] 7.5 Send the EN/DE catalogs to the user for review and apply their corrections

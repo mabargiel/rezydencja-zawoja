@@ -17572,7 +17572,7 @@
       "type": "frame",
       "id": "FWOuz",
       "x": -29,
-      "y": -3838,
+      "y": -4138,
       "name": "◆ Components — Rezydencja Zawoja",
       "clip": true,
       "width": 1560,
@@ -18219,40 +18219,241 @@
                     },
                     {
                       "type": "frame",
-                      "id": "z71AP",
-                      "name": "Nav CTA",
-                      "fill": "#10160F4D",
-                      "stroke": "$text-inverse",
-                      "strokeWidth": 1,
-                      "gap": 8,
-                      "padding": [
-                        12,
-                        28
-                      ],
+                      "id": "MFTUb",
+                      "name": "Nav Actions",
+                      "gap": 32,
                       "alignItems": "center",
                       "children": [
                         {
-                          "type": "text",
-                          "id": "SdmTm",
-                          "name": "Nav CTA Label",
-                          "fill": "$text-inverse",
-                          "effect": {
-                            "type": "shadow",
-                            "shadowType": "outer",
-                            "color": "#00000099",
-                            "offset": {
-                              "x": 0,
-                              "y": 1
-                            },
-                            "blur": 6
-                          },
-                          "content": "REZERWUJ",
-                          "fontFamily": "$font-body",
-                          "fontSize": 13,
-                          "fontWeight": "500",
-                          "letterSpacing": 2
+                          "id": "YDiCZ",
+                          "type": "ref",
+                          "ref": "MNzCs",
+                          "name": "Language Switcher"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "z71AP",
+                          "name": "Nav CTA",
+                          "fill": "#10160F4D",
+                          "stroke": "$text-inverse",
+                          "strokeWidth": 1,
+                          "gap": 8,
+                          "padding": [
+                            12,
+                            28
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "SdmTm",
+                              "name": "Nav CTA Label",
+                              "fill": "$text-inverse",
+                              "effect": {
+                                "type": "shadow",
+                                "shadowType": "outer",
+                                "color": "#00000099",
+                                "offset": {
+                                  "x": 0,
+                                  "y": 1
+                                },
+                                "blur": 6
+                              },
+                              "content": "REZERWUJ",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13,
+                              "fontWeight": "500",
+                              "letterSpacing": 2
+                            }
+                          ]
                         }
                       ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "IPM2z",
+          "name": "Cell Language switcher",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 18,
+          "children": [
+            {
+              "type": "frame",
+              "id": "L0k7e",
+              "name": "Label",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "uv8f2",
+                  "name": "Cell Title",
+                  "fill": "$text-primary",
+                  "content": "Language switcher",
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.5
+                },
+                {
+                  "type": "text",
+                  "id": "K4jf1",
+                  "name": "Cell Desc",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": 820,
+                  "content": "PL · EN · DE links to the current page in each language. The active language uses $accent-warm with medium weight; separators use $text-inverse-dim. Nav variant sits between the links and the REZERWUJ button; Menu variant is used in the mobile menu.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "$font-body",
+                  "fontSize": 13.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "uufnE",
+              "name": "Preview Dark",
+              "clip": true,
+              "width": "fill_container",
+              "fill": "$bg-dark",
+              "gap": 96,
+              "padding": [
+                32,
+                64
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "MNzCs",
+                  "name": "Language Switcher Nav",
+                  "reusable": true,
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Z3KDW",
+                      "name": "Option PL",
+                      "fill": "$accent-warm",
+                      "content": "PL",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "XC0sL",
+                      "name": "Separator",
+                      "fill": "$text-inverse-dim",
+                      "content": "·",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "TT4TI",
+                      "name": "Option EN",
+                      "fill": "$text-inverse",
+                      "content": "EN",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "gu11L",
+                      "name": "Separator",
+                      "fill": "$text-inverse-dim",
+                      "content": "·",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "H9tBl",
+                      "name": "Option DE",
+                      "fill": "$text-inverse",
+                      "content": "DE",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal",
+                      "letterSpacing": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rzQSn",
+                  "name": "Language Switcher Menu",
+                  "reusable": true,
+                  "gap": 14,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "q6JyE",
+                      "name": "Option PL",
+                      "fill": "$accent-warm",
+                      "content": "PL",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "500",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "QX3MN",
+                      "name": "Separator",
+                      "fill": "$text-inverse-dim",
+                      "content": "·",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "NDa29",
+                      "name": "Option EN",
+                      "fill": "$text-inverse",
+                      "content": "EN",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "JUNDN",
+                      "name": "Separator",
+                      "fill": "$text-inverse-dim",
+                      "content": "·",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "IEUEG",
+                      "name": "Option DE",
+                      "fill": "$text-inverse",
+                      "content": "DE",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 2
                     }
                   ]
                 }
@@ -19963,6 +20164,217 @@
                       ]
                     }
                   ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "oXJga",
+      "x": 10329,
+      "y": 0,
+      "name": "Mobile Menu",
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "$bg-dark",
+      "layout": "vertical",
+      "padding": [
+        22,
+        20,
+        40,
+        20
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "uwZm8",
+          "name": "M Menu Top",
+          "width": "fill_container",
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "P8O9aY",
+              "name": "Brand Logo",
+              "width": 63,
+              "height": 40,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "images/logo-light.png",
+                "mode": "fit"
+              }
+            },
+            {
+              "type": "icon",
+              "id": "jwBJT",
+              "name": "M Close Icon",
+              "width": 24,
+              "height": 24,
+              "icon": "x",
+              "library": "lucide",
+              "fill": "$text-inverse"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "N3eZKC",
+          "name": "M Menu Links",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 18,
+          "padding": [
+            56,
+            0,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "bQfy8",
+              "name": "M Menu Link Dom",
+              "fill": "$text-inverse",
+              "content": "Dom",
+              "lineHeight": 1.1,
+              "fontFamily": "$font-display",
+              "fontSize": 34,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "uarSx",
+              "name": "M Menu Link Wnętrza",
+              "fill": "$accent-warm",
+              "content": "Wnętrza",
+              "lineHeight": 1.1,
+              "fontFamily": "$font-display",
+              "fontSize": 34,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "EjV38",
+              "name": "M Menu Link Okolica",
+              "fill": "$text-inverse",
+              "content": "Okolica",
+              "lineHeight": 1.1,
+              "fontFamily": "$font-display",
+              "fontSize": 34,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "StTjN",
+              "name": "M Menu Link Galeria",
+              "fill": "$text-inverse",
+              "content": "Galeria",
+              "lineHeight": 1.1,
+              "fontFamily": "$font-display",
+              "fontSize": 34,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "ch4b0",
+              "name": "M Menu Link Cennik",
+              "fill": "$text-inverse",
+              "content": "Cennik",
+              "lineHeight": 1.1,
+              "fontFamily": "$font-display",
+              "fontSize": 34,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "A2VfZq",
+              "name": "M Menu Link Kontakt",
+              "fill": "$text-inverse",
+              "content": "Kontakt",
+              "lineHeight": 1.1,
+              "fontFamily": "$font-display",
+              "fontSize": 34,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "eYQOU",
+          "name": "Spacer",
+          "width": "fill_container",
+          "height": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "KviuK",
+          "name": "M Menu Divider",
+          "width": "fill_container",
+          "height": 1,
+          "fill": "#F7F5EF26"
+        },
+        {
+          "type": "frame",
+          "id": "MMmW1",
+          "name": "M Menu Bottom",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            28,
+            0,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "id": "AaJvq",
+              "type": "ref",
+              "ref": "rzQSn",
+              "name": "Language Switcher"
+            },
+            {
+              "id": "ECAb3",
+              "type": "ref",
+              "ref": "Asguq",
+              "name": "M Menu CTA",
+              "width": "fill_container",
+              "justifyContent": "center"
+            },
+            {
+              "type": "frame",
+              "id": "LIc4E",
+              "name": "M Menu Kontakt",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "z4HVpi",
+                  "name": "M Menu Contact",
+                  "fill": "$text-inverse-dim",
+                  "content": "+48 500 290 390",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13.5,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                },
+                {
+                  "type": "text",
+                  "id": "eGfmg",
+                  "name": "M Menu Contact",
+                  "fill": "$text-inverse-dim",
+                  "content": "biuro@rezydencjazawoja.pl",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13.5,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
                 }
               ]
             }
