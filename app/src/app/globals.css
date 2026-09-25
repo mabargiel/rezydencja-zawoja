@@ -17,6 +17,10 @@
   --color-scrim-top: #0d120d80;
   --color-scrim-middle: #0d120d66;
   --color-scrim-bottom: #0a0e08d9;
+  --color-scrim-hero-top: #0d120db3;
+  --color-scrim-hero-lower: #0d120d8c;
+  --color-scrim-panorama-top: #0d120d59;
+  --color-scrim-panorama-bottom: #0a0e08e6;
   --font-display: var(--font-cormorant), 'Times New Roman', serif;
   --font-body: var(--font-jost), system-ui, sans-serif;
 }
@@ -27,6 +31,24 @@
     var(--color-scrim-top) 0%,
     var(--color-scrim-middle) 40%,
     var(--color-scrim-bottom) 100%
+  );
+}
+
+@utility bg-hero-scrim {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-scrim-hero-top) 0%,
+    var(--color-scrim-middle) 32%,
+    var(--color-scrim-hero-lower) 60%,
+    var(--color-scrim-bottom) 100%
+  );
+}
+
+@utility bg-panorama-scrim {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-scrim-panorama-top) 0%,
+    var(--color-scrim-panorama-bottom) 100%
   );
 }
 

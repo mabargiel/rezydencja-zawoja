@@ -9,6 +9,7 @@ export async function SubPage({ page }: { page: Exclude<PageKey, 'home'> }) {
   const { data } = await sanityFetch({
     params: { lng: language, page: `${page}Page` },
     query: pageHeaderQuery,
+    stega: false,
   })
 
   return (
@@ -17,7 +18,7 @@ export async function SubPage({ page }: { page: Exclude<PageKey, 'home'> }) {
         eyebrow={t(`pages.${page}.eyebrow`)}
         title={t(`pages.${page}.title`)}
         intro={t(`pages.${page}.intro`)}
-        image={data?.photo}
+        image={data?.header?.photo}
       />
     </main>
   )
