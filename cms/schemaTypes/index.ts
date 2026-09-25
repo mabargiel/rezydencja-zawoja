@@ -1,4 +1,4 @@
-import photoGallery from './photoGallery'
-import hero from './hero'
+import { hero } from './hero'
+import { photoGallery } from './photoGallery'
 
 export const schemaTypes = [hero, photoGallery]
