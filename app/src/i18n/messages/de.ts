@@ -49,13 +49,110 @@ export const de = {
     address: 'Zawoja, Beskiden, am Fuß der Babia Góra',
     copyright: '© {{year}} Rezydencja Zawoja. Alle Rechte vorbehalten.',
   },
-  pages: {
-    home: {
+  home: {
+    hero: {
       eyebrow: 'Beskiden · am Fuß der Babia Góra',
       title: 'Ein Haus in den Bergen,\nnur für Sie',
       intro:
         'Eine luxuriöse Residenz zur Alleinnutzung. Stille, viel Raum und der Blick auf die Babia Góra aus jedem Fenster.',
     },
+    booking: {
+      label: 'Verfügbarkeit prüfen',
+      arrival: 'Anreise',
+      departure: 'Abreise',
+      guests: 'Gäste',
+      guestsAny: 'bis zu 10',
+      submit: 'Verfügbarkeit prüfen',
+    },
+    intro: {
+      eyebrow: 'Über die Residenz',
+      title: 'Eine Auszeit vom Alltag',
+      lead: 'Die Rezydencja Zawoja ist der ideale Ort für alle, die Ruhe, Privatsphäre und ein wenig Luxus schätzen.',
+      body: 'Stilvolle Einrichtung und hochwertige Ausstattung: ein geräumiges Wohnzimmer mit Kamin und Aussicht, ein Wellness- und Fitnessbereich mit Whirlpool, Sauna, Salzgrotte und Fitnessraum, ein Billardzimmer und fünf gemütliche Schlafzimmer. Mitten in den Beskiden, am Fuß der Babia Góra, nur 100 km von Krakau entfernt.',
+      link: 'Das Haus entdecken',
+    },
+    spa: {
+      eyebrow: 'Entspannung',
+      title: 'Freizeitangebot und Wellness vor Ort',
+      body: 'Unser Traum war es, die Rezydencja Zawoja zu einer Oase der Erholung für Körper und Seele zu machen. Deshalb gibt es im Haus eine Salzgrotte, eine Sauna und einen Whirlpool mit beheiztem Salzwasser.',
+      saltGrotto: {
+        title: 'Salzgrotte',
+        description: 'Ein salziges Mikroklima, das die Sinne beruhigt und die Erholung fördert.',
+      },
+      hotTub: {
+        title: 'Badebottich',
+        description: 'Ein holzbeheizter Badebottich mit Bergblick, auch im Winter ein Erlebnis.',
+      },
+      sauna: {
+        title: 'Sauna',
+        description: 'Eine finnische Sauna zum Aufwärmen nach einem Tag auf dem Wanderweg.',
+      },
+      amenities: {
+        jacuzzi: 'Salzwasser-Whirlpool',
+        billiards: 'Billardzimmer',
+        fitness: 'Fitnessraum',
+        fireplace: 'Wohnzimmer mit Kamin und Aussicht',
+        terrace: 'Aussichtsterrasse',
+        grill: 'Gartengrill',
+      },
+    },
+    interiors: {
+      eyebrow: 'Einzigartige Einrichtung',
+      title: 'Ein Haus mit Seele',
+      body: 'Die Rezydencja Zawoja ist ein Blockhaus, in dem wir statt des typischen Goralenstils auf eine außergewöhnliche Einrichtung und hochwertige Ausstattung gesetzt haben. Inspiriert vom Zauber der Residenzen vergangener Jahrhunderte, mit über Jahre gesammelten antiken Möbeln aus dem frühen 20. Jahrhundert.',
+      antiques: {
+        title: 'Möbel mit Geschichte',
+        description:
+          'Französische Kommoden, ein Tisch aus dem Anfang des letzten Jahrhunderts und ein Eichenbuffet aus einem polnischen Gutshaus.',
+      },
+      bedrooms: {
+        title: 'Fünf Schlafzimmer',
+        description:
+          'Jedes Schlafzimmer im Obergeschoss ist individuell eingerichtet und unterstreicht den Stil seiner Möbel.',
+      },
+      link: 'Die Innenräume ansehen',
+    },
+    location: {
+      eyebrow: 'Malerische Lage',
+      title: 'Zauberhafte Aussichten zu jeder Jahreszeit',
+      body: 'Das Haus liegt auf einer Anhöhe inmitten von Wäldern, die mit jeder Jahreszeit ihre Farben wechseln, mit einem Panorama des Babia-Góra-Massivs aus den Wohnzimmerfenstern.',
+      facts: {
+        trails: { title: 'Wanderwege der Babia Góra', detail: 'Wandern' },
+        waterfalls: { title: 'Bergwasserfälle', detail: 'und Dorfkapellen' },
+        lifts: { title: 'Skilifte', detail: 'Wintersaison' },
+        cycling: { title: 'Radwege', detail: 'Sommer in den Beskiden' },
+        krakow: { title: '100 km', detail: 'bis Krakau' },
+      },
+    },
+    gallery: {
+      eyebrow: 'Galerie',
+      title: 'Ein Blick hinein',
+      link: 'Ganze Galerie',
+    },
+    pricing: {
+      eyebrow: 'Preise {{year}}',
+      title: 'Das ganze Haus, klare Regeln',
+      note: 'Die Residenz wird nur als Ganzes vermietet, für höchstens 10 Personen einschließlich Kindern. Sauna, Billard, Salzgrotte und Fitnessraum sind inklusive. Die Preise gelten für einen Aufenthalt von bis zu 6 Personen.',
+      period: 'Zeitraum',
+      minimumStay: 'Mindestaufenthalt',
+      price: 'Preis für das Haus',
+      extraPerson: 'Aufpreis pro Person 7–10',
+      bookingTitle: 'Termin buchen',
+      bookingBody:
+        'Rufen Sie an oder schreiben Sie uns, wir bestätigen die Verfügbarkeit noch am selben Tag.',
+    },
+    cta: {
+      eyebrow: 'Buchung',
+      title: 'Berge, Stille und ein Haus nur für Sie',
+      body: 'Prüfen Sie freie Termine oder schreiben Sie uns. Wir beantworten gern jede Frage zu Ihrem Aufenthalt in der Residenz.',
+      primary: 'Termine prüfen',
+      secondary: 'Schreiben Sie uns',
+    },
+  },
+  pricing: {
+    unit: { night: 'Nacht', stay: 'Aufenthalt', week: 'Woche', weekend: 'Wochenende' },
+  },
+  pages: {
     interiors: {
       eyebrow: 'Innenräume',
       title: 'Ein Haus mit Seele,\nRaum für Raum',
