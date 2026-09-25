@@ -62,20 +62,33 @@ The app and the Studio SHALL use a Sanity project named `rezydencja-zawoja` in t
 - **THEN** the request is not blocked by CORS
 
 ### Requirement: Current framework versions
-`app` SHALL use the current stable major of `next` (16.x) with a compatible `next-sanity`, and `cms` SHALL use the current stable major of `sanity` (6.x). Existing pages and schemas SHALL keep working.
+Every dependency in `app` and `cms` SHALL be on its latest published version, with only these documented exceptions:
+- `eslint` stays on 9.x while `eslint-config-next`'s bundled plugins don't support ESLint 10;
+- `typescript` stays on 6.0.x while typescript-eslint supports only TypeScript below 6.1;
+- `@types/node` matches the Node major version in `.nvmrc`.
 
-#### Scenario: App still renders
-- **WHEN** the app is built and started against the new project with seed content from task 6.3
-- **THEN** `/` renders the hero video and `/gallery` renders the gallery images from Sanity without runtime errors
+The app SHALL contain no code from before the design.
 
-#### Scenario: Studio edits content in the new project
-- **WHEN** the Studio is started with `npm run dev -w cms` against the new project
-- **THEN** a `hero` and a `photoGallery` document can be created, edited and published without schema errors
+#### Scenario: No outdated dependencies beyond the exceptions
+- **WHEN** a contributor runs `npm outdated --workspaces`
+- **THEN** the only packages listed are `eslint`, `typescript`, `@types/node` and packages whose latest version requires ESLint 10 or TypeScript 7
+
+#### Scenario: No pre-design code remains
+- **WHEN** a contributor searches `app/src` and `cms/schemaTypes`
+- **THEN** there are no `Hero`, `HeroClient`, `HeroOverlay` or `photoGallery` symbols, no `framer-motion` import, and no Next.js starter SVGs in `app/public`
+
+#### Scenario: Studio builds with the current schema set
+- **WHEN** `npm run build -w cms` runs
+- **THEN** the Studio builds and `npx sanity schema validate` reports 0 errors
 
 ### Requirement: Design source is versioned in the repo
-The pen.dev design SHALL be stored at `design/rezydencja.pen` and marked as binary in `.gitattributes`.
+The pen.dev design SHALL be stored at `design/rezydencja.pen`, with every image it references in `design/images/`, and `.pen` and image files SHALL be marked as binary in `.gitattributes`.
 
 #### Scenario: Design readable through the MCP
 - **WHEN** the Pencil MCP opens `design/rezydencja.pen`
 - **THEN** the components `Navbar` (uR0N6) and `Footer` (vgRjs) and the screen `Rezydencja Zawoja Landing` (iq1tP) are present
+
+#### Scenario: Design images resolve
+- **WHEN** the Pencil MCP screenshots the node `jfJ6e` (Intro Images)
+- **THEN** the photos render instead of empty image fills
 
