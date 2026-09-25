@@ -7,7 +7,6 @@ export default async function NotFound() {
 
   return (
     <main>
-      <title>{t('meta.notFound.title')}</title>
       <PageHeader
         eyebrow={t('pages.notFound.eyebrow')}
         title={t('pages.notFound.title')}

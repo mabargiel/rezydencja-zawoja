@@ -96,7 +96,8 @@ Also:
 - `.pen` files are encrypted. Read them **only through the Pencil MCP** (`mcp__pencil__*` tools, `filePath` = absolute path to `design/rezydencja.pen`). Never use Read/Grep on them.
 - Useful calls in `execute`: `Get(id, {depth: 5})` for structure, `Get(id, {resolveVariables: true})` for computed values, `TakeScreenshot([id])` for visuals, `GetVariables()` for tokens.
 - Match the design's text, spacing, typography, radii, icons and responsive behavior. Desktop frames are 1440px wide, mobile frames 390px.
-- When the design changes in pen.dev, replace the file in a `chore(design):` commit.
+- Pencil MCP calls act on the document open in the pen.dev app, whatever `filePath` says. If that's not `design/rezydencja.pen`, copy the edited document (and any new files in its `images/`) into `design/` after changing it.
+- When the design changes in pen.dev, replace the file in a `chore(design):` or `feat(design):` commit.
 
 ### Tokens
 
@@ -145,11 +146,13 @@ The component board is `FWOuz`.
 
 ## i18n
 
-- Languages: `pl`, `en`, `de`. Translations use **i18next** (`react-i18next`).
-- Every route lives under a language segment: `/pl/...`, `/en/...`, `/de/...`.
-- A request without a language prefix is redirected based on `Accept-Language`; if nothing matches, fall back to `en`.
-- Every page emits `hreflang` alternates for all three languages. The navbar has a PL/EN/DE switcher.
-- No user-visible string is hardcoded in a component, including `alt`, `aria-label` and metadata. Everything goes through the i18next catalogs.
+- Languages: `pl`, `en`, `de` (`app/src/i18n/config.ts`). Routes live under `app/src/app/[lng]/`, e.g. `/pl/interiors`. Slugs are English and the same in every language.
+- `app/src/proxy.ts` redirects paths without a language: the `lng` cookie first, then `Accept-Language`, then `en`. Visiting a prefixed path stores that language in the cookie.
+- Translations use **i18next on the server only**. In a Server Component: `const t = await getT()` from `@/i18n/server`. The language comes from `next/root-params`, so don't pass `lng` around. Client Components get already-translated strings as props; don't add `react-i18next`.
+- Catalogs are TypeScript modules in `app/src/i18n/messages/`. `pl.ts` is the source (the design's copy); `en.ts` and `de.ts` use `satisfies Messages`, so a missing or extra key fails `typecheck`, and `t()` keys are type-checked. To add text: add the key to `pl.ts`, then to `en.ts` and `de.ts`.
+- Store text in sentence case and uppercase it with CSS (`uppercase`) where the design shows capitals.
+- Every page exports `generateMetadata = () => pageMetadata('<page>')` from `@/lib/metadata`, which adds a translated title and description, the canonical URL and `hreflang` alternates.
+- No user-visible string is hardcoded in a component, including `alt`, `aria-label` and metadata. Phone and email are not translated and live in `app/src/config/site.ts`.
 - The design's copy is Polish. EN and DE are drafted by Claude and reviewed by the owner.
 
 ## Content

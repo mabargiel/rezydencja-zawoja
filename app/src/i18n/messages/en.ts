@@ -27,9 +27,6 @@ export const en = {
       title: 'Contact',
       description: 'Ask about availability at Rezydencja Zawoja. We reply the same day.',
     },
-    notFound: {
-      title: 'Page not found',
-    },
   },
   nav: {
     label: 'Main navigation',

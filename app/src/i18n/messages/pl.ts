@@ -25,9 +25,6 @@ export const pl = {
       title: 'Kontakt',
       description: 'Zapytaj o wolny termin w Rezydencji Zawoja. Odpowiadamy tego samego dnia.',
     },
-    notFound: {
-      title: 'Nie znaleziono strony',
-    },
   },
   nav: {
     label: 'Nawigacja główna',

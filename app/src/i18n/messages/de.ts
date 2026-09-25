@@ -28,9 +28,6 @@ export const de = {
       description:
         'Fragen Sie nach freien Terminen in der Rezydencja Zawoja. Wir antworten noch am selben Tag.',
     },
-    notFound: {
-      title: 'Seite nicht gefunden',
-    },
   },
   nav: {
     label: 'Hauptnavigation',
