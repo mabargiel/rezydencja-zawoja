@@ -33,4 +33,8 @@ export default defineConfig([
       ],
     },
   },
+  {
+    files: ['src/i18n/messages/**'],
+    rules: { 'sort-keys-fix/sort-keys-fix': 'off' },
+  },
 ])

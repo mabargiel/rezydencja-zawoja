@@ -1,39 +1,67 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import logo from '../../public/images/logo.svg'
+import { ButtonOutline } from '@/components/Actions'
+import { LanguageSwitcher } from '@/components/LanguageSwitcher'
+import { MobileMenu } from '@/components/MobileMenu'
+import { NavLink } from '@/components/NavLink'
+import { navItems } from '@/config/site'
+import { getLanguage, getT } from '@/i18n/server'
 
-export default function Navbar({ className = '' }) {
+export async function Navbar() {
+  const [language, t] = await Promise.all([getLanguage(), getT()])
+  const links = navItems.map(item => ({
+    href: `/${language}${item.path}`,
+    label: t(`nav.${item.key}`),
+    segment: item.segment,
+  }))
+
   return (
-    <nav className={`w-full z-50 ${className}`}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 text-white">
-        <Link href="/" className="flex items-center">
-          <Image src={logo} alt="Rezydencja Zawoja Logo" width={200} priority />
-        </Link>
-        <ul className="flex gap-6 font-medium">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/rooms">Pokoje</Link>
-          </li>
-          <li>
-            <Link href="/gallery">Galeria</Link>
-          </li>
-          <li>
-            <Link href="/zawoja">W okolicy</Link>
-          </li>
-          <li>
-            <Link href="/pricing">Cennik</Link>
-          </li>
-          <li>
-            <Link href="/blog">Blog</Link>
-          </li>
-          <li>
-            <Link href="/contact">Kontakt</Link>
-          </li>
+    <div className="absolute inset-x-0 top-0 z-30 flex items-center justify-between px-5 py-[22px] lg:px-16 lg:py-7">
+      <Link href={`/${language}`} aria-label={t('nav.homeLink')}>
+        <Image
+          src="/brand/logo-light.svg"
+          alt=""
+          width={78}
+          height={50}
+          priority
+          className="h-10 w-auto lg:h-[50px]"
+        />
+      </Link>
+
+      <nav aria-label={t('nav.label')} className="hidden lg:block">
+        <ul className="flex items-center gap-9">
+          {links.map(link => (
+            <li key={link.href}>
+              <NavLink
+                href={link.href}
+                segment={link.segment}
+                className="font-body text-sm tracking-[1.5px]"
+              >
+                {link.label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
+      </nav>
+
+      <div className="hidden items-center gap-8 lg:flex">
+        <LanguageSwitcher current={language} label={t('nav.language')} size="nav" />
+        <ButtonOutline href={`/${language}/contact`}>{t('nav.book')}</ButtonOutline>
       </div>
-    </nav>
+
+      <MobileMenu
+        language={language}
+        links={links}
+        labels={{
+          book: t('nav.book'),
+          close: t('nav.closeMenu'),
+          homeLink: t('nav.homeLink'),
+          language: t('nav.language'),
+          navigation: t('nav.label'),
+          open: t('nav.openMenu'),
+        }}
+      />
+    </div>
   )
 }

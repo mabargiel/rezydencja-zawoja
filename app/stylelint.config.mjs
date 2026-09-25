@@ -1,5 +1,6 @@
-export default {
+const config = {
   extends: ['stylelint-config-standard'],
+  ignoreFiles: ['.next/**', 'out/**', 'build/**'],
   rules: {
     'at-rule-no-deprecated': [true, { ignoreAtRules: ['apply'] }],
     'at-rule-no-unknown': [
@@ -20,5 +21,6 @@ export default {
     ],
     'import-notation': 'string',
   },
-  ignoreFiles: ['.next/**', 'out/**', 'build/**'],
 }
+
+export default config
