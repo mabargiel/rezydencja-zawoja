@@ -45,5 +45,5 @@
 - [x] 7.1 Browser check at 390px and 1440px for all 5 routes in PL, EN and DE against the design screenshots (`YCfBW`/`iq1tP` header areas, `V8PYt`/`E3j9wx`, `vgRjs`/`O6EcDO`); fix any drift
 - [x] 7.2 Check the mobile menu with the keyboard (open, Escape, focus return) and by tapping links (closes, scroll unlocked)
 - [x] 7.3 `npm run build`: confirm all 15 pages are static, check the `hreflang` tags in the HTML, and confirm `Innenräume` is absent from `.next/static/chunks`
-- [ ] 7.4 Run format:check, lint, lint:styles, typecheck and build at the root; push a branch, open a PR, and confirm CI is green before merging
+- [x] 7.4 Run format:check, lint, lint:styles, typecheck and build at the root; push a branch, open a PR, and confirm CI is green before merging
 - [ ] 7.5 Send the EN/DE catalogs to the user for review and apply their corrections
