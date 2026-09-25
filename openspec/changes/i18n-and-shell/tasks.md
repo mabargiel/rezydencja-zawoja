@@ -1,9 +1,9 @@
 ## 1. Clean slate
 
-- [ ] 1.1 Delete `app/src/components/*`, `app/src/app/gallery`, `app/src/app/page.tsx`, `app/src/app/layout.tsx`, `app/src/lib/queries.ts`, `app/src/lib/schemas.ts` and everything in `app/public`; keep `lib/env.ts` and `lib/sanity.ts`
-- [ ] 1.2 Delete `cms/schemaTypes/hero.ts` and `photoGallery.ts`, export an empty `schemaTypes` list, and confirm `npx sanity schema validate` and `npm run build -w cms` pass
-- [ ] 1.3 Delete the Sanity documents `hero` and `photoGallery` and their 3 assets from `oavmm529/production`; confirm the dataset has no documents left
-- [ ] 1.4 Uninstall `framer-motion`; upgrade every dependency to its latest version apart from the exceptions (ESLint 9, TypeScript 6.0, `@types/node` 24); refresh `allowScripts`; confirm `npm outdated --workspaces` lists only the exceptions
+- [x] 1.1 Delete `app/src/components/*`, `app/src/app/gallery`, `app/src/app/page.tsx`, `app/src/app/layout.tsx`, `app/src/lib/queries.ts`, `app/src/lib/schemas.ts` and everything in `app/public`; keep `lib/env.ts` and `lib/sanity.ts`
+- [x] 1.2 Delete `cms/schemaTypes/hero.ts` and `photoGallery.ts`, export an empty `schemaTypes` list, and confirm `npx sanity schema validate` and `npm run build -w cms` pass
+- [x] 1.3 Delete the Sanity documents `hero` and `photoGallery` and their 3 assets from `oavmm529/production`; confirm the dataset has no documents left
+- [x] 1.4 Uninstall `framer-motion`; upgrade every dependency to its latest version apart from the exceptions (ESLint 9, TypeScript 6.0, `@types/node` 24); refresh `allowScripts`; confirm `npm outdated --workspaces` lists only the exceptions
 
 ## 2. i18n foundation
 

@@ -1,4 +1,3 @@
-import { hero } from './hero'
-import { photoGallery } from './photoGallery'
+import type { SchemaTypeDefinition } from 'sanity'
 
-export const schemaTypes = [hero, photoGallery]
+export const schemaTypes: SchemaTypeDefinition[] = []
