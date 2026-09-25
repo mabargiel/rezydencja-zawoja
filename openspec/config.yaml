@@ -1,20 +1,19 @@
 schema: spec-driven
 
-# Project context (optional)
-# This is shown to AI when creating artifacts.
-# Add your tech stack, conventions, style guides, domain knowledge, etc.
-# Example:
-#   context: |
-#     Tech stack: TypeScript, React, Node.js
-#     We use conventional commits
-#     Domain: e-commerce platform
+context: |
+  Rezydencja Zawoja: marketing site for a guesthouse in Zawoja, Poland. Brochure site, no on-site booking.
+  Monorepo (npm workspaces): app/ = Next.js 16 App Router, React 19, TypeScript 6, Tailwind 4;
+  cms/ = Sanity Studio 6 (project oavmm529, dataset production); design/rezydencja.pen = pen.dev design,
+  read only through the Pencil MCP. Hosting: Vercel (root dir app/), Studio on rezydencja-zawoja.sanity.studio.
+  i18n: PL/EN/DE with i18next, URL prefix /pl /en /de, Accept-Language detection, EN fallback.
+  Content split: images, videos and pricing in Sanity; page copy and UI text in i18next catalogs.
+  Conventions: Conventional Commits with scopes app|cms|design|ci|repo; Server Components by default;
+  no AI-style comments; see CLAUDE.md for the full rules.
 
-# Per-artifact rules (optional)
-# Add custom rules for specific artifacts.
-# Example:
-#   rules:
-#     proposal:
-#       - Keep proposals under 500 words
-#       - Always include a "Non-goals" section
-#     tasks:
-#       - Break tasks into chunks of max 2 hours
+rules:
+  tasks:
+    - Each task is small enough to finish and verify in one sitting
+    - UI tasks name the design node IDs they implement
+    - Every task that changes UI text covers all three languages
+  design:
+    - Reference design node IDs from design/rezydencja.pen for any UI decision

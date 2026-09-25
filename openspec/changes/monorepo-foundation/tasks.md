@@ -31,21 +31,21 @@
 
 ## 5. Upgrade Next.js
 
-- [ ] 5.1 Run `npx @next/codemod@latest upgrade` in `app/` to reach Next 16.x; bump `eslint-config-next`, `next-sanity` (13.x), React and types
-- [ ] 5.2 Replace the `next lint` scripts with `eslint .` and update `eslint.config.mjs` for the new flat config
-- [ ] 5.3 Fix type, lint and build errors; verify `/` (hero video) and `/gallery` render with Sanity data in the browser
+- [x] 5.1 Run `npx @next/codemod@latest upgrade` in `app/` to reach Next 16.x; bump `eslint-config-next`, `next-sanity` (13.x), React and types
+- [x] 5.2 Replace the `next lint` scripts with `eslint .` and update `eslint.config.mjs` for the new flat config
+- [x] 5.3 Fix type, lint and build errors; verify `/` (hero video) and `/gallery` render with Sanity data in the browser
 
 ## 6. Upgrade Sanity Studio
 
-- [ ] 6.1 Read the Sanity v4, v5 and v6 migration notes and bump `sanity` and `@sanity/vision` to 6.x (drop `styled-components` if it's no longer a peer)
-- [ ] 6.2 Convert `hero` and `photoGallery` to `defineType`/`defineField`; update `sanity.config.ts` and `sanity.cli.ts` for the new API
-- [ ] 6.3 Run `npm run dev -w cms`, create and publish one `hero` document (1 video) and one `photoGallery` document (2–3 images) as seed content, and confirm there are no schema errors
+- [x] 6.1 Read the Sanity v4, v5 and v6 migration notes and bump `sanity` and `@sanity/vision` to 6.x (drop `styled-components` if it's no longer a peer)
+- [x] 6.2 Convert `hero` and `photoGallery` to `defineType`/`defineField`; update `sanity.config.ts` and `sanity.cli.ts` for the new API
+- [x] 6.3 Run `npm run dev -w cms`, create and publish one `hero` document (1 video) and one `photoGallery` document (2–3 images) as seed content, and confirm there are no schema errors
 
 ## 7. Design source and CLAUDE.md
 
-- [ ] 7.1 Copy `~/.pencil/documents/480b4496-262a-41df-98f9-ffa4918efbd6/pencil-new.pen` to `design/rezydencja.pen`; confirm the Pencil MCP opens it and finds uR0N6, vgRjs and iq1tP
-- [ ] 7.2 Write the root `CLAUDE.md` with the sections from design D6: project map, commands, Conventional Commits (types, scopes, examples), TS/React rules, comment and clean-code rules with examples, design source plus token table plus component/screen ID table, i18next and URL-prefix rules, Sanity content rules, OpenSpec workflow
-- [ ] 7.3 Fill `openspec/config.yaml` `context` with the stack, repo layout, i18n/content decisions and conventions, and add a `rules` entry keeping tasks small
+- [x] 7.1 Copy `~/.pencil/documents/480b4496-262a-41df-98f9-ffa4918efbd6/pencil-new.pen` to `design/rezydencja.pen`; confirm the Pencil MCP opens it and finds uR0N6, vgRjs and iq1tP
+- [x] 7.2 Write the root `CLAUDE.md` with the sections from design D6: project map, commands, Conventional Commits (types, scopes, examples), TS/React rules, comment and clean-code rules with examples, design source plus token table plus component/screen ID table, i18next and URL-prefix rules, Sanity content rules, OpenSpec workflow
+- [x] 7.3 Fill `openspec/config.yaml` `context` with the stack, repo layout, i18n/content decisions and conventions, and add a `rules` entry keeping tasks small
 
 ## 8. CI and deployment
 

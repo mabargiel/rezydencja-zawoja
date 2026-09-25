@@ -44,7 +44,7 @@ CLAUDE.md SHALL:
 
 #### Scenario: Token and ID tables
 - **WHEN** a contributor reads the design section
-- **THEN** it contains the ten color tokens with hex values, the two font families, the reusable component IDs (Navbar uR0N6, Button Primary Fw8hs, Button Outline Asguq, Button Text Link rZiGf, Section Heading znsFD/iZvba, Booking Bar MB8Pv, Feature Card p9n20A, Pricing Table m4W0t2, Amenity Row O7P7qP/Ofbwp, Footer vgRjs) and the desktop and mobile screen IDs
+- **THEN** it contains every color token from the design with its hex value, the two font families, the reusable component IDs (Navbar uR0N6, Button Primary Fw8hs, Button Outline Asguq, Button Text Link rZiGf, Section Heading znsFD/iZvba, Booking Bar MB8Pv, Feature Card p9n20A, Pricing Table m4W0t2, Amenity Row O7P7qP/Ofbwp, Footer vgRjs) and the desktop and mobile screen IDs
 
 ### Requirement: i18n and content rules
 CLAUDE.md SHALL state:
