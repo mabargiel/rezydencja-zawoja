@@ -1,11 +1,15 @@
 ## ADDED Requirements
 
 ### Requirement: CI checks on every pull request
-A GitHub Actions workflow SHALL run `npm ci`, then lint, typecheck and build for both workspaces, on every pull request and on every push to `main`. It SHALL use the Node version pinned in `.nvmrc`.
+A GitHub Actions workflow SHALL run `npm ci`, then Prettier check, ESLint, Stylelint, typecheck and build for both workspaces, on every pull request and on every push to `main`. It SHALL use the Node version pinned in `.nvmrc`.
 
 #### Scenario: Passing change
 - **WHEN** a pull request builds and lints cleanly in both `app` and `cms`
 - **THEN** the CI check reports success
+
+#### Scenario: Style violations block merge
+- **WHEN** a pull request contains a file not formatted with Prettier, or CSS that breaks a Stylelint rule
+- **THEN** the CI check fails at the `format:check` or `lint:styles` step
 
 #### Scenario: Type error blocks merge
 - **WHEN** a pull request introduces a TypeScript error in `app`

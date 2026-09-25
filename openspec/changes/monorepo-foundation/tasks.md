@@ -49,7 +49,7 @@
 
 ## 8. CI and deployment
 
-- [x] 8.1 Add `.github/workflows/ci.yml`: on PR and push to main, `setup-node` from `.nvmrc` with npm cache, `npm ci`, then lint, typecheck and build
+- [x] 8.1 Add `.github/workflows/ci.yml`: on PR and push to main, `setup-node` from `.nvmrc` with npm cache, `npm ci`, then Prettier check, ESLint, Stylelint (Tailwind-aware config for `app/src/**/*.css`), typecheck and build
 - [x] 8.2 Add `.github/workflows/deploy-studio.yml`: on push to main with `paths: cms/**`, run `npx sanity deploy` using `SANITY_AUTH_TOKEN` and the studio env vars
 - [x] 8.3 Set `studioHost: 'rezydencja-zawoja'` in `cms/sanity.cli.ts`; confirm the hostname is free during the first `sanity deploy`
 

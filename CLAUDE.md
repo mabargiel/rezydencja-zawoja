@@ -22,12 +22,13 @@ Run from the repo root:
 | `npm run dev`                         | app on :3000 and Studio on :3333  |
 | `npm run dev:app` / `npm run dev:cms` | one of them                       |
 | `npm run lint`                        | ESLint in both workspaces         |
+| `npm run lint:styles`                 | Stylelint on CSS                  |
 | `npm run typecheck`                   | `tsc --noEmit` in both workspaces |
 | `npm run build`                       | production build of both          |
 | `npm run format`                      | Prettier over the repo            |
 | `npm run format:check`                | Prettier check without writing    |
 
-Before committing, `format:check`, `lint`, `typecheck` and `build` must pass; CI runs the same four.
+Before committing, `format:check`, `lint`, `lint:styles`, `typecheck` and `build` must pass; CI runs the same five.
 
 Environment: copy `app/.env.example` → `app/.env.local` and `cms/.env.example` → `cms/.env`.
 
