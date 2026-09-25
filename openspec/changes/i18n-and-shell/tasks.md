@@ -7,18 +7,18 @@
 
 ## 2. i18n foundation
 
-- [ ] 2.1 Install `i18next`, `negotiator`, `@types/negotiator` and `@formatjs/intl-localematcher`; add `src/i18n/config.ts` (`languages`, `defaultLanguage`, `isLanguage` guard)
-- [ ] 2.2 Add `src/i18n/messages/pl.ts` with all shell copy taken from the design: nav (`uR0N6`), CTA, footer (`vgRjs`), the Page Header copy for interiors (`q2jEWP`), gallery (`I6nLg8`), surroundings (`KHrRC`) and contact (`z08EQV`), the Home temporary header (`qCVqV`), and meta titles and descriptions
-- [ ] 2.3 Draft `messages/en.ts` and `messages/de.ts` with `satisfies Messages`; add `types.ts` with the `Messages` type and i18next `CustomTypeOptions`; confirm that removing one `de` key fails `typecheck`
-- [ ] 2.4 Add `src/i18n/server.ts` with `getT()` built on `next/root-params` `lng()` and one memoized i18next instance per language
-- [ ] 2.5 Add `src/proxy.ts` (cookie → `Accept-Language` → `en` redirect, cookie refresh on prefixed paths, matcher that skips `_next`, `api` and files); check every i18n-routing scenario with `curl`
+- [x] 2.1 Install `i18next`, `negotiator`, `@types/negotiator` and `@formatjs/intl-localematcher`; add `src/i18n/config.ts` (`languages`, `defaultLanguage`, `isLanguage` guard)
+- [x] 2.2 Add `src/i18n/messages/pl.ts` with all shell copy taken from the design: nav (`uR0N6`), CTA, footer (`vgRjs`), the Page Header copy for interiors (`q2jEWP`), gallery (`I6nLg8`), surroundings (`KHrRC`) and contact (`z08EQV`), the Home temporary header (`qCVqV`), and meta titles and descriptions
+- [x] 2.3 Draft `messages/en.ts` and `messages/de.ts` with `satisfies Messages`; add `types.ts` with the `Messages` type and i18next `CustomTypeOptions`; confirm that removing one `de` key fails `typecheck`
+- [x] 2.4 Add `src/i18n/server.ts` with `getT()` built on `next/root-params` `lng()` and one memoized i18next instance per language
+- [x] 2.5 Add `src/proxy.ts` (cookie → `Accept-Language` → `en` redirect, cookie refresh on prefixed paths, matcher that skips `_next`, `api` and files); check every i18n-routing scenario with `curl`
 
 ## 3. Tokens, fonts and layout
 
-- [ ] 3.1 Rewrite `globals.css`: `@theme` colour tokens from the design variables, `--font-display` and `--font-body`, a base body style (`bg`, `text-primary`, Jost), and a focus-visible ring using `accent-warm`
-- [ ] 3.2 Add `app/[lng]/layout.tsx`: `<html lang>`, Cormorant Garamond and Jost via `next/font` (`latin-ext`), `generateStaticParams` for the 3 languages, and a `notFound()` guard for unknown values
-- [ ] 3.3 Add `src/lib/metadata.ts` with a helper that builds a translated title, description and `alternates.languages` (+ `x-default`) for a path; use it in every page
-- [ ] 3.4 Add `src/config/site.ts` (phone, email, routes list with segment and catalog key) and copy `design/images/logo-light.svg` and `logo-dark.png` to `app/public/brand/`
+- [x] 3.1 Rewrite `globals.css`: `@theme` colour tokens from the design variables, `--font-display` and `--font-body`, a base body style (`bg`, `text-primary`, Jost), and a focus-visible ring using `accent-warm`
+- [x] 3.2 Add `app/[lng]/layout.tsx`: `<html lang>`, Cormorant Garamond and Jost via `next/font` (`latin-ext`), `generateStaticParams` for the 3 languages, and a `notFound()` guard for unknown values
+- [x] 3.3 Add `src/lib/metadata.ts` with a helper that builds a translated title, description and `alternates.languages` (+ `x-default`) for a path; use it in every page
+- [x] 3.4 Add `src/config/site.ts` (phone, email, routes list with segment and catalog key) and copy `design/images/logo-light.svg` to `app/public/brand/` (every placement is on a dark background, so `logo-dark` is left out) and build `app/icon.svg` from it
 
 ## 4. Shared components
 

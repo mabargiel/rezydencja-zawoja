@@ -13,6 +13,10 @@
     "lint:styles:fix": "stylelint \"src/**/*.css\" --fix"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.9.0",
+    "i18next": "^26.4.2",
+    "lucide-react": "^1.48.0",
+    "negotiator": "^1.1.0",
     "next": "^16.3.6",
     "next-sanity": "^13.3.4",
     "react": "^19.3.0",
@@ -20,6 +24,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/negotiator": "^0.6.5",
     "@types/node": "^24.13.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
