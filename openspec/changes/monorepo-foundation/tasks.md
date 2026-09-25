@@ -55,8 +55,8 @@
 
 ## 9. Publish and cut over
 
-- [ ] 9.1 Create the GitHub repo `mabargiel/rezydencja-zawoja`, push `main` and `feature/new-logo`, and confirm CI is green
-- [ ] 9.2 Add the `SANITY_AUTH_TOKEN` secret; confirm the Studio deploy workflow succeeds
+- [x] 9.1 Create the GitHub repo `mabargiel/rezydencja-zawoja`, push `main` and `feature/new-logo`, and confirm CI is green
+- [x] 9.2 Add the `SANITY_AUTH_TOKEN` secret; confirm the Studio deploy workflow succeeds
 - [ ] 9.3a Add the Vercel production and preview domains and `https://rezydencja-zawoja.sanity.studio` to the new project's CORS origins
 - [ ] 9.3 Reconnect the Vercel project to the new repo with Root Directory `app/` and the Sanity env vars; confirm a PR preview renders `/`
 - [ ] 9.4 After the user confirms, archive `mabargiel/rezydencja-zawoja-ui` and `mabargiel/rezydencja-zawoja-cms` delete `../_premerge-backup/`, and delete the old Sanity project `r9qn2ra2` (old owner's account)

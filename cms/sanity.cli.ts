@@ -7,6 +7,7 @@ export default defineCliConfig({
   },
   studioHost: 'rezydencja-zawoja',
   deployment: {
+    appId: 'oj5dnyfvbj3p6gh1v9uqlowh',
     autoUpdates: true,
   },
 })
