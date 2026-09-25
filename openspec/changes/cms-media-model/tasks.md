@@ -13,9 +13,9 @@
 
 ## 3. Seed
 
-- [ ] 3.1 Write `cms/scripts/seed-map.ts`: the 32 photo files with category and drafted PL/EN/DE alt text (written after looking at each photo), the slot → file mapping from the design inventory (`iq1tP`, `qf7cQ`, `V6NL6`, `z1yziP`, `McNXT`), and the design's gallery order
-- [ ] 3.2 Write `cms/scripts/seed.ts`: upload assets, `createOrReplace` photos with IDs `photo-<stem>`, the singletons, the hero `videoSlot` from the old `video1.mp4`, and `pricing` from the Cennik design values (`TIplG`)
-- [ ] 3.3 Run the seed against `production`, run it a second time, and confirm the document and asset counts are unchanged
+- [x] 3.1 Write `cms/scripts/seed-map.ts`: the 32 photo files with category and drafted PL/EN/DE alt text (written after looking at each photo), the slot → file mapping from the design inventory (`iq1tP`, `qf7cQ`, `V6NL6`, `z1yziP`, `McNXT`), and the design's gallery order
+- [x] 3.2 Write `cms/scripts/seed.ts`: upload assets, `createOrReplace` photos with IDs `photo-<stem>`, the singletons, the hero `videoSlot` from the old `video1.mp4`, and `pricing` from the Cennik design values (`TIplG`)
+- [x] 3.3 Run the seed against `production`, run it a second time, and confirm the document and asset counts are unchanged
 
 ## 4. App data layer
 
