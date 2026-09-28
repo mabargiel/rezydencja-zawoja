@@ -3,7 +3,8 @@ import { basename, resolve } from 'node:path'
 
 import { getCliClient } from 'sanity/cli'
 
-import { layout, photoId, photos, placeholderBedroom, pricing } from './seed-map'
+import { bedroomsLayout, legacyPhotos, legacySource, roomsLayout } from './seed-legacy'
+import { layout, photoId, photos, pricing } from './seed-map'
 
 type Localized = { pl: string; en: string; de: string }
 
@@ -45,6 +46,26 @@ async function seedPhotos() {
     console.log(`photo ${photo.file}`)
   }
 }
+
+async function seedLegacyPhotos() {
+  for (const photo of legacyPhotos) {
+    const response = await fetch(legacySource + encodeURIComponent(photo.file))
+    if (!response.ok) throw new Error(`Could not download ${photo.file}: ${response.status}`)
+    const asset = await client.assets.upload('image', Buffer.from(await response.arrayBuffer()), {
+      filename: photo.file,
+    })
+    await client.createOrReplace({
+      _id: photo.id,
+      _type: 'photo',
+      alt: localized(photo.alt),
+      category: photo.category,
+      image: { _type: 'image', asset: { _type: 'reference', _ref: asset._id } },
+    })
+    console.log(`legacy photo ${photo.file}`)
+  }
+}
+
+const idRefList = (ids: string[]) => ids.map(id => ({ _key: id, _ref: id, _type: 'reference' }))
 
 async function heroVideoRef() {
   const path = process.env.HERO_VIDEO
@@ -90,23 +111,20 @@ async function seedPages() {
       _id: 'interiorsPage',
       _type: 'interiorsPage',
       header: slot(interiorsPage.header),
-      rooms: interiorsPage.rooms.map(room => ({
+      rooms: roomsLayout.map(room => ({
         _key: room.type,
         _type: 'room',
-        photos: photoRefList(room.photos),
+        photos: idRefList(room.photos),
         type: room.type,
       })),
-      bedrooms: interiorsPage.bedrooms.map(bedroom => {
-        const text = placeholderBedroom(bedroom.number)
-        return {
-          _key: `bedroom-${bedroom.number}`,
-          _type: 'bedroom',
-          beds: localized(text.beds),
-          guests: text.guests,
-          name: localized(text.name),
-          ...(bedroom.photo ? { photo: photoRef(bedroom.photo) } : {}),
-        }
-      }),
+      bedrooms: bedroomsLayout.map((bedroom, index) => ({
+        _key: `bedroom-${index + 1}`,
+        _type: 'bedroom',
+        beds: localized(bedroom.beds),
+        guests: bedroom.guests,
+        name: localized(bedroom.name),
+        photos: idRefList(bedroom.photos),
+      })),
     },
     {
       _id: 'surroundingsPage',
@@ -166,4 +184,5 @@ async function seedPages() {
 }
 
 await seedPhotos()
+await seedLegacyPhotos()
 await seedPages()

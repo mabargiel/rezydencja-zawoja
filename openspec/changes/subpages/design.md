@@ -63,21 +63,22 @@ Bullets and facts are arrays read with `t(key, { returnObjects: true })`. i18nex
 ```
 interiorsPage
   header      mediaSlot
-  rooms[]     type: salon | bedrooms | bathrooms | kitchen | recreation | details   (unique)
-              photos: photo refs (1–8, ordered; the first is the large mosaic tile)
-  bedrooms[]  name (i18n string), beds (i18n string, e.g. "łóżko podwójne i pojedyncze"),
-              guests (number 1–4), photo → photo (optional: 5 bedrooms, 4 photos so far)
+  rooms[]     type: salon | kitchen | bedrooms | recreation | bathrooms   (unique)
+              photos: photo refs (1–16, ordered; the first is the large mosaic tile)
+  bedrooms[]  name (i18n string), beds (i18n string, e.g. "Dwa łóżka pojedyncze"),
+              guests (number 1–4), photos: photo refs (1–12; the first is the card photo)
 ```
 - The CMS controls which rooms show, their order and their photos. The text for each room type is in i18next. Room types are a fixed list with a uniqueness rule.
 - Interior photos don't change with the season, so rooms use plain photo references rather than seasonal slots. The header stays a seasonal slot.
 - Bed setup is free text in three languages, because the combinations vary. Guests is a number shown with a `user` icon ("3"), which avoids plural forms that differ between languages.
 - The old fixed slots are removed from the schema, and the seed writes the new shape with `createOrReplace`. Nothing else reads them: Home uses `homePage.interiors`.
+- **Content comes from the old site.** rezydencjazawoja.pl already groups 54 room photos by room and describes each bedroom (Apartament with a sitting room and a double bed; bedrooms 2 and 5 with a double bed and TV; 3 and 4 with two single beds; 2 guests each). `cms/scripts/seed-legacy.ts` lists the 42 photos we didn't have yet, with alt text, and the seed downloads and uploads them from the old site's URLs. The 12 already in the library are reused. The room list and order follow the old site: Salon, Kuchnia, Sypialnie, Rozrywka, Łazienki. The antique pieces belong to the Apartament, so there's no separate "Detale" room. The room copy is rewritten from the old site's facts, including which floor each room is on.
 - *Alternative: a `room` field on every photo, queried by room.* That spreads the curation across 32 photo documents and loses per-room ordering. Rejected.
 
 ### D7. Room sections and mosaic
 - Each room renders as a `<section id={type}>` with an eyebrow (the room name), a title, a short body, facts as a dotted inline list, and a mosaic.
 - The mosaic: on desktop, 1 large tile (2 rows) plus up to 3 smaller ones. With 1 photo it's a single wide image; with 2 photos, 2 equal tiles. On mobile, the large tile is on top and the rest form a 2-column row.
-- The Sypialnie section adds a row of `BedroomCard`s under the mosaic, scrolling horizontally on mobile.
+- The Sypialnie section adds a row of `BedroomCard`s under the mosaic, scrolling horizontally on mobile. Each card is a button that opens the lightbox with that bedroom's photos.
 - The exact look comes from the approved pen.dev design (task 3.1).
 
 ### D8. Room navigation: a top chip row, then a right-side rail while scrolling
@@ -94,7 +95,7 @@ interiorsPage
 - [Tile heights are fixed and ignore the photo's aspect ratio, so the crop relies on the hotspot] → That matches the design, and the hotspot-based `object-position` from `SanityImage` keeps subjects in frame.
 - [Hiding tiles with `display: none` inside CSS columns re-flows the columns] → Intended: the filtered set re-balances into the columns.
 - [The new Wnętrza has no approved design yet] → Task 3.1 designs it in pen.dev for desktop and mobile, together with the lightbox, and code waits for approval.
-- [Bedroom details are unknown] → The seed uses placeholders ("Sypialnia 1–5", generic bed text), and the owner fills in the real setup in the Studio. It's content, not code.
+- [The seed depends on the old site being online for the legacy photos] → It's a one-time migration: once seeded, Sanity holds the files. The old site stays up until the new one launches.
 - [Typing bullets through `returnObjects`] → If i18next's typing fights it, fall back to fixed keys (`bullets.0`, `bullets.1`, `bullets.2`). It's a local change inside the catalogs.
 
 ## Migration Plan
@@ -106,5 +107,4 @@ interiorsPage
 
 ## Open Questions
 
-- The real bedroom setup (the name, beds and guest count for each of the 5 bedrooms) comes from the owner. The seed uses placeholders until then.
 - The look of the Wnętrza tour and the lightbox is settled by the approval step (task 3.1).

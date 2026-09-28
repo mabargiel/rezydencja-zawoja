@@ -51,7 +51,13 @@ const bedroomBeds = `coalesce(beds[language == $lng][0].value, beds[language == 
 export const interiorsPageQuery = defineQuery(`*[_id == "interiorsPage"][0]{
   header{ ${resolvedSlot} },
   rooms[]{ _key, type, "photos": photos[]->{ "_key": _id, ${photoFields} } },
-  bedrooms[]{ _key, "name": ${bedroomName}, "beds": ${bedroomBeds}, guests, "photo": photo->{ ${photoFields} } }
+  bedrooms[]{
+    _key,
+    "name": ${bedroomName},
+    "beds": ${bedroomBeds},
+    guests,
+    "photos": photos[]->{ "_key": _id, ${photoFields} }
+  }
 }`)
 
 export const surroundingsPageQuery = defineQuery(`*[_id == "surroundingsPage"][0]{

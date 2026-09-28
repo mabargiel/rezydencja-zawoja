@@ -320,34 +320,6 @@ export const layout = {
   },
   interiorsPage: {
     header: 'apartament-zabytkowy-kredens5.jpg',
-    rooms: [
-      {
-        type: 'salon',
-        photos: ['salon-widok2-2048x1152.jpg', 'apartament-zabytkowy-kredens5.jpg'],
-      },
-      {
-        type: 'bedrooms',
-        photos: ['Sypialnia406.jpg', 'IMG_7886.jpeg', 'sypialnia413.jpg', 'sypialnia513.jpeg'],
-      },
-      { type: 'bathrooms', photos: ['lazienka-pietro1.jpg', 'lazienkadolna1.jpeg'] },
-      { type: 'kitchen', photos: ['Ekspres.jpeg'] },
-      { type: 'recreation', photos: ['IMG_1798-480x650.jpg', 'silownia2.jpeg', 'IMG_2239.jpg'] },
-      {
-        type: 'details',
-        photos: [
-          'apartament-zabytkowa-lampa2.jpg',
-          'apartament-zabytkowy-kufer.jpeg',
-          'sypialnia2-dekoracja5.jpg',
-        ],
-      },
-    ],
-    bedrooms: [
-      { number: 1, photo: 'Sypialnia406.jpg' },
-      { number: 2, photo: 'IMG_7886.jpeg' },
-      { number: 3, photo: 'sypialnia413.jpg' },
-      { number: 4, photo: 'sypialnia513.jpeg' },
-      { number: 5 },
-    ],
   },
   surroundingsPage: {
     header: 'zimowy-widok2-800x800.jpg',
@@ -520,11 +492,3 @@ export const pricing: {
     },
   ],
 }
-
-export const placeholderBedroom = (
-  number: number
-): { name: Localized; beds: Localized; guests: number } => ({
-  beds: { de: 'Doppelbett', en: 'double bed', pl: 'łóżko podwójne' },
-  guests: 2,
-  name: { de: `Schlafzimmer ${number}`, en: `Bedroom ${number}`, pl: `Sypialnia ${number}` },
-})

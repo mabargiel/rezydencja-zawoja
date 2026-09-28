@@ -6,11 +6,10 @@ import { header } from './fields'
 
 export const roomTypes = [
   { title: 'Salon', value: 'salon' },
-  { title: 'Sypialnie', value: 'bedrooms' },
-  { title: 'Łazienki', value: 'bathrooms' },
   { title: 'Kuchnia', value: 'kitchen' },
+  { title: 'Sypialnie', value: 'bedrooms' },
   { title: 'Rozrywka i fitness', value: 'recreation' },
-  { title: 'Detale', value: 'details' },
+  { title: 'Łazienki', value: 'bathrooms' },
 ]
 
 type LocalizedItem = { language: string; value: string }
@@ -47,7 +46,7 @@ export const interiorsPage = defineType({
               type: 'array',
               of: [defineArrayMember({ type: 'reference', to: [{ type: 'photo' }] })],
               options: { layout: 'grid' },
-              validation: rule => rule.required().min(1).max(8).unique(),
+              validation: rule => rule.required().min(1).max(16).unique(),
             }),
           ],
           preview: {
@@ -99,14 +98,17 @@ export const interiorsPage = defineType({
               validation: rule => rule.required().integer().min(1).max(4),
             }),
             defineField({
-              name: 'photo',
-              title: 'Zdjęcie',
-              type: 'reference',
-              to: [{ type: 'photo' }],
+              name: 'photos',
+              title: 'Zdjęcia',
+              description: 'Pierwsze zdjęcie pojawia się na karcie, wszystkie w podglądzie.',
+              type: 'array',
+              of: [defineArrayMember({ type: 'reference', to: [{ type: 'photo' }] })],
+              options: { layout: 'grid' },
+              validation: rule => rule.required().min(1).max(12).unique(),
             }),
           ],
           preview: {
-            select: { guests: 'guests', media: 'photo.image', name: 'name' },
+            select: { guests: 'guests', media: 'photos.0.image', name: 'name' },
             prepare: ({ guests, media, name }) => ({
               media,
               subtitle: guests ? `${guests} os.` : undefined,

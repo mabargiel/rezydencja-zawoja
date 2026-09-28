@@ -1,7 +1,8 @@
 ## 1. CMS: room model
 
 - [x] 1.1 Change the `interiorsPage` schema to `header` + `rooms[]` (unique `type` from salon, bedrooms, bathrooms, kitchen, recreation, details; 1–8 ordered photo refs) + `bedrooms[]` (localized `name` and `beds`, `guests` 1–4, optional photo), with Polish titles and previews; remove the old fixed slots; validate and deploy the schema
-- [x] 1.2 Update `seed-map.ts` and `seed.ts`: six rooms in tour order with their library photos, and five placeholder bedrooms (4 with the bedroom photos, 1 without); re-run the seed and confirm it's idempotent
+- [x] 1.2 Update `seed-map.ts` and `seed.ts` for the room model; re-run the seed and confirm it's idempotent
+- [x] 1.3 Import the old site's room content: 42 new photos with PL/EN/DE alt text (`seed-legacy.ts`), five rooms in the old site's order and grouping, and five bedrooms with their real names, bed setups and photo sets (bedroom `photos[]` replaces the single photo); confirm no broken references and idempotency
 
 ## 2. Data and copy
 
@@ -10,8 +11,8 @@
 
 ## 3. Design (approval gate)
 
-- [x] 3.1 In pen.dev, design at 1440px and 390px:
-  - the new Wnętrza body: top chip row, room section with mosaic variants (1, 2, 3+ photos), Sypialnie bedroom cards, desktop right-side room rail, mobile sticky chip row;
+- [ ] 3.1 In pen.dev, design at 1440px and 390px:
+  - the new Wnętrza body: top chip row, room section with floor label and mosaic variants (1, 2, 3+ photos), Sypialnie bedroom cards, desktop right-side room rail, mobile sticky chip row;
   - the Lightbox (dark, contained photo, close, prev/next, counter, caption).
 
   Reuse the tokens, fonts and icons, and screenshot everything for approval.
@@ -30,7 +31,7 @@
 ## 6. Wnętrza
 
 - [ ] 6.1 `RoomSection` + mosaic per the approved design, with each photo opening the lightbox limited to that room
-- [ ] 6.2 `BedroomCard`s in the Sypialnie section (row on desktop, horizontal scroll on mobile, neutral tile without a photo, translated guest icon label)
+- [ ] 6.2 `BedroomCard`s in the Sypialnie section (row on desktop, horizontal scroll on mobile, translated guest icon label), each opening the lightbox with that bedroom's photos
 - [ ] 6.3 `RoomNav`:
   - a top chip row (anchor links, works without JavaScript);
   - a desktop right rail shown while the row is out of view and hidden after the rooms end;
@@ -43,4 +44,4 @@
 - [ ] 7.1 Compare all three pages at 1440px and 390px in PL, EN and DE with the approved and existing frames (iframe method, instant scrolling)
 - [ ] 7.2 Wnętrza: room order follows the CMS; the rail appears and hides at the right moments; the active room follows scrolling; the mobile row sticks; links work without JavaScript. Gallery: all photos without JavaScript, filters, and lightbox keyboard, swipe, wrap and focus return
 - [ ] 7.3 Run format:check, lint, lint:styles, typecheck, typegen freshness and build; scan for comments; open a PR from `feat/subpages` and confirm CI and the Vercel preview are green
-- [ ] 7.4 Send the new EN/DE copy for review, and ask the owner for the real bedroom setup (name, beds and guests for each of the 5 bedrooms) and a photo for the fifth bedroom
+- [ ] 7.4 Send the new EN/DE copy for review
