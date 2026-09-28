@@ -9,10 +9,7 @@
 
 Design structure:
 
-- **Wnętrza content `zQWfy`:** padding 110/120, gap 96 between 4 feature rows.
-  - Each row: a 600×460 photo, gap 80, then text (eyebrow, 40px title, body 16/1.65, 3 bullets with a `minus` icon).
-  - Relaxation `R7tmq7`: `bg-dark`, 480px text plus 2 photos 400 tall.
-  - Details `X8zj38`: a heading at 36px plus 4 photos 300 tall.
+- **Wnętrza:** the current design (`zQWfy`, `R7tmq7`, `X8zj38`) is being replaced by a room-by-room tour (D6–D8), designed in pen.dev first. The feature row pattern (a 600×460 photo, gap 80, eyebrow, 40px title, body 16/1.65, `minus` bullets) is kept for Okolica.
 - **Okolica:**
   - intro `d5VfA`: a 520px heading at 44px, with lead 18 and body 15.5 on the right;
   - 4 feature rows `fZVdb`, the same pattern;
@@ -33,19 +30,19 @@ Design structure:
 
 ## Decisions
 
-### D1. One `FeatureRow` component for both pages
+### D1. `FeatureRow` for Okolica
 Props: `eyebrow`, `title`, `body`, `bullets?`, `photo`, `reverse`. Desktop is `lg:flex-row`, with `reverse` swapping sides (odd rows put the image on the right, as in the design). Mobile stacks the photo above the text. The first photo on each page doesn't use `priority`, because the header photo is the page's main image.
 
 ### D2. One query per page, including the header
-`interiorsPageQuery`, `surroundingsPageQuery` and `galleryPageQuery` each return `header{ ${resolvedSlot} }` plus the body slots. Arrays use `relaxation[]{ _key, ${resolvedSlot} }`. The gallery uses `photos[]->{ "_key": _id, category, ${photoFields} }`. The three pages render `PageHeader` themselves and stop using `SubPage`. Contact keeps `SubPage` until the contact-form change.
+`interiorsPageQuery`, `surroundingsPageQuery` and `galleryPageQuery` each return `header{ ${resolvedSlot} }` plus the body. The interiors body is `rooms[]{ _key, type, photos[]->{ "_key": _id, ${photoFields} } }` and `bedrooms[]{ _key, name, beds, guests, photo->{…} }`, with localized strings resolved to `$lng` falling back to `pl`. The gallery uses `photos[]->{ "_key": _id, category, ${photoFields} }`. The three pages render `PageHeader` themselves and stop using `SubPage`. Contact keeps `SubPage` until the contact-form change.
 
 ### D3. Copy structure
 The copy follows the CMS field names:
-- `pages.interiors.rows.{livingRoom|antiques|bedrooms|comfort}.{eyebrow,title,body,bullets?}`, plus `relaxation` and `details`;
+- `pages.interiors.nav` (the room nav label) and `pages.interiors.rooms.{salon|bedrooms|bathrooms|kitchen|recreation|details}.{name,title,body,facts[]}`, keyed by the CMS room type;
 - `pages.surroundings.intro`, `pages.surroundings.rows.{babiaGora|slopes|trails|waterfalls}` and `pages.surroundings.facts[]`;
 - `pages.gallery.filters` and `pages.gallery.lightbox`.
 
-Bullets are arrays read with `t(key, { returnObjects: true })`. i18next types them from the Polish catalog, and `satisfies Messages` keeps EN/DE at the same shape. `comfort` has no `bullets` key, matching the design.
+Bullets and facts are arrays read with `t(key, { returnObjects: true })`. i18next types them from the Polish catalog, and `satisfies Messages` keeps EN/DE at the same shape. Room copy lives in the catalogs, keyed by room type. The CMS decides which rooms appear, in what order, and with which photos.
 
 ### D4. The gallery filter is client-side over server-rendered photos
 `GalleryGrid` is a Client Component that receives the resolved photos, category labels and lightbox labels.
@@ -60,20 +57,54 @@ Bullets are arrays read with `t(key, { returnObjects: true })`. i18next types th
 - The implementation is a `Lightbox` Client Component using `<dialog>` with `showModal()`, like the mobile menu. That gives focus trapping, Escape to close and focus return for free.
 - Arrow keys move previous/next, and swiping left or right uses pointer events with a 40px threshold. It wraps within the current filter.
 - The image loads at `sizes="100vw"` with `object-contain`, through the existing loader. The neighbouring image is preloaded.
-- Each gallery tile is a `<button>` with the photo's alt text as its accessible name, which opens the lightbox at that index.
+- Each gallery tile and Wnętrza room photo is a `<button>` with the photo's alt text as its accessible name, which opens the lightbox at that index within its own set (the filtered gallery, or the room).
+
+### D6. The Wnętrza room model in the CMS
+```
+interiorsPage
+  header      mediaSlot
+  rooms[]     type: salon | bedrooms | bathrooms | kitchen | recreation | details   (unique)
+              photos: photo refs (1–8, ordered; the first is the large mosaic tile)
+  bedrooms[]  name (i18n string), beds (i18n string, e.g. "łóżko podwójne i pojedyncze"),
+              guests (number 1–4), photo → photo (optional: 5 bedrooms, 4 photos so far)
+```
+- The CMS controls which rooms show, their order and their photos. The text for each room type is in i18next. Room types are a fixed list with a uniqueness rule.
+- Interior photos don't change with the season, so rooms use plain photo references rather than seasonal slots. The header stays a seasonal slot.
+- Bed setup is free text in three languages, because the combinations vary. Guests is a number shown with a `user` icon ("3"), which avoids plural forms that differ between languages.
+- The old fixed slots are removed from the schema, and the seed writes the new shape with `createOrReplace`. Nothing else reads them: Home uses `homePage.interiors`.
+- *Alternative: a `room` field on every photo, queried by room.* That spreads the curation across 32 photo documents and loses per-room ordering. Rejected.
+
+### D7. Room sections and mosaic
+- Each room renders as a `<section id={type}>` with an eyebrow (the room name), a title, a short body, facts as a dotted inline list, and a mosaic.
+- The mosaic: on desktop, 1 large tile (2 rows) plus up to 3 smaller ones. With 1 photo it's a single wide image; with 2 photos, 2 equal tiles. On mobile, the large tile is on top and the rest form a 2-column row.
+- The Sypialnie section adds a row of `BedroomCard`s under the mosaic, scrolling horizontally on mobile.
+- The exact look comes from the approved pen.dev design (task 3.1).
+
+### D8. Room navigation: a top chip row, then a right-side rail while scrolling
+- **Top row.** Below the Page Header, `RoomNav` renders a horizontal row of chips for the rooms present, in CMS order. They're anchor links to `#<type>`, so they work without JavaScript.
+- **Desktop right rail (≥ `lg`).** Once the top row has scrolled out of view, a compact vertical rail appears fixed on the right edge, vertically centred: short room labels, each with a dot, on a translucent `bg`/blur background. It fades out again when the top row returns or the room sections end (at the footer).
+- **Mobile (< `lg`).** The chip row sticks below the fixed navbar and scrolls horizontally. The active chip is scrolled into view. A right rail would cover the photos at 390px.
+- **Active room.** Everywhere, the room crossing the middle of the viewport is highlighted (`accent-warm` / filled dot) with `aria-current="location"`, reusing `useSectionInView`.
+- **Visibility.** The rail's visibility uses the same observer approach, watching the top row and the end of the room list. Everything is one small Client Component that receives the translated room names as props.
+- **Accessibility.** The rail is a `<nav>` with its own label and appears only after the top row is gone, so screen readers and keyboard users don't meet duplicate navigation at the same time. Room sections use `scroll-margin-top` so jumps land below the navbar and the sticky mobile row.
+- The rail's exact look comes from the approved pen.dev design (task 3.1).
 
 ## Risks / Trade-offs
 
 - [Tile heights are fixed and ignore the photo's aspect ratio, so the crop relies on the hotspot] → That matches the design, and the hotspot-based `object-position` from `SanityImage` keeps subjects in frame.
 - [Hiding tiles with `display: none` inside CSS columns re-flows the columns] → Intended: the filtered set re-balances into the columns.
+- [The new Wnętrza has no approved design yet] → Task 3.1 designs it in pen.dev for desktop and mobile, together with the lightbox, and code waits for approval.
+- [Bedroom details are unknown] → The seed uses placeholders ("Sypialnia 1–5", generic bed text), and the owner fills in the real setup in the Studio. It's content, not code.
 - [Typing bullets through `returnObjects`] → If i18next's typing fights it, fall back to fixed keys (`bullets.0`, `bullets.1`, `bullets.2`). It's a local change inside the catalogs.
 
 ## Migration Plan
 
-1. Add the queries and copy, then build the shared `FeatureRow`, then Wnętrza, then Okolica.
-2. Design the lightbox, get approval, then build the gallery.
-3. Verify and open a PR from `feat/subpages`. `main` is protected.
+1. Change the CMS schema and seed.
+2. Design the new Wnętrza and the lightbox in pen.dev, and get approval.
+3. Build Okolica (`FeatureRow`), then Wnętrza, then the gallery with the lightbox.
+4. Verify and open a PR from `feat/subpages`. `main` is protected.
 
 ## Open Questions
 
-- None blocking. The lightbox look is settled by the approval step in D5.
+- The real bedroom setup (the name, beds and guest count for each of the 5 bedrooms) comes from the owner. The seed uses placeholders until then.
+- The look of the Wnętrza tour and the lightbox is settled by the approval step (task 3.1).
