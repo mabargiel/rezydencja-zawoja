@@ -167,6 +167,7 @@ export const pl = {
       rooms: {
         salon: {
           name: 'Salon',
+          short: 'Salon',
           floor: 'Parter',
           title: 'Widokowy salon z kominkiem',
           body: 'Stylowy i przestronny salon z kamiennym kominkiem, stołem obiadowym dla całej grupy i wygodnym zestawem wypoczynkowym. Z salonu wychodzi się na taras, a zza okien rozciąga się malowniczy widok na Masyw Babiej Góry i Mosorny Groń.',
@@ -178,6 +179,7 @@ export const pl = {
         },
         kitchen: {
           name: 'Kuchnia',
+          short: 'Kuchnia',
           floor: 'Parter',
           title: 'Kuchnia otwarta na salon',
           body: 'Kuchnia otwiera się na salon, więc gotujący nie tracą kontaktu z resztą towarzystwa. Jest w pełni wyposażona: znajdziecie w niej wszystkie niezbędne naczynia, zmywarkę i ekspres do kawy.',
@@ -185,6 +187,7 @@ export const pl = {
         },
         bedrooms: {
           name: 'Sypialnie',
+          short: 'Sypialnie',
           floor: 'Piętro',
           title: 'Pięć dwuosobowych sypialni',
           body: 'Całe piętro zajmuje pięć w pełni umeblowanych, dwuosobowych sypialni. Każda ma swój własny wystrój, podkreślający styl zabytkowych mebli, a największą z nich jest apartament z osobnym salonikiem.',
@@ -196,6 +199,7 @@ export const pl = {
         },
         recreation: {
           name: 'Rozrywka i fitness',
+          short: 'Rozrywka',
           floor: 'Parter i poziom dolny',
           title: 'Bilard, fitness i strefa relaksu',
           body: 'Na parterze czeka pokój bilardowy w stylu myśliwskim, ze stołem i różnymi grami. Na dolnym poziomie znajduje się przeszklona strefa relaksu z salą fitness, częścią wypoczynkową, grotą solną i sauną. Oba miejsca mają sprzęt RTV.',
@@ -207,6 +211,7 @@ export const pl = {
         },
         bathrooms: {
           name: 'Łazienki',
+          short: 'Łazienki',
           floor: 'Każdy poziom',
           title: 'Łazienka na każdym poziomie',
           body: 'Na każdej kondygnacji jest łazienka, a na dolnym poziomie pokój kąpielowy z prysznicem i wanną oraz drugi prysznic. Dzięki temu nawet dziesięcioosobowa grupa nie czeka w kolejce.',

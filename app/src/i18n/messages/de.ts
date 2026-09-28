@@ -171,6 +171,7 @@ export const de = {
       rooms: {
         salon: {
           name: 'Wohnzimmer',
+          short: 'Wohnzimmer',
           floor: 'Erdgeschoss',
           title: 'Wohnzimmer mit Kamin und Aussicht',
           body: 'Ein stilvolles, geräumiges Wohnzimmer mit Steinkamin, einem Esstisch für die ganze Gruppe und einer bequemen Sitzgruppe. Von hier geht es auf die Terrasse, und die Fenster blicken auf das Babia-Góra-Massiv und den Mosorny Groń.',
@@ -182,6 +183,7 @@ export const de = {
         },
         kitchen: {
           name: 'Küche',
+          short: 'Küche',
           floor: 'Erdgeschoss',
           title: 'Eine zum Wohnzimmer offene Küche',
           body: 'Die Küche ist zum Wohnzimmer hin offen, so bleibt beim Kochen niemand außen vor. Sie ist voll ausgestattet mit allem Geschirr, einer Spülmaschine und einem Kaffeevollautomaten.',
@@ -193,6 +195,7 @@ export const de = {
         },
         bedrooms: {
           name: 'Schlafzimmer',
+          short: 'Schlafzimmer',
           floor: 'Obergeschoss',
           title: 'Fünf Doppelzimmer',
           body: 'Das gesamte Obergeschoss nehmen fünf voll möblierte Doppelzimmer ein. Jedes ist individuell eingerichtet, passend zum Stil seiner antiken Möbel, und das größte ist ein Apartment mit eigenem Wohnbereich.',
@@ -204,6 +207,7 @@ export const de = {
         },
         recreation: {
           name: 'Spiel & Fitness',
+          short: 'Freizeit',
           floor: 'Erdgeschoss und Untergeschoss',
           title: 'Billard, Fitness und Entspannung',
           body: 'Im Erdgeschoss wartet ein Billardzimmer im Jagdstil mit Tisch und vielen Spielen. Im Untergeschoss liegt ein verglaster Wellnessbereich mit Fitnessraum, Ruhebereich, Salzgrotte und Sauna. Beide sind mit TV- und Audiotechnik ausgestattet.',
@@ -215,6 +219,7 @@ export const de = {
         },
         bathrooms: {
           name: 'Bäder',
+          short: 'Bäder',
           floor: 'Jede Etage',
           title: 'Ein Bad auf jeder Etage',
           body: 'Auf jeder Etage gibt es ein Bad, im Untergeschoss ein Badezimmer mit Dusche und Badewanne sowie eine zweite Dusche. So muss auch eine Gruppe von zehn Personen nie Schlange stehen.',

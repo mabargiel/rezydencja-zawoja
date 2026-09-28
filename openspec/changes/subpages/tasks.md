@@ -30,9 +30,9 @@
 
 ## 6. Wnętrza
 
-- [ ] 6.1 `RoomSection` + mosaic per the approved design, with each photo opening the lightbox limited to that room
-- [ ] 6.2 `BedroomCard`s in the Sypialnie section (row on desktop, horizontal scroll on mobile, translated guest icon label), each opening the lightbox with that bedroom's photos
-- [ ] 6.3 `RoomNav`:
+- [x] 6.1 `RoomSection` + mosaic per the approved design, with each photo opening the lightbox limited to that room
+- [x] 6.2 `BedroomCard`s in the Sypialnie section (row on desktop, horizontal scroll on mobile, translated guest icon label), each opening the lightbox with that bedroom's photos
+- [x] 6.3 `RoomNav`:
   - a top chip row (anchor links, works without JavaScript);
   - a desktop right rail shown while the row is out of view and hidden after the rooms end;
   - a mobile sticky row below the navbar;

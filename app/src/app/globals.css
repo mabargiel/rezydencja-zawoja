@@ -54,6 +54,10 @@
   );
 }
 
+@utility scrollbar-none {
+  scrollbar-width: none;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

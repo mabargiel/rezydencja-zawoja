@@ -73,7 +73,7 @@ export type InteriorsPage = {
   _rev: string
   header?: MediaSlot
   rooms?: Array<{
-    type?: 'salon' | 'bedrooms' | 'bathrooms' | 'kitchen' | 'recreation' | 'details'
+    type?: 'salon' | 'kitchen' | 'bedrooms' | 'recreation' | 'bathrooms'
     photos?: Array<
       {
         _key: string
@@ -683,7 +683,7 @@ export type InteriorsPageQueryResult =
       } | null
       rooms: Array<{
         _key: string
-        type: 'bathrooms' | 'bedrooms' | 'details' | 'kitchen' | 'recreation' | 'salon' | null
+        type: 'bathrooms' | 'bedrooms' | 'kitchen' | 'recreation' | 'salon' | null
         photos: Array<{
           _key: string
           alt: string | null

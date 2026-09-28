@@ -2,7 +2,13 @@ import { useCallback, useSyncExternalStore } from 'react'
 
 const visibility = new Map<string, boolean>()
 
-export function useSectionInView(id: string | undefined, enabled: boolean): boolean {
+const middleOfViewport = '-50% 0px -50% 0px'
+
+export function useSectionInView(
+  id: string | undefined,
+  enabled: boolean,
+  rootMargin: string = middleOfViewport
+): boolean {
   const subscribe = useCallback(
     (onChange: () => void) => {
       const element = id && enabled ? document.getElementById(id) : null
@@ -13,7 +19,7 @@ export function useSectionInView(id: string | undefined, enabled: boolean): bool
           visibility.set(id, entry.isIntersecting)
           onChange()
         },
-        { rootMargin: '-50% 0px -50% 0px' }
+        { rootMargin }
       )
       observer.observe(element)
       return () => {
@@ -21,7 +27,7 @@ export function useSectionInView(id: string | undefined, enabled: boolean): bool
         visibility.delete(id)
       }
     },
-    [id, enabled]
+    [id, enabled, rootMargin]
   )
 
   return useSyncExternalStore(

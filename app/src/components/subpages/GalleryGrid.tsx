@@ -55,7 +55,7 @@ export function GalleryGrid({ photos, labels, lightbox }: GalleryGridProps) {
       <div
         role="group"
         aria-label={labels.filters}
-        className="-mx-5 flex gap-3 overflow-x-auto px-5 lg:mx-0 lg:px-0"
+        className="-mx-5 flex gap-3 overflow-x-auto scrollbar-none px-5 lg:mx-0 lg:px-0"
       >
         {available.map(option => {
           const isActive = option === filter

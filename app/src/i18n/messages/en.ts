@@ -169,6 +169,7 @@ export const en = {
       rooms: {
         salon: {
           name: 'Living room',
+          short: 'Living room',
           floor: 'Ground floor',
           title: 'A living room with a fireplace and a view',
           body: 'A stylish, spacious living room with a stone fireplace, a dining table for the whole group and a comfortable sofa set. It opens onto the terrace, and the windows look out over the Babia Góra massif and Mosorny Groń.',
@@ -180,6 +181,7 @@ export const en = {
         },
         kitchen: {
           name: 'Kitchen',
+          short: 'Kitchen',
           floor: 'Ground floor',
           title: 'A kitchen open to the living room',
           body: 'The kitchen opens onto the living room, so whoever is cooking stays part of the conversation. It is fully equipped with all the tableware you need, a dishwasher and a coffee machine.',
@@ -191,6 +193,7 @@ export const en = {
         },
         bedrooms: {
           name: 'Bedrooms',
+          short: 'Bedrooms',
           floor: 'Upper floor',
           title: 'Five double bedrooms',
           body: 'The whole upper floor is taken up by five fully furnished double bedrooms. Each has its own decor that brings out the style of its antique furniture, and the largest is an apartment with its own sitting room.',
@@ -202,6 +205,7 @@ export const en = {
         },
         recreation: {
           name: 'Games & fitness',
+          short: 'Games',
           floor: 'Ground floor and lower level',
           title: 'Billiards, fitness and relaxation',
           body: 'On the ground floor there is a hunting-style billiard room with a table and all kinds of games. The lower level has a glazed relaxation area with a fitness room, a lounge, a salt grotto and a sauna. Both have TV and audio equipment.',
@@ -213,6 +217,7 @@ export const en = {
         },
         bathrooms: {
           name: 'Bathrooms',
+          short: 'Bathrooms',
           floor: 'Every floor',
           title: 'A bathroom on every floor',
           body: 'There is a bathroom on every floor, and on the lower level a bathroom with a shower and a bathtub plus a second shower. Even a group of ten never has to queue.',
