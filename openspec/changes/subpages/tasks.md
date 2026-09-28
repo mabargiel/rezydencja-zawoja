@@ -41,7 +41,7 @@
 
 ## 7. Verification
 
-- [ ] 7.1 Compare all three pages at 1440px and 390px in PL, EN and DE with the approved and existing frames (iframe method, instant scrolling)
-- [ ] 7.2 Wnętrza: room order follows the CMS; the rail appears and hides at the right moments; the active room follows scrolling; the mobile row sticks; links work without JavaScript. Gallery: all photos without JavaScript, filters, and lightbox keyboard, swipe, wrap and focus return
+- [x] 7.1 Compare all three pages at 1440px and 390px in PL, EN and DE with the approved and existing frames (iframe method, instant scrolling)
+- [x] 7.2 Wnętrza: room order follows the CMS; the rail appears and hides at the right moments; the active room follows scrolling; the mobile row sticks; links work without JavaScript. Gallery: all photos without JavaScript, filters, and lightbox keyboard, swipe, wrap and focus return
 - [ ] 7.3 Run format:check, lint, lint:styles, typecheck, typegen freshness and build; scan for comments; open a PR from `feat/subpages` and confirm CI and the Vercel preview are green
 - [ ] 7.4 Send the new EN/DE copy for review
