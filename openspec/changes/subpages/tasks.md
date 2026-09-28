@@ -19,8 +19,8 @@
 
 ## 4. Okolica
 
-- [ ] 4.1 Move the three pages off `SubPage` so each renders `PageHeader` from its own query; confirm the headers are unchanged
-- [ ] 4.2 `FeatureRow` (`fZVdb` / `a4wouB`), `SurroundingsIntro` (`d5VfA` / `c6QbYA`) and `KeyFacts` (`nGbvs` / `a8QVU`), with the 4 attraction rows using their CMS photos
+- [x] 4.1 Move the three pages off `SubPage` so each renders `PageHeader` from its own query; confirm the headers are unchanged
+- [x] 4.2 `FeatureRow` (`fZVdb` / `a4wouB`), `SurroundingsIntro` (`d5VfA` / `c6QbYA`) and `KeyFacts` (`nGbvs` / `a8QVU`), with the 4 attraction rows using their CMS photos
 
 ## 5. Lightbox and Galeria
 
