@@ -10,7 +10,7 @@
 
 ## 3. Design (approval gate)
 
-- [ ] 3.1 In pen.dev, design at 1440px and 390px:
+- [x] 3.1 In pen.dev, design at 1440px and 390px:
   - the new Wnętrza body: top chip row, room section with mosaic variants (1, 2, 3+ photos), Sypialnie bedroom cards, desktop right-side room rail, mobile sticky chip row;
   - the Lightbox (dark, contained photo, close, prev/next, counter, caption).
 
