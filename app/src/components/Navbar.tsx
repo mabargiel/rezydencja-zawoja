@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ButtonOutline } from '@/components/Actions'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 import { MobileMenu } from '@/components/MobileMenu'
+import { NavbarFrame } from '@/components/NavbarFrame'
 import { NavLink } from '@/components/NavLink'
 import { navItems } from '@/config/site'
 import { getLanguage, getT } from '@/i18n/server'
@@ -13,11 +14,13 @@ export async function Navbar() {
   const links = navItems.map(item => ({
     href: `/${language}${item.path}`,
     label: t(`nav.${item.key}`),
+    section: item.section,
     segment: item.segment,
+    yieldTo: item.yieldTo,
   }))
 
   return (
-    <div className="absolute inset-x-0 top-0 z-30 flex items-center justify-between px-5 py-[22px] lg:px-16 lg:py-7">
+    <NavbarFrame>
       <Link href={`/${language}`} aria-label={t('nav.homeLink')}>
         <Image
           src="/brand/logo-light.svg"
@@ -36,7 +39,9 @@ export async function Navbar() {
             <li key={link.href}>
               <NavLink
                 href={link.href}
+                section={link.section}
                 segment={link.segment}
+                yieldTo={link.yieldTo}
                 className="font-body text-sm tracking-[1.5px]"
               >
                 {link.label}
@@ -63,6 +68,6 @@ export async function Navbar() {
           open: t('nav.openMenu'),
         }}
       />
-    </div>
+    </NavbarFrame>
   )
 }

@@ -19,13 +19,15 @@ type NavItem = {
   key: PageKey | 'pricing'
   path: string
   segment?: string | null
+  section?: string
+  yieldTo?: string
 }
 
 export const navItems: readonly NavItem[] = [
-  { key: 'home', path: pagePaths.home, segment: null },
+  { key: 'home', path: pagePaths.home, segment: null, yieldTo: 'pricing' },
   { key: 'interiors', path: pagePaths.interiors, segment: 'interiors' },
   { key: 'surroundings', path: pagePaths.surroundings, segment: 'surroundings' },
   { key: 'gallery', path: pagePaths.gallery, segment: 'gallery' },
-  { key: 'pricing', path: '#pricing' },
+  { key: 'pricing', path: '#pricing', section: 'pricing' },
   { key: 'contact', path: pagePaths.contact, segment: 'contact' },
 ]

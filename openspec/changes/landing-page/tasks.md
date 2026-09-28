@@ -36,3 +36,11 @@
 - [x] 6.3 Pricing: seeded values and units in all 3 languages; the table semantics; the Cennik nav link from a subpage lands on `#pricing` below the navbar
 - [x] 6.4 Run format:check, lint, lint:styles, typecheck, typegen freshness and build; scan for comments; open a PR and confirm CI and the Vercel preview are green
 - [ ] 6.5 Send the new EN/DE copy to the user for review
+
+## 7. Sticky navbar and section-aware active link
+
+- [x] 7.1 Add the scrolled Navbar state to `design/rezydencja.pen` (translucent `bg-dark`, background blur, reduced padding) on the component board next to `uR0N6`, and copy the design into the repo
+- [x] 7.2 Make the Navbar fixed to the top, with a small client wrapper that switches to the scrolled state (`bg-bg-dark/85`, `backdrop-blur-md`, slimmer padding) after the page scrolls, with a smooth transition
+- [x] 7.3 On Home, make Cennik the active link (and Dom inactive) while `#pricing` crosses the middle of the viewport, using an IntersectionObserver hook shared by the desktop links and the mobile menu
+- [x] 7.4 Verify at 1440px and 390px: the navbar stays visible and blurred while scrolling on every page; Cennik is active on the pricing section and after arriving via `/pl#pricing`; Dom is active again below it
+
