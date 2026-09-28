@@ -11,7 +11,13 @@ import { NavLink } from '@/components/NavLink'
 import { phoneHref, site } from '@/config/site'
 import type { Language } from '@/i18n/config'
 
-type MenuLink = { href: string; label: string; segment?: string | null }
+type MenuLink = {
+  href: string
+  label: string
+  segment?: string | null
+  section?: string
+  yieldTo?: string
+}
 
 type MobileMenuProps = {
   language: Language
@@ -63,7 +69,9 @@ export function MobileMenu({ language, links, labels }: MobileMenuProps) {
                 <li key={link.href}>
                   <NavLink
                     href={link.href}
+                    section={link.section}
                     segment={link.segment}
+                    yieldTo={link.yieldTo}
                     onNavigate={close}
                     className="font-display text-[34px] leading-[1.1]"
                   >

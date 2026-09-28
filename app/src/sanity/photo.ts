@@ -1,3 +1,5 @@
 import type { PageHeaderQueryResult } from './types'
 
-export type ResolvedPhoto = NonNullable<NonNullable<PageHeaderQueryResult>['photo']>
+type HeaderSlot = NonNullable<NonNullable<PageHeaderQueryResult>['header']>
+
+export type ResolvedPhoto = NonNullable<HeaderSlot['photo']>

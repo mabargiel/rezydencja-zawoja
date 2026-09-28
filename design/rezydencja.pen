@@ -17572,7 +17572,7 @@
       "type": "frame",
       "id": "FWOuz",
       "x": -29,
-      "y": -4138,
+      "y": -4500,
       "name": "◆ Components — Rezydencja Zawoja",
       "clip": true,
       "width": 1560,
@@ -18040,7 +18040,7 @@
                   "fill": "$text-secondary",
                   "textGrowth": "fixed-width",
                   "width": 820,
-                  "content": "Overlay navigation for hero / page headers. Active link uses $accent-warm. Text carries a subtle shadow for legibility over photos.",
+                  "content": "Overlay navigation for hero / page headers, fixed to the top of the viewport. Active link uses $accent-warm; on Home, Cennik is active while the pricing section is in view.",
                   "lineHeight": 1.5,
                   "fontFamily": "$font-body",
                   "fontSize": 13.5,
@@ -18270,6 +18270,83 @@
                       ]
                     }
                   ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "TSVGd",
+          "name": "Cell Navbar scrolled",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 18,
+          "children": [
+            {
+              "type": "frame",
+              "id": "ekjI6",
+              "name": "Label",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tiuKv",
+                  "name": "Cell Title",
+                  "fill": "$text-primary",
+                  "content": "Navbar · scrolled",
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.5
+                },
+                {
+                  "type": "text",
+                  "id": "AFLVg",
+                  "name": "Cell Desc",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": 820,
+                  "content": "State after the page scrolls: $bg-dark at ~85% opacity with a 16px background blur, padding 16/64. Returns to the transparent state at the top of the page.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "$font-body",
+                  "fontSize": 13.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "j7FLTV",
+              "name": "Preview Photo",
+              "clip": true,
+              "width": "fill_container",
+              "height": 200,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "images/salon-widok2-2048x1152.jpg",
+                "mode": "fill"
+              },
+              "layout": "vertical",
+              "children": [
+                {
+                  "id": "F5kWA",
+                  "type": "ref",
+                  "ref": "uR0N6",
+                  "name": "Navbar Scrolled",
+                  "width": "fill_container",
+                  "padding": [
+                    16,
+                    64
+                  ],
+                  "fill": "#1E241FD9",
+                  "effect": {
+                    "type": "background_blur",
+                    "radius": 16
+                  }
                 }
               ]
             }

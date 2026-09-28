@@ -22,11 +22,22 @@ export function ButtonPrimary({ href, children, className = '' }: ActionProps) {
   )
 }
 
-export function ButtonOutline({ href, children, className = '' }: ActionProps) {
+const outlineTones = {
+  accent: 'border-accent text-accent hover:bg-accent hover:text-surface',
+  inverse:
+    'border-text-inverse bg-scrim-button text-text-inverse hover:bg-text-inverse hover:text-bg-dark',
+}
+
+export function ButtonOutline({
+  href,
+  children,
+  className = '',
+  tone = 'inverse',
+}: ActionProps & { tone?: keyof typeof outlineTones }) {
   return (
     <Link
       href={href}
-      className={`${label} inline-flex items-center justify-center gap-2 border border-text-inverse bg-scrim-button px-7 py-3 tracking-[2px] text-text-inverse transition-colors hover:bg-text-inverse hover:text-bg-dark ${className}`}
+      className={`${label} inline-flex items-center justify-center gap-2 border px-7 py-3 tracking-[2px] transition-colors ${outlineTones[tone]} ${className}`}
     >
       {children}
     </Link>
