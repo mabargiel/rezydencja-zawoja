@@ -347,6 +347,10 @@ export const layout = {
       'sypialnia2-dekoracja5.jpg',
       'IMG_3178-480x650.jpeg',
       'silownia2.jpeg',
+      'zimowy-spacer3.jpg',
+      'wyciag-krzeselkowy.jpeg',
+      'babia-gora-trails.jpg',
+      'okolica-promo.jpeg',
     ],
   },
   contactPage: {

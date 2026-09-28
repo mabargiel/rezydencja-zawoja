@@ -5,14 +5,14 @@ Below its Page Header, the Galeria page SHALL show every photo in `galleryPage.p
 
 #### Scenario: Seeded gallery
 - **WHEN** `/pl/gallery` renders with the seeded dataset
-- **THEN** 16 photos appear, the first being the photo made from `salon-widok2-2048x1152.jpg`, each with Polish alt text
+- **THEN** 20 photos appear (the design's 16 followed by 4 surroundings photos), the first being the photo made from `salon-widok2-2048x1152.jpg`, each with Polish alt text
 
 #### Scenario: Without JavaScript
 - **WHEN** the page loads with JavaScript disabled
-- **THEN** all 16 photos are visible
+- **THEN** all 20 photos are visible
 
 ### Requirement: Category filters
-Above the grid, the page SHALL show filter chips for All, Interiors, Spa, Terrace & garden and Surroundings, translated and styled as in `LYvzh`. Selecting a chip SHALL show only photos of that category, mark the chip as pressed, and keep the masonry balanced. "All" SHALL be selected initially.
+Above the grid, the page SHALL show filter chips for All, Interiors, Spa, Terrace & garden and Surroundings, translated and styled as in `LYvzh`. A category chip SHALL only appear when at least one gallery photo has that category. Selecting a chip SHALL show only photos of that category, mark the chip as pressed, and keep the masonry balanced. "All" SHALL be selected initially.
 
 #### Scenario: Filter to spa
 - **WHEN** a visitor selects "Strefa SPA"
@@ -22,8 +22,8 @@ Above the grid, the page SHALL show filter chips for All, Interiors, Spa, Terrac
 Activating a gallery photo SHALL open it full-screen in a modal dialog matching the approved Lightbox design. It shows the photo uncropped, its alt text as a caption, a position counter, previous/next controls and a close control, all labelled in the page's language. Navigation SHALL stay within the currently filtered photos and wrap at the ends.
 
 #### Scenario: Keyboard use
-- **WHEN** a keyboard user opens photo 3 of 16, presses the right arrow, then Escape
-- **THEN** photo 4 is shown with the counter "4 / 16", and after Escape the dialog closes with focus back on the photo that opened it
+- **WHEN** a keyboard user opens photo 3 of 20, presses the right arrow, then Escape
+- **THEN** photo 4 is shown with the counter "4 / 20", and after Escape the dialog closes with focus back on the photo that opened it
 
 #### Scenario: Swipe on mobile
 - **WHEN** a touch user swipes left on the open photo

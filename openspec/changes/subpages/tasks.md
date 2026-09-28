@@ -25,8 +25,8 @@
 
 ## 5. Lightbox and Galeria
 
-- [ ] 5.1 `Lightbox` from the approved design: `<dialog>` + `showModal()`, prev/next with wrap inside the given photo set, arrow keys, swipe, counter, caption, labelled controls, focus return, neighbour preload
-- [ ] 5.2 `GalleryGrid`: chips (`LYvzh`) as `aria-pressed` buttons, CSS-columns masonry (4/2) with the design height cycle re-applied to the visible set, tiles as buttons opening the lightbox within the filter, and all photos in the server HTML
+- [x] 5.1 `Lightbox` from the approved design: `<dialog>` + `showModal()`, prev/next with wrap inside the given photo set, arrow keys, swipe, counter, caption, labelled controls, focus return, neighbour preload
+- [x] 5.2 `GalleryGrid`: chips (`LYvzh`) as `aria-pressed` buttons, CSS-columns masonry (4/2) with the design height cycle re-applied to the visible set, tiles as buttons opening the lightbox within the filter, and all photos in the server HTML
 
 ## 6. Wnętrza
 
