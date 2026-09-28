@@ -20458,6 +20458,3490 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "KQ85j",
+      "x": 10879,
+      "y": 0,
+      "name": "Wnetrza v2 Desktop",
+      "clip": true,
+      "width": 1440,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "afGTe",
+          "name": "Page Header",
+          "clip": true,
+          "width": "fill_container",
+          "height": 460,
+          "fill": [
+            {
+              "type": "image",
+              "enabled": true,
+              "url": "images/apartament-zabytkowy-kredens5.jpg",
+              "mode": "fill"
+            },
+            {
+              "type": "gradient",
+              "gradientType": "linear",
+              "enabled": true,
+              "rotation": 180,
+              "size": {
+                "height": 1
+              },
+              "colors": [
+                {
+                  "color": "#0D120D80",
+                  "position": 0
+                },
+                {
+                  "color": "#0D120D66",
+                  "position": 0.4
+                },
+                {
+                  "color": "#0A0E08D9",
+                  "position": 1
+                }
+              ]
+            }
+          ],
+          "layout": "vertical",
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "mgms0",
+              "name": "Nav",
+              "width": "fill_container",
+              "padding": [
+                28,
+                64
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "C3efJk",
+                  "name": "Brand Logo",
+                  "width": 78,
+                  "height": 50,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "images/logo-light.png",
+                    "mode": "fit"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "vRoIE",
+                  "name": "Nav Links",
+                  "gap": 36,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "G6T5g",
+                      "name": "Link Dom",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Dom",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "P7sHd",
+                      "name": "Link Wnętrza",
+                      "fill": "$accent-warm",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Wnętrza",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "cE3Oz",
+                      "name": "Link Okolica",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Okolica",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "h45fX",
+                      "name": "Link Galeria",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Galeria",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "nqBal",
+                      "name": "Link Cennik",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Cennik",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "yhfkI",
+                      "name": "Link Kontakt",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Kontakt",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "uGLV4",
+                  "name": "Nav CTA",
+                  "fill": "#10160F4D",
+                  "stroke": "$text-inverse",
+                  "strokeWidth": 1,
+                  "gap": 8,
+                  "padding": [
+                    12,
+                    28
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "U9b59z",
+                      "name": "Nav CTA Label",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "REZERWUJ",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "500",
+                      "letterSpacing": 2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "jYxPe",
+              "name": "Header Title Block",
+              "width": 820,
+              "layout": "vertical",
+              "gap": 18,
+              "padding": [
+                0,
+                64,
+                56,
+                64
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "NBZAp",
+                  "name": "Header Eyebrow Row",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "L9GQK",
+                      "name": "Eyebrow Rule",
+                      "width": 26,
+                      "height": 2,
+                      "fill": "$accent-warm"
+                    },
+                    {
+                      "type": "text",
+                      "id": "N1xmcG",
+                      "name": "Header Eyebrow",
+                      "fill": "$accent-warm",
+                      "content": "WNĘTRZA",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal",
+                      "letterSpacing": 6
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "h3sFjs",
+                  "name": "Header Title",
+                  "fill": "$text-inverse",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000099",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 10
+                  },
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Dom z duszą,\npokój po pokoju",
+                  "lineHeight": 1.04,
+                  "fontFamily": "$font-display",
+                  "fontSize": 64,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "DlyZv",
+                  "name": "Header Intro",
+                  "fill": "$text-inverse-dim",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000099",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 6
+                  },
+                  "textGrowth": "fixed-width",
+                  "width": 640,
+                  "content": "Drewniany dom z bali, w którym zabytkowe meble spotykają się z wysokim standardem wyposażenia. Każde wnętrze ma swój własny charakter.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "$font-body",
+                  "fontSize": 16.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "N9VWH",
+          "name": "Room Chips",
+          "width": "fill_container",
+          "gap": 12,
+          "padding": [
+            40,
+            120,
+            8,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "OWLnS",
+              "name": "Chip Salon",
+              "fill": "$accent",
+              "padding": [
+                10,
+                22
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "mWQsV",
+                  "name": "Chip Label",
+                  "fill": "#FFFFFF",
+                  "content": "Salon",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                  "letterSpacing": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "IdP7b",
+              "name": "Chip Sypialnie",
+              "fill": "#00000000",
+              "stroke": "$line",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                22
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "U6CRA",
+                  "name": "Chip Label",
+                  "fill": "$text-secondary",
+                  "content": "Kuchnia",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "v09Sg",
+              "name": "Chip Łazienki",
+              "fill": "#00000000",
+              "stroke": "$line",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                22
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "w3F8D",
+                  "name": "Chip Label",
+                  "fill": "$text-secondary",
+                  "content": "Sypialnie",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "P4QgN9",
+              "name": "Chip Kuchnia",
+              "fill": "#00000000",
+              "stroke": "$line",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                22
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "BCVqf",
+                  "name": "Chip Label",
+                  "fill": "$text-secondary",
+                  "content": "Rozrywka i fitness",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "F3XV4Y",
+              "name": "Chip Rozrywka i fitness",
+              "fill": "#00000000",
+              "stroke": "$line",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                22
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "lCQke",
+                  "name": "Chip Label",
+                  "fill": "$text-secondary",
+                  "content": "Łazienki",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "BrCP1",
+          "name": "Room Salon",
+          "width": "fill_container",
+          "gap": 80,
+          "padding": [
+            64,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "s9Rcl",
+              "name": "Room Text",
+              "width": 420,
+              "layout": "vertical",
+              "gap": 18,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "qs9cT",
+                  "name": "Eyebrow Row",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "AKZ5s",
+                      "name": "Eyebrow Rule",
+                      "width": 26,
+                      "height": 2,
+                      "fill": "$accent-warm"
+                    },
+                    {
+                      "type": "text",
+                      "id": "W4Ac55",
+                      "name": "Room Eyebrow",
+                      "fill": "$accent-warm-deep",
+                      "content": "SALON · PARTER",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal",
+                      "letterSpacing": 5
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "b9IAd",
+                  "name": "Room Title",
+                  "fill": "$text-primary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Widokowy salon z kominkiem",
+                  "lineHeight": 1.05,
+                  "fontFamily": "$font-display",
+                  "fontSize": 40,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Pf7jB",
+                  "name": "Room Body",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Sercem domu jest przestronny salon z kamiennym kominkiem i panoramicznymi oknami wychodzącymi na Masyw Babiej Góry.",
+                  "lineHeight": 1.65,
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "guhFo",
+                  "name": "Room Facts",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": [
+                    6,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "BuRVq",
+                      "name": "Fact",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "yaVyl",
+                          "name": "Fact Icon",
+                          "width": 14,
+                          "height": 14,
+                          "icon": "minus",
+                          "library": "lucide",
+                          "fill": "$accent-warm-deep"
+                        },
+                        {
+                          "type": "text",
+                          "id": "HHsRD",
+                          "name": "Fact Label",
+                          "fill": "$text-secondary",
+                          "content": "Kamienny kominek opalany drewnem",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "sp9Ng",
+                      "name": "Fact",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "pCz7S",
+                          "name": "Fact Icon",
+                          "width": 14,
+                          "height": 14,
+                          "icon": "minus",
+                          "library": "lucide",
+                          "fill": "$accent-warm-deep"
+                        },
+                        {
+                          "type": "text",
+                          "id": "yKyyd",
+                          "name": "Fact Label",
+                          "fill": "$text-secondary",
+                          "content": "Panoramiczne okna na góry",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "XCpXz",
+                      "name": "Fact",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "o4IJp",
+                          "name": "Fact Icon",
+                          "width": 14,
+                          "height": 14,
+                          "icon": "minus",
+                          "library": "lucide",
+                          "fill": "$accent-warm-deep"
+                        },
+                        {
+                          "type": "text",
+                          "id": "kb7JM",
+                          "name": "Fact Label",
+                          "fill": "$text-secondary",
+                          "content": "Strefy wypoczynku dla całej grupy",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "DnPEu",
+              "name": "Mosaic 2",
+              "width": "fill_container",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "x1FGbi",
+                  "name": "Mosaic Large",
+                  "width": "fill_container",
+                  "height": 480,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "images/salon-widok2-2048x1152.jpg",
+                    "mode": "fill"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "urfif",
+                  "name": "Mosaic Small",
+                  "width": 250,
+                  "height": 480,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "images/apartament-zabytkowy-kredens5.jpg",
+                    "mode": "fill"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "h1LXOS",
+          "name": "Room Kuchnia",
+          "width": "fill_container",
+          "stroke": "$line",
+          "strokeWidth": {
+            "top": 1
+          },
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            64,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "QgkVt",
+              "name": "Room Row",
+              "width": "fill_container",
+              "gap": 80,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "YBOYh",
+                  "name": "Room Text",
+                  "width": 420,
+                  "layout": "vertical",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "lcEVS",
+                      "name": "Eyebrow Row",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "t6hxIF",
+                          "name": "Eyebrow Rule",
+                          "width": 26,
+                          "height": 2,
+                          "fill": "$accent-warm"
+                        },
+                        {
+                          "type": "text",
+                          "id": "W7VZgd",
+                          "name": "Room Eyebrow",
+                          "fill": "$accent-warm-deep",
+                          "content": "KUCHNIA · PARTER",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "SsUi1",
+                      "name": "Room Title",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Kuchnia otwarta na salon",
+                      "lineHeight": 1.05,
+                      "fontFamily": "$font-display",
+                      "fontSize": 40,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "xs4VH",
+                      "name": "Room Body",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Kuchnia otwiera się na salon i jest w pełni wyposażona: naczynia, zmywarka i ekspres do kawy.",
+                      "lineHeight": 1.65,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "IHmHO",
+                      "name": "Room Facts",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": [
+                        6,
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "m8sZAo",
+                          "name": "Fact",
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "K39Lc",
+                              "name": "Fact Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "minus",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "M52fw",
+                              "name": "Fact Label",
+                              "fill": "$text-secondary",
+                              "content": "Ekspres do kawy",
+                              "fontFamily": "$font-body",
+                              "fontSize": 14.5,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ne2Pb",
+                          "name": "Fact",
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "mXbcs",
+                              "name": "Fact Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "minus",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "D3slm5",
+                              "name": "Fact Label",
+                              "fill": "$text-secondary",
+                              "content": "Wyposażenie do wspólnego gotowania",
+                              "fontFamily": "$font-body",
+                              "fontSize": 14.5,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "stFwx",
+                  "name": "Mosaic 1",
+                  "width": "fill_container",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "dj8MI",
+                      "name": "Mosaic Single",
+                      "width": "fill_container",
+                      "height": 420,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/kuchnia.jpeg",
+                        "mode": "fill"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "aluOJ",
+          "name": "Room Sypialnie",
+          "width": "fill_container",
+          "stroke": "$line",
+          "strokeWidth": {
+            "top": 1
+          },
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            64,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "t0QQNj",
+              "name": "Room Row",
+              "width": "fill_container",
+              "gap": 80,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "iPQOQ",
+                  "name": "Room Text",
+                  "width": 420,
+                  "layout": "vertical",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "T4wD6",
+                      "name": "Eyebrow Row",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "G5Xtpx",
+                          "name": "Eyebrow Rule",
+                          "width": 26,
+                          "height": 2,
+                          "fill": "$accent-warm"
+                        },
+                        {
+                          "type": "text",
+                          "id": "d7dbm",
+                          "name": "Room Eyebrow",
+                          "fill": "$accent-warm-deep",
+                          "content": "SYPIALNIE · PIĘTRO",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "KDm6U",
+                      "name": "Room Title",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Pięć dwuosobowych sypialni",
+                      "lineHeight": 1.05,
+                      "fontFamily": "$font-display",
+                      "fontSize": 40,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "IXZrK",
+                      "name": "Room Body",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Na piętrze czeka pięć przytulnych sypialni, każda z własnym wystrojem podkreślającym styl mebli.",
+                      "lineHeight": 1.65,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "X8e9c",
+                      "name": "Room Facts",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": [
+                        6,
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "svxVp",
+                          "name": "Fact",
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "ooJL3",
+                              "name": "Fact Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "minus",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Lsbwu",
+                              "name": "Fact Label",
+                              "fill": "$text-secondary",
+                              "content": "Pięć sypialni na piętrze",
+                              "fontFamily": "$font-body",
+                              "fontSize": 14.5,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "brFDR",
+                          "name": "Fact",
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "k48Rp",
+                              "name": "Fact Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "minus",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "JAEDw",
+                              "name": "Fact Label",
+                              "fill": "$text-secondary",
+                              "content": "Komfortowe łóżka i pościel",
+                              "fontFamily": "$font-body",
+                              "fontSize": 14.5,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ikDMi",
+                          "name": "Fact",
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "daQPb",
+                              "name": "Fact Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "minus",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "S7p1ko",
+                              "name": "Fact Label",
+                              "fill": "$text-secondary",
+                              "content": "Widok na góry lub las z każdego okna",
+                              "fontFamily": "$font-body",
+                              "fontSize": 14.5,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "BMkL7",
+                  "name": "Mosaic 3+",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "DRxJM",
+                      "name": "Mosaic Large",
+                      "width": "fill_container",
+                      "height": 480,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/Sypialnia406.jpg",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "m9LCFz",
+                      "name": "Mosaic Column",
+                      "width": 250,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "f3FLWE",
+                          "name": "Mosaic Small",
+                          "width": "fill_container",
+                          "height": 232,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "images/IMG_7886.jpeg",
+                            "mode": "fill"
+                          }
+                        },
+                        {
+                          "type": "frame",
+                          "id": "bgSYg",
+                          "name": "Mosaic Small",
+                          "width": "fill_container",
+                          "height": 232,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "images/sypialnia413.jpg",
+                            "mode": "fill"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "d1qcg",
+              "name": "Bedroom Cards",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "RWSZA",
+                  "name": "Bedroom Card",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "MXC98",
+                      "name": "Card Photo",
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/apartament.jpeg",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "evUXe",
+                      "name": "Card Caption",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "yyW8G",
+                          "name": "Card Name",
+                          "fill": "$text-primary",
+                          "content": "Apartament",
+                          "fontFamily": "$font-display",
+                          "fontSize": 22,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "sR4ML",
+                          "name": "Card Beds",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Salonik i sypialnia z łóżkiem podwójnym, TV",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "KwY2K",
+                          "name": "Card Guests",
+                          "gap": 6,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "Sa34D",
+                              "name": "Guests Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "user",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "O2MhuQ",
+                              "name": "Guests Count",
+                              "fill": "$text-primary",
+                              "content": "2",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13.5,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rLJYI",
+                  "name": "Bedroom Card",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Trolx",
+                      "name": "Card Photo",
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/IMG_7886.jpeg",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pV2y6",
+                      "name": "Card Caption",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "VQ0CS",
+                          "name": "Card Name",
+                          "fill": "$text-primary",
+                          "content": "Sypialnia 2",
+                          "fontFamily": "$font-display",
+                          "fontSize": 22,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "bsJml",
+                          "name": "Card Beds",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Łóżko podwójne, TV",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "i3NFGK",
+                          "name": "Card Guests",
+                          "gap": 6,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "dyJ4S",
+                              "name": "Guests Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "user",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "aCrcs",
+                              "name": "Guests Count",
+                              "fill": "$text-primary",
+                              "content": "2",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13.5,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "tApB5",
+                  "name": "Bedroom Card",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "alInl",
+                      "name": "Card Photo",
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/sypialnia3.jpeg",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "t2NvOx",
+                      "name": "Card Caption",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "wCgpy",
+                          "name": "Card Name",
+                          "fill": "$text-primary",
+                          "content": "Sypialnia 3",
+                          "fontFamily": "$font-display",
+                          "fontSize": 22,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "K65Yua",
+                          "name": "Card Beds",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Dwa łóżka pojedyncze",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "F1meg",
+                          "name": "Card Guests",
+                          "gap": 6,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "cAI4y",
+                              "name": "Guests Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "user",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "fZicX",
+                              "name": "Guests Count",
+                              "fill": "$text-primary",
+                              "content": "2",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13.5,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "T06mEA",
+                  "name": "Bedroom Card",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "S60mbm",
+                      "name": "Card Photo",
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/sypialnia4.jpeg",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "x6Cx3",
+                      "name": "Card Caption",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "bKiTT",
+                          "name": "Card Name",
+                          "fill": "$text-primary",
+                          "content": "Sypialnia 4",
+                          "fontFamily": "$font-display",
+                          "fontSize": 22,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "eQAgT",
+                          "name": "Card Beds",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Dwa łóżka pojedyncze",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "j9Kijb",
+                          "name": "Card Guests",
+                          "gap": 6,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "BvYk5",
+                              "name": "Guests Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "user",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "zkghI",
+                              "name": "Guests Count",
+                              "fill": "$text-primary",
+                              "content": "2",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13.5,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "LCKUF",
+                  "name": "Bedroom Card",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ioMVW",
+                      "name": "Card Photo",
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/sypialnia5.jpeg",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "YNfeV",
+                      "name": "Card Caption",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "PM2gg",
+                          "name": "Card Name",
+                          "fill": "$text-primary",
+                          "content": "Sypialnia 5",
+                          "fontFamily": "$font-display",
+                          "fontSize": 22,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Td39r",
+                          "name": "Card Beds",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Łóżko podwójne, TV",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "i2eNJK",
+                          "name": "Card Guests",
+                          "gap": 6,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "lLcnM",
+                              "name": "Guests Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "user",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "b4XHM",
+                              "name": "Guests Count",
+                              "fill": "$text-primary",
+                              "content": "2",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13.5,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "dhbwF",
+          "name": "Room Rozrywka",
+          "width": "fill_container",
+          "stroke": "$line",
+          "strokeWidth": {
+            "top": 1
+          },
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            64,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "mrfcl",
+              "name": "Room Row",
+              "width": "fill_container",
+              "gap": 80,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Xsxk3",
+                  "name": "Room Text",
+                  "width": 420,
+                  "layout": "vertical",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "l82foY",
+                      "name": "Eyebrow Row",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "aP3e3",
+                          "name": "Eyebrow Rule",
+                          "width": 26,
+                          "height": 2,
+                          "fill": "$accent-warm"
+                        },
+                        {
+                          "type": "text",
+                          "id": "HTc7n",
+                          "name": "Room Eyebrow",
+                          "fill": "$accent-warm-deep",
+                          "content": "ROZRYWKA I FITNESS · PARTER I DÓŁ",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "dPjem",
+                      "name": "Room Title",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Bilard, fitness i strefa relaksu",
+                      "lineHeight": 1.05,
+                      "fontFamily": "$font-display",
+                      "fontSize": 40,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "A5a83",
+                      "name": "Room Body",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Pokój bilardowy i sala fitness sprawiają, że nawet w czasie niepogody nie sposób się nudzić.",
+                      "lineHeight": 1.65,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "IsC4c",
+                      "name": "Room Facts",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": [
+                        6,
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "vvMx2",
+                          "name": "Fact",
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "b2Ml2N",
+                              "name": "Fact Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "minus",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "i5Tix",
+                              "name": "Fact Label",
+                              "fill": "$text-secondary",
+                              "content": "Pokój bilardowy",
+                              "fontFamily": "$font-body",
+                              "fontSize": 14.5,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "j4QH2S",
+                          "name": "Fact",
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "QVchW",
+                              "name": "Fact Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "minus",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "DbEuD",
+                              "name": "Fact Label",
+                              "fill": "$text-secondary",
+                              "content": "Sala fitness z widokiem na góry",
+                              "fontFamily": "$font-body",
+                              "fontSize": 14.5,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "oI0Fz",
+                          "name": "Fact",
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "vWrYI",
+                              "name": "Fact Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "minus",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "s8opwG",
+                              "name": "Fact Label",
+                              "fill": "$text-secondary",
+                              "content": "Grota solna, sauna i jacuzzi",
+                              "fontFamily": "$font-body",
+                              "fontSize": 14.5,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "U5G8XL",
+                  "name": "Mosaic 3+",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "B1Ee3",
+                      "name": "Mosaic Large",
+                      "width": "fill_container",
+                      "height": 480,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/IMG_1798-480x650.jpg",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dxJRK",
+                      "name": "Mosaic Column",
+                      "width": 250,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "k0bM9",
+                          "name": "Mosaic Small",
+                          "width": "fill_container",
+                          "height": 232,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "images/silownia2.jpeg",
+                            "mode": "fill"
+                          }
+                        },
+                        {
+                          "type": "frame",
+                          "id": "FGclC",
+                          "name": "Mosaic Small",
+                          "width": "fill_container",
+                          "height": 232,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "images/IMG_2239.jpg",
+                            "mode": "fill"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "IaZJx",
+          "name": "Footer",
+          "width": "fill_container",
+          "fill": "$bg-dark",
+          "layout": "vertical",
+          "gap": 50,
+          "padding": [
+            70,
+            120,
+            40,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "alvJI",
+              "name": "Stopka Top",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "eTXSX",
+                  "name": "Stopka Brand",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "empCu",
+                      "name": "Brand Logo",
+                      "width": 91,
+                      "height": 58,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/logo-light.png",
+                        "mode": "fit"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "TEI2v",
+                      "name": "Stopka Kontakt",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": [
+                        18,
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Zkle3",
+                          "name": "Stopka Adres",
+                          "fill": "$text-inverse-dim",
+                          "content": "Zawoja, Beskidy, u stóp Babiej Góry",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "GGX3z",
+                          "name": "Stopka Tel",
+                          "fill": "$text-inverse-dim",
+                          "content": "+48 500 290 390",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "OIhhp",
+                          "name": "Stopka Email",
+                          "fill": "$text-inverse-dim",
+                          "content": "biuro@rezydencjazawoja.pl",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "YzYoA",
+                  "name": "Stopka Nav",
+                  "gap": 36,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qdnui",
+                      "name": "Stopka Link Dom",
+                      "fill": "$text-inverse-dim",
+                      "content": "Dom",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "g21MuL",
+                      "name": "Stopka Link Wnętrza",
+                      "fill": "$text-inverse-dim",
+                      "content": "Wnętrza",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "P3wRl",
+                      "name": "Stopka Link Okolica",
+                      "fill": "$text-inverse-dim",
+                      "content": "Okolica",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "NznNQ",
+                      "name": "Stopka Link Galeria",
+                      "fill": "$text-inverse-dim",
+                      "content": "Galeria",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "OIwKE",
+                      "name": "Stopka Link Cennik",
+                      "fill": "$text-inverse-dim",
+                      "content": "Cennik",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "RZ1Xm",
+                      "name": "Stopka Link Kontakt",
+                      "fill": "$text-inverse-dim",
+                      "content": "Kontakt",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fxsL6",
+              "name": "Stopka Bottom",
+              "width": "fill_container",
+              "stroke": "#F7F5EF26",
+              "strokeWidth": {
+                "top": 1
+              },
+              "padding": [
+                24,
+                0,
+                0,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "W5GB1",
+                  "name": "Stopka Copyright",
+                  "fill": "$text-inverse-dim",
+                  "content": "© 2026 Rezydencja Zawoja. Wszelkie prawa zastrzeżone.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12.5,
+                  "fontWeight": "300"
+                },
+                {
+                  "type": "frame",
+                  "id": "TGY4T",
+                  "name": "Stopka Legal",
+                  "gap": 28,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "s5AE1Q",
+                      "name": "Legal 1",
+                      "fill": "$text-inverse-dim",
+                      "content": "Polityka prywatności",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12.5,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "text",
+                      "id": "yFhWl",
+                      "name": "Legal 2",
+                      "fill": "$text-inverse-dim",
+                      "content": "Regulamin najmu",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12.5,
+                      "fontWeight": "300"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "v30Oe",
+          "layoutPosition": "absolute",
+          "x": 1236,
+          "y": 1900,
+          "name": "Room Rail (scrolled, desktop)",
+          "fill": "#F4F1EAE6",
+          "stroke": "$line",
+          "strokeWidth": 1,
+          "effect": {
+            "type": "background_blur",
+            "radius": 12
+          },
+          "layout": "vertical",
+          "gap": 14,
+          "padding": [
+            18,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "GU97f",
+              "name": "Rail Item",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "gYcVL",
+                  "name": "Rail Dot",
+                  "fill": "#00000000",
+                  "width": 7,
+                  "height": 7,
+                  "stroke": "$text-secondary",
+                  "strokeWidth": 1
+                },
+                {
+                  "type": "text",
+                  "id": "l9oY4",
+                  "name": "Rail Label",
+                  "fill": "$text-secondary",
+                  "content": "Salon",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "KosTP",
+              "name": "Rail Item",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "agWuQ",
+                  "name": "Rail Dot",
+                  "fill": "#00000000",
+                  "width": 7,
+                  "height": 7,
+                  "stroke": "$text-secondary",
+                  "strokeWidth": 1
+                },
+                {
+                  "type": "text",
+                  "id": "KSCbq",
+                  "name": "Rail Label",
+                  "fill": "$text-secondary",
+                  "content": "Kuchnia",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "W2qVPq",
+              "name": "Rail Item",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "OmKdH",
+                  "name": "Rail Dot",
+                  "fill": "$accent-warm",
+                  "width": 7,
+                  "height": 7,
+                  "stroke": "$text-secondary",
+                  "strokeWidth": 1
+                },
+                {
+                  "type": "text",
+                  "id": "c71M0y",
+                  "name": "Rail Label",
+                  "fill": "$accent-warm-deep",
+                  "content": "Sypialnie",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "cEXET",
+              "name": "Rail Item",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "PRoSq",
+                  "name": "Rail Dot",
+                  "fill": "#00000000",
+                  "width": 7,
+                  "height": 7,
+                  "stroke": "$text-secondary",
+                  "strokeWidth": 1
+                },
+                {
+                  "type": "text",
+                  "id": "IT3qX",
+                  "name": "Rail Label",
+                  "fill": "$text-secondary",
+                  "content": "Rozrywka",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Eb3KY",
+              "name": "Rail Item",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "Z1dVDO",
+                  "name": "Rail Dot",
+                  "fill": "#00000000",
+                  "width": 7,
+                  "height": 7,
+                  "stroke": "$text-secondary",
+                  "strokeWidth": 1
+                },
+                {
+                  "type": "text",
+                  "id": "fS4TC",
+                  "name": "Rail Label",
+                  "fill": "$text-secondary",
+                  "content": "Łazienki",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "T9iPp0",
+      "x": 12439,
+      "y": 0,
+      "name": "Wnetrza v2 Mobile",
+      "clip": true,
+      "width": 390,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Ee2q5",
+          "name": "M Page Header",
+          "clip": true,
+          "width": "fill_container",
+          "height": 400,
+          "fill": [
+            {
+              "type": "image",
+              "enabled": true,
+              "url": "images/apartament-zabytkowy-kredens5.jpg",
+              "mode": "fill"
+            },
+            {
+              "type": "gradient",
+              "gradientType": "linear",
+              "enabled": true,
+              "rotation": 180,
+              "size": {
+                "height": 1
+              },
+              "colors": [
+                {
+                  "color": "#0D120D80",
+                  "position": 0
+                },
+                {
+                  "color": "#0D120D66",
+                  "position": 0.4
+                },
+                {
+                  "color": "#0A0E08E0",
+                  "position": 1
+                }
+              ]
+            }
+          ],
+          "layout": "vertical",
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "jEbvf",
+              "name": "M Nav",
+              "width": "fill_container",
+              "padding": [
+                22,
+                20
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "t1ffik",
+                  "name": "Brand Logo",
+                  "width": 63,
+                  "height": 40,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "images/logo-light.png",
+                    "mode": "fit"
+                  }
+                },
+                {
+                  "type": "icon",
+                  "id": "DoO44",
+                  "name": "M Menu Icon",
+                  "width": 24,
+                  "height": 24,
+                  "icon": "menu",
+                  "library": "lucide",
+                  "fill": "$text-inverse"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "GrP6e",
+              "name": "M Header Title",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 14,
+              "padding": [
+                0,
+                20,
+                32,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Ch91e",
+                  "name": "Eyebrow Row",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "x1DZp",
+                      "name": "Eyebrow Rule",
+                      "width": 22,
+                      "height": 2,
+                      "fill": "$accent-warm"
+                    },
+                    {
+                      "type": "text",
+                      "id": "a96dg",
+                      "name": "M Header Eyebrow",
+                      "fill": "$accent-warm",
+                      "content": "WNĘTRZA",
+                      "fontFamily": "$font-body",
+                      "fontSize": 10.5,
+                      "fontWeight": "normal",
+                      "letterSpacing": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "XDNBv",
+                  "name": "M Header Title",
+                  "fill": "$text-inverse",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000099",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 8
+                  },
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Dom z duszą,\npokój po pokoju",
+                  "lineHeight": 1.05,
+                  "fontFamily": "$font-display",
+                  "fontSize": 38,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "UQZMZ",
+                  "name": "M Header Intro",
+                  "fill": "$text-inverse-dim",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000099",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 8
+                  },
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Drewniany dom z bali, w którym zabytkowe meble spotykają się z wysokim standardem wyposażenia.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "e8BQTK",
+          "name": "M Room Chips (sticky)",
+          "clip": true,
+          "width": "fill_container",
+          "fill": "#F4F1EAF2",
+          "stroke": "$line",
+          "strokeWidth": {
+            "bottom": 1
+          },
+          "gap": 10,
+          "padding": [
+            14,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "XCCnt",
+              "name": "Chip Salon",
+              "fill": "$accent",
+              "padding": [
+                8,
+                16
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "QBZRK",
+                  "name": "Chip Label",
+                  "fill": "#FFFFFF",
+                  "content": "Salon",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12.5,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.5
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "MgYAY",
+              "name": "Chip Sypialnie",
+              "fill": "#00000000",
+              "stroke": "$line",
+              "strokeWidth": 1,
+              "padding": [
+                8,
+                16
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "P1FNm",
+                  "name": "Chip Label",
+                  "fill": "$text-secondary",
+                  "content": "Kuchnia",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12.5,
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.5
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "VFIuq",
+              "name": "Chip Łazienki",
+              "fill": "#00000000",
+              "stroke": "$line",
+              "strokeWidth": 1,
+              "padding": [
+                8,
+                16
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "jlXwx",
+                  "name": "Chip Label",
+                  "fill": "$text-secondary",
+                  "content": "Sypialnie",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12.5,
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.5
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "apI8f",
+              "name": "Chip Kuchnia",
+              "fill": "#00000000",
+              "stroke": "$line",
+              "strokeWidth": 1,
+              "padding": [
+                8,
+                16
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wKJ6s",
+                  "name": "Chip Label",
+                  "fill": "$text-secondary",
+                  "content": "Rozrywka",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12.5,
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.5
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qDGMP",
+              "name": "Chip Rozrywka",
+              "fill": "#00000000",
+              "stroke": "$line",
+              "strokeWidth": 1,
+              "padding": [
+                8,
+                16
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VGbry",
+                  "name": "Chip Label",
+                  "fill": "$text-secondary",
+                  "content": "Łazienki",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12.5,
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "PKLk4",
+          "name": "M Room Salon",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 14,
+          "padding": [
+            36,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "ZJsop",
+              "name": "Eyebrow Row",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "o17f8x",
+                  "name": "Eyebrow Rule",
+                  "width": 22,
+                  "height": 2,
+                  "fill": "$accent-warm"
+                },
+                {
+                  "type": "text",
+                  "id": "dY69j",
+                  "name": "Room Eyebrow",
+                  "fill": "$accent-warm-deep",
+                  "content": "SALON · PARTER",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10.5,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "ZTj5s",
+              "name": "Room Title",
+              "fill": "$text-primary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Widokowy salon z kominkiem",
+              "lineHeight": 1.05,
+              "fontFamily": "$font-display",
+              "fontSize": 28,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "qP5dR",
+              "name": "Room Body",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Sercem domu jest przestronny salon z kamiennym kominkiem i panoramicznymi oknami na Masyw Babiej Góry.",
+              "lineHeight": 1.6,
+              "fontFamily": "$font-body",
+              "fontSize": 14.5,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "j6Czb",
+              "name": "Room Facts",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "QJsB5",
+                  "name": "Fact",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "yOYxy",
+                      "name": "Fact Icon",
+                      "width": 13,
+                      "height": 13,
+                      "icon": "minus",
+                      "library": "lucide",
+                      "fill": "$accent-warm-deep"
+                    },
+                    {
+                      "type": "text",
+                      "id": "a884Pj",
+                      "name": "Fact Label",
+                      "fill": "$text-secondary",
+                      "content": "Kamienny kominek opalany drewnem",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13.5,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "F3sK9s",
+                  "name": "Fact",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "mZS0C",
+                      "name": "Fact Icon",
+                      "width": 13,
+                      "height": 13,
+                      "icon": "minus",
+                      "library": "lucide",
+                      "fill": "$accent-warm-deep"
+                    },
+                    {
+                      "type": "text",
+                      "id": "VH58s",
+                      "name": "Fact Label",
+                      "fill": "$text-secondary",
+                      "content": "Panoramiczne okna na góry",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13.5,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "m8SDn",
+              "name": "M Mosaic",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "padding": [
+                8,
+                0,
+                0,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "o6Xon",
+                  "name": "Mosaic Large",
+                  "width": "fill_container",
+                  "height": 240,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "images/salon-widok2-2048x1152.jpg",
+                    "mode": "fill"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "fsnM7",
+                  "name": "Mosaic Row",
+                  "width": "fill_container",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "sw8Gh",
+                      "name": "Mosaic Small",
+                      "width": "fill_container",
+                      "height": 150,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/apartament-zabytkowy-kredens5.jpg",
+                        "mode": "fill"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "VHN2q",
+          "name": "M Room Sypialnie",
+          "width": "fill_container",
+          "stroke": "$line",
+          "strokeWidth": {
+            "top": 1
+          },
+          "layout": "vertical",
+          "gap": 14,
+          "padding": [
+            36,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "zAnvc",
+              "name": "Eyebrow Row",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "m4Uqm",
+                  "name": "Eyebrow Rule",
+                  "width": 22,
+                  "height": 2,
+                  "fill": "$accent-warm"
+                },
+                {
+                  "type": "text",
+                  "id": "c49sf",
+                  "name": "Room Eyebrow",
+                  "fill": "$accent-warm-deep",
+                  "content": "SYPIALNIE · PIĘTRO",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10.5,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "kyViL",
+              "name": "Room Title",
+              "fill": "$text-primary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Pięć dwuosobowych sypialni",
+              "lineHeight": 1.05,
+              "fontFamily": "$font-display",
+              "fontSize": 28,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "jD1xq",
+              "name": "Room Body",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Na piętrze czeka pięć przytulnych sypialni, każda z własnym wystrojem.",
+              "lineHeight": 1.6,
+              "fontFamily": "$font-body",
+              "fontSize": 14.5,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "K77huh",
+              "name": "Room Facts",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "CbFN4",
+                  "name": "Fact",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "G63pHY",
+                      "name": "Fact Icon",
+                      "width": 13,
+                      "height": 13,
+                      "icon": "minus",
+                      "library": "lucide",
+                      "fill": "$accent-warm-deep"
+                    },
+                    {
+                      "type": "text",
+                      "id": "L9wdLn",
+                      "name": "Fact Label",
+                      "fill": "$text-secondary",
+                      "content": "Pięć sypialni na piętrze",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13.5,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "RUaag",
+                  "name": "Fact",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "H57F94",
+                      "name": "Fact Icon",
+                      "width": 13,
+                      "height": 13,
+                      "icon": "minus",
+                      "library": "lucide",
+                      "fill": "$accent-warm-deep"
+                    },
+                    {
+                      "type": "text",
+                      "id": "aon6d",
+                      "name": "Fact Label",
+                      "fill": "$text-secondary",
+                      "content": "Widok na góry lub las z każdego okna",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13.5,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Wk3pr",
+              "name": "M Mosaic",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "padding": [
+                8,
+                0,
+                0,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "XzE8B",
+                  "name": "Mosaic Large",
+                  "width": "fill_container",
+                  "height": 240,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "images/Sypialnia406.jpg",
+                    "mode": "fill"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "xzv8s",
+                  "name": "Mosaic Row",
+                  "width": "fill_container",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "zGs4e",
+                      "name": "Mosaic Small",
+                      "width": "fill_container",
+                      "height": 150,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/IMG_7886.jpeg",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "R48y3t",
+                      "name": "Mosaic Small",
+                      "width": "fill_container",
+                      "height": 150,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/sypialnia413.jpg",
+                        "mode": "fill"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fJS2c",
+              "name": "M Bedroom Cards (scroll →)",
+              "clip": true,
+              "width": "fill_container",
+              "gap": 14,
+              "padding": [
+                10,
+                0,
+                0,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "LFqHW",
+                  "name": "Bedroom Card",
+                  "width": 200,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "QkFer",
+                      "name": "Card Photo",
+                      "width": "fill_container",
+                      "height": 150,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/apartament.jpeg",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PnUnK",
+                      "name": "Card Caption",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "m39r6",
+                          "name": "Card Name",
+                          "fill": "$text-primary",
+                          "content": "Apartament",
+                          "fontFamily": "$font-display",
+                          "fontSize": 20,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Ikfon",
+                          "name": "Card Beds",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Salonik i sypialnia z łóżkiem podwójnym, TV",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "AlG7s",
+                          "name": "Card Guests",
+                          "gap": 6,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "HH2XC",
+                              "name": "Guests Icon",
+                              "width": 13,
+                              "height": 13,
+                              "icon": "user",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "gtSQg",
+                              "name": "Guests Count",
+                              "fill": "$text-primary",
+                              "content": "2",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "goyGq",
+                  "name": "Bedroom Card",
+                  "width": 200,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ciihE",
+                      "name": "Card Photo",
+                      "width": "fill_container",
+                      "height": 150,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/IMG_7886.jpeg",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Z6mZKz",
+                      "name": "Card Caption",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "R8ZfFj",
+                          "name": "Card Name",
+                          "fill": "$text-primary",
+                          "content": "Sypialnia 2",
+                          "fontFamily": "$font-display",
+                          "fontSize": 20,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "u5mw1",
+                          "name": "Card Beds",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Łóżko podwójne, TV",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "b9atEV",
+                          "name": "Card Guests",
+                          "gap": 6,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "S1JlO3",
+                              "name": "Guests Icon",
+                              "width": 13,
+                              "height": 13,
+                              "icon": "user",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "mqZ58",
+                              "name": "Guests Count",
+                              "fill": "$text-primary",
+                              "content": "2",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "dLqYW",
+                  "name": "Bedroom Card",
+                  "width": 200,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "jIr7d",
+                      "name": "Card Photo",
+                      "width": "fill_container",
+                      "height": 150,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/sypialnia3.jpeg",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "TBv3n",
+                      "name": "Card Caption",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "BuXYW",
+                          "name": "Card Name",
+                          "fill": "$text-primary",
+                          "content": "Sypialnia 3",
+                          "fontFamily": "$font-display",
+                          "fontSize": 20,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "tPvUo",
+                          "name": "Card Beds",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Dwa łóżka pojedyncze",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "L3j08n",
+                          "name": "Card Guests",
+                          "gap": 6,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "r1J0wC",
+                              "name": "Guests Icon",
+                              "width": 13,
+                              "height": 13,
+                              "icon": "user",
+                              "library": "lucide",
+                              "fill": "$accent-warm-deep"
+                            },
+                            {
+                              "type": "text",
+                              "id": "GQF1F",
+                              "name": "Guests Count",
+                              "fill": "$text-primary",
+                              "content": "2",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "zlmT8",
+      "x": 12949,
+      "y": 0,
+      "name": "Lightbox Desktop",
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "#0F130FF2",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Jrk80",
+          "name": "LB Top",
+          "width": "fill_container",
+          "padding": [
+            28,
+            40
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "oFdVq",
+              "name": "LB Counter",
+              "fill": "$text-inverse-dim",
+              "content": "3 / 16",
+              "fontFamily": "$font-body",
+              "fontSize": 13,
+              "fontWeight": "normal",
+              "letterSpacing": 2
+            },
+            {
+              "type": "icon",
+              "id": "Xnk0g",
+              "name": "LB Close",
+              "width": 26,
+              "height": 26,
+              "icon": "x",
+              "library": "lucide",
+              "fill": "$text-inverse"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "gJMiH",
+          "name": "LB Stage",
+          "width": "fill_container",
+          "height": "fill_container",
+          "gap": 32,
+          "padding": [
+            0,
+            40
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "nmafM",
+              "name": "LB Prev",
+              "width": 52,
+              "height": 52,
+              "stroke": "#F7F5EF40",
+              "strokeWidth": 1,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "L2tuJ",
+                  "name": "LB Prev Icon",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "chevron-left",
+                  "library": "lucide",
+                  "fill": "$text-inverse"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "eg9Hy",
+              "name": "LB Photo (contain)",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "images/salon-widok2-2048x1152.jpg",
+                "mode": "fit"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "GahEc",
+              "name": "LB Next",
+              "width": 52,
+              "height": 52,
+              "stroke": "#F7F5EF40",
+              "strokeWidth": 1,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "Ao981",
+                  "name": "LB Next Icon",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "chevron-right",
+                  "library": "lucide",
+                  "fill": "$text-inverse"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "OLsm7",
+          "name": "LB Caption",
+          "width": "fill_container",
+          "padding": [
+            24,
+            40,
+            32,
+            40
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "glElG",
+              "name": "LB Caption Text",
+              "fill": "$text-inverse-dim",
+              "content": "Salon z kominkiem i przeszklonymi ścianami z widokiem na góry",
+              "fontFamily": "$font-body",
+              "fontSize": 14.5,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "o2q1d",
+      "x": 14509,
+      "y": 0,
+      "name": "Lightbox Mobile",
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "#0F130FF2",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "B588IW",
+          "name": "LB Top",
+          "width": "fill_container",
+          "padding": 20,
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "s78DB",
+              "name": "LB Counter",
+              "fill": "$text-inverse-dim",
+              "content": "3 / 16",
+              "fontFamily": "$font-body",
+              "fontSize": 12.5,
+              "fontWeight": "normal",
+              "letterSpacing": 2
+            },
+            {
+              "type": "icon",
+              "id": "Oq5Td",
+              "name": "LB Close",
+              "width": 24,
+              "height": 24,
+              "icon": "x",
+              "library": "lucide",
+              "fill": "$text-inverse"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "aaQS3",
+          "name": "LB Photo (contain, swipe)",
+          "width": "fill_container",
+          "height": "fill_container",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "images/salon-widok2-2048x1152.jpg",
+            "mode": "fit"
+          }
+        },
+        {
+          "type": "frame",
+          "id": "ADinP",
+          "name": "LB Bottom",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            20,
+            20,
+            32,
+            20
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "m0Dn9",
+              "name": "LB Caption Text",
+              "fill": "$text-inverse-dim",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Salon z kominkiem i przeszklonymi ścianami z widokiem na góry",
+              "lineHeight": 1.5,
+              "fontFamily": "$font-body",
+              "fontSize": 13.5,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "g8btz3",
+              "name": "LB Nav",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "b1SeCZ",
+                  "name": "LB Prev",
+                  "width": 48,
+                  "height": 48,
+                  "stroke": "#F7F5EF40",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "roiIH",
+                      "name": "LB Prev Icon",
+                      "width": 20,
+                      "height": 20,
+                      "icon": "chevron-left",
+                      "library": "lucide",
+                      "fill": "$text-inverse"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jwv6i",
+                  "name": "LB Next",
+                  "width": 48,
+                  "height": 48,
+                  "stroke": "#F7F5EF40",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "pMcPw",
+                      "name": "LB Next Icon",
+                      "width": 20,
+                      "height": 20,
+                      "icon": "chevron-right",
+                      "library": "lucide",
+                      "fill": "$text-inverse"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "variables": {

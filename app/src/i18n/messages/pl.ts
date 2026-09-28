@@ -148,24 +148,155 @@ export const pl = {
   pricing: {
     unit: { night: 'doba', stay: 'pobyt', week: 'tydzień', weekend: 'weekend' },
   },
+  lightbox: {
+    label: 'Podgląd zdjęcia',
+    close: 'Zamknij',
+    previous: 'Poprzednie zdjęcie',
+    next: 'Następne zdjęcie',
+    counter: '{{current}} / {{total}}',
+  },
   pages: {
     interiors: {
       eyebrow: 'Wnętrza',
       title: 'Dom z duszą,\npokój po pokoju',
       intro:
         'Drewniany dom z bali, w którym zabytkowe meble spotykają się z wysokim standardem wyposażenia. Każde wnętrze ma swój własny charakter.',
+      nav: 'Pomieszczenia',
+      guests: 'Liczba osób',
+      openPhoto: 'Powiększ zdjęcie: {{alt}}',
+      rooms: {
+        salon: {
+          name: 'Salon',
+          short: 'Salon',
+          floor: 'Parter',
+          title: 'Widokowy salon z kominkiem',
+          body: 'Stylowy i przestronny salon z kamiennym kominkiem, stołem obiadowym dla całej grupy i wygodnym zestawem wypoczynkowym. Z salonu wychodzi się na taras, a zza okien rozciąga się malowniczy widok na Masyw Babiej Góry i Mosorny Groń.',
+          facts: [
+            'Kamienny kominek i stół obiadowy',
+            'Wyjście na taras',
+            'Widok na Babią Górę i Mosorny Groń',
+          ],
+        },
+        kitchen: {
+          name: 'Kuchnia',
+          short: 'Kuchnia',
+          floor: 'Parter',
+          title: 'Kuchnia otwarta na salon',
+          body: 'Kuchnia otwiera się na salon, więc gotujący nie tracą kontaktu z resztą towarzystwa. Jest w pełni wyposażona: znajdziecie w niej wszystkie niezbędne naczynia, zmywarkę i ekspres do kawy.',
+          facts: ['Otwarta na salon', 'Zmywarka i ekspres do kawy', 'Pełne wyposażenie i naczynia'],
+        },
+        bedrooms: {
+          name: 'Sypialnie',
+          short: 'Sypialnie',
+          floor: 'Piętro',
+          title: 'Pięć dwuosobowych sypialni',
+          body: 'Całe piętro zajmuje pięć w pełni umeblowanych, dwuosobowych sypialni. Każda ma swój własny wystrój, podkreślający styl zabytkowych mebli, a największą z nich jest apartament z osobnym salonikiem.',
+          facts: [
+            'Pięć sypialni dla maksymalnie 10 osób',
+            'Łóżka podwójne lub pojedyncze',
+            'Apartament z własnym salonikiem',
+          ],
+        },
+        recreation: {
+          name: 'Rozrywka i fitness',
+          short: 'Rozrywka',
+          floor: 'Parter i poziom dolny',
+          title: 'Bilard, fitness i strefa relaksu',
+          body: 'Na parterze czeka pokój bilardowy w stylu myśliwskim, ze stołem i różnymi grami. Na dolnym poziomie znajduje się przeszklona strefa relaksu z salą fitness, częścią wypoczynkową, grotą solną i sauną. Oba miejsca mają sprzęt RTV.',
+          facts: [
+            'Pokój bilardowy w stylu myśliwskim',
+            'Sala fitness i strefa wypoczynku',
+            'Grota solna i sauna',
+          ],
+        },
+        bathrooms: {
+          name: 'Łazienki',
+          short: 'Łazienki',
+          floor: 'Każdy poziom',
+          title: 'Łazienka na każdym poziomie',
+          body: 'Na każdej kondygnacji jest łazienka, a na dolnym poziomie pokój kąpielowy z prysznicem i wanną oraz drugi prysznic. Dzięki temu nawet dziesięcioosobowa grupa nie czeka w kolejce.',
+          facts: [
+            'Łazienka na każdym poziomie',
+            'Wanna i dwa prysznice na dole',
+            'Pralka do dyspozycji gości',
+          ],
+        },
+      },
     },
     surroundings: {
       eyebrow: 'Okolica',
       title: 'U stóp\nBabiej Góry',
       intro:
         'Zawoja to najdłuższa wieś w Polsce, rozciągnięta na 18 km w Beskidzie Żywieckim, bezpośrednio pod majestatyczną Królową Beskidów.',
+      overview: {
+        eyebrow: 'Beskid Żywiecki',
+        title: 'Chwila wytchnienia z dala od zgiełku',
+        lead: 'Zawoja ciągnie się wzdłuż rzek Skawica, Jaworzyna i Mosorczyk, u stóp Babiej Góry, która jak magnes przyciąga turystów żądnych wrażeń.',
+        body: 'Wyjątkowa lokalizacja sprzyja wypoczynkowi i sportowi. Znajdziecie tu wszystko, czego trzeba, by odpocząć od miasta: malownicze krajobrazy, góralskie tradycje i atrakcje dla całych rodzin, przez cały rok.',
+      },
+      rows: {
+        babiaGora: {
+          eyebrow: 'Babia Góra',
+          title: 'Królowa Beskidów',
+          body: 'Najwyższy szczyt Beskidu Żywieckiego i, poza Tatrami, najwyższy w Polsce, zaliczany do Korony Gór Polski. Nieprzewidywalna i tajemnicza, oferuje prawdziwie wysokogórską wspinaczkę i zapierające dech widoki. A te sławne wschody słońca!',
+          bullets: [
+            'Babiogórski Park Narodowy na liście UNESCO od 1977 r.',
+            'Schronisko PTTK na Markowych Szczawinach, 1180 m n.p.m.',
+            'Rakiety śnieżne do wypożyczenia dla naszych gości',
+          ],
+        },
+        slopes: {
+          eyebrow: 'Zima i narty',
+          title: 'Stoki na wyciągnięcie ręki',
+          body: 'Ośrodek Mosorny Groń w Zawoi Policzne to kolej krzesełkowa i niemal 1,5 km trasa z widokiem na Babią Górę, sztucznie naśnieżana i oświetlona wieczorami. Dla początkujących osobny wyciąg orczykowy, a w Czatoży kompleks wyciągów Wojtek.',
+          bullets: [
+            'Kolej krzesełkowa na Mosorny Groń, 1045 m n.p.m.',
+            'Trasa czerwona, jazda także wieczorem',
+            'Wypożyczalnia sprzętu i szkółka narciarska',
+          ],
+        },
+        trails: {
+          eyebrow: 'Na rowerze',
+          title: 'Babia Góra Trails',
+          body: 'Kompleks 20 km górskich singletracków powstałych we współpracy gmin Zawoja i Oravská Polhora. Po polskiej stronie 14,5 km tras podjazdowych i zjazdowych o różnym stopniu trudności, z transgranicznym połączeniem ze Słowacją.',
+          bullets: [
+            'Dual pumptrack i park rowerowy w Zawoi Morgi',
+            'Trasy o różnym stopniu trudności',
+            '5,2 km singletrack łączący ze Słowacją',
+          ],
+        },
+        waterfalls: {
+          eyebrow: 'Natura i kultura',
+          title: 'Wodospady i drewniane kaplice',
+          body: 'Warto zapuścić się dalej: okazały wodospad na Mosornym Potoku liczy około 8 m i należy do największych w Beskidach. W okolicy odnajdziecie też zabytkową kaplicę Matki Bożej Anielskiej oraz skansen prezentujący budownictwo Babiogórców.',
+          bullets: [
+            'Wodospad na Mosornym Potoku, ok. 8 m wysokości',
+            'Kaplica pw. Matki Bożej Anielskiej z lat 1905–1908',
+            'Skansen im. Józefa Żaka w Zawoi Markowej',
+          ],
+        },
+      },
+      facts: [
+        { value: '100 km', label: 'od Krakowa' },
+        { value: '1725 m', label: 'szczyt Babiej Góry' },
+        { value: '20 km', label: 'tras rowerowych' },
+        { value: '18 km', label: 'długości Zawoi' },
+      ],
     },
     gallery: {
       eyebrow: 'Galeria',
       title: 'Zajrzyj do każdego\nzakątka',
       intro:
         'Wnętrza pełne charakteru, strefa relaksu i widoki, które zapamiętacie na długo. Zobacz Rezydencję Zawoja od środka i z zewnątrz.',
+      filters: {
+        label: 'Filtruj zdjęcia',
+        all: 'Wszystko',
+        interiors: 'Wnętrza',
+        spa: 'Strefa SPA',
+        terraceGarden: 'Taras i ogród',
+        surroundings: 'Okolica',
+      },
+      openPhoto: 'Powiększ zdjęcie: {{alt}}',
     },
     contact: {
       eyebrow: 'Kontakt',
