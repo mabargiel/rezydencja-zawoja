@@ -5,8 +5,8 @@
 
 ## 2. Data and copy
 
-- [ ] 2.1 Add `interiorsPageQuery` (header, rooms with photos, localized bedrooms), `surroundingsPageQuery` and `galleryPageQuery` (photos with `category`); run `npm run typegen`
-- [ ] 2.2 Add copy to `pl.ts`: Wnętrza room nav label and per-room `name`, `title`, `body`, `facts[]`, and bedroom labels; Okolica (`d5VfA`, `fZVdb`, `nGbvs`); Galeria filters (`LYvzh`) and lightbox labels. Draft `en.ts` and `de.ts`, and confirm `returnObjects` arrays are typed
+- [x] 2.1 Add `interiorsPageQuery` (header, rooms with photos, localized bedrooms), `surroundingsPageQuery` and `galleryPageQuery` (photos with `category`); run `npm run typegen`
+- [x] 2.2 Add copy to `pl.ts`: Wnętrza room nav label and per-room `name`, `title`, `body`, `facts[]`, and bedroom labels; Okolica (`d5VfA`, `fZVdb`, `nGbvs`); Galeria filters (`LYvzh`) and lightbox labels. Draft `en.ts` and `de.ts`, and confirm `returnObjects` arrays are typed
 
 ## 3. Design (approval gate)
 

@@ -150,24 +150,151 @@ export const en = {
   pricing: {
     unit: { night: 'night', stay: 'stay', week: 'week', weekend: 'weekend' },
   },
+  lightbox: {
+    label: 'Photo viewer',
+    close: 'Close',
+    previous: 'Previous photo',
+    next: 'Next photo',
+    counter: '{{current}} / {{total}}',
+  },
   pages: {
     interiors: {
       eyebrow: 'Interiors',
       title: 'A house with soul,\nroom by room',
       intro:
         'A log house where antique furniture meets modern comfort. Every room has a character of its own.',
+      nav: 'Rooms',
+      guests: 'Number of guests',
+      openPhoto: 'Enlarge photo: {{alt}}',
+      rooms: {
+        salon: {
+          name: 'Living room',
+          title: 'A living room with a fireplace and a view',
+          body: 'The heart of the house is a spacious living room with a stone fireplace and panoramic windows facing the Babia Góra massif. This is where everyone gathers, by the fire, with a view that changes throughout the day.',
+          facts: [
+            'Wood-burning stone fireplace',
+            'Panoramic mountain windows',
+            'Seating areas for the whole group',
+          ],
+        },
+        bedrooms: {
+          name: 'Bedrooms',
+          title: 'Five individual bedrooms',
+          body: 'Upstairs there are five cosy bedrooms, each with its own individual decor that brings out the style of its furniture. Soft fabrics, warm wood and the view outside the window make for a peaceful night.',
+          facts: [
+            'Five bedrooms upstairs',
+            'Comfortable beds and bedding',
+            'A view of the mountains or forest from every window',
+          ],
+        },
+        bathrooms: {
+          name: 'Bathrooms',
+          title: 'Comfort in every detail',
+          body: 'Bright, well-kept bathrooms with showers and full amenities on every floor make a stay for a large group truly comfortable.',
+          facts: ['A bathroom on every floor', 'Showers and full amenities'],
+        },
+        kitchen: {
+          name: 'Kitchen',
+          title: 'A kitchen for the whole group',
+          body: 'The equipped kitchen lets you cook a shared meal for everyone, and the morning coffee from the espresso machine tastes best with a mountain view.',
+          facts: ['Espresso machine', 'Equipment for cooking together'],
+        },
+        recreation: {
+          name: 'Games & fitness',
+          title: 'Evenings to enjoy',
+          body: 'A billiard room and a fully equipped fitness room mean there is never a dull moment, even in bad weather. There is entertainment for the whole group in every season.',
+          facts: [
+            'Billiard room',
+            'Fitness room with a mountain view',
+            'Salt grotto, sauna and jacuzzi',
+          ],
+        },
+        details: {
+          name: 'Details',
+          title: 'A collection from past centuries',
+          body: 'Instead of the typical highland style, we chose distinctive interiors inspired by the magic of old residences. French chests of drawers, an oak sideboard from a Polish manor house and a table from the turn of the last century give the rooms a unique character.',
+          facts: [
+            'French chests of drawers and an oak sideboard',
+            'Antique pieces collected over the years',
+            'Hunting trophies and old prints',
+          ],
+        },
+      },
     },
     surroundings: {
       eyebrow: 'Surroundings',
       title: 'At the foot of\nBabia Góra',
       intro:
         'Zawoja is the longest village in Poland, stretching 18 km through the Żywiec Beskids, right below the majestic Queen of the Beskids.',
+      overview: {
+        eyebrow: 'Żywiec Beskids',
+        title: 'A moment of peace, far from the bustle',
+        lead: 'Zawoja stretches along the Skawica, Jaworzyna and Mosorczyk rivers at the foot of Babia Góra, which draws adventurous visitors like a magnet.',
+        body: 'The location is ideal for rest and sport. You will find everything you need to get away from the city: picturesque landscapes, highland traditions and attractions for the whole family, all year round.',
+      },
+      rows: {
+        babiaGora: {
+          eyebrow: 'Babia Góra',
+          title: 'Queen of the Beskids',
+          body: 'The highest peak of the Żywiec Beskids and, outside the Tatras, the highest in Poland, part of the Crown of Polish Mountains. Unpredictable and mysterious, it offers real high-mountain hiking and breathtaking views. And those famous sunrises!',
+          bullets: [
+            'Babia Góra National Park, a UNESCO site since 1977',
+            'PTTK mountain hut at Markowe Szczawiny, 1,180 m',
+            'Snowshoes to borrow for our guests',
+          ],
+        },
+        slopes: {
+          eyebrow: 'Winter and skiing',
+          title: 'Slopes close at hand',
+          body: 'The Mosorny Groń resort in Zawoja Policzne has a chairlift and an almost 1.5 km run with a view of Babia Góra, with artificial snow and evening lighting. Beginners have a separate T-bar lift, and in Czatoża there is the Wojtek lift complex.',
+          bullets: [
+            'Chairlift to Mosorny Groń, 1,045 m',
+            'Red run, open in the evening too',
+            'Equipment rental and ski school',
+          ],
+        },
+        trails: {
+          eyebrow: 'By bike',
+          title: 'Babia Góra Trails',
+          body: 'A 20 km network of mountain singletracks built jointly by Zawoja and Oravská Polhora. On the Polish side there are 14.5 km of climbing and descending trails of varying difficulty, with a cross-border link to Slovakia.',
+          bullets: [
+            'Dual pump track and bike park in Zawoja Morgi',
+            'Trails of varying difficulty',
+            '5.2 km singletrack connecting to Slovakia',
+          ],
+        },
+        waterfalls: {
+          eyebrow: 'Nature and culture',
+          title: 'Waterfalls and wooden chapels',
+          body: 'It is worth venturing further: the waterfall on the Mosorny stream is about 8 m high, one of the largest in the Beskids. Nearby you will also find the historic Chapel of Our Lady of the Angels and an open-air museum of Babia Góra folk architecture.',
+          bullets: [
+            'Waterfall on the Mosorny stream, about 8 m high',
+            'Chapel of Our Lady of the Angels, 1905–1908',
+            'Józef Żak open-air museum in Zawoja Markowa',
+          ],
+        },
+      },
+      facts: [
+        { value: '100 km', label: 'from Kraków' },
+        { value: '1725 m', label: 'Babia Góra summit' },
+        { value: '20 km', label: 'of cycling trails' },
+        { value: '18 km', label: 'length of Zawoja' },
+      ],
     },
     gallery: {
       eyebrow: 'Gallery',
       title: 'Look into\nevery corner',
       intro:
         'Interiors full of character, a place to unwind and views you will remember for a long time. See Rezydencja Zawoja inside and out.',
+      filters: {
+        label: 'Filter photos',
+        all: 'All',
+        interiors: 'Interiors',
+        spa: 'Spa',
+        terraceGarden: 'Terrace & garden',
+        surroundings: 'Surroundings',
+      },
+      openPhoto: 'Enlarge photo: {{alt}}',
     },
     contact: {
       eyebrow: 'Contact',

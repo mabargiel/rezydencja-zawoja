@@ -44,3 +44,25 @@ export const homePageQuery = defineQuery(`{
     facts[]{ _key, "label": ${factLabel}, "value": ${factValue} }
   }
 }`)
+
+const bedroomName = `coalesce(name[language == $lng][0].value, name[language == "pl"][0].value)`
+const bedroomBeds = `coalesce(beds[language == $lng][0].value, beds[language == "pl"][0].value)`
+
+export const interiorsPageQuery = defineQuery(`*[_id == "interiorsPage"][0]{
+  header{ ${resolvedSlot} },
+  rooms[]{ _key, type, "photos": photos[]->{ "_key": _id, ${photoFields} } },
+  bedrooms[]{ _key, "name": ${bedroomName}, "beds": ${bedroomBeds}, guests, "photo": photo->{ ${photoFields} } }
+}`)
+
+export const surroundingsPageQuery = defineQuery(`*[_id == "surroundingsPage"][0]{
+  header{ ${resolvedSlot} },
+  babiaGora{ ${resolvedSlot} },
+  slopes{ ${resolvedSlot} },
+  trails{ ${resolvedSlot} },
+  waterfalls{ ${resolvedSlot} }
+}`)
+
+export const galleryPageQuery = defineQuery(`*[_id == "galleryPage"][0]{
+  header{ ${resolvedSlot} },
+  "photos": photos[]->{ "_key": _id, category, ${photoFields} }
+}`)
