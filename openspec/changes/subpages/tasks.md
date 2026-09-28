@@ -1,7 +1,7 @@
 ## 1. CMS: room model
 
-- [ ] 1.1 Change the `interiorsPage` schema to `header` + `rooms[]` (unique `type` from salon, bedrooms, bathrooms, kitchen, recreation, details; 1–8 ordered photo refs) + `bedrooms[]` (localized `name` and `beds`, `guests` 1–4, optional photo), with Polish titles and previews; remove the old fixed slots; validate and deploy the schema
-- [ ] 1.2 Update `seed-map.ts` and `seed.ts`: six rooms in tour order with their library photos, and five placeholder bedrooms (4 with the bedroom photos, 1 without); re-run the seed and confirm it's idempotent
+- [x] 1.1 Change the `interiorsPage` schema to `header` + `rooms[]` (unique `type` from salon, bedrooms, bathrooms, kitchen, recreation, details; 1–8 ordered photo refs) + `bedrooms[]` (localized `name` and `beds`, `guests` 1–4, optional photo), with Polish titles and previews; remove the old fixed slots; validate and deploy the schema
+- [x] 1.2 Update `seed-map.ts` and `seed.ts`: six rooms in tour order with their library photos, and five placeholder bedrooms (4 with the bedroom photos, 1 without); re-run the seed and confirm it's idempotent
 
 ## 2. Data and copy
 

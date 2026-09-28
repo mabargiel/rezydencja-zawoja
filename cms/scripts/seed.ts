@@ -3,7 +3,7 @@ import { basename, resolve } from 'node:path'
 
 import { getCliClient } from 'sanity/cli'
 
-import { layout, photoId, photos, pricing } from './seed-map'
+import { layout, photoId, photos, placeholderBedroom, pricing } from './seed-map'
 
 type Localized = { pl: string; en: string; de: string }
 
@@ -24,9 +24,6 @@ const localized = (text: Localized) =>
 const photoRef = (file: string) => ({ _type: 'reference', _ref: photoId(file) })
 
 const slot = (file: string) => ({ _type: 'mediaSlot', photo: photoRef(file) })
-
-const slotList = (files: string[]) =>
-  files.map((file, index) => ({ ...slot(file), _key: `slot-${index}` }))
 
 const photoRefList = (files: string[]) =>
   files.map(file => ({ ...photoRef(file), _key: photoId(file) }))
@@ -93,12 +90,23 @@ async function seedPages() {
       _id: 'interiorsPage',
       _type: 'interiorsPage',
       header: slot(interiorsPage.header),
-      livingRoom: slot(interiorsPage.livingRoom),
-      antiques: slot(interiorsPage.antiques),
-      bedrooms: slot(interiorsPage.bedrooms),
-      comfort: slot(interiorsPage.comfort),
-      relaxation: slotList(interiorsPage.relaxation),
-      details: slotList(interiorsPage.details),
+      rooms: interiorsPage.rooms.map(room => ({
+        _key: room.type,
+        _type: 'room',
+        photos: photoRefList(room.photos),
+        type: room.type,
+      })),
+      bedrooms: interiorsPage.bedrooms.map(bedroom => {
+        const text = placeholderBedroom(bedroom.number)
+        return {
+          _key: `bedroom-${bedroom.number}`,
+          _type: 'bedroom',
+          beds: localized(text.beds),
+          guests: text.guests,
+          name: localized(text.name),
+          ...(bedroom.photo ? { photo: photoRef(bedroom.photo) } : {}),
+        }
+      }),
     },
     {
       _id: 'surroundingsPage',
