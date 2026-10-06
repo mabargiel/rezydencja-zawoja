@@ -35,6 +35,6 @@
   - no request to Azure from the page;
   - without JavaScript;
   - a real send through Resend: the owner email arrives at biuro@ (or `CONTACT_TO_EMAIL`), and the confirmation arrives in the guest's language with Reply-To biuro@
-- [ ] 5.3 Owner checkpoint: create the Resend account, verify `rezydencjazawoja.pl`, and add `RESEND_API_KEY`, `CONTACT_FROM_EMAIL` (and `CONTACT_TO_EMAIL` for Preview) in Vercel
-- [ ] 5.4 Run format:check, lint, lint:styles, typecheck, typegen freshness and build; scan for comments; open a PR from `feat/contact-form`; confirm CI and the Vercel preview are green, and send one inquiry from the preview
-- [ ] 5.5 Send the new EN/DE copy for review
+- [x] 5.3 Owner checkpoint: create the Resend account, verify `rezydencjazawoja.pl`, and add `RESEND_API_KEY`, `CONTACT_FROM_EMAIL` (and `CONTACT_TO_EMAIL` for Preview) in Vercel
+- [x] 5.4 Run format:check, lint, lint:styles, typecheck, typegen freshness and build; scan for comments; open a PR from `feat/contact-form`; confirm CI and the Vercel preview are green, and send one inquiry from the preview
+- [x] 5.5 Send the new EN/DE copy for review
