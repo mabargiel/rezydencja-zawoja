@@ -10,7 +10,7 @@
     - the rights and a UODO complaint;
     - a generic cookie notice.
   - **Rental terms (`/regulamin-najmu`):**
-    - reservation by phone, email or intermediaries;
+    - reservation by phone, email or intermediaries (the new terms drop the intermediaries);
     - a deposit confirms the booking;
     - cancellation: free from 45 days, 50% at 44–31 days, 100% at 30 days or less;
     - check-in 16:00, check-out 10:00, ID required, at most 10 guests;
@@ -93,8 +93,8 @@ Sections:
 - [EN/DE legal translations may be imprecise] → Each page states that the Polish version is binding.
 - [Portable Text in three languages makes the seed long] → The seed builds blocks from compact helpers (`h2`, `p`, `ul`) rather than raw JSON.
 
-## Open Questions
+## Resolved Questions
 
-- **Booking channels:** the old terms list Booking.com and Airbnb as booking channels. Should the new terms keep them (if the listings stay active), or say bookings are direct only?
-- **Property address:** the old terms use "Zawoja 2853". The site uses "Zawoja Mosorne 2853, 34-222 Zawoja". Which should the legal texts use?
-- **NIP or REGON:** should the controller section show the company's NIP?
+- **Booking channels:** the terms list only direct channels (phone, email, the contact form). Booking.com and Airbnb listings exist, but their fees are high, so the website steers guests to book directly.
+- **Property address:** the legal texts use "Zawoja 2853, 34-222 Zawoja", as on the old site.
+- **NIP:** to be shown in the controller section, but the owner doesn't have it at hand. The seed leaves it out rather than publishing a placeholder, and the owner adds it in the Studio.
