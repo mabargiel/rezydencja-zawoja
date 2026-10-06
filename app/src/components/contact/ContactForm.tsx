@@ -1,10 +1,8 @@
 'use client'
 
-import { CircleAlert } from 'lucide-react'
 import { useActionState } from 'react'
 
 import { sendInquiry } from '@/app/[lng]/contact/actions'
-import { phoneHref, site } from '@/config/site'
 import type { Language } from '@/i18n/config'
 import type { Messages } from '@/i18n/types'
 import {
@@ -16,7 +14,7 @@ import {
   today,
 } from '@/lib/inquiry'
 
-import { Field, FieldError, Row, SubmitButton } from './FormParts'
+import { Field, FieldError, Row, SendError, SubmitButton } from './FormParts'
 import { InquirySent } from './InquirySent'
 
 type ContactCopy = Messages['pages']['contact']
@@ -161,35 +159,10 @@ export function ContactForm({ copy, language, contactHref, defaults = {} }: Cont
       </div>
 
       {state.status === 'failed' && (
-        <div
-          role="alert"
-          className="flex gap-3 border border-error bg-error-tint px-4 py-3.5 lg:gap-3.5 lg:px-[18px] lg:py-4"
-        >
-          <CircleAlert
-            aria-hidden
-            size={18}
-            strokeWidth={1.75}
-            className="mt-0.5 shrink-0 text-error"
-          />
-          <div className="flex flex-col gap-1">
-            <p className="font-body text-sm font-medium text-text-primary lg:text-[14.5px]">
-              {errors.failedTitle}
-            </p>
-            <p className="font-body text-[13px] leading-[1.5] text-text-secondary lg:text-[13.5px]">
-              {errors.failedBody}{' '}
-              <a href={phoneHref} className="underline underline-offset-2 hover:text-accent">
-                {site.phone}
-              </a>
-              {' · '}
-              <a
-                href={`mailto:${site.email}`}
-                className="underline underline-offset-2 hover:text-accent"
-              >
-                {site.email}
-              </a>
-            </p>
-          </div>
-        </div>
+        <SendError title={errors.failedTitle} body={errors.failedBody} />
+      )}
+      {state.status === 'limited' && (
+        <SendError title={errors.limitedTitle} body={errors.limitedBody} />
       )}
 
       <SubmitButton label={form.submit} pendingLabel={form.sending} />

@@ -1,5 +1,7 @@
 'use server'
 
+import { checkRateLimit } from '@vercel/firewall'
+import { headers } from 'next/headers'
 import { Resend } from 'resend'
 
 import { site } from '@/config/site'
@@ -8,13 +10,31 @@ import type { InquiryState } from '@/lib/inquiry'
 import { guestConfirmation, ownerEmail } from '@/lib/inquiryEmails'
 import { readValues, validateInquiry } from '@/lib/inquirySchema'
 
+// Fails open: a missing rule, a timeout or running outside Vercel must never stop a real guest
+// from sending an inquiry, so only a definite answer from the firewall blocks the submission.
+async function isRateLimited() {
+  if (!process.env.VERCEL) return false
+  try {
+    const { rateLimited, error } = await checkRateLimit('contact-inquiry', {
+      headers: await headers(),
+      timeout: 2000,
+    })
+    if (error === 'not-found') console.error('Rate limit rule contact-inquiry is not configured')
+    return rateLimited || error === 'blocked'
+  } catch (error) {
+    console.error('Rate limit check failed:', error)
+    return false
+  }
+}
+
 export async function sendInquiry(
   _previous: InquiryState,
   formData: FormData
 ): Promise<InquiryState> {
+  const values = readValues(formData)
+  if (await isRateLimited()) return { status: 'limited', values }
   if (formData.get('website')) return { status: 'sent' }
 
-  const values = readValues(formData)
   const result = validateInquiry(values)
   if (!result.success) return { errors: result.errors, status: 'invalid', values }
   const { inquiry } = result

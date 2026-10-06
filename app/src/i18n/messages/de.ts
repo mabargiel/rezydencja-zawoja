@@ -355,6 +355,9 @@ export const de = {
         consent: 'Bitte stimmen Sie zu, damit wir Ihre Anfrage beantworten können.',
         failedTitle: 'Ihre Anfrage konnte nicht gesendet werden.',
         failedBody: 'Bitte versuchen Sie es gleich noch einmal oder kontaktieren Sie uns direkt:',
+        limitedTitle: 'Zu viele Versuche.',
+        limitedBody:
+          'Bitte warten Sie einige Minuten und versuchen Sie es erneut oder kontaktieren Sie uns direkt:',
       },
       sent: {
         eyebrow: 'Anfrage gesendet',

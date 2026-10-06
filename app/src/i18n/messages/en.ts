@@ -353,6 +353,8 @@ export const en = {
         consent: 'Please tick the consent box so we can reply to your inquiry.',
         failedTitle: 'We could not send your inquiry.',
         failedBody: 'Please try again in a moment or contact us directly:',
+        limitedTitle: 'Too many attempts.',
+        limitedBody: 'Please wait a few minutes and try again, or contact us directly:',
       },
       sent: {
         eyebrow: 'Inquiry sent',
