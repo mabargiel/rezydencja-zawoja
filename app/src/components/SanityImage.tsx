@@ -9,6 +9,8 @@ type SanityImageProps = {
   priority?: boolean
   eager?: boolean
   fit?: 'cover' | 'contain'
+  hasBlurPlaceholder?: boolean
+  onLoad?: () => void
   className?: string
 }
 
@@ -18,6 +20,8 @@ export function SanityImage({
   priority,
   eager,
   fit = 'cover',
+  hasBlurPlaceholder = true,
+  onLoad,
   className = '',
 }: SanityImageProps) {
   const { image, alt } = photo
@@ -37,8 +41,9 @@ export function SanityImage({
       sizes={sizes}
       priority={priority}
       loading={eager && !priority ? 'eager' : undefined}
-      placeholder={image.asset.metadata?.lqip ? 'blur' : 'empty'}
-      blurDataURL={image.asset.metadata?.lqip ?? undefined}
+      placeholder={hasBlurPlaceholder && image.asset.metadata?.lqip ? 'blur' : 'empty'}
+      blurDataURL={hasBlurPlaceholder ? (image.asset.metadata?.lqip ?? undefined) : undefined}
+      onLoad={onLoad}
       style={fit === 'cover' ? { objectPosition } : undefined}
       className={`${fit === 'cover' ? 'object-cover' : 'object-contain'} ${className}`}
     />

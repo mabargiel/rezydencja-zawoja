@@ -10,7 +10,7 @@ export function SectionHeading({ eyebrow, title, tone = 'light' }: SectionHeadin
   const onDark = tone === 'dark'
 
   return (
-    <div className="flex max-w-[560px] flex-col gap-5 lg:gap-6">
+    <div className="reveal flex max-w-[560px] flex-col gap-5 lg:gap-6">
       <Eyebrow tone={tone}>{eyebrow}</Eyebrow>
       <h2
         className={`font-display text-[34px] leading-[1.08] whitespace-pre-line lg:text-[54px] lg:leading-[1.05] ${onDark ? 'text-text-inverse' : 'text-text-primary'}`}

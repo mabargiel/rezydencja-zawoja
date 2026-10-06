@@ -33,11 +33,11 @@ Every new transition uses these through Tailwind (`ease-out-soft`, `duration-bas
 - Utilities in `globals.css`:
   - `reveal`: fade from 0 and rise 24px;
   - `reveal-media`: fade and settle from `scale(1.04)`, for images inside an `overflow-hidden` frame.
-- Each is driven by `animation-timeline: view(); animation-range: entry 0% cover 25%;` with `animation-fill-mode: both`.
+- Each is driven by `animation-timeline: view()` with `animation-fill-mode: both`, and a range in **pixels**: `entry 0 → entry 160px` for `reveal`, `entry 0 → entry 220px` for `reveal-media`. Percentage ranges scale with element height, which would leave tall blocks that are partly on screen at load (like the legal text) half-transparent until scrolled. A fixed distance means anything already at least 160px into the viewport renders in its final state.
 - Both are wrapped in `@supports (animation-timeline: view())` and `@media (prefers-reduced-motion: no-preference)`. In any other browser, or with reduced motion, the classes do nothing, and the content is simply visible.
-- **Stagger**: siblings use a `--reveal-delay` custom property, applied as a shifted range rather than a time delay, through utilities like `reveal-delay-1` to `reveal-delay-3`.
+- **Stagger**: siblings shift their range by 40px, 80px or 120px through `reveal-delay-1` to `reveal-delay-3` (`--reveal-shift`), with a `revealDelay(index)` helper for mapped lists.
 - Content already in view at load is past its entry range, so it renders in its final state with no flash.
-- Applied to the text column and media of each section: headings (through `SectionHeading`), feature cards, room mosaics, bedroom cards, pricing rows, gallery tiles, key facts, the contact card and form, and legal text blocks. Not applied to the hero, the navbar or the footer.
+- Applied to the text column and media of each section: headings (through `SectionHeading`), feature cards, room text and mosaics, bedroom cards, the pricing table (as a whole, since table rows don't take transforms reliably), mobile pricing rows, gallery tiles, key facts, and the directions caption and map. Not applied to the hero, the navbar, the footer, the contact card and form (on screen at load, and interactive) or the legal text (long reading content).
 - *Alternative: an IntersectionObserver `Reveal` client wrapper.* It works in every browser, including Firefox, where scroll-driven animations aren't reliably available yet. But it wraps server content in client components, needs hydration before anything appears, and risks content staying hidden if JavaScript fails. The CSS route degrades to visible content. If Firefox reveals turn out to matter, a tiny observer fallback can add a class later.
 
 ### D3. Hero media sequence (a `HeroMedia` client component)
@@ -62,8 +62,8 @@ Every new transition uses these through Tailwind (`ease-out-soft`, `duration-bas
 - Where `@starting-style` isn't supported, dialogs simply appear, as they do today.
 
 ### D6. Hover feedback
-- A `group-hover:scale-[1.03]` image zoom (as in the gallery) on `FeatureCard`, `InteriorsTeaser` and `GalleryPreview` tiles.
-- `ButtonPrimary` and `ButtonOutline` get the same arrow nudge as `TextLink`.
+- Hover zoom stays on photos that open something (the gallery, room mosaics and bedroom cards). It is *not* added to `FeatureCard`, `InteriorsTeaser` or `GalleryPreview`: those photos aren't clickable, and a zoom would suggest they are, which conflicts with the spec's "tiles that link or open the lightbox".
+- `ButtonPrimary` gets the same arrow nudge as `TextLink` (`ButtonOutline` has no arrow), and both use the motion tokens and `motion-reduce:transition-none`.
 - All hover effects are `motion-safe:` only.
 
 ### D7. Gallery filter cross-fade

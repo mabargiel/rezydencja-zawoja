@@ -28,6 +28,39 @@
   --color-scrim-panorama-bottom: #0a0e08e6;
   --font-display: var(--font-cormorant), 'Times New Roman', serif;
   --font-body: var(--font-jost), system-ui, sans-serif;
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-base: 450ms;
+  --duration-slow: 900ms;
+  --animate-rise: rise var(--duration-slow) var(--ease-out-soft) both;
+  --animate-settle: settle 1600ms var(--ease-out-soft) both;
+  --animate-fade: fade var(--duration-base) var(--ease-out-soft) both;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+  }
+
+  @keyframes settle {
+    from {
+      transform: scale(1.06);
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @keyframes reveal-media {
+    from {
+      opacity: 0;
+      transform: scale(1.04);
+    }
+  }
 }
 
 @utility bg-header-scrim {
@@ -55,6 +88,63 @@
     var(--color-scrim-panorama-top) 0%,
     var(--color-scrim-panorama-bottom) 100%
   );
+}
+
+@layer utilities {
+  @media (prefers-reduced-motion: no-preference) {
+    .dialog-motion {
+      opacity: 0;
+      transform: var(--dialog-from);
+      transition:
+        opacity var(--duration-base) var(--ease-out-soft),
+        transform var(--duration-base) var(--ease-out-soft),
+        overlay var(--duration-base) allow-discrete,
+        display var(--duration-base) allow-discrete;
+    }
+
+    .dialog-motion[open] {
+      opacity: 1;
+      transform: none;
+    }
+
+    @starting-style {
+      .dialog-motion[open] {
+        opacity: 0;
+        transform: var(--dialog-from);
+      }
+    }
+
+    @supports (animation-timeline: view()) {
+      .reveal,
+      .reveal-media {
+        animation-timing-function: var(--ease-out-soft);
+        animation-fill-mode: both;
+        animation-timeline: view();
+      }
+
+      .reveal {
+        animation-name: rise;
+        animation-range: entry var(--reveal-shift, 0%) entry calc(160px + var(--reveal-shift, 0%));
+      }
+
+      .reveal-media {
+        animation-name: reveal-media;
+        animation-range: entry 0 entry 220px;
+      }
+    }
+  }
+}
+
+@utility reveal-delay-1 {
+  --reveal-shift: 40px;
+}
+
+@utility reveal-delay-2 {
+  --reveal-shift: 80px;
+}
+
+@utility reveal-delay-3 {
+  --reveal-shift: 120px;
 }
 
 @utility scrollbar-none {

@@ -74,9 +74,9 @@ export function GalleryGrid({ photos, labels, lightbox }: GalleryGridProps) {
         })}
       </div>
 
-      <ul className="columns-2 gap-3 lg:columns-4 lg:gap-5">
+      <ul key={filter} className="columns-2 gap-3 motion-safe:animate-fade lg:columns-4 lg:gap-5">
         {visible.map((photo, index) => (
-          <li key={photo._key} className="mb-3 break-inside-avoid lg:mb-5">
+          <li key={photo._key} className="reveal mb-3 break-inside-avoid lg:mb-5">
             <PhotoTile
               photo={photo}
               label={fillTemplate(lightbox.openPhoto, { alt: photo.alt ?? '' })}

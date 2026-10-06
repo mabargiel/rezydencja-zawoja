@@ -61,12 +61,12 @@ export function Pricing({ language, pricing, labels }: PricingProps) {
         <div className="lg:w-[560px] lg:shrink-0">
           <SectionHeading eyebrow={labels.eyebrow} title={labels.title} />
         </div>
-        <p className="font-body text-[15px] leading-[1.7] text-text-secondary lg:text-base">
+        <p className="reveal reveal-delay-1 font-body text-[15px] leading-[1.7] text-text-secondary lg:text-base">
           {labels.note}
         </p>
       </div>
 
-      <table className="hidden w-full border-collapse text-text-secondary lg:table">
+      <table className="reveal hidden w-full border-collapse text-text-secondary lg:table">
         <thead>
           <tr>
             <th scope="col" className={headClass}>
@@ -113,7 +113,7 @@ export function Pricing({ language, pricing, labels }: PricingProps) {
 
       <ul className="flex flex-col lg:hidden">
         {rates.map(rate => (
-          <li key={rate.key} className="flex flex-col gap-2.5 border-t border-line py-5">
+          <li key={rate.key} className="reveal flex flex-col gap-2.5 border-t border-line py-5">
             <div className="flex justify-between gap-4">
               <span className="font-display text-[19px] text-text-primary">{rate.period}</span>
               <span className="shrink-0 font-body text-base font-medium text-text-primary">
@@ -127,7 +127,7 @@ export function Pricing({ language, pricing, labels }: PricingProps) {
           </li>
         ))}
         {addOns.map(addOn => (
-          <li key={addOn.key} className="flex flex-col gap-2.5 border-t border-line py-5">
+          <li key={addOn.key} className="reveal flex flex-col gap-2.5 border-t border-line py-5">
             <div className="flex justify-between gap-4">
               <span className="font-display text-[19px] text-text-primary">{addOn.name}</span>
               <span className="shrink-0 font-body text-base font-medium text-text-primary">
@@ -143,7 +143,10 @@ export function Pricing({ language, pricing, labels }: PricingProps) {
         {(pricing.facts ?? []).map((fact, index) => {
           const Icon = factIcons[index] ?? Info
           return (
-            <li key={fact._key} className="flex flex-col gap-2.5 border-t border-line pt-[18px]">
+            <li
+              key={fact._key}
+              className="reveal flex flex-col gap-2.5 border-t border-line pt-[18px]"
+            >
               <Icon aria-hidden size={20} strokeWidth={1.5} className="text-accent-warm-deep" />
               <span className="font-body text-sm font-medium text-text-primary lg:text-[15px]">
                 {fact.label}
@@ -156,7 +159,7 @@ export function Pricing({ language, pricing, labels }: PricingProps) {
         })}
       </ul>
 
-      <div className="flex flex-col gap-5 bg-bg-dark p-6 lg:flex-row lg:items-center lg:justify-between lg:px-8 lg:py-7">
+      <div className="reveal flex flex-col gap-5 bg-bg-dark p-6 lg:flex-row lg:items-center lg:justify-between lg:px-8 lg:py-7">
         <div className="flex flex-col gap-1">
           <h3 className="font-display text-[24px] text-text-inverse lg:text-[26px]">
             {labels.bookingTitle}

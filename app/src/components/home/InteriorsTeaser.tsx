@@ -25,17 +25,23 @@ export function InteriorsTeaser({
   return (
     <section className="flex flex-col gap-7 bg-bg px-5 py-14 lg:flex-row lg:items-center lg:gap-[110px] lg:px-[120px] lg:py-[130px]">
       <div className="relative h-[320px] overflow-hidden bg-line lg:h-[680px] lg:w-[560px] lg:shrink-0">
-        {photo && <SanityImage photo={photo} sizes="(min-width: 1024px) 560px, 100vw" />}
+        {photo && (
+          <SanityImage
+            photo={photo}
+            sizes="(min-width: 1024px) 560px, 100vw"
+            className="reveal-media"
+          />
+        )}
       </div>
       <div className="flex flex-col gap-6 lg:gap-[26px]">
         <SectionHeading eyebrow={eyebrow} title={title} />
-        <p className="font-body text-[15px] leading-[1.7] text-text-secondary lg:text-base">
+        <p className="reveal reveal-delay-1 font-body text-[15px] leading-[1.7] text-text-secondary lg:text-base">
           {body}
         </p>
         {features.map(feature => (
           <div
             key={feature.title}
-            className="flex flex-col gap-2 border-t border-line pt-5 lg:pt-[22px]"
+            className="reveal flex flex-col gap-2 border-t border-line pt-5 lg:pt-[22px]"
           >
             <h3 className="font-display text-[22px] text-text-primary lg:text-2xl">
               {feature.title}
@@ -45,7 +51,7 @@ export function InteriorsTeaser({
             </p>
           </div>
         ))}
-        <TextLink href={link.href} className="pt-2.5">
+        <TextLink href={link.href} className="reveal pt-2.5">
           {link.label}
         </TextLink>
       </div>

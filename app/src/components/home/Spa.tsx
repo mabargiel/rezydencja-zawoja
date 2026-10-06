@@ -40,18 +40,18 @@ export function Spa({ eyebrow, title, body, saltGrotto, hotTub, sauna, amenities
         <div className="lg:w-[560px] lg:shrink-0">
           <SectionHeading eyebrow={eyebrow} title={title} tone="dark" />
         </div>
-        <p className="font-body text-[15px] leading-[1.7] text-text-inverse-dim lg:text-base">
+        <p className="reveal reveal-delay-1 font-body text-[15px] leading-[1.7] text-text-inverse-dim lg:text-base">
           {body}
         </p>
       </div>
 
       <div className="grid gap-10 lg:grid-cols-3 lg:gap-6">
-        <FeatureCard icon={Gem} {...saltGrotto} />
-        <FeatureCard icon={Waves} {...hotTub} />
-        <FeatureCard icon={Flame} {...sauna} />
+        <FeatureCard icon={Gem} {...saltGrotto} className="reveal" />
+        <FeatureCard icon={Waves} {...hotTub} className="reveal reveal-delay-1" />
+        <FeatureCard icon={Flame} {...sauna} className="reveal reveal-delay-2" />
       </div>
 
-      <div className="lg:pt-5">
+      <div className="reveal lg:pt-5">
         <AmenityList
           items={[
             { icon: Droplets, label: amenities.jacuzzi },

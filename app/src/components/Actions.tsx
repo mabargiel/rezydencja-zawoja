@@ -14,10 +14,15 @@ export function ButtonPrimary({ href, children, className = '' }: ActionProps) {
   return (
     <Link
       href={href}
-      className={`${label} inline-flex items-center justify-center gap-2.5 bg-accent px-8 py-4 tracking-[2px] text-surface transition-colors hover:bg-bg-dark ${className}`}
+      className={`${label} group inline-flex items-center justify-center gap-2.5 bg-accent px-8 py-4 tracking-[2px] text-surface transition-colors hover:bg-bg-dark ${className}`}
     >
       {children}
-      <ArrowRight aria-hidden size={16} strokeWidth={1.75} />
+      <ArrowRight
+        aria-hidden
+        size={16}
+        strokeWidth={1.75}
+        className="transition-transform duration-(--duration-fast) ease-out-soft group-hover:translate-x-1 motion-reduce:transition-none"
+      />
     </Link>
   )
 }
@@ -55,7 +60,7 @@ export function TextLink({ href, children, className = '' }: ActionProps) {
         aria-hidden
         size={15}
         strokeWidth={1.75}
-        className="transition-transform group-hover:translate-x-1"
+        className="transition-transform duration-(--duration-fast) ease-out-soft group-hover:translate-x-1 motion-reduce:transition-none"
       />
     </Link>
   )

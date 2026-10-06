@@ -8,11 +8,18 @@ type FeatureCardProps = {
   title: string
   description: string
   photo?: ResolvedPhoto | null
+  className?: string
 }
 
-export function FeatureCard({ icon: Icon, title, description, photo }: FeatureCardProps) {
+export function FeatureCard({
+  icon: Icon,
+  title,
+  description,
+  photo,
+  className = '',
+}: FeatureCardProps) {
   return (
-    <article className="flex flex-col">
+    <article className={`flex flex-col ${className}`}>
       <div className="relative h-[220px] overflow-hidden bg-bg lg:h-[400px]">
         {photo && <SanityImage photo={photo} sizes="(min-width: 1024px) 33vw, 100vw" />}
       </div>

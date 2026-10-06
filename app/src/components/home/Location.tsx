@@ -20,12 +20,12 @@ export function Location({ eyebrow, title, body, facts, photo }: LocationProps) 
 
       <div className="flex flex-col gap-5 lg:max-w-[640px]">
         <SectionHeading eyebrow={eyebrow} title={title} tone="dark" />
-        <p className="font-body text-[15px] leading-[1.7] text-text-inverse-dim lg:max-w-[520px] lg:text-base">
+        <p className="reveal reveal-delay-1 font-body text-[15px] leading-[1.7] text-text-inverse-dim lg:max-w-[520px] lg:text-base">
           {body}
         </p>
       </div>
 
-      <ul className="grid grid-cols-3 gap-4 border-t border-line-inverse pt-5 lg:mt-10 lg:grid-cols-5 lg:gap-0 lg:pt-[26px]">
+      <ul className="reveal reveal-delay-2 grid grid-cols-3 gap-4 border-t border-line-inverse pt-5 lg:mt-10 lg:grid-cols-5 lg:gap-0 lg:pt-[26px]">
         {facts.map(fact => (
           <li
             key={fact.title}
