@@ -21,10 +21,6 @@ const addOnNote = `coalesce(note[language == $lng][0].value, note[language == "p
 const factLabel = `coalesce(label[language == $lng][0].value, label[language == "pl"][0].value)`
 const factValue = `coalesce(value[language == $lng][0].value, value[language == "pl"][0].value)`
 
-export const pageHeaderQuery = defineQuery(`*[_id == $page][0]{
-  header{ ${resolvedSlot} }
-}`)
-
 export const homePageQuery = defineQuery(`{
   "home": *[_id == "homePage"][0]{
     hero{
@@ -71,4 +67,9 @@ export const surroundingsPageQuery = defineQuery(`*[_id == "surroundingsPage"][0
 export const galleryPageQuery = defineQuery(`*[_id == "galleryPage"][0]{
   header{ ${resolvedSlot} },
   "photos": photos[]->{ "_key": _id, category, ${photoFields} }
+}`)
+
+export const contactPageQuery = defineQuery(`*[_id == "contactPage"][0]{
+  header{ ${resolvedSlot} },
+  map{ ${resolvedSlot} }
 }`)

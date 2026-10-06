@@ -1,9 +1,16 @@
 export const site = {
+  address: ['Zawoja Mosorne 2853', '34-222 Zawoja'],
+  checkIn: '16:00',
+  checkOut: '10:00',
+  coordinates: { lat: 49.64051614064316, lng: 19.558586753262016 },
   email: 'biuro@rezydencjazawoja.pl',
+  mapAttribution: '© Microsoft, © TomTom',
   phone: '+48 500 290 390',
 } as const
 
 export const phoneHref = `tel:${site.phone.replaceAll(' ', '')}`
+
+export const mapsHref = `https://www.google.com/maps/search/?api=1&query=${site.coordinates.lat},${site.coordinates.lng}`
 
 export type PageKey = 'home' | 'interiors' | 'surroundings' | 'gallery' | 'contact'
 

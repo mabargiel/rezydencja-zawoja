@@ -1,6 +1,6 @@
-import type { PageHeaderQueryResult } from './types'
+import type { ContactPageQueryResult } from './types'
 
-type HeaderSlot = NonNullable<NonNullable<PageHeaderQueryResult>['header']>
+type HeaderSlot = NonNullable<NonNullable<ContactPageQueryResult>['header']>
 
 export type ResolvedPhoto = NonNullable<HeaderSlot['photo']>
 

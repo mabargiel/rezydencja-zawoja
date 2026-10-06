@@ -12,6 +12,9 @@
   --color-accent-warm: #b99a5f;
   --color-accent-warm-deep: #7a5d2e;
   --color-line: #ddd8cc;
+  --color-error: #9b3b2b;
+  --color-error-tint: #9b3b2b0f;
+  --color-text-placeholder: #737769;
   --color-line-inverse: #f7f5ef26;
   --color-line-inverse-strong: #f7f5ef40;
   --color-scrim-lightbox: #0f130ff2;
