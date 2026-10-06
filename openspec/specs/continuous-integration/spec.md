@@ -4,7 +4,7 @@
 TBD - created by archiving change monorepo-foundation. Update Purpose after archive.
 ## Requirements
 ### Requirement: CI checks on every pull request
-A GitHub Actions workflow SHALL run `npm ci`, then Prettier check, ESLint, Stylelint, typecheck and build for both workspaces, on every pull request and on every push to `main`. It SHALL use the Node version pinned in `.nvmrc`.
+A GitHub Actions workflow SHALL run `npm ci`, then Prettier check, ESLint, Stylelint, the unused-code check (knip), typecheck and build for both workspaces, on every pull request and on every push to `main`. It SHALL use the Node version pinned in `.nvmrc`.
 
 #### Scenario: Passing change
 - **WHEN** a pull request builds and lints cleanly in both `app` and `cms`
@@ -17,6 +17,14 @@ A GitHub Actions workflow SHALL run `npm ci`, then Prettier check, ESLint, Style
 #### Scenario: Type error blocks merge
 - **WHEN** a pull request introduces a TypeScript error in `app`
 - **THEN** the CI check fails at the typecheck step
+
+#### Scenario: Unused code blocks merge
+- **WHEN** a pull request leaves an unused file, export or dependency in `app` or `cms`
+- **THEN** the CI check fails at the knip step
+
+#### Scenario: Entry points are not reported
+- **WHEN** knip runs on the repository
+- **THEN** the CMS scripts run with `sanity exec`, the Next image loader and the generated Sanity types are not reported as unused
 
 ### Requirement: Studio deployment from main
 A GitHub Actions workflow SHALL run `sanity deploy` when a push to `main` changes files under `cms/`, authenticated with the `SANITY_AUTH_TOKEN` repository secret.
