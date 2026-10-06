@@ -347,6 +347,9 @@ export const pl = {
         consent: 'Zaznacz zgodę, abyśmy mogli odpowiedzieć na zapytanie.',
         failedTitle: 'Nie udało się wysłać zapytania.',
         failedBody: 'Spróbujcie ponownie za chwilę albo skontaktujcie się bezpośrednio:',
+        limitedTitle: 'Za dużo prób wysłania.',
+        limitedBody:
+          'Odczekajcie kilka minut i spróbujcie ponownie albo skontaktujcie się bezpośrednio:',
       },
       sent: {
         eyebrow: 'Zapytanie wysłane',
