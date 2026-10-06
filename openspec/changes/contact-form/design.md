@@ -79,9 +79,10 @@ Without JavaScript the fields start empty, and the guest retypes the dates. That
   - `address` (two lines);
   - `checkIn: '16:00'` and `checkOut: '10:00'`;
   - `coordinates: { lat: 49.64051614064316, lng: 19.558586753262016 }`;
-  - `mapsHref`, a Google Maps search URL built from the coordinates.
+  - `mapsHref`: `https://www.google.com/maps/search/?api=1&query=<lat>,<lng>`, built from the coordinates.
 - Translated labels come from the catalogs: "Przyjazd od {{time}}".
-- The map is the CMS image (`SanityImage`, cover; D8). The marker is markup on top of it, and the whole image links to `mapsHref` in a new tab.
+- The map is the CMS image (`SanityImage`, cover; D8). The marker is markup on top of it, positioned so the pin's tip sits at the exact centre. The whole map, marker included, is one `<a>` to `mapsHref` (`target="_blank"`, `rel="noopener"`).
+- **Marker contrast:** `accent-warm` measured only 1.9–2.6:1 against the map's greens, so the pin is `bg-dark` with a light outline and an `accent-warm` centre dot (11–15:1), on a short stem whose tip marks the house.
 
 ### D8. Map: an Azure Maps static image, generated once and stored in the CMS
 - `cms/scripts/map.ts` (`npm run map -w cms`) calls the Azure Maps Render API (`GET https://atlas.microsoft.com/map/static`, current `api-version`):

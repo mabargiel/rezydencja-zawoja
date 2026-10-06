@@ -27,11 +27,15 @@ The contact card SHALL show the house name, then the address, phone, email and s
 - **THEN** the labels and stay times are in German, and the phone, email and address are unchanged
 
 ### Requirement: Directions with map
-The directions section SHALL show an eyebrow, a title and the coordinates as a link that opens the location in Google Maps in a new tab, followed by the `contactPage.map` image from the CMS with a "Rezydencja Zawoja" marker centred on it. The map image SHALL also link to the same location, have translated alt text, and show the map provider's copyright notice.
+The directions section SHALL show an eyebrow, a title and the coordinates as a link that opens the location in Google Maps in a new tab, followed by the `contactPage.map` image from the CMS with a "Rezydencja Zawoja" marker whose tip sits exactly on the house at the centre of the map. The whole map, including the marker, SHALL be one link to the same Google Maps location, with translated alt text and an accessible name saying it opens Google Maps. The map SHALL show the map provider's copyright notice. The marker SHALL have at least 3:1 contrast against the map (WCAG 1.4.11): a `bg-dark` pin with a light outline and an `accent-warm` centre, under a `bg-dark` label.
 
 #### Scenario: Open in maps
-- **WHEN** a visitor activates the coordinates link or the map image
-- **THEN** Google Maps opens at 49.64051614064316, 19.558586753262016 in a new tab
+- **WHEN** a visitor clicks anywhere on the map, or the coordinates link
+- **THEN** `https://www.google.com/maps/search/?api=1&query=49.64051614064316,19.558586753262016` opens in a new tab
+
+#### Scenario: Marker contrast
+- **WHEN** the marker is measured against the map colours around it
+- **THEN** the pin reaches at least 3:1 contrast
 
 #### Scenario: Map comes from the CMS
 - **WHEN** an editor replaces the map photo in `contactPage.map`
