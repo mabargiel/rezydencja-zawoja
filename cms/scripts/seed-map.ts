@@ -1,5 +1,4 @@
-type Localized = { pl: string; en: string; de: string }
-type Category = 'interiors' | 'spa' | 'terraceGarden' | 'surroundings'
+import type { Category, Localized } from './localized'
 
 export type PhotoSeed = { file: string; category: Category; alt: Localized }
 
@@ -295,12 +294,6 @@ export const photos: PhotoSeed[] = [
 ]
 
 export const azureMapPhotoId = 'photo-azure-map'
-
-export const photoId = (file: string) =>
-  `photo-${file
-    .replace(/\.[^.]+$/, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')}`
 
 export const layout = {
   homePage: {

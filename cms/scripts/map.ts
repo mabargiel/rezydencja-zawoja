@@ -1,5 +1,6 @@
 import { getCliClient } from 'sanity/cli'
 
+import { localizedArray } from './localized'
 import { azureMapPhotoId } from './seed-map'
 
 const client = getCliClient({ apiVersion: '2026-09-01' })
@@ -8,9 +9,11 @@ process.loadEnvFile('.env')
 
 const house = { lat: 49.64051614064316, lng: 19.558586753262016 }
 
-// Azure caps static images at 2000px wide; the height keeps the design's 1440×560 map ratio.
-const width = 2000
-const height = Math.round((width * 560) / 1440)
+const azureMaxWidth = 2000
+const designMapRatio = 560 / 1440
+
+const width = azureMaxWidth
+const height = Math.round(width * designMapRatio)
 
 async function renderMap() {
   const key = process.env.AZURE_MAPS_KEY
@@ -41,26 +44,11 @@ const asset = await client.assets.upload('image', await renderMap(), {
 await client.createOrReplace({
   _id: azureMapPhotoId,
   _type: 'photo',
-  alt: [
-    {
-      _key: 'pl',
-      _type: 'internationalizedArrayStringValue',
-      language: 'pl',
-      value: 'Mapa Zawoi z położeniem Rezydencji Zawoja w Zawoi Mosorne',
-    },
-    {
-      _key: 'en',
-      _type: 'internationalizedArrayStringValue',
-      language: 'en',
-      value: 'Map of Zawoja showing Rezydencja Zawoja in Zawoja Mosorne',
-    },
-    {
-      _key: 'de',
-      _type: 'internationalizedArrayStringValue',
-      language: 'de',
-      value: 'Karte von Zawoja mit der Lage der Rezydencja Zawoja in Zawoja Mosorne',
-    },
-  ],
+  alt: localizedArray({
+    de: 'Karte von Zawoja mit der Lage der Rezydencja Zawoja in Zawoja Mosorne',
+    en: 'Map of Zawoja showing Rezydencja Zawoja in Zawoja Mosorne',
+    pl: 'Mapa Zawoi z położeniem Rezydencji Zawoja w Zawoi Mosorne',
+  }),
   category: 'surroundings',
   image: {
     _type: 'image',

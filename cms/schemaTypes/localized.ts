@@ -16,3 +16,8 @@ export const localizedValidation = (rule: Rule) => [
     })
     .warning(),
 ]
+
+export const polishText = (items: unknown) =>
+  Array.isArray(items)
+    ? items.find((item: LocalizedItem) => item.language === 'pl')?.value
+    : undefined
