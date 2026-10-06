@@ -25,6 +25,16 @@ export const pl = {
       title: 'Kontakt',
       description: 'Zapytaj o wolny termin w Rezydencji Zawoja. Odpowiadamy tego samego dnia.',
     },
+    privacyPolicy: {
+      title: 'Polityka prywatności',
+      description:
+        'Jak Rezydencja Zawoja przetwarza dane osobowe z formularza zapytania i rezerwacji.',
+    },
+    rentalTerms: {
+      title: 'Regulamin najmu',
+      description:
+        'Zasady rezerwacji i pobytu w Rezydencji Zawoja: zaliczka, depozyt, anulacja, przyjazd i wyjazd.',
+    },
   },
   nav: {
     label: 'Nawigacja główna',
@@ -45,6 +55,7 @@ export const pl = {
     navigation: 'Nawigacja w stopce',
     address: 'Zawoja, Beskidy, u stóp Babiej Góry',
     copyright: '© {{year}} Rezydencja Zawoja. Wszelkie prawa zastrzeżone.',
+    legal: 'Dokumenty',
   },
   home: {
     hero: {
@@ -167,6 +178,13 @@ export const pl = {
     children: 'Dzieci: {{count}}',
     closing: 'W razie pytań odpowiedzcie na tę wiadomość lub zadzwońcie: {{phone}}.',
     signature: 'Pozdrawiamy serdecznie\nRezydencja Zawoja\n{{email}}',
+  },
+  legal: {
+    eyebrow: 'Dokumenty',
+    updated: 'Ostatnia aktualizacja: {{date}}',
+    translationNote: 'To jest tłumaczenie pomocnicze. Wiążąca jest wersja polska.',
+    translationLink: 'Przeczytaj wersję polską',
+    fallbackNote: 'Ten dokument jest dostępny tylko po polsku.',
   },
   pages: {
     interiors: {
@@ -331,7 +349,8 @@ export const pl = {
         children: 'Dzieci',
         message: 'Wiadomość (opcjonalnie)',
         messagePlaceholder: 'Pytania, szczególne życzenia, pora przyjazdu…',
-        consent: 'Wyrażam zgodę na przetwarzanie moich danych na potrzeby procesu rezerwacji.',
+        consent: 'Wyrażam zgodę na {{link}} na potrzeby procesu rezerwacji.',
+        consentLink: 'przetwarzanie moich danych',
         submit: 'Wyślij zapytanie',
         sending: 'Wysyłanie…',
         honeypot: 'Zostaw to pole puste',

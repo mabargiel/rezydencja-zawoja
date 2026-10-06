@@ -3,6 +3,7 @@ import { ImagesIcon } from '@sanity/icons/Images'
 import type { StructureBuilder, StructureResolver } from 'sanity/structure'
 
 import { singletons, type SingletonType } from './constants'
+import { legalPages } from './schemaTypes/documents/legalPage'
 import { photoCategories } from './schemaTypes/documents/photo'
 
 const singleton = (S: StructureBuilder, type: SingletonType) =>
@@ -31,7 +32,17 @@ export const structure: StructureResolver = S =>
         .child(
           S.list()
             .title('Strony')
-            .items(pages.map(type => singleton(S, type)))
+            .items([
+              ...pages.map(type => singleton(S, type)),
+              S.divider(),
+              ...Object.entries(legalPages).map(([id, title]) =>
+                S.listItem()
+                  .id(id)
+                  .title(title)
+                  .schemaType('legalPage')
+                  .child(S.document().schemaType('legalPage').documentId(id).title(title))
+              ),
+            ])
         ),
       singleton(S, 'pricing'),
       S.divider(),

@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { navItems, phoneHref, site } from '@/config/site'
+import { navItems, pagePaths, phoneHref, site } from '@/config/site'
 import { getLanguage, getT } from '@/i18n/server'
+
+const legalPages = ['privacyPolicy', 'rentalTerms'] as const
 
 export async function Footer() {
   const [language, t] = await Promise.all([getLanguage(), getT()])
@@ -49,9 +51,23 @@ export async function Footer() {
         </nav>
       </div>
 
-      <p className="border-t border-line-inverse pt-6 text-[11.5px] lg:text-[12.5px] lg:font-light">
-        {t('footer.copyright', { year: new Date().getFullYear() })}
-      </p>
+      <div className="flex flex-col gap-3.5 border-t border-line-inverse pt-6 text-[11.5px] lg:flex-row lg:items-center lg:justify-between lg:text-[12.5px] lg:font-light">
+        <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
+        <nav aria-label={t('footer.legal')}>
+          <ul className="flex flex-col gap-2.5 lg:flex-row lg:gap-7">
+            {legalPages.map(page => (
+              <li key={page}>
+                <Link
+                  href={`/${language}${pagePaths[page]}`}
+                  className="transition-colors hover:text-text-inverse"
+                >
+                  {t(`meta.${page}.title`)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </footer>
   )
 }

@@ -23,6 +23,7 @@ export type ContactFormProps = {
   copy: Pick<ContactCopy, 'form' | 'errors' | 'sent'>
   language: Language
   contactHref: string
+  privacyHref: string
   defaults?: InquiryValues
 }
 
@@ -31,7 +32,13 @@ const initialState: InquiryState = { status: 'idle' }
 const inputClass =
   'w-full border bg-surface px-3.5 py-3 font-body text-[14.5px] text-text-primary outline-none transition-colors placeholder:text-text-placeholder focus:border-accent lg:px-4 lg:py-3.5 lg:text-[15px]'
 
-export function ContactForm({ copy, language, contactHref, defaults = {} }: ContactFormProps) {
+export function ContactForm({
+  copy,
+  language,
+  contactHref,
+  privacyHref,
+  defaults = {},
+}: ContactFormProps) {
   const [state, formAction] = useActionState(sendInquiry, initialState)
   const { form, errors, sent } = copy
 
@@ -153,7 +160,7 @@ export function ContactForm({ copy, language, contactHref, defaults = {} }: Cont
             aria-describedby={errorFor('consent') ? 'consent-error' : undefined}
             className={`mt-0.5 size-[18px] shrink-0 accent-accent lg:mt-0 ${errorFor('consent') ? 'outline outline-1 outline-error' : ''}`}
           />
-          {form.consent}
+          <ConsentText text={form.consent} linkText={form.consentLink} href={privacyHref} />
         </label>
         <FieldError field="consent" message={errorFor('consent')} />
       </div>
@@ -167,5 +174,29 @@ export function ContactForm({ copy, language, contactHref, defaults = {} }: Cont
 
       <SubmitButton label={form.submit} pendingLabel={form.sending} />
     </form>
+  )
+}
+
+type ConsentTextProps = {
+  text: string
+  linkText: string
+  href: string
+}
+
+function ConsentText({ text, linkText, href }: ConsentTextProps) {
+  const [before, after = ''] = text.split('{{link}}')
+  return (
+    <span>
+      {before}
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener"
+        className="text-accent underline underline-offset-2 hover:text-bg-dark"
+      >
+        {linkText}
+      </a>
+      {after}
+    </span>
   )
 }

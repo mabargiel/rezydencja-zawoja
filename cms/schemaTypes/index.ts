@@ -1,5 +1,6 @@
 import type { SchemaTypeDefinition } from 'sanity'
 
+import { legalPage } from './documents/legalPage'
 import { photo } from './documents/photo'
 import { mediaSlot } from './objects/mediaSlot'
 import { videoSlot } from './objects/videoSlot'
@@ -22,4 +23,5 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   surroundingsPage,
   galleryPage,
   contactPage,
+  legalPage,
 ]

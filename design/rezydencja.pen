@@ -27900,6 +27900,1439 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "q4lnf",
+      "x": 17261,
+      "y": -4500,
+      "name": "Legal Page Desktop",
+      "clip": true,
+      "width": 1440,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Kk0ae",
+          "name": "Page Header",
+          "clip": true,
+          "width": "fill_container",
+          "fill": "$bg-dark",
+          "layout": "vertical",
+          "gap": 64,
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "NxqN1",
+              "name": "Nav",
+              "width": "fill_container",
+              "padding": [
+                28,
+                64
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "GD51c",
+                  "name": "Brand Logo",
+                  "width": 78,
+                  "height": 50,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "images/logo-light.png",
+                    "mode": "fit"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "I4lBJ3",
+                  "name": "Nav Links",
+                  "gap": 36,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "MHjOM",
+                      "name": "Link Dom",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Dom",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "A3qMA",
+                      "name": "Link Wnętrza",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Wnętrza",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "gFtFC",
+                      "name": "Link Okolica",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Okolica",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "k7aNxb",
+                      "name": "Link Galeria",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Galeria",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "Hobc5",
+                      "name": "Link Cennik",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Cennik",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "S7YY01",
+                      "name": "Link Kontakt",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Kontakt",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "RFxDR",
+                  "name": "Nav CTA",
+                  "fill": "#10160F4D",
+                  "stroke": "$text-inverse",
+                  "strokeWidth": 1,
+                  "gap": 8,
+                  "padding": [
+                    12,
+                    28
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ZDhBS",
+                      "name": "Nav CTA Label",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "REZERWUJ",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "500",
+                      "letterSpacing": 2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "x99pSz",
+              "name": "Header Title Block",
+              "width": 820,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                8,
+                64,
+                64,
+                64
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "L4DdXv",
+                  "name": "Header Eyebrow Row",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "SoNZa",
+                      "name": "Eyebrow Rule",
+                      "width": 26,
+                      "height": 2,
+                      "fill": "$accent-warm"
+                    },
+                    {
+                      "type": "text",
+                      "id": "kCe02",
+                      "name": "Header Eyebrow",
+                      "fill": "$accent-warm",
+                      "content": "DOKUMENTY",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal",
+                      "letterSpacing": 6
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "M8x9Pv",
+                  "name": "Header Title",
+                  "fill": "$text-inverse",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000099",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 10
+                  },
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Polityka prywatności",
+                  "lineHeight": 1.04,
+                  "fontFamily": "$font-display",
+                  "fontSize": 56,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "HDO2h",
+                  "name": "Header Intro",
+                  "fill": "$text-inverse-dim",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000099",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 6
+                  },
+                  "textGrowth": "fixed-width",
+                  "width": 660,
+                  "content": "Ostatnia aktualizacja: 6 października 2026",
+                  "lineHeight": 1.6,
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "lddEo",
+          "name": "Legal Body",
+          "width": "fill_container",
+          "fill": "$bg",
+          "layout": "vertical",
+          "padding": [
+            80,
+            120,
+            100,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "JHgBO",
+              "name": "Legal Column",
+              "width": 760,
+              "layout": "vertical",
+              "gap": 18,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GGmMG",
+                  "name": "H2",
+                  "fill": "$text-primary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "1. Administrator danych",
+                  "lineHeight": 1.15,
+                  "fontFamily": "$font-display",
+                  "fontSize": 30,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "GrVbR",
+                  "name": "Paragraph",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Administratorem danych osobowych jest TURAM Agata Małecka-Bargiel, ul. Słoneczna 54, 30-199 Rząska, prowadząca Rezydencję Zawoja (Zawoja 2853, 34-222 Zawoja). W sprawach danych osobowych prosimy o kontakt: biuro@rezydencjazawoja.pl.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "d3YvWd",
+                  "name": "Section Gap",
+                  "width": 1,
+                  "height": 14
+                },
+                {
+                  "type": "text",
+                  "id": "GDrvr",
+                  "name": "H2",
+                  "fill": "$text-primary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "2. Jakie dane przetwarzamy i dlaczego",
+                  "lineHeight": 1.15,
+                  "fontFamily": "$font-display",
+                  "fontSize": 30,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "au56B",
+                  "name": "Paragraph",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Formularz zapytania zbiera imię i nazwisko, adres e-mail, numer telefonu, termin pobytu, liczbę gości i treść wiadomości. Dane przetwarzamy w następujących celach:",
+                  "lineHeight": 1.7,
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "JnYN2",
+                  "name": "List",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": [
+                    2,
+                    0,
+                    2,
+                    4
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "GTPwC",
+                      "name": "List Item",
+                      "width": "fill_container",
+                      "gap": 14,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "J7t68w",
+                          "name": "Bullet Wrap",
+                          "width": 6,
+                          "height": 27,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "ellipse",
+                              "id": "YCgoc",
+                              "name": "Bullet",
+                              "fill": "$accent-warm",
+                              "width": 6,
+                              "height": 6
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "AlPy0",
+                          "name": "Item Text",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "odpowiedź na zapytanie i działania przed zawarciem umowy najmu (art. 6 ust. 1 lit. b RODO),",
+                          "lineHeight": 1.7,
+                          "fontFamily": "$font-body",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "lWgIB",
+                      "name": "List Item",
+                      "width": "fill_container",
+                      "gap": 14,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "y7jiP",
+                          "name": "Bullet Wrap",
+                          "width": 6,
+                          "height": 27,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "ellipse",
+                              "id": "NcWYe",
+                              "name": "Bullet",
+                              "fill": "$accent-warm",
+                              "width": 6,
+                              "height": 6
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "kqMpc",
+                          "name": "Item Text",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "zawarcie i wykonanie umowy najmu (art. 6 ust. 1 lit. b RODO),",
+                          "lineHeight": 1.7,
+                          "fontFamily": "$font-body",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Q8uqs",
+                      "name": "List Item",
+                      "width": "fill_container",
+                      "gap": 14,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "efl7s",
+                          "name": "Bullet Wrap",
+                          "width": 6,
+                          "height": 27,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "ellipse",
+                              "id": "RfWxp",
+                              "name": "Bullet",
+                              "fill": "$accent-warm",
+                              "width": 6,
+                              "height": 6
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "P4mEfM",
+                          "name": "Item Text",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "wypełnienie obowiązków księgowych i podatkowych (art. 6 ust. 1 lit. c RODO).",
+                          "lineHeight": 1.7,
+                          "fontFamily": "$font-body",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "l2gBF",
+                  "name": "Section Gap",
+                  "width": 1,
+                  "height": 14
+                },
+                {
+                  "type": "text",
+                  "id": "Xw2av",
+                  "name": "H3",
+                  "fill": "$text-primary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Pliki cookies",
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.3
+                },
+                {
+                  "type": "text",
+                  "id": "Jy5zb",
+                  "name": "Paragraph With Link",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Strona zapisuje tylko jedno ciasteczko, lng, które zapamiętuje wybrany język. Nie używamy cookies analitycznych ani reklamowych.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "osKrZ",
+                  "name": "Paragraph Link Row",
+                  "width": "fill_container",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Khxoe",
+                      "name": "Link Lead",
+                      "fill": "$text-secondary",
+                      "content": "Skargę można złożyć do Prezesa UODO:",
+                      "lineHeight": 1.7,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "V1Pc9",
+                      "name": "Link",
+                      "fill": "$accent",
+                      "content": "uodo.gov.pl",
+                      "lineHeight": 1.7,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "uNyLD",
+          "name": "Stopka",
+          "width": "fill_container",
+          "fill": "$bg-dark",
+          "layout": "vertical",
+          "gap": 50,
+          "padding": [
+            70,
+            120,
+            40,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "MAr6E",
+              "name": "Stopka Top",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "SGZSY",
+                  "name": "Stopka Brand",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "L2phJ",
+                      "name": "Brand Logo",
+                      "width": 91,
+                      "height": 58,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/logo-light.png",
+                        "mode": "fit"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "s5PiEe",
+                      "name": "Stopka Kontakt",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": [
+                        18,
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "SNY7t",
+                          "name": "Stopka Adres",
+                          "fill": "$text-inverse-dim",
+                          "content": "Zawoja, Beskidy, u stóp Babiej Góry",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "n4xJyI",
+                          "name": "Stopka Tel",
+                          "fill": "$text-inverse-dim",
+                          "content": "+48 500 290 390",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "togP6",
+                          "name": "Stopka Email",
+                          "fill": "$text-inverse-dim",
+                          "content": "biuro@rezydencjazawoja.pl",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CZ81D",
+                  "name": "Stopka Nav",
+                  "gap": 36,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "QM4yH",
+                      "name": "Stopka Link Dom",
+                      "fill": "$text-inverse-dim",
+                      "content": "Dom",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "gP3KH",
+                      "name": "Stopka Link Wnętrza",
+                      "fill": "$text-inverse-dim",
+                      "content": "Wnętrza",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "b8UPx",
+                      "name": "Stopka Link Okolica",
+                      "fill": "$text-inverse-dim",
+                      "content": "Okolica",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "DEsX2",
+                      "name": "Stopka Link Galeria",
+                      "fill": "$text-inverse-dim",
+                      "content": "Galeria",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "TtYtm",
+                      "name": "Stopka Link Cennik",
+                      "fill": "$text-inverse-dim",
+                      "content": "Cennik",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "Gwlew",
+                      "name": "Stopka Link Kontakt",
+                      "fill": "$text-inverse-dim",
+                      "content": "Kontakt",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "U83RlA",
+              "name": "Stopka Bottom",
+              "width": "fill_container",
+              "stroke": "#F7F5EF26",
+              "strokeWidth": {
+                "top": 1
+              },
+              "padding": [
+                24,
+                0,
+                0,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "muUIf",
+                  "name": "Stopka Copyright",
+                  "fill": "$text-inverse-dim",
+                  "content": "© 2026 Rezydencja Zawoja. Wszelkie prawa zastrzeżone.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12.5,
+                  "fontWeight": "300"
+                },
+                {
+                  "type": "frame",
+                  "id": "l1Y5ui",
+                  "name": "Stopka Legal",
+                  "gap": 28,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "C1wog6",
+                      "name": "Legal 1",
+                      "fill": "$text-inverse-dim",
+                      "content": "Polityka prywatności",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12.5,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "text",
+                      "id": "w3ud3H",
+                      "name": "Legal 2",
+                      "fill": "$text-inverse-dim",
+                      "content": "Regulamin najmu",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12.5,
+                      "fontWeight": "300"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "GJT76",
+      "x": 18861,
+      "y": -4500,
+      "name": "Legal Page Mobile (EN)",
+      "clip": true,
+      "width": 390,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "gcAzJ",
+          "name": "M Page Header",
+          "clip": true,
+          "width": "fill_container",
+          "fill": "$bg-dark",
+          "layout": "vertical",
+          "gap": 40,
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "xgdVa",
+              "name": "M Nav",
+              "width": "fill_container",
+              "padding": [
+                22,
+                20
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "KcgGn",
+                  "name": "Brand Logo",
+                  "width": 63,
+                  "height": 40,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "images/logo-light.png",
+                    "mode": "fit"
+                  }
+                },
+                {
+                  "type": "icon",
+                  "id": "K44hoX",
+                  "name": "M Menu Icon",
+                  "width": 24,
+                  "height": 24,
+                  "icon": "menu",
+                  "library": "lucide",
+                  "fill": "$text-inverse"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "f61iJq",
+              "name": "M Header Title",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "padding": [
+                0,
+                20,
+                36,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "g5l8a",
+                  "name": "Eyebrow Row",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Wqqab",
+                      "name": "Eyebrow Rule",
+                      "width": 22,
+                      "height": 2,
+                      "fill": "$accent-warm"
+                    },
+                    {
+                      "type": "text",
+                      "id": "jgwXz",
+                      "name": "M Header Eyebrow",
+                      "fill": "$accent-warm",
+                      "content": "DOCUMENTS",
+                      "fontFamily": "$font-body",
+                      "fontSize": 10.5,
+                      "fontWeight": "normal",
+                      "letterSpacing": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "jip0z",
+                  "name": "M Header Title",
+                  "fill": "$text-inverse",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000099",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 8
+                  },
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Privacy policy",
+                  "lineHeight": 1.05,
+                  "fontFamily": "$font-display",
+                  "fontSize": 36,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "q32Lt2",
+                  "name": "M Header Intro",
+                  "fill": "$text-inverse-dim",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000099",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 8
+                  },
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Last updated: 6 October 2026",
+                  "lineHeight": 1.55,
+                  "fontFamily": "$font-body",
+                  "fontSize": 13.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "mZLuT",
+          "name": "M Legal Body",
+          "width": "fill_container",
+          "fill": "$bg",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            36,
+            20,
+            56,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "u2jc4b",
+              "name": "Binding Note",
+              "width": "fill_container",
+              "fill": "$surface",
+              "stroke": "$line",
+              "gap": 10,
+              "padding": [
+                14,
+                16
+              ],
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "b1iEha",
+                  "name": "Note Icon",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "languages",
+                  "library": "lucide",
+                  "fill": "$accent-warm-deep"
+                },
+                {
+                  "type": "frame",
+                  "id": "cSBj9",
+                  "name": "Note Text",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "s3EKny",
+                      "name": "Note Body",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "This is a translation for your convenience. The Polish version is legally binding.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "E9v8Uw",
+                      "name": "Note Link",
+                      "fill": "$accent",
+                      "content": "Read the Polish version",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "G2WR6",
+              "name": "Section Gap",
+              "width": 1,
+              "height": 4
+            },
+            {
+              "type": "text",
+              "id": "G8qusZ",
+              "name": "H2",
+              "fill": "$text-primary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "1. Data controller",
+              "lineHeight": 1.15,
+              "fontFamily": "$font-display",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "LupJ1",
+              "name": "Paragraph",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "The controller of your personal data is TURAM Agata Małecka-Bargiel, ul. Słoneczna 54, 30-199 Rząska, which runs Rezydencja Zawoja (Zawoja 2853, 34-222 Zawoja). Contact: biuro@rezydencjazawoja.pl.",
+              "lineHeight": 1.65,
+              "fontFamily": "$font-body",
+              "fontSize": 14.5,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "JXpAJ",
+              "name": "Section Gap",
+              "width": 1,
+              "height": 10
+            },
+            {
+              "type": "text",
+              "id": "q0xKR",
+              "name": "H2",
+              "fill": "$text-primary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "2. What data we process and why",
+              "lineHeight": 1.15,
+              "fontFamily": "$font-display",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "j46WX",
+              "name": "List",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "G4EN5n",
+                  "name": "List Item",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "N910O",
+                      "name": "Bullet Wrap",
+                      "width": 5,
+                      "height": 24,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "lDhKK",
+                          "name": "Bullet",
+                          "fill": "$accent-warm",
+                          "width": 5,
+                          "height": 5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "qphLH",
+                      "name": "Item Text",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "answering your inquiry before a rental contract (Art. 6(1)(b) GDPR),",
+                      "lineHeight": 1.65,
+                      "fontFamily": "$font-body",
+                      "fontSize": 14.5,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "qLRUX",
+                  "name": "List Item",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "o3a0T",
+                      "name": "Bullet Wrap",
+                      "width": 5,
+                      "height": 24,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "TJ1u9",
+                          "name": "Bullet",
+                          "fill": "$accent-warm",
+                          "width": 5,
+                          "height": 5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "CGkK1",
+                      "name": "Item Text",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "concluding and performing the rental contract (Art. 6(1)(b) GDPR),",
+                      "lineHeight": 1.65,
+                      "fontFamily": "$font-body",
+                      "fontSize": 14.5,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Q075kT",
+                  "name": "List Item",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "tu4bz",
+                      "name": "Bullet Wrap",
+                      "width": 5,
+                      "height": 24,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "uiS2F",
+                          "name": "Bullet",
+                          "fill": "$accent-warm",
+                          "width": 5,
+                          "height": 5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "HcIuW",
+                      "name": "Item Text",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "accounting and tax obligations (Art. 6(1)(c) GDPR).",
+                      "lineHeight": 1.65,
+                      "fontFamily": "$font-body",
+                      "fontSize": 14.5,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "s2ARaN",
+          "name": "M Stopka",
+          "width": "fill_container",
+          "fill": "$bg-dark",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            48,
+            20,
+            32,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "zZPJH",
+              "name": "Brand Logo",
+              "width": 78,
+              "height": 50,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "images/logo-light.png",
+                "mode": "fit"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "RSpnK",
+              "name": "M Stopka Kontakt",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wh5JK",
+                  "name": "M Stopka Adres",
+                  "fill": "$text-inverse-dim",
+                  "content": "Zawoja, Beskidy, u stóp Babiej Góry",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "OJmel",
+                  "name": "M Stopka Tel",
+                  "fill": "$text-inverse-dim",
+                  "content": "+48 500 290 390",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "iEKKR",
+                  "name": "M Stopka Email",
+                  "fill": "$text-inverse-dim",
+                  "content": "biuro@rezydencjazawoja.pl",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aQTUs",
+              "name": "M Stopka Nav",
+              "layout": "vertical",
+              "gap": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "NBcHR",
+                  "name": "M Stopka Link Dom",
+                  "fill": "$text-inverse-dim",
+                  "content": "Dom",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Umqbx",
+                  "name": "M Stopka Link Wnętrza",
+                  "fill": "$text-inverse-dim",
+                  "content": "Wnętrza",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "OL8bC",
+                  "name": "M Stopka Link Okolica",
+                  "fill": "$text-inverse-dim",
+                  "content": "Okolica",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "FJ0sb",
+                  "name": "M Stopka Link Galeria",
+                  "fill": "$text-inverse-dim",
+                  "content": "Galeria",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "ruafT",
+                  "name": "M Stopka Link Cennik",
+                  "fill": "$text-inverse-dim",
+                  "content": "Cennik",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "rjSas",
+                  "name": "M Stopka Link Kontakt",
+                  "fill": "$text-inverse-dim",
+                  "content": "Kontakt",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "p3Ati0",
+              "name": "M Stopka Bottom",
+              "width": "fill_container",
+              "stroke": "#F7F5EF26",
+              "strokeWidth": {
+                "top": 1
+              },
+              "layout": "vertical",
+              "gap": 14,
+              "padding": [
+                24,
+                0,
+                0,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "qRgYb",
+                  "name": "M Stopka Copyright",
+                  "fill": "$text-inverse-dim",
+                  "content": "© 2026 Rezydencja Zawoja. Wszelkie prawa zastrzeżone.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 11.5,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "e1Yk92",
+                  "name": "M Stopka Legal",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "SfywM",
+                      "name": "M Legal 1",
+                      "fill": "$text-inverse-dim",
+                      "content": "Polityka prywatności",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11.5,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "n8HugO",
+                      "name": "M Legal 2",
+                      "fill": "$text-inverse-dim",
+                      "content": "Regulamin najmu",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11.5,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "variables": {
