@@ -44,7 +44,11 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const language = await getLanguage()
 
   return (
-    <html lang={language} className={`${cormorant.variable} ${jost.variable}`}>
+    <html
+      lang={language}
+      data-scroll-behavior="smooth"
+      className={`${cormorant.variable} ${jost.variable}`}
+    >
       <body className="relative">
         <Navbar />
         {children}

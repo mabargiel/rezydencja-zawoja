@@ -26,7 +26,7 @@ export async function Navbar() {
           src="/brand/logo-light.svg"
           unoptimized
           alt=""
-          width={78}
+          width={79}
           height={50}
           priority
           className="h-10 w-auto lg:h-[50px]"
