@@ -1,7 +1,7 @@
 ## 1. Design (approval gate)
 
-- [ ] 1.1 In pen.dev, design the legal page at 1440px and 390px: a compact header without a photo (eyebrow, title, last updated), the text column with H2, H3, paragraph, list and link styles, and the binding-language note. Add the legal links to the footer frames if needed. Screenshot everything for approval
-- [ ] 1.2 Get the user's approval, apply feedback, and copy the design into `design/`
+- [x] 1.1 In pen.dev, design the legal page at 1440px and 390px: a compact header without a photo (eyebrow, title, last updated), the text column with H2, H3, paragraph, list and link styles, and the binding-language note. Add the legal links to the footer frames if needed. Screenshot everything for approval
+- [x] 1.2 Get the user's approval, apply feedback, and copy the design into `design/`
 
 ## 2. CMS
 
