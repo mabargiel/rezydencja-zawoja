@@ -13,7 +13,7 @@ export const privacyPolicy = {
   pl: [
     h2('1. Administrator danych'),
     p(
-      'Administratorem danych osobowych jest TURAM Agata Małecka-Bargiel, ul. Słoneczna 54, 30-199 Rząska, prowadząca obiekt Rezydencja Zawoja (Zawoja 2853, 34-222 Zawoja). W sprawach dotyczących danych osobowych prosimy o kontakt pod adresem ',
+      'Administratorem danych osobowych jest TURAM Agata Małecka-Bargiel, ul. Słoneczna 54, 30-199 Rząska, NIP 9451750587, prowadząca obiekt Rezydencja Zawoja (Zawoja 2853, 34-222 Zawoja). W sprawach dotyczących danych osobowych prosimy o kontakt pod adresem ',
       email,
       ' lub telefonicznie: ',
       phone,
@@ -103,7 +103,7 @@ export const privacyPolicy = {
   en: [
     h2('1. Data controller'),
     p(
-      'The controller of personal data is TURAM Agata Małecka-Bargiel, ul. Słoneczna 54, 30-199 Rząska, Poland, which runs Rezydencja Zawoja (Zawoja 2853, 34-222 Zawoja). For any matter concerning personal data, please contact us at ',
+      'The controller of personal data is TURAM Agata Małecka-Bargiel, ul. Słoneczna 54, 30-199 Rząska, Poland, tax ID (NIP) 9451750587, which runs Rezydencja Zawoja (Zawoja 2853, 34-222 Zawoja). For any matter concerning personal data, please contact us at ',
       email,
       ' or by phone on ',
       phone,
@@ -193,7 +193,7 @@ export const privacyPolicy = {
   de: [
     h2('1. Verantwortlicher'),
     p(
-      'Verantwortlich für die Verarbeitung personenbezogener Daten ist TURAM Agata Małecka-Bargiel, ul. Słoneczna 54, 30-199 Rząska, Polen, Betreiberin der Rezydencja Zawoja (Zawoja 2853, 34-222 Zawoja). Bei Fragen zum Datenschutz erreichen Sie uns unter ',
+      'Verantwortlich für die Verarbeitung personenbezogener Daten ist TURAM Agata Małecka-Bargiel, ul. Słoneczna 54, 30-199 Rząska, Polen, Steuernummer (NIP) 9451750587, Betreiberin der Rezydencja Zawoja (Zawoja 2853, 34-222 Zawoja). Bei Fragen zum Datenschutz erreichen Sie uns unter ',
       email,
       ' oder telefonisch unter ',
       phone,
