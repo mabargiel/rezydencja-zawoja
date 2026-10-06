@@ -30,4 +30,4 @@
 
 - [x] 6.1 Build again and diff the prerendered HTML against the baseline (class order normalised); only the expected differences remain
 - [x] 6.2 Lightbox in a visible browser: open, keyboard, swipe, close button, Escape, reopen; gallery filters; room nav; contact form
-- [ ] 6.3 Run format:check, lint, lint:styles, knip, typecheck and build; open a PR; confirm CI and the Vercel preview are green
+- [x] 6.3 Run format:check, lint, lint:styles, knip, typecheck and build; open a PR; confirm CI and the Vercel preview are green
