@@ -1,3 +1,5 @@
+import { revealDelay } from '@/components/reveal'
+
 type KeyFactsProps = {
   facts: readonly { value: string; label: string }[]
 }
@@ -9,7 +11,7 @@ export function KeyFacts({ facts }: KeyFactsProps) {
         {facts.map((fact, index) => (
           <div
             key={fact.value}
-            className={`flex flex-col-reverse gap-1 lg:gap-1.5 ${index > 0 ? 'lg:border-l lg:border-line-inverse lg:pl-10' : ''} ${index > 1 ? 'max-lg:border-t max-lg:border-line-inverse max-lg:pt-6' : ''}`}
+            className={`reveal ${revealDelay(index)} flex flex-col-reverse gap-1 lg:gap-1.5 ${index > 0 ? 'lg:border-l lg:border-line-inverse lg:pl-10' : ''} ${index > 1 ? 'max-lg:border-t max-lg:border-line-inverse max-lg:pt-6' : ''}`}
           >
             <dt className="font-body text-xs tracking-[0.5px] text-text-inverse-dim lg:text-[13px] lg:tracking-[1px]">
               {fact.label}

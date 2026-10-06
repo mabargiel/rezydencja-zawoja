@@ -35,11 +35,11 @@ export async function LegalPage({ page }: LegalPageProps) {
         <Eyebrow tone="dark" size="header">
           {t('legal.eyebrow')}
         </Eyebrow>
-        <h1 className="font-display text-4xl leading-[1.05] text-text-inverse lg:text-[56px]">
+        <h1 className="font-display text-4xl motion-safe:animate-rise leading-[1.05] text-text-inverse lg:text-[56px]">
           {data.title ?? t(`meta.${page}.title`)}
         </h1>
         {updatedAt && (
-          <p className="font-body text-[13.5px] text-text-inverse-dim lg:text-[15px]">
+          <p className="font-body text-[13.5px] text-text-inverse-dim motion-safe:animate-rise motion-safe:[animation-delay:100ms] lg:text-[15px]">
             {t('legal.updated', { date: updatedAt })}
           </p>
         )}

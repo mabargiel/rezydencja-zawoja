@@ -12,9 +12,16 @@ type PageHeaderProps = {
 export function PageHeader({ eyebrow, title, intro, image }: PageHeaderProps) {
   return (
     <header className="relative isolate flex h-[400px] flex-col justify-end overflow-hidden bg-bg-dark lg:h-[460px]">
-      {image && <SanityImage photo={image} sizes="100vw" priority className="-z-20" />}
+      {image && (
+        <SanityImage
+          photo={image}
+          sizes="100vw"
+          priority
+          className="-z-20 motion-safe:animate-settle"
+        />
+      )}
       <div aria-hidden className="absolute inset-0 -z-10 bg-header-scrim" />
-      <div className="flex flex-col gap-3.5 px-5 pb-8 lg:max-w-[820px] lg:gap-[18px] lg:px-16 lg:pb-14">
+      <div className="flex flex-col gap-3.5 px-5 pb-8 motion-safe:animate-rise lg:max-w-[820px] lg:gap-[18px] lg:px-16 lg:pb-14">
         <Eyebrow tone="dark" size="header">
           {eyebrow}
         </Eyebrow>

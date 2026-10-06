@@ -69,7 +69,7 @@ export function Lightbox({ photos, index, labels, onIndexChange, onClose }: Ligh
         if (event.key === 'ArrowRight') step(1)
         if (event.key === 'ArrowLeft') step(-1)
       }}
-      className="m-0 h-dvh max-h-none w-full max-w-none bg-scrim-lightbox text-text-inverse backdrop:bg-transparent"
+      className="dialog-motion m-0 h-dvh max-h-none w-full max-w-none bg-scrim-lightbox text-text-inverse [--dialog-from:scale(0.98)] backdrop:bg-transparent"
     >
       {current && (
         <div className="flex h-full flex-col">
@@ -112,7 +112,7 @@ export function Lightbox({ photos, index, labels, onIndexChange, onClose }: Ligh
                     sizes="100vw"
                     fit="contain"
                     eager
-                    className={isCurrent ? '' : 'invisible'}
+                    className={`transition-opacity duration-(--duration-base) ease-out-soft motion-reduce:transition-none ${isCurrent ? 'opacity-100' : 'opacity-0'}`}
                   />
                 )
               })}

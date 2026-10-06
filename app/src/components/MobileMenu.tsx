@@ -53,7 +53,7 @@ export function MobileMenu({ language, homeHref, bookHref, links, labels }: Mobi
       <dialog
         ref={dialog}
         aria-label={labels.navigation}
-        className="m-0 h-dvh max-h-none w-full max-w-none bg-bg-dark text-text-inverse backdrop:bg-bg-dark lg:hidden"
+        className="dialog-motion m-0 h-dvh max-h-none w-full max-w-none bg-bg-dark text-text-inverse [--dialog-from:translateX(16px)] backdrop:bg-bg-dark lg:hidden"
       >
         <div className="flex min-h-full flex-col px-5 pt-[22px] pb-10">
           <div className="flex items-center justify-between">

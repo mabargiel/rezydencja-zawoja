@@ -17,11 +17,11 @@ export function BookingCta({ eyebrow, title, body, primary, secondary }: Booking
     <section className="flex flex-col gap-8 border-t border-line bg-bg px-5 py-16 lg:flex-row lg:items-center lg:justify-between lg:gap-[60px] lg:px-[120px] lg:py-[110px]">
       <div className="flex flex-col gap-5 lg:w-[560px] lg:gap-[22px]">
         <SectionHeading eyebrow={eyebrow} title={title} />
-        <p className="font-body text-[15px] leading-[1.7] text-text-secondary lg:text-base">
+        <p className="reveal-left reveal-delay-1 font-body text-[15px] leading-[1.7] text-text-secondary lg:text-base">
           {body}
         </p>
       </div>
-      <div className="flex flex-col gap-5 lg:items-end lg:gap-[22px]">
+      <div className="reveal-right reveal-delay-2 flex flex-col gap-5 lg:items-end lg:gap-[22px]">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-[18px]">
           <ButtonPrimary href={primary.href} className="lg:px-10 lg:py-[18px]">
             {primary.label}

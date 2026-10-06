@@ -4,6 +4,7 @@ import { User } from 'lucide-react'
 import { useState } from 'react'
 
 import { Lightbox, type LightboxLabels } from '@/components/Lightbox'
+import { revealDelay } from '@/components/reveal'
 import { fillTemplate } from '@/lib/template'
 import type { KeyedPhoto } from '@/sanity/photo'
 import type { InteriorsPageQueryResult } from '@/sanity/types'
@@ -26,13 +27,13 @@ export function BedroomCards({ bedrooms, guestsLabel, lightbox }: BedroomCardsPr
   return (
     <>
       <ul className="-mx-5 flex gap-3.5 overflow-x-auto scrollbar-none px-5 pt-2.5 lg:mx-0 lg:gap-5 lg:overflow-visible lg:px-0 lg:pt-0">
-        {bedrooms.map(bedroom => {
+        {bedrooms.map((bedroom, index) => {
           const photos = bedroom.photos ?? []
           const [cover] = photos
           return (
             <li
               key={bedroom._key}
-              className="flex w-[200px] shrink-0 flex-col gap-2.5 lg:w-auto lg:flex-1 lg:gap-3.5"
+              className={`reveal-right ${revealDelay(index)} flex w-[200px] shrink-0 flex-col gap-2.5 lg:w-auto lg:flex-1 lg:gap-3.5`}
             >
               {cover ? (
                 <PhotoTile
