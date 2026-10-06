@@ -5,9 +5,9 @@
 
 ## 2. CMS
 
-- [ ] 2.1 The `legalPage` schema: read-only slug, localized title, `updatedAt`, and `body.{pl,en,de}` Portable Text with the allowed styles. Pin both documents in the structure and disable delete and duplicate. Validate and deploy the schema
-- [ ] 2.2 Draft the content: rewrite the privacy policy for the new site (D4), carry over the rental terms (D5), and translate both to EN and DE. Resolve the open questions with the owner first
-- [ ] 2.3 Seed both documents with compact block helpers; confirm the seed is idempotent
+- [x] 2.1 The `legalPage` schema: read-only slug, localized title, `updatedAt`, and `body.{pl,en,de}` Portable Text with the allowed styles. Pin both documents in the structure and disable delete and duplicate. Validate and deploy the schema
+- [x] 2.2 Draft the content: rewrite the privacy policy for the new site (D4), carry over the rental terms (D5), and translate both to EN and DE. Resolve the open questions with the owner first
+- [x] 2.3 Seed both documents with compact block helpers; confirm the seed is idempotent
 
 ## 3. App
 

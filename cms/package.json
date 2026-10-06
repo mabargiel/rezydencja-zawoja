@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "typegen": "sanity schema extract --force && sanity typegen generate",
-    "map": "sanity exec scripts/map.ts --with-user-token"
+    "map": "sanity exec scripts/map.ts --with-user-token",
+    "seed:legal": "sanity exec scripts/seed-legal.ts --with-user-token"
   },
   "keywords": [
     "sanity"

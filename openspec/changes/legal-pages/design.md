@@ -42,18 +42,19 @@
 
 ### D1. Sanity `legalPage` documents with localized Portable Text
 - A `legalPage` document type with:
-  - `slug`: `privacy-policy` or `rental-terms`, read-only;
   - `title`: internationalized string;
   - `updatedAt`: date;
   - `body`: an object with `pl`, `en` and `de`, each a Portable Text array limited to normal text, H2, H3, bullet and numbered lists, bold and links.
 - PL is required. EN and DE warn when empty, matching `localizedValidation`.
-- Two fixed documents, `legalPage.privacy-policy` and `legalPage.rental-terms`, are pinned in the structure as "Polityka prywatności" and "Regulamin najmu". Delete and duplicate are off, like the other singletons.
+- The document ID decides the page, so there's no slug field. IDs have no dot, because Sanity treats dotted IDs as private, and the public dataset wouldn't serve them.
+- The seed uses `createIfNotExists`, so re-running it never overwrites the owner's edits. `npm run seed:legal -w cms` seeds only these two documents.
+- Two fixed documents, `privacyPolicy` and `rentalTerms`, are pinned in the structure as "Polityka prywatności" and "Regulamin najmu". Delete and duplicate are off, like the other singletons.
 - *Why not the i18next catalogs?* CLAUDE.md keeps write-once page copy in the catalogs. Legal text is long, structured and likely to be corrected by the owner, which is what the CMS is for.
 - *Why not the internationalized-array plugin for the body?* It's configured for strings. A plain object with three block fields is simpler, and the Studio shows each language as its own editor.
 
 ### D2. Routes and rendering
 - `app/src/app/[lng]/privacy-policy/page.tsx` and `rental-terms/page.tsx` share a `LegalPage` Server Component.
-- `legalPageQuery` takes `$slug` and `$lng`, and returns the title, `updatedAt`, and `body[$lng]` with the Polish body as fallback.
+- `legalPageQuery` takes `$id` and `$lng`, and returns the title, `updatedAt`, and `body[$lng]` with the Polish body as fallback.
 - Rendering uses `PortableText` from `next-sanity` with components mapped to the design's typography: H2 and H3 in Cormorant, body text 16/1.7, lists with the `accent-warm` marker, links in `accent`.
 - When the visitor's language falls back to Polish, the page says so with the binding-language note.
 - `generateMetadata = () => pageMetadata('privacyPolicy' | 'rentalTerms')`, with titles and descriptions in the catalogs.

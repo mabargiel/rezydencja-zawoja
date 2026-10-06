@@ -16,4 +16,4 @@ export const singletons = {
 
 export type SingletonType = keyof typeof singletons
 
-export const singletonTypes = new Set<string>(Object.keys(singletons))
+export const singletonTypes = new Set<string>([...Object.keys(singletons), 'legalPage'])

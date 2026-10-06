@@ -3,6 +3,7 @@ import { basename, resolve } from 'node:path'
 
 import { getCliClient } from 'sanity/cli'
 
+import { seedLegalPages } from './legal/seedLegalPages'
 import { bedroomsLayout, legacyPhotos, legacySource, roomsLayout } from './seed-legacy'
 import { azureMapPhotoId, layout, photoId, photos, pricing } from './seed-map'
 
@@ -193,3 +194,4 @@ async function seedPages() {
 await seedPhotos()
 await seedLegacyPhotos()
 await seedPages()
+await seedLegalPages(client)
