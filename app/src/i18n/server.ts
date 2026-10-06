@@ -24,12 +24,15 @@ export async function getLanguage(): Promise<Language> {
   return value
 }
 
-export async function getT(): Promise<TFunction> {
-  const language = await getLanguage()
+export function getTranslator(language: Language): TFunction {
   let t = translators.get(language)
   if (!t) {
     t = createTranslator(language)
     translators.set(language, t)
   }
   return t
+}
+
+export async function getT(): Promise<TFunction> {
+  return getTranslator(await getLanguage())
 }

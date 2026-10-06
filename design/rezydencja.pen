@@ -23942,6 +23942,3964 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "PX28p",
+      "x": 15019,
+      "y": 0,
+      "name": "Kontakt v2 Desktop",
+      "clip": true,
+      "width": 1440,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Dmb60",
+          "name": "Page Header",
+          "clip": true,
+          "width": "fill_container",
+          "height": 460,
+          "fill": [
+            {
+              "type": "image",
+              "enabled": true,
+              "url": "images/dom-noca1.jpeg",
+              "mode": "fill"
+            },
+            {
+              "type": "gradient",
+              "gradientType": "linear",
+              "enabled": true,
+              "rotation": 180,
+              "size": {
+                "height": 1
+              },
+              "colors": [
+                {
+                  "color": "#0D120D80",
+                  "position": 0
+                },
+                {
+                  "color": "#0D120D66",
+                  "position": 0.4
+                },
+                {
+                  "color": "#0A0E08D9",
+                  "position": 1
+                }
+              ]
+            }
+          ],
+          "layout": "vertical",
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "XDZ15",
+              "name": "Nav",
+              "width": "fill_container",
+              "padding": [
+                28,
+                64
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "DYYO4",
+                  "name": "Brand Logo",
+                  "width": 78,
+                  "height": 50,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "images/logo-light.png",
+                    "mode": "fit"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "b8xLGt",
+                  "name": "Nav Links",
+                  "gap": 36,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "KQARZ",
+                      "name": "Link Dom",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Dom",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "iyqzN",
+                      "name": "Link Wnętrza",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Wnętrza",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "fbmNa",
+                      "name": "Link Okolica",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Okolica",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "LPKEk",
+                      "name": "Link Galeria",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Galeria",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "nYUB7",
+                      "name": "Link Cennik",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Cennik",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "E124B",
+                      "name": "Link Kontakt",
+                      "fill": "$accent-warm",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "Kontakt",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pw9Nn",
+                  "name": "Nav CTA",
+                  "fill": "#10160F4D",
+                  "stroke": "$text-inverse",
+                  "strokeWidth": 1,
+                  "gap": 8,
+                  "padding": [
+                    12,
+                    28
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "P7jHk",
+                      "name": "Nav CTA Label",
+                      "fill": "$text-inverse",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000099",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 6
+                      },
+                      "content": "REZERWUJ",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "500",
+                      "letterSpacing": 2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NlVPV",
+              "name": "Header Title Block",
+              "width": 820,
+              "layout": "vertical",
+              "gap": 18,
+              "padding": [
+                0,
+                64,
+                56,
+                64
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "b9ssN",
+                  "name": "Header Eyebrow Row",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "OSp5w",
+                      "name": "Eyebrow Rule",
+                      "width": 26,
+                      "height": 2,
+                      "fill": "$accent-warm"
+                    },
+                    {
+                      "type": "text",
+                      "id": "jdd0H",
+                      "name": "Header Eyebrow",
+                      "fill": "$accent-warm",
+                      "content": "KONTAKT",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal",
+                      "letterSpacing": 6
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Y4Sgw",
+                  "name": "Header Title",
+                  "fill": "$text-inverse",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000099",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 10
+                  },
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Zapraszamy do\nRezydencji",
+                  "lineHeight": 1.04,
+                  "fontFamily": "$font-display",
+                  "fontSize": 64,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "ZlYIB",
+                  "name": "Header Intro",
+                  "fill": "$text-inverse-dim",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000099",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 6
+                  },
+                  "textGrowth": "fixed-width",
+                  "width": 660,
+                  "content": "W razie pytań lub chęci rezerwacji jesteśmy do Waszej dyspozycji. Zadzwońcie albo skorzystajcie z formularza, potwierdzimy dostępność jeszcze tego samego dnia.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "$font-body",
+                  "fontSize": 16.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "rkKhn",
+          "name": "Kontakt Content",
+          "width": "fill_container",
+          "fill": "$bg",
+          "gap": 64,
+          "padding": [
+            100,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "TGV4w",
+              "name": "Kontakt Form",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "LD5lW",
+                  "name": "Eyebrow Row",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "zswDS",
+                      "name": "Eyebrow Rule",
+                      "width": 26,
+                      "height": 2,
+                      "fill": "$accent-warm"
+                    },
+                    {
+                      "type": "text",
+                      "id": "O0vSK",
+                      "name": "Form Eyebrow",
+                      "fill": "$accent-warm-deep",
+                      "content": "FORMULARZ ZAPYTANIA",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal",
+                      "letterSpacing": 5
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "a0GAvd",
+                  "name": "Form Title",
+                  "fill": "$text-primary",
+                  "content": "Zapytaj o wolny termin",
+                  "fontFamily": "$font-display",
+                  "fontSize": 38,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "rBKkK",
+                  "name": "Field IMIĘ I NAZWISKO",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "j8CW2s",
+                      "name": "Field Label",
+                      "fill": "$text-secondary",
+                      "content": "IMIĘ I NAZWISKO",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "hrJQX",
+                      "name": "Field Box",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF",
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "v70pE",
+                          "name": "Field Placeholder",
+                          "fill": "#9A9C90",
+                          "content": "Jan Kowalski",
+                          "fontFamily": "$font-body",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "iaZpi",
+                  "name": "Form Row",
+                  "width": "fill_container",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "QA7gN",
+                      "name": "Field TELEFON",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ruGMU",
+                          "name": "Field Label",
+                          "fill": "$text-secondary",
+                          "content": "TELEFON",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "APAbM",
+                          "name": "Field Box",
+                          "width": "fill_container",
+                          "fill": "#FFFFFF",
+                          "stroke": "$line",
+                          "strokeWidth": 1,
+                          "padding": [
+                            14,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "AMyER",
+                              "name": "Field Placeholder",
+                              "fill": "#9A9C90",
+                              "content": "+48 500 000 000",
+                              "fontFamily": "$font-body",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "rLmfX",
+                      "name": "Field EMAIL",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "xsfP2",
+                          "name": "Field Label",
+                          "fill": "$text-secondary",
+                          "content": "EMAIL",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "kgMp1",
+                          "name": "Field Box",
+                          "width": "fill_container",
+                          "fill": "#FFFFFF",
+                          "stroke": "$line",
+                          "strokeWidth": 1,
+                          "padding": [
+                            14,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Ntg08",
+                              "name": "Field Placeholder",
+                              "fill": "#9A9C90",
+                              "content": "jan@email.pl",
+                              "fontFamily": "$font-body",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ea5TF",
+                  "name": "Form Row",
+                  "width": "fill_container",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Lfeuo",
+                      "name": "Field DATA PRZYJAZDU",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "k7djjW",
+                          "name": "Field Label",
+                          "fill": "$text-secondary",
+                          "content": "DATA PRZYJAZDU",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "pEyAE",
+                          "name": "Field Box",
+                          "width": "fill_container",
+                          "fill": "#FFFFFF",
+                          "stroke": "$line",
+                          "strokeWidth": 1,
+                          "padding": [
+                            14,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "gsdZQ",
+                              "name": "Field Placeholder",
+                              "fill": "#9A9C90",
+                              "content": "12 gru 2026",
+                              "fontFamily": "$font-body",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "K7qqR",
+                      "name": "Field DATA WYJAZDU",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "iJKsG",
+                          "name": "Field Label",
+                          "fill": "$text-secondary",
+                          "content": "DATA WYJAZDU",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "J0Wnw",
+                          "name": "Field Box",
+                          "width": "fill_container",
+                          "fill": "#FFFFFF",
+                          "stroke": "$line",
+                          "strokeWidth": 1,
+                          "padding": [
+                            14,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "tNfD6",
+                              "name": "Field Placeholder",
+                              "fill": "#9A9C90",
+                              "content": "16 gru 2026",
+                              "fontFamily": "$font-body",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "QZukE",
+                  "name": "Form Row",
+                  "width": "fill_container",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "aNaew",
+                      "name": "Field DOROŚLI",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "OXV4r",
+                          "name": "Field Label",
+                          "fill": "$text-secondary",
+                          "content": "DOROŚLI",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "dYYfe",
+                          "name": "Field Box",
+                          "width": "fill_container",
+                          "fill": "#FFFFFF",
+                          "stroke": "$line",
+                          "strokeWidth": 1,
+                          "padding": [
+                            14,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "cCTIo",
+                              "name": "Field Placeholder",
+                              "fill": "#9A9C90",
+                              "content": "4",
+                              "fontFamily": "$font-body",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "G0bhkZ",
+                      "name": "Field DZIECI",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "NpytA",
+                          "name": "Field Label",
+                          "fill": "$text-secondary",
+                          "content": "DZIECI",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "LYdHC",
+                          "name": "Field Box",
+                          "width": "fill_container",
+                          "fill": "#FFFFFF",
+                          "stroke": "$line",
+                          "strokeWidth": 1,
+                          "padding": [
+                            14,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "j6xI2D",
+                              "name": "Field Placeholder",
+                              "fill": "#9A9C90",
+                              "content": "0",
+                              "fontFamily": "$font-body",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "YUMi7",
+                  "name": "Field WIADOMOŚĆ",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "O85qcw",
+                      "name": "Field Label",
+                      "fill": "$text-secondary",
+                      "content": "WIADOMOŚĆ (OPCJONALNIE)",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "K0tCxD",
+                      "name": "Field Box",
+                      "width": "fill_container",
+                      "height": 120,
+                      "fill": "#FFFFFF",
+                      "stroke": "$line",
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "y4vcI",
+                          "name": "Field Placeholder",
+                          "fill": "#9A9C90",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Pytania, szczególne życzenia, pora przyjazdu…",
+                          "fontFamily": "$font-body",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fvydq",
+                  "name": "Consent Row",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "padding": [
+                    6,
+                    0,
+                    0,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Iorb7",
+                      "name": "Checkbox",
+                      "width": 18,
+                      "height": 18,
+                      "fill": "#FFFFFF",
+                      "stroke": "$accent",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "iRNDJ",
+                      "name": "Consent Text",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Wyrażam zgodę na przetwarzanie moich danych na potrzeby procesu rezerwacji.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Dmhkb",
+                  "name": "Send Button",
+                  "width": "fill_container",
+                  "fill": "$accent",
+                  "gap": 10,
+                  "padding": [
+                    17,
+                    40
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Yn3uU",
+                      "name": "Send Label",
+                      "fill": "#FFFFFF",
+                      "content": "WYŚLIJ ZAPYTANIE",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "500",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "icon",
+                      "id": "a5jZsQ",
+                      "name": "Send Arrow",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "arrow-right",
+                      "library": "lucide",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "XuS4F",
+              "name": "Kontakt Karta",
+              "width": 440,
+              "fill": "$bg-dark",
+              "layout": "vertical",
+              "gap": 28,
+              "padding": 44,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "xoanK",
+                  "name": "Card Title",
+                  "fill": "$text-inverse",
+                  "content": "Rezydencja Zawoja",
+                  "fontFamily": "$font-display",
+                  "fontSize": 28,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "X8pc8X",
+                  "name": "Info Adres",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "F8QXG7",
+                      "name": "Icon Wrap",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "#F7F5EF14",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "czWGm",
+                          "name": "Info Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "map-pin",
+                          "library": "lucide",
+                          "fill": "$accent-warm"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ug4WX",
+                      "name": "Info Col",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "uKH05",
+                          "name": "Info Label",
+                          "fill": "$accent-warm",
+                          "content": "Adres",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "nhcV5",
+                          "name": "Info Val",
+                          "fill": "$text-inverse",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Zawoja Mosorne 2853\n34-222 Zawoja",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-body",
+                          "fontSize": 15.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Y0YuB",
+                  "name": "Info Telefon",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "nq7Bj",
+                      "name": "Icon Wrap",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "#F7F5EF14",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "R3UxXC",
+                          "name": "Info Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "phone",
+                          "library": "lucide",
+                          "fill": "$accent-warm"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "LIpjD",
+                      "name": "Info Col",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "DGJkZ",
+                          "name": "Info Label",
+                          "fill": "$accent-warm",
+                          "content": "Telefon",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "KtJx4",
+                          "name": "Info Val",
+                          "fill": "$text-inverse",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "+48 500 290 390",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-body",
+                          "fontSize": 15.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "m6JWP",
+                  "name": "Info E-mail",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "OWrbJ",
+                      "name": "Icon Wrap",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "#F7F5EF14",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "Iy4bM",
+                          "name": "Info Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "mail",
+                          "library": "lucide",
+                          "fill": "$accent-warm"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "FDY4i",
+                      "name": "Info Col",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "r95Z7",
+                          "name": "Info Label",
+                          "fill": "$accent-warm",
+                          "content": "E-mail",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "xIQbv",
+                          "name": "Info Val",
+                          "fill": "$text-inverse",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "biuro@rezydencjazawoja.pl",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-body",
+                          "fontSize": 15.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "c9W4b",
+                  "name": "Info Doba pobytu",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "AL8sY",
+                      "name": "Icon Wrap",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "#F7F5EF14",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "oak7c",
+                          "name": "Info Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "clock-4",
+                          "library": "lucide",
+                          "fill": "$accent-warm"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "NjYFQ",
+                      "name": "Info Col",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "poeIo",
+                          "name": "Info Label",
+                          "fill": "$accent-warm",
+                          "content": "Doba pobytu",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "AjjIX",
+                          "name": "Info Val",
+                          "fill": "$text-inverse",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Przyjazd od 16:00\nWyjazd do 10:00",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-body",
+                          "fontSize": 15.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "JQL7u",
+                  "name": "Card Buttons",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    8,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "cNiWB",
+                      "name": "Card Call",
+                      "width": "fill_container",
+                      "fill": "$accent-warm",
+                      "gap": 9,
+                      "padding": [
+                        15,
+                        0
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "IIJm4",
+                          "name": "Call Icon",
+                          "width": 15,
+                          "height": 15,
+                          "icon": "phone",
+                          "library": "lucide",
+                          "fill": "$bg-dark"
+                        },
+                        {
+                          "type": "text",
+                          "id": "OSKl1",
+                          "name": "Call Label",
+                          "fill": "$bg-dark",
+                          "content": "ZADZWOŃ TERAZ",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "500",
+                          "letterSpacing": 1.5
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "wLP0y",
+          "name": "Kontakt Mapa",
+          "width": "fill_container",
+          "fill": "$bg",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "OezKO",
+              "name": "Mapa Caption",
+              "width": "fill_container",
+              "fill": "$bg",
+              "stroke": "$line",
+              "strokeWidth": {
+                "top": 1
+              },
+              "padding": [
+                44,
+                120
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "WDooY",
+                  "name": "Caption Left",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "jBRg1",
+                      "name": "Eyebrow Row",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "p6b1so",
+                          "name": "Eyebrow Rule",
+                          "width": 26,
+                          "height": 2,
+                          "fill": "$accent-warm"
+                        },
+                        {
+                          "type": "text",
+                          "id": "J7zbLJ",
+                          "name": "Caption Eyebrow",
+                          "fill": "$accent-warm-deep",
+                          "content": "DOJAZD",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "B9OMW",
+                      "name": "Caption Title",
+                      "fill": "$text-primary",
+                      "content": "Znajdziecie nas w Zawoi Mosorne",
+                      "fontFamily": "$font-display",
+                      "fontSize": 34,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "KL9Oi",
+                  "name": "Caption Link",
+                  "gap": 9,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "AA286",
+                      "name": "Pin Small",
+                      "width": 15,
+                      "height": 15,
+                      "icon": "map-pin",
+                      "library": "lucide",
+                      "fill": "$accent"
+                    },
+                    {
+                      "type": "text",
+                      "id": "YQdK6",
+                      "name": "Caption Coords",
+                      "fill": "$accent",
+                      "content": "49.6405, 19.5586",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "500",
+                      "letterSpacing": 0.5
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "u55mk",
+              "name": "Mapa Obraz",
+              "clip": true,
+              "width": "fill_container",
+              "height": 560,
+              "fill": [
+                {
+                  "type": "image",
+                  "enabled": true,
+                  "url": "images/map-zawoja-azure.png",
+                  "mode": "fill"
+                },
+                "#3E4F411A"
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "OJFFq",
+                  "name": "Map Marker",
+                  "layout": "vertical",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "eMulX",
+                      "name": "Marker Pill",
+                      "fill": "$bg-dark",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000059",
+                        "offset": {
+                          "x": 0,
+                          "y": 4
+                        },
+                        "blur": 16
+                      },
+                      "padding": [
+                        10,
+                        18
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "l2ovS",
+                          "name": "Marker Label",
+                          "fill": "$text-inverse",
+                          "content": "REZYDENCJA ZAWOJA",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "500",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "FLpKL",
+                      "name": "Marker Pin",
+                      "fill": "#00000000",
+                      "layout": "vertical",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "J7OeiJ",
+                          "name": "Pin Head",
+                          "width": 26,
+                          "height": 26,
+                          "fill": "$bg-dark",
+                          "cornerRadius": 13,
+                          "stroke": "$text-inverse",
+                          "strokeWidth": 2,
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#00000059",
+                            "offset": {
+                              "x": 0,
+                              "y": 2
+                            },
+                            "blur": 6
+                          },
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "ellipse",
+                              "id": "G91b5",
+                              "name": "Pin Dot",
+                              "fill": "$accent-warm",
+                              "width": 9,
+                              "height": 9
+                            }
+                          ]
+                        },
+                        {
+                          "type": "rectangle",
+                          "id": "XN8Jp",
+                          "name": "Pin Stem",
+                          "fill": "$bg-dark",
+                          "width": 2,
+                          "height": 12
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "MrjUt",
+          "name": "Stopka",
+          "width": "fill_container",
+          "fill": "$bg-dark",
+          "layout": "vertical",
+          "gap": 50,
+          "padding": [
+            70,
+            120,
+            40,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "RTvlF",
+              "name": "Stopka Top",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ZIFec",
+                  "name": "Stopka Brand",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Cm113",
+                      "name": "Brand Logo",
+                      "width": 91,
+                      "height": 58,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/logo-light.png",
+                        "mode": "fit"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "aUY1e",
+                      "name": "Stopka Kontakt",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": [
+                        18,
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "m6a2PA",
+                          "name": "Stopka Adres",
+                          "fill": "$text-inverse-dim",
+                          "content": "Zawoja, Beskidy, u stóp Babiej Góry",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "BlBEW",
+                          "name": "Stopka Tel",
+                          "fill": "$text-inverse-dim",
+                          "content": "+48 500 290 390",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "NpsRA",
+                          "name": "Stopka Email",
+                          "fill": "$text-inverse-dim",
+                          "content": "biuro@rezydencjazawoja.pl",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "P5t4d",
+                  "name": "Stopka Nav",
+                  "gap": 36,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "lW7E9",
+                      "name": "Stopka Link Dom",
+                      "fill": "$text-inverse-dim",
+                      "content": "Dom",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "ePUnm",
+                      "name": "Stopka Link Wnętrza",
+                      "fill": "$text-inverse-dim",
+                      "content": "Wnętrza",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "gDqqS",
+                      "name": "Stopka Link Okolica",
+                      "fill": "$text-inverse-dim",
+                      "content": "Okolica",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "irHDd",
+                      "name": "Stopka Link Galeria",
+                      "fill": "$text-inverse-dim",
+                      "content": "Galeria",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "LoPB8",
+                      "name": "Stopka Link Cennik",
+                      "fill": "$text-inverse-dim",
+                      "content": "Cennik",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "Rkj9z",
+                      "name": "Stopka Link Kontakt",
+                      "fill": "$text-inverse-dim",
+                      "content": "Kontakt",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "letterSpacing": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ZzCFp",
+              "name": "Stopka Bottom",
+              "width": "fill_container",
+              "stroke": "#F7F5EF26",
+              "strokeWidth": {
+                "top": 1
+              },
+              "padding": [
+                24,
+                0,
+                0,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wVyqk",
+                  "name": "Stopka Copyright",
+                  "fill": "$text-inverse-dim",
+                  "content": "© 2026 Rezydencja Zawoja. Wszelkie prawa zastrzeżone.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12.5,
+                  "fontWeight": "300"
+                },
+                {
+                  "type": "frame",
+                  "id": "saRqI",
+                  "name": "Stopka Legal",
+                  "gap": 28,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "t38uX",
+                      "name": "Legal 1",
+                      "fill": "$text-inverse-dim",
+                      "content": "Polityka prywatności",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12.5,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZFJHx",
+                      "name": "Legal 2",
+                      "fill": "$text-inverse-dim",
+                      "content": "Regulamin najmu",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12.5,
+                      "fontWeight": "300"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "BtqL3",
+      "x": 15019,
+      "y": 2600,
+      "name": "Kontakt Form States Desktop",
+      "width": 1592,
+      "fill": "$bg",
+      "layout": "vertical",
+      "gap": 48,
+      "padding": 64,
+      "children": [
+        {
+          "type": "text",
+          "id": "K4y2I",
+          "name": "Board Title",
+          "fill": "$text-secondary",
+          "content": "Formularz — stany (desktop)",
+          "fontFamily": "$font-body",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "letterSpacing": 2
+        },
+        {
+          "type": "frame",
+          "id": "HQBN5",
+          "name": "States Grid",
+          "width": "fill_container",
+          "gap": 64,
+          "children": [
+            {
+              "type": "frame",
+              "id": "V2vtZF",
+              "name": "Column Errors",
+              "width": 696,
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "qFp8s",
+                  "name": "State Caption",
+                  "fill": "$accent-warm-deep",
+                  "content": "BŁĘDY PÓL",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "NOeS4",
+                  "name": "Form Row",
+                  "width": "fill_container",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "s3KXq",
+                      "name": "Field EMAIL",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "E56J2",
+                          "name": "Field Label",
+                          "fill": "$text-secondary",
+                          "content": "EMAIL",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "CXjlP",
+                          "name": "Field Box",
+                          "width": "fill_container",
+                          "fill": "#FFFFFF",
+                          "stroke": "$error",
+                          "strokeWidth": 1.5,
+                          "padding": [
+                            14,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "o7TGV",
+                              "name": "Field Value",
+                              "fill": "$text-primary",
+                              "content": "jan@email",
+                              "fontFamily": "$font-body",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ZFkZB",
+                          "name": "Field Error",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "PU683",
+                              "name": "Error Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "circle-alert",
+                              "library": "lucide",
+                              "fill": "$error"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Y2nxNK",
+                              "name": "Error Text",
+                              "fill": "$error",
+                              "content": "Podaj poprawny adres e-mail.",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "SwQo9",
+                      "name": "Field DATA WYJAZDU",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "K8Wouh",
+                          "name": "Field Label",
+                          "fill": "$text-secondary",
+                          "content": "DATA WYJAZDU",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "zjVXC",
+                          "name": "Field Box",
+                          "width": "fill_container",
+                          "fill": "#FFFFFF",
+                          "stroke": "$error",
+                          "strokeWidth": 1.5,
+                          "padding": [
+                            14,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "fOthv",
+                              "name": "Field Value",
+                              "fill": "$text-primary",
+                              "content": "10 gru 2026",
+                              "fontFamily": "$font-body",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Z0gz1",
+                          "name": "Field Error",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "aNyNZ",
+                              "name": "Error Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "circle-alert",
+                              "library": "lucide",
+                              "fill": "$error"
+                            },
+                            {
+                              "type": "text",
+                              "id": "aAChn",
+                              "name": "Error Text",
+                              "fill": "$error",
+                              "content": "Wyjazd musi być po dniu przyjazdu.",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Gqcnj",
+                  "name": "Consent Field",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ei8hb",
+                      "name": "Consent Row",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Y4bpn",
+                          "name": "Checkbox",
+                          "width": 18,
+                          "height": 18,
+                          "fill": "#FFFFFF",
+                          "stroke": "$error",
+                          "strokeWidth": 1.5
+                        },
+                        {
+                          "type": "text",
+                          "id": "PQwg9",
+                          "name": "Consent Text",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Wyrażam zgodę na przetwarzanie moich danych na potrzeby procesu rezerwacji.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "WgLzR",
+                      "name": "Field Error",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "s97ncR",
+                          "name": "Error Icon",
+                          "width": 14,
+                          "height": 14,
+                          "icon": "circle-alert",
+                          "library": "lucide",
+                          "fill": "$error"
+                        },
+                        {
+                          "type": "text",
+                          "id": "pUVcG",
+                          "name": "Error Text",
+                          "fill": "$error",
+                          "content": "Zaznacz zgodę, abyśmy mogli odpowiedzieć na zapytanie.",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "FzflB",
+                  "name": "State Caption",
+                  "fill": "$accent-warm-deep",
+                  "content": "BŁĄD WYSYŁKI + WYSYŁANIE",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "NQbnc",
+                  "name": "Failure Banner",
+                  "width": "fill_container",
+                  "fill": "#9B3B2B0F",
+                  "stroke": "$error",
+                  "gap": 14,
+                  "padding": [
+                    16,
+                    18
+                  ],
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "pemfW",
+                      "name": "Banner Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "circle-alert",
+                      "library": "lucide",
+                      "fill": "$error"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "y9717G",
+                      "name": "Banner Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "xalmI",
+                          "name": "Banner Title",
+                          "fill": "$text-primary",
+                          "content": "Nie udało się wysłać zapytania.",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14.5,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "CWMvZ",
+                          "name": "Banner Body",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Spróbujcie ponownie za chwilę albo skontaktujcie się bezpośrednio: +48 500 290 390 · biuro@rezydencjazawoja.pl",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$font-body",
+                          "fontSize": 13.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Gqpxt",
+                  "name": "Send Button Sending",
+                  "opacity": 0.75,
+                  "width": "fill_container",
+                  "fill": "$accent",
+                  "gap": 10,
+                  "padding": [
+                    17,
+                    40
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "GxRV3",
+                      "name": "Spinner",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "loader-circle",
+                      "library": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ju4hr",
+                      "name": "Send Label",
+                      "fill": "#FFFFFF",
+                      "content": "WYSYŁANIE…",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "500",
+                      "letterSpacing": 2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "rnluG",
+              "name": "Column Sent",
+              "width": 696,
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "U9h8vj",
+                  "name": "State Caption",
+                  "fill": "$accent-warm-deep",
+                  "content": "WYSŁANO",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "rN56G",
+                  "name": "Sent Panel",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "stroke": "$line",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 48,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Zxq5B",
+                      "name": "Sent Icon Wrap",
+                      "width": 52,
+                      "height": 52,
+                      "fill": "$bg-dark",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "YMxJu",
+                          "name": "Sent Icon",
+                          "width": 22,
+                          "height": 22,
+                          "icon": "check",
+                          "library": "lucide",
+                          "fill": "$accent-warm"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "s6utw",
+                      "name": "Eyebrow Row",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "UILRy",
+                          "name": "Eyebrow Rule",
+                          "width": 26,
+                          "height": 2,
+                          "fill": "$accent-warm"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ptIUA",
+                          "name": "Sent Eyebrow",
+                          "fill": "$accent-warm-deep",
+                          "content": "ZAPYTANIE WYSŁANE",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "JmsCJ",
+                      "name": "Sent Title",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Dziękujemy, odezwiemy się wkrótce",
+                      "lineHeight": 1.1,
+                      "fontFamily": "$font-display",
+                      "fontSize": 38,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "B4Mw9R",
+                      "name": "Sent Body",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Potwierdzimy dostępność terminu jeszcze dziś. Odpowiedź wyślemy na podany adres e-mail. W pilnych sprawach zadzwońcie: +48 500 290 390.",
+                      "lineHeight": 1.65,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "s2tSdi",
+                      "name": "Send Again Link",
+                      "gap": 10,
+                      "padding": [
+                        8,
+                        0,
+                        0,
+                        0
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "xK6SE",
+                          "name": "Again Label",
+                          "fill": "$accent",
+                          "content": "WYŚLIJ KOLEJNE ZAPYTANIE",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "500",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "icon",
+                          "id": "zU2bN",
+                          "name": "Again Arrow",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "arrow-right",
+                          "library": "lucide",
+                          "fill": "$accent"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ASGOo",
+      "x": 16711,
+      "y": 0,
+      "name": "Kontakt v2 Mobile",
+      "clip": true,
+      "width": 390,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "KL5bN",
+          "name": "M Page Header",
+          "clip": true,
+          "width": "fill_container",
+          "height": 400,
+          "fill": [
+            {
+              "type": "image",
+              "enabled": true,
+              "url": "images/dom-noca1.jpeg",
+              "mode": "fill"
+            },
+            {
+              "type": "gradient",
+              "gradientType": "linear",
+              "enabled": true,
+              "rotation": 180,
+              "size": {
+                "height": 1
+              },
+              "colors": [
+                {
+                  "color": "#0D120D80",
+                  "position": 0
+                },
+                {
+                  "color": "#0D120D66",
+                  "position": 0.4
+                },
+                {
+                  "color": "#0A0E08E0",
+                  "position": 1
+                }
+              ]
+            }
+          ],
+          "layout": "vertical",
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "d58CA4",
+              "name": "M Nav",
+              "width": "fill_container",
+              "padding": [
+                22,
+                20
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "o5Eko",
+                  "name": "Brand Logo",
+                  "width": 63,
+                  "height": 40,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "images/logo-light.png",
+                    "mode": "fit"
+                  }
+                },
+                {
+                  "type": "icon",
+                  "id": "r68lV",
+                  "name": "M Menu Icon",
+                  "width": 24,
+                  "height": 24,
+                  "icon": "menu",
+                  "library": "lucide",
+                  "fill": "$text-inverse"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Ba6Be",
+              "name": "M Header Title",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 14,
+              "padding": [
+                0,
+                20,
+                32,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "TMYE9",
+                  "name": "Eyebrow Row",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "bBreo",
+                      "name": "Eyebrow Rule",
+                      "width": 22,
+                      "height": 2,
+                      "fill": "$accent-warm"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZhJsO",
+                      "name": "M Header Eyebrow",
+                      "fill": "$accent-warm",
+                      "content": "KONTAKT",
+                      "fontFamily": "$font-body",
+                      "fontSize": 10.5,
+                      "fontWeight": "normal",
+                      "letterSpacing": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Y7mciO",
+                  "name": "M Header Title",
+                  "fill": "$text-inverse",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000099",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 8
+                  },
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Zapraszamy do\nRezydencji",
+                  "lineHeight": 1.05,
+                  "fontFamily": "$font-display",
+                  "fontSize": 38,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "VZGBw",
+                  "name": "M Header Intro",
+                  "fill": "$text-inverse-dim",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000099",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 8
+                  },
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Zadzwońcie albo skorzystajcie z formularza. Potwierdzimy dostępność jeszcze tego samego dnia.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "cv2qX",
+          "name": "M Kontakt Content",
+          "width": "fill_container",
+          "fill": "$bg",
+          "layout": "vertical",
+          "gap": 36,
+          "padding": [
+            40,
+            20,
+            48,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "hhvGo",
+              "name": "M Kontakt Karta",
+              "width": "fill_container",
+              "fill": "$bg-dark",
+              "layout": "vertical",
+              "gap": 24,
+              "padding": 28,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "dqSbm",
+                  "name": "M Card Title",
+                  "fill": "$text-inverse",
+                  "content": "Rezydencja Zawoja",
+                  "fontFamily": "$font-display",
+                  "fontSize": 26,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "K1RPGf",
+                  "name": "M Info Adres",
+                  "width": "fill_container",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "AtCEd",
+                      "name": "M Icon Wrap",
+                      "width": 38,
+                      "height": 38,
+                      "fill": "#F7F5EF14",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "SciYI",
+                          "name": "M Info Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "map-pin",
+                          "library": "lucide",
+                          "fill": "$accent-warm"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "L5hDF",
+                      "name": "M Info Col",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "g0MNd",
+                          "name": "M Info Label",
+                          "fill": "$accent-warm",
+                          "content": "Adres",
+                          "fontFamily": "$font-body",
+                          "fontSize": 10.5,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1.5
+                        },
+                        {
+                          "type": "text",
+                          "id": "jZlBT",
+                          "name": "M Info Val",
+                          "fill": "$text-inverse",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Zawoja Mosorne 2853, 34-222 Zawoja",
+                          "lineHeight": 1.4,
+                          "fontFamily": "$font-body",
+                          "fontSize": 14.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "F6Y6K",
+                  "name": "M Info Telefon",
+                  "width": "fill_container",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "BZ41H",
+                      "name": "M Icon Wrap",
+                      "width": 38,
+                      "height": 38,
+                      "fill": "#F7F5EF14",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "kgepC",
+                          "name": "M Info Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "phone",
+                          "library": "lucide",
+                          "fill": "$accent-warm"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "kgXWk",
+                      "name": "M Info Col",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Uh1PQ",
+                          "name": "M Info Label",
+                          "fill": "$accent-warm",
+                          "content": "Telefon",
+                          "fontFamily": "$font-body",
+                          "fontSize": 10.5,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1.5
+                        },
+                        {
+                          "type": "text",
+                          "id": "azE0v",
+                          "name": "M Info Val",
+                          "fill": "$text-inverse",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "+48 500 290 390",
+                          "lineHeight": 1.4,
+                          "fontFamily": "$font-body",
+                          "fontSize": 14.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "mI15N",
+                  "name": "M Info E-mail",
+                  "width": "fill_container",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "qZC20",
+                      "name": "M Icon Wrap",
+                      "width": 38,
+                      "height": 38,
+                      "fill": "#F7F5EF14",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "jtACy",
+                          "name": "M Info Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "mail",
+                          "library": "lucide",
+                          "fill": "$accent-warm"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "wgrwx",
+                      "name": "M Info Col",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "xdHm3",
+                          "name": "M Info Label",
+                          "fill": "$accent-warm",
+                          "content": "E-mail",
+                          "fontFamily": "$font-body",
+                          "fontSize": 10.5,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1.5
+                        },
+                        {
+                          "type": "text",
+                          "id": "Bo88Y",
+                          "name": "M Info Val",
+                          "fill": "$text-inverse",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "biuro@rezydencjazawoja.pl",
+                          "lineHeight": 1.4,
+                          "fontFamily": "$font-body",
+                          "fontSize": 14.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "I5xzl",
+                  "name": "M Info Doba pobytu",
+                  "width": "fill_container",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "kjLdI",
+                      "name": "M Icon Wrap",
+                      "width": 38,
+                      "height": 38,
+                      "fill": "#F7F5EF14",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "pkOAx",
+                          "name": "M Info Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "clock-4",
+                          "library": "lucide",
+                          "fill": "$accent-warm"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "W3d27z",
+                      "name": "M Info Col",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "z4xRG",
+                          "name": "M Info Label",
+                          "fill": "$accent-warm",
+                          "content": "Doba pobytu",
+                          "fontFamily": "$font-body",
+                          "fontSize": 10.5,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1.5
+                        },
+                        {
+                          "type": "text",
+                          "id": "JoUf8",
+                          "name": "M Info Val",
+                          "fill": "$text-inverse",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Przyjazd 16:00 / Wyjazd 10:00",
+                          "lineHeight": 1.4,
+                          "fontFamily": "$font-body",
+                          "fontSize": 14.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "H16dp",
+                  "name": "M Card Call",
+                  "width": "fill_container",
+                  "fill": "$accent-warm",
+                  "gap": 9,
+                  "padding": [
+                    14,
+                    0
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "TRi8h",
+                      "name": "M Call Icon",
+                      "width": 15,
+                      "height": 15,
+                      "icon": "phone",
+                      "library": "lucide",
+                      "fill": "$bg-dark"
+                    },
+                    {
+                      "type": "text",
+                      "id": "K0V6G",
+                      "name": "M Call Label",
+                      "fill": "$bg-dark",
+                      "content": "ZADZWOŃ TERAZ",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.5
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "x9Dw7v",
+              "name": "M Kontakt Form",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 18,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "cdsRR",
+                  "name": "Eyebrow Row",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "RYCol",
+                      "name": "Eyebrow Rule",
+                      "width": 22,
+                      "height": 2,
+                      "fill": "$accent-warm"
+                    },
+                    {
+                      "type": "text",
+                      "id": "RBwVi",
+                      "name": "M Form Eyebrow",
+                      "fill": "$accent-warm-deep",
+                      "content": "FORMULARZ ZAPYTANIA",
+                      "fontFamily": "$font-body",
+                      "fontSize": 10.5,
+                      "fontWeight": "normal",
+                      "letterSpacing": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Yrjcl",
+                  "name": "M Form Title",
+                  "fill": "$text-primary",
+                  "content": "Zapytaj o wolny termin",
+                  "fontFamily": "$font-display",
+                  "fontSize": 28,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "f867z",
+                  "name": "M Field IMIĘ I NAZWISKO",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 7,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "BfvKt",
+                      "name": "M F Label",
+                      "fill": "$text-secondary",
+                      "content": "IMIĘ I NAZWISKO",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "tkMxy",
+                      "name": "M F Box",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF",
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "padding": [
+                        13,
+                        14
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "fQP85",
+                          "name": "M F Ph",
+                          "fill": "#9A9C90",
+                          "content": "Jan Kowalski",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fnIxF",
+                  "name": "M Field TELEFON",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 7,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "FWifi",
+                      "name": "M F Label",
+                      "fill": "$text-secondary",
+                      "content": "TELEFON",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "f4k5sL",
+                      "name": "M F Box",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF",
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "padding": [
+                        13,
+                        14
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "wrqhZ",
+                          "name": "M F Ph",
+                          "fill": "#9A9C90",
+                          "content": "+48 500 000 000",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "m1Uad0",
+                  "name": "M Field EMAIL",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 7,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "AdpLM",
+                      "name": "M F Label",
+                      "fill": "$text-secondary",
+                      "content": "EMAIL",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "L8fkQ",
+                      "name": "M F Box",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF",
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "padding": [
+                        13,
+                        14
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "oLVC2",
+                          "name": "M F Ph",
+                          "fill": "#9A9C90",
+                          "content": "jan@email.pl",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "YRfkK",
+                  "name": "M Form Row",
+                  "width": "fill_container",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "imuPA",
+                      "name": "M Field PRZYJAZD",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 7,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "dhyod",
+                          "name": "M F Label",
+                          "fill": "$text-secondary",
+                          "content": "PRZYJAZD",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Q1TS8",
+                          "name": "M F Box",
+                          "width": "fill_container",
+                          "fill": "#FFFFFF",
+                          "stroke": "$line",
+                          "strokeWidth": 1,
+                          "padding": [
+                            13,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "JXBEy",
+                              "name": "M F Ph",
+                              "fill": "#9A9C90",
+                              "content": "12 gru 2026",
+                              "fontFamily": "$font-body",
+                              "fontSize": 14.5,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "YNBbY",
+                      "name": "M Field WYJAZD",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 7,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "j65tPT",
+                          "name": "M F Label",
+                          "fill": "$text-secondary",
+                          "content": "WYJAZD",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "C5TNk",
+                          "name": "M F Box",
+                          "width": "fill_container",
+                          "fill": "#FFFFFF",
+                          "stroke": "$line",
+                          "strokeWidth": 1,
+                          "padding": [
+                            13,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "XXQ4X",
+                              "name": "M F Ph",
+                              "fill": "#9A9C90",
+                              "content": "16 gru 2026",
+                              "fontFamily": "$font-body",
+                              "fontSize": 14.5,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NsSOP",
+                  "name": "M Form Row",
+                  "width": "fill_container",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "H1uTXz",
+                      "name": "M Field DOROŚLI",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 7,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "HRUiX",
+                          "name": "M F Label",
+                          "fill": "$text-secondary",
+                          "content": "DOROŚLI",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "PqEHX",
+                          "name": "M F Box",
+                          "width": "fill_container",
+                          "fill": "#FFFFFF",
+                          "stroke": "$line",
+                          "strokeWidth": 1,
+                          "padding": [
+                            13,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "cu0Un",
+                              "name": "M F Ph",
+                              "fill": "#9A9C90",
+                              "content": "4",
+                              "fontFamily": "$font-body",
+                              "fontSize": 14.5,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "SmvId",
+                      "name": "M Field DZIECI",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 7,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "pPS7z",
+                          "name": "M F Label",
+                          "fill": "$text-secondary",
+                          "content": "DZIECI",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "UGjwC",
+                          "name": "M F Box",
+                          "width": "fill_container",
+                          "fill": "#FFFFFF",
+                          "stroke": "$line",
+                          "strokeWidth": 1,
+                          "padding": [
+                            13,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "rZ00v",
+                              "name": "M F Ph",
+                              "fill": "#9A9C90",
+                              "content": "0",
+                              "fontFamily": "$font-body",
+                              "fontSize": 14.5,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "h45JPA",
+                  "name": "M Field WIADOMOŚĆ",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 7,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "RuHT0",
+                      "name": "M F Label",
+                      "fill": "$text-secondary",
+                      "content": "WIADOMOŚĆ (OPCJONALNIE)",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "boVW2",
+                      "name": "M F Box",
+                      "width": "fill_container",
+                      "height": 110,
+                      "fill": "#FFFFFF",
+                      "stroke": "$line",
+                      "padding": [
+                        13,
+                        14
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ro5Iu",
+                          "name": "M F Ph",
+                          "fill": "#9A9C90",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Pytania, szczególne życzenia, pora przyjazdu…",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "k6JCd",
+                  "name": "M Consent",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "padding": [
+                    4,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "rRv8u",
+                      "name": "M Checkbox",
+                      "width": 18,
+                      "height": 18,
+                      "fill": "#FFFFFF",
+                      "stroke": "$accent",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "Puvai",
+                      "name": "M Consent Text",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Wyrażam zgodę na przetwarzanie moich danych na potrzeby procesu rezerwacji.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 12.5,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ePVat",
+                  "name": "M Send",
+                  "width": "fill_container",
+                  "fill": "$accent",
+                  "gap": 10,
+                  "padding": [
+                    16,
+                    0
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "X2Uk1g",
+                      "name": "M Send Label",
+                      "fill": "#FFFFFF",
+                      "content": "WYŚLIJ ZAPYTANIE",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "500",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "icon",
+                      "id": "t9ezc",
+                      "name": "M Send Arrow",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "arrow-right",
+                      "library": "lucide",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "O0jky2",
+          "name": "M Kontakt Mapa",
+          "width": "fill_container",
+          "fill": "$bg",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "sR89k",
+              "name": "M Mapa Caption",
+              "width": "fill_container",
+              "fill": "$bg",
+              "stroke": "$line",
+              "strokeWidth": {
+                "top": 1
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": [
+                36,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "mc9pd",
+                  "name": "Eyebrow Row",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "a0tVa",
+                      "name": "Eyebrow Rule",
+                      "width": 22,
+                      "height": 2,
+                      "fill": "$accent-warm"
+                    },
+                    {
+                      "type": "text",
+                      "id": "yTgP7",
+                      "name": "M Cap Eyebrow",
+                      "fill": "$accent-warm-deep",
+                      "content": "DOJAZD",
+                      "fontFamily": "$font-body",
+                      "fontSize": 10.5,
+                      "fontWeight": "normal",
+                      "letterSpacing": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "upSjI",
+                  "name": "M Cap Title",
+                  "fill": "$text-primary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Znajdziecie nas w Zawoi Mosorne",
+                  "lineHeight": 1.1,
+                  "fontFamily": "$font-display",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "R46AXj",
+                  "name": "M Cap Coords",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "FzYDH",
+                      "name": "M Pin Sm",
+                      "width": 14,
+                      "height": 14,
+                      "icon": "map-pin",
+                      "library": "lucide",
+                      "fill": "$accent"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZNo2o",
+                      "name": "M Coords",
+                      "fill": "$accent",
+                      "content": "49.6405, 19.5586",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13.5,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "WF8Ci",
+              "name": "M Mapa Obraz",
+              "clip": true,
+              "width": "fill_container",
+              "height": 320,
+              "fill": [
+                {
+                  "type": "image",
+                  "enabled": true,
+                  "url": "images/map-zawoja-azure.png",
+                  "mode": "fill"
+                },
+                "#3E4F411A"
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "mrzxG",
+                  "name": "M Map Marker",
+                  "layout": "vertical",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "acyPi",
+                      "name": "M Marker Pill",
+                      "fill": "$bg-dark",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000059",
+                        "offset": {
+                          "x": 0,
+                          "y": 4
+                        },
+                        "blur": 14
+                      },
+                      "padding": [
+                        9,
+                        15
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ecRrp",
+                          "name": "M Marker Label",
+                          "fill": "$text-inverse",
+                          "content": "REZYDENCJA ZAWOJA",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "500",
+                          "letterSpacing": 1.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "hEhMs",
+                      "name": "Marker Pin",
+                      "fill": "#00000000",
+                      "layout": "vertical",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "F9nma6",
+                          "name": "Pin Head",
+                          "width": 22,
+                          "height": 22,
+                          "fill": "$bg-dark",
+                          "cornerRadius": 11,
+                          "stroke": "$text-inverse",
+                          "strokeWidth": 2,
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#00000059",
+                            "offset": {
+                              "x": 0,
+                              "y": 2
+                            },
+                            "blur": 6
+                          },
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "ellipse",
+                              "id": "oFKCx",
+                              "name": "Pin Dot",
+                              "fill": "$accent-warm",
+                              "width": 7,
+                              "height": 7
+                            }
+                          ]
+                        },
+                        {
+                          "type": "rectangle",
+                          "id": "rRmh0",
+                          "name": "Pin Stem",
+                          "fill": "$bg-dark",
+                          "width": 2,
+                          "height": 10
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "A39Os",
+          "name": "M Stopka",
+          "width": "fill_container",
+          "fill": "$bg-dark",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            48,
+            20,
+            32,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "J8BaC",
+              "name": "Brand Logo",
+              "width": 78,
+              "height": 50,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "images/logo-light.png",
+                "mode": "fit"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "kUs9E",
+              "name": "M Stopka Kontakt",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "SU29y",
+                  "name": "M Stopka Adres",
+                  "fill": "$text-inverse-dim",
+                  "content": "Zawoja, Beskidy, u stóp Babiej Góry",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "W6G8J",
+                  "name": "M Stopka Tel",
+                  "fill": "$text-inverse-dim",
+                  "content": "+48 500 290 390",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "t1EZOl",
+                  "name": "M Stopka Email",
+                  "fill": "$text-inverse-dim",
+                  "content": "biuro@rezydencjazawoja.pl",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "q21HQs",
+              "name": "M Stopka Nav",
+              "layout": "vertical",
+              "gap": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "N0KFF8",
+                  "name": "M Stopka Link Dom",
+                  "fill": "$text-inverse-dim",
+                  "content": "Dom",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "v6zxre",
+                  "name": "M Stopka Link Wnętrza",
+                  "fill": "$text-inverse-dim",
+                  "content": "Wnętrza",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "YKTui",
+                  "name": "M Stopka Link Okolica",
+                  "fill": "$text-inverse-dim",
+                  "content": "Okolica",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "BMgbq",
+                  "name": "M Stopka Link Galeria",
+                  "fill": "$text-inverse-dim",
+                  "content": "Galeria",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "lnYc5",
+                  "name": "M Stopka Link Cennik",
+                  "fill": "$text-inverse-dim",
+                  "content": "Cennik",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Eok12",
+                  "name": "M Stopka Link Kontakt",
+                  "fill": "$text-inverse-dim",
+                  "content": "Kontakt",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "z9jQJx",
+              "name": "M Stopka Bottom",
+              "width": "fill_container",
+              "stroke": "#F7F5EF26",
+              "strokeWidth": {
+                "top": 1
+              },
+              "layout": "vertical",
+              "gap": 14,
+              "padding": [
+                24,
+                0,
+                0,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "NgBCI",
+                  "name": "M Stopka Copyright",
+                  "fill": "$text-inverse-dim",
+                  "content": "© 2026 Rezydencja Zawoja. Wszelkie prawa zastrzeżone.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 11.5,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "VTrkI",
+                  "name": "M Stopka Legal",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "EiysW",
+                      "name": "M Legal 1",
+                      "fill": "$text-inverse-dim",
+                      "content": "Polityka prywatności",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11.5,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "nIIs6",
+                      "name": "M Legal 2",
+                      "fill": "$text-inverse-dim",
+                      "content": "Regulamin najmu",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11.5,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "JdukH",
+      "x": 16711,
+      "y": 2800,
+      "name": "Kontakt Form States Mobile",
+      "width": 390,
+      "fill": "$bg",
+      "layout": "vertical",
+      "gap": 28,
+      "padding": [
+        40,
+        20
+      ],
+      "children": [
+        {
+          "type": "text",
+          "id": "z1lsV",
+          "name": "State Caption",
+          "fill": "$accent-warm-deep",
+          "content": "BŁĄD POLA + BŁĄD WYSYŁKI",
+          "fontFamily": "$font-body",
+          "fontSize": 11,
+          "fontWeight": "normal",
+          "letterSpacing": 1
+        },
+        {
+          "type": "frame",
+          "id": "MKZl1",
+          "name": "M Field EMAIL",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 7,
+          "children": [
+            {
+              "type": "text",
+              "id": "bJfzq",
+              "name": "M F Label",
+              "fill": "$text-secondary",
+              "content": "EMAIL",
+              "fontFamily": "$font-body",
+              "fontSize": 11,
+              "fontWeight": "normal",
+              "letterSpacing": 1
+            },
+            {
+              "type": "frame",
+              "id": "ADzZX",
+              "name": "M F Box",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "stroke": "$error",
+              "strokeWidth": 1.5,
+              "padding": [
+                13,
+                14
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "V0dlD3",
+                  "name": "M F Value",
+                  "fill": "$text-primary",
+                  "content": "jan@email",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "G36OzQ",
+              "name": "Field Error",
+              "width": "fill_container",
+              "gap": 7,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "Sev7K",
+                  "name": "Error Icon",
+                  "width": 13,
+                  "height": 13,
+                  "icon": "circle-alert",
+                  "library": "lucide",
+                  "fill": "$error"
+                },
+                {
+                  "type": "text",
+                  "id": "zYIgv",
+                  "name": "Error Text",
+                  "fill": "$error",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Podaj poprawny adres e-mail.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "TOQN8",
+          "name": "Failure Banner",
+          "width": "fill_container",
+          "fill": "#9B3B2B0F",
+          "stroke": "$error",
+          "gap": 12,
+          "padding": [
+            14,
+            16
+          ],
+          "children": [
+            {
+              "type": "icon",
+              "id": "iP83r",
+              "name": "Banner Icon",
+              "width": 17,
+              "height": 17,
+              "icon": "circle-alert",
+              "library": "lucide",
+              "fill": "$error"
+            },
+            {
+              "type": "frame",
+              "id": "hebSG",
+              "name": "Banner Text",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "r4oHSq",
+                  "name": "Banner Title",
+                  "fill": "$text-primary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Nie udało się wysłać zapytania.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "gSfS4",
+                  "name": "Banner Body",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Spróbujcie ponownie za chwilę albo skontaktujcie się bezpośrednio: +48 500 290 390 · biuro@rezydencjazawoja.pl",
+                  "lineHeight": 1.5,
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "fFMS6",
+          "name": "State Caption",
+          "fill": "$accent-warm-deep",
+          "content": "WYSŁANO",
+          "fontFamily": "$font-body",
+          "fontSize": 11,
+          "fontWeight": "normal",
+          "letterSpacing": 1
+        },
+        {
+          "type": "frame",
+          "id": "thYtw",
+          "name": "Sent Panel",
+          "width": "fill_container",
+          "fill": "$surface",
+          "stroke": "$line",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 28,
+          "children": [
+            {
+              "type": "frame",
+              "id": "gdq0Y",
+              "name": "Sent Icon Wrap",
+              "width": 44,
+              "height": 44,
+              "fill": "$bg-dark",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "yy5AQ",
+                  "name": "Sent Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "check",
+                  "library": "lucide",
+                  "fill": "$accent-warm"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NugyE",
+              "name": "Eyebrow Row",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "c31BD",
+                  "name": "Eyebrow Rule",
+                  "width": 22,
+                  "height": 2,
+                  "fill": "$accent-warm"
+                },
+                {
+                  "type": "text",
+                  "id": "YElBM",
+                  "name": "Sent Eyebrow",
+                  "fill": "$accent-warm-deep",
+                  "content": "ZAPYTANIE WYSŁANE",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10.5,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "oQNnk",
+              "name": "Sent Title",
+              "fill": "$text-primary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Dziękujemy, odezwiemy się wkrótce",
+              "lineHeight": 1.1,
+              "fontFamily": "$font-display",
+              "fontSize": 28,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "c9IFso",
+              "name": "Sent Body",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Potwierdzimy dostępność terminu jeszcze dziś. Odpowiedź wyślemy na podany adres e-mail. W pilnych sprawach zadzwońcie: +48 500 290 390.",
+              "lineHeight": 1.6,
+              "fontFamily": "$font-body",
+              "fontSize": 14.5,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "W8Xnw",
+              "name": "Send Again Link",
+              "gap": 10,
+              "padding": [
+                6,
+                0,
+                0,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "m8nFUh",
+                  "name": "Again Label",
+                  "fill": "$accent",
+                  "content": "WYŚLIJ KOLEJNE ZAPYTANIE",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12.5,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "icon",
+                  "id": "FC9M0",
+                  "name": "Again Arrow",
+                  "width": 15,
+                  "height": 15,
+                  "icon": "arrow-right",
+                  "library": "lucide",
+                  "fill": "$accent"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "variables": {
@@ -23996,6 +27954,10 @@
     "accent-warm-deep": {
       "type": "color",
       "value": "#7A5D2E"
+    },
+    "error": {
+      "type": "color",
+      "value": "#9B3B2B"
     }
   },
   "fileToken": "fd3e4a83-d401-4cf5-8853-08e57a20ed90"
