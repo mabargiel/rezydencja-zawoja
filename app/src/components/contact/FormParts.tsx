@@ -4,6 +4,7 @@ import { ArrowRight, CircleAlert, LoaderCircle } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { useFormStatus } from 'react-dom'
 
+import { phoneHref, site } from '@/config/site'
 import type { InquiryField } from '@/lib/inquiry'
 
 export function Row({ children, isPaired }: { children: ReactNode; isPaired?: boolean }) {
@@ -71,5 +72,42 @@ export function SubmitButton({ label, pendingLabel }: { label: string; pendingLa
         </>
       )}
     </button>
+  )
+}
+
+type SendErrorProps = {
+  title: string
+  body: string
+}
+
+export function SendError({ title, body }: SendErrorProps) {
+  return (
+    <div
+      role="alert"
+      className="flex gap-3 border border-error bg-error-tint px-4 py-3.5 lg:gap-3.5 lg:px-[18px] lg:py-4"
+    >
+      <CircleAlert
+        aria-hidden
+        size={18}
+        strokeWidth={1.75}
+        className="mt-0.5 shrink-0 text-error"
+      />
+      <div className="flex flex-col gap-1">
+        <p className="font-body text-sm font-medium text-text-primary lg:text-[14.5px]">{title}</p>
+        <p className="font-body text-[13px] leading-[1.5] text-text-secondary lg:text-[13.5px]">
+          {body}{' '}
+          <a href={phoneHref} className="underline underline-offset-2 hover:text-accent">
+            {site.phone}
+          </a>
+          {' · '}
+          <a
+            href={`mailto:${site.email}`}
+            className="underline underline-offset-2 hover:text-accent"
+          >
+            {site.email}
+          </a>
+        </p>
+      </div>
+    </div>
   )
 }

@@ -31,7 +31,7 @@ export type InquiryField = (typeof inquiryFields)[number]
 export type InquiryValues = Partial<Record<InquiryField, string>>
 
 export type InquiryState = {
-  status: 'idle' | 'invalid' | 'failed' | 'sent'
+  status: 'idle' | 'invalid' | 'failed' | 'limited' | 'sent'
   errors?: Partial<Record<InquiryField, ErrorCode>>
   values?: InquiryValues
 }
