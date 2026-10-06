@@ -33,7 +33,7 @@ export function BedroomCards({ bedrooms, guestsLabel, lightbox }: BedroomCardsPr
           return (
             <li
               key={bedroom._key}
-              className={`reveal ${revealDelay(index)} flex w-[200px] shrink-0 flex-col gap-2.5 lg:w-auto lg:flex-1 lg:gap-3.5`}
+              className={`reveal-right ${revealDelay(index)} flex w-[200px] shrink-0 flex-col gap-2.5 lg:w-auto lg:flex-1 lg:gap-3.5`}
             >
               {cover ? (
                 <PhotoTile

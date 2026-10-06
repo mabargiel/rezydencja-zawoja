@@ -1,15 +1,19 @@
 ## ADDED Requirements
 
 ### Requirement: Reveal on scroll
-Section headings, text blocks, images, cards, table rows and gallery tiles SHALL fade in and rise by at most 24px as they enter the viewport, with siblings staggered. The reveal SHALL be driven by CSS scroll-driven animations without client JavaScript. Content that's already in view when the page loads SHALL render in its final state. In browsers without scroll-driven animations, content SHALL be fully visible without animation. The hero, navbar and footer SHALL NOT use reveals.
+Section headings, text columns, photo frames and cards SHALL slide in from the left or right (at most 64px) and fade in as they enter the viewport. Text beside a photo SHALL come from the opposite side to the photo, and siblings SHALL be staggered. Grids where a side doesn't make sense (gallery masonry, key facts) SHALL rise by at most 40px instead. Reveals SHALL work in current Chrome, Safari and Firefox. Content SHALL be visible without JavaScript, content already in view when the page loads SHALL never be hidden, and reveals SHALL NOT cause horizontal scrolling. The hero, navbar and footer SHALL NOT use reveals.
 
 #### Scenario: Scrolling Home
-- **WHEN** a visitor using Chrome or Safari scrolls the Home page down to the Spa section
-- **THEN** its heading and photos fade and rise into place as they enter the viewport
+- **WHEN** a visitor in Chrome or Firefox scrolls the Home page down to the Intro section
+- **THEN** its heading slides in from the left and its text from the right as they enter the viewport
 
-#### Scenario: Unsupported browser
-- **WHEN** a browser without `animation-timeline: view()` loads any page
+#### Scenario: Without JavaScript
+- **WHEN** a page loads with JavaScript disabled
 - **THEN** every section's content is visible at full opacity with no transform
+
+#### Scenario: No horizontal scroll on mobile
+- **WHEN** a page is viewed at 390px wide before any section has revealed
+- **THEN** the page can't be scrolled horizontally
 
 #### Scenario: No layout shift
 - **WHEN** a page is measured with Lighthouse
@@ -49,3 +53,14 @@ With `prefers-reduced-motion: reduce`, no reveal, entrance, hover zoom or dialog
 #### Scenario: Reduced motion
 - **WHEN** any page loads with `prefers-reduced-motion: reduce` and the visitor scrolls, hovers and opens the lightbox
 - **THEN** nothing moves or fades, and all content is visible
+
+### Requirement: Smooth photo loading
+Every CMS photo SHALL show its blurred placeholder until it loads and then sharpen smoothly, without an abrupt swap from blurred to sharp. The transition SHALL NOT wait for client JavaScript to hydrate, SHALL NOT hide the image (so LCP is measured as without the effect), and photos SHALL display normally without JavaScript.
+
+#### Scenario: Panorama on a slow connection
+- **WHEN** a visitor scrolls to the Home "Malownicza lokalizacja" section on a slow connection
+- **THEN** the panorama shows blurred until it loads, then sharpens over about 0.7 seconds
+
+#### Scenario: LCP unchanged
+- **WHEN** Lighthouse measures Home, Galeria and Okolica before and after this change
+- **THEN** LCP is within run-to-run variance of the baseline

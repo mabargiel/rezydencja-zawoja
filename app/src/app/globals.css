@@ -32,6 +32,7 @@
   --duration-fast: 200ms;
   --duration-base: 450ms;
   --duration-slow: 900ms;
+  --duration-cinematic: 2800ms;
   --animate-rise: rise var(--duration-slow) var(--ease-out-soft) both;
   --animate-settle: settle 1600ms var(--ease-out-soft) both;
   --animate-fade: fade var(--duration-base) var(--ease-out-soft) both;
@@ -52,13 +53,6 @@
   @keyframes fade {
     from {
       opacity: 0;
-    }
-  }
-
-  @keyframes reveal-media {
-    from {
-      opacity: 0;
-      transform: scale(1.04);
     }
   }
 }
@@ -114,37 +108,58 @@
       }
     }
 
-    @supports (animation-timeline: view()) {
-      .reveal,
-      .reveal-media {
-        animation-timing-function: var(--ease-out-soft);
-        animation-fill-mode: both;
-        animation-timeline: view();
-      }
+    [data-blur-up-ready] img[data-blur-up] {
+      transition:
+        filter 700ms var(--ease-out-soft),
+        transform var(--duration-slow) var(--ease-out-soft);
+    }
 
-      .reveal {
-        animation-name: rise;
-        animation-range: entry var(--reveal-shift, 0%) entry calc(160px + var(--reveal-shift, 0%));
-      }
+    [data-blur-up-ready] img[data-blur-up]:not([data-loaded]) {
+      filter: blur(14px);
+      transform: scale(1.06);
+    }
 
-      .reveal-media {
-        animation-name: reveal-media;
-        animation-range: entry 0 entry 220px;
-      }
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-media {
+      transition:
+        opacity 1100ms var(--ease-out-soft) var(--reveal-delay, 0ms),
+        transform 1100ms var(--ease-out-soft) var(--reveal-delay, 0ms);
+    }
+
+    [data-reveal-ready] .reveal:not([data-revealed]) {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    [data-reveal-ready] .reveal-left:not([data-revealed]) {
+      opacity: 0;
+      transform: translateX(-64px);
+    }
+
+    [data-reveal-ready] .reveal-right:not([data-revealed]) {
+      opacity: 0;
+      transform: translateX(64px);
+    }
+
+    [data-reveal-ready] .reveal-media:not([data-revealed]) {
+      opacity: 0;
+      transform: scale(1.06);
     }
   }
 }
 
 @utility reveal-delay-1 {
-  --reveal-shift: 40px;
+  --reveal-delay: 120ms;
 }
 
 @utility reveal-delay-2 {
-  --reveal-shift: 80px;
+  --reveal-delay: 240ms;
 }
 
 @utility reveal-delay-3 {
-  --reveal-shift: 120px;
+  --reveal-delay: 360ms;
 }
 
 @utility scrollbar-none {
@@ -153,6 +168,7 @@
 
 @layer base {
   html {
+    overflow-x: clip;
     scroll-behavior: smooth;
   }
 
@@ -161,6 +177,7 @@
   }
 
   body {
+    overflow-x: clip;
     background-color: var(--color-bg);
     color: var(--color-text-primary);
     font-family: var(--font-body);

@@ -35,7 +35,7 @@ export function RoomSection({
       className="flex scroll-mt-32 flex-col gap-3.5 px-5 py-9 lg:scroll-mt-20 lg:gap-10 lg:px-[120px] lg:py-16"
     >
       <div className="flex flex-col gap-3.5 lg:flex-row lg:gap-20">
-        <div className="reveal flex flex-col gap-3.5 lg:w-[420px] lg:shrink-0 lg:gap-[18px]">
+        <div className="reveal-left flex flex-col gap-3.5 lg:w-[420px] lg:shrink-0 lg:gap-[18px]">
           <Eyebrow>{eyebrow}</Eyebrow>
           <h2
             id={`${id}-title`}
@@ -48,7 +48,7 @@ export function RoomSection({
           </p>
           <DashList items={facts} className="gap-2 lg:gap-2.5 lg:pt-1.5" />
         </div>
-        <div className="reveal reveal-delay-1 lg:min-w-0 lg:flex-1">
+        <div className="reveal-right reveal-delay-1 lg:min-w-0 lg:flex-1">
           <RoomMosaic photos={photos} lightbox={lightbox} />
         </div>
       </div>

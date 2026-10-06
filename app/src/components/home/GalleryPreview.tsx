@@ -32,7 +32,7 @@ export function GalleryPreview({ eyebrow, title, link, photos }: GalleryPreviewP
         {photos.slice(0, 4).map((photo, index) => (
           <li
             key={photo._key}
-            className={`relative mb-3 break-inside-avoid overflow-hidden bg-line lg:mb-0 ${tiles[index]} reveal ${revealDelay(index)}`}
+            className={`relative mb-3 break-inside-avoid overflow-hidden bg-line lg:mb-0 ${tiles[index]} ${index < 2 ? 'reveal-left' : 'reveal-right'} ${revealDelay(index)}`}
           >
             <SanityImage photo={photo} sizes="(min-width: 1024px) 25vw, 50vw" />
           </li>

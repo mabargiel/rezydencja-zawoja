@@ -18,11 +18,7 @@ export function PhotoTile({ photo, label, sizes, className, hiddenCount, onOpen 
       onClick={onOpen}
       className={`group relative block overflow-hidden bg-line ${className}`}
     >
-      <SanityImage
-        photo={photo}
-        sizes={sizes}
-        className="transition-transform duration-500 group-hover:scale-[1.03]"
-      />
+      <SanityImage photo={photo} sizes={sizes} className="group-hover:scale-[1.03]" />
       {hiddenCount !== undefined && hiddenCount > 0 && (
         <span
           aria-hidden

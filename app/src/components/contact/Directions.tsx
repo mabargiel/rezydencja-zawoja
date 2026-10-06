@@ -19,7 +19,7 @@ export async function Directions({ map }: DirectionsProps) {
   return (
     <section aria-labelledby="directions-title">
       <div className="flex flex-col gap-2.5 border-t border-line px-5 py-9 lg:flex-row lg:items-center lg:justify-between lg:px-[120px] lg:py-11">
-        <div className="reveal flex flex-col gap-2.5 lg:gap-3">
+        <div className="reveal-left flex flex-col gap-2.5 lg:gap-3">
           <Eyebrow>{t('pages.contact.directions.eyebrow')}</Eyebrow>
           <h2
             id="directions-title"

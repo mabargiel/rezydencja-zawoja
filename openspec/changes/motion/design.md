@@ -29,27 +29,29 @@ In `@theme`:
 
 Every new transition uses these through Tailwind (`ease-out-soft`, `duration-base`), so motion is tuned in one place.
 
-### D2. Reveal on scroll with CSS scroll-driven animations
-- Utilities in `globals.css`:
-  - `reveal`: fade from 0 and rise 24px;
-  - `reveal-media`: fade and settle from `scale(1.04)`, for images inside an `overflow-hidden` frame.
-- Each is driven by `animation-timeline: view()` with `animation-fill-mode: both`, and a range in **pixels**: `entry 0 → entry 160px` for `reveal`, `entry 0 → entry 220px` for `reveal-media`. Percentage ranges scale with element height, which would leave tall blocks that are partly on screen at load (like the legal text) half-transparent until scrolled. A fixed distance means anything already at least 160px into the viewport renders in its final state.
-- Both are wrapped in `@supports (animation-timeline: view())` and `@media (prefers-reduced-motion: no-preference)`. In any other browser, or with reduced motion, the classes do nothing, and the content is simply visible.
-- **Stagger**: siblings shift their range by 40px, 80px or 120px through `reveal-delay-1` to `reveal-delay-3` (`--reveal-shift`), with a `revealDelay(index)` helper for mapped lists.
-- Content already in view at load is past its entry range, so it renders in its final state with no flash.
-- Applied to the text column and media of each section: headings (through `SectionHeading`), feature cards, room text and mosaics, bedroom cards, the pricing table (as a whole, since table rows don't take transforms reliably), mobile pricing rows, gallery tiles, key facts, and the directions caption and map. Not applied to the hero, the navbar, the footer, the contact card and form (on screen at load, and interactive) or the legal text (long reading content).
-- *Alternative: an IntersectionObserver `Reveal` client wrapper.* It works in every browser, including Firefox, where scroll-driven animations aren't reliably available yet. But it wraps server content in client components, needs hydration before anything appears, and risks content staying hidden if JavaScript fails. The CSS route degrades to visible content. If Firefox reveals turn out to matter, a tiny observer fallback can add a class later.
+### D2. Reveal on scroll: side slides with an IntersectionObserver
+- **Directional utilities:**
+  - `reveal-left` and `reveal-right` slide in from 64px to either side and fade in;
+  - `reveal` rises 40px, for grids where a side doesn't make sense (gallery masonry, key facts);
+  - `reveal-media` settles from `scale(1.06)`;
+  - `reveal-delay-1` to `reveal-delay-3` stagger siblings by 120ms, 240ms and 360ms, with a `revealDelay(index)` helper for mapped lists.
+- **Direction per section:** headings come from the left; text beside a photo comes from the opposite side to the photo; alternating Okolica rows mirror; the room mosaic and bedroom cards come from the right; photo frames slide as a whole, so the image isn't clipped inside its box.
+- **Mechanism:** a `RevealObserver` client component in the layout.
+  - Content is hidden only under `html[data-reveal-ready]`, which the observer sets after marking everything already on screen as shown. Without JavaScript, nothing is ever hidden, and visible content never disappears.
+  - Elements are marked with a `data-revealed` attribute, not a class, so React re-renders can't strip it.
+  - A `MutationObserver` picks up content added later (gallery tiles after a filter change, streamed content, client-side navigation).
+- **Mobile:** `overflow-x: clip` on `html` and `body` stops elements waiting off to the side from creating horizontal scroll, without breaking `position: sticky`.
+- *Why not CSS scroll-driven animations (the first attempt)?* Firefox doesn't run them, and the owner tests in Firefox. In Chrome they finished within the first ~50px of scrolling, too subtle to notice.
+- Reduced motion: the observer doesn't start, and the hidden-state rules sit behind `prefers-reduced-motion: no-preference`.
 
-### D3. Hero media sequence (a `HeroMedia` client component)
-- `Hero` stays a Server Component and renders `<HeroMedia poster={poster} videoUrl={videoUrl} />` in place of the image and `HeroVideo`.
-- **Layers, from the bottom up:**
-  1. the hero's `bg-bg-dark`;
-  2. the LQIP as a blurred, slightly scaled background on the media frame, visible immediately from the server HTML;
-  3. the poster `SanityImage priority`, which starts at `opacity-0` and fades in over `duration-slow` when `onLoad` fires (`next/image` reports cached images too);
-  4. the `<video>` (`preload="metadata"`), which starts at `opacity-0` and fades in on the `playing` event, so a video that never plays never shows.
-- Reduced motion keeps the current behaviour: no video. The poster then appears without a fade, since `motion-reduce:transition-none` applies.
-- The text block and booking bar use a one-time CSS entrance (`animate-rise` with staggered delays, 100–400ms), also disabled under reduced motion.
-- **LCP**: the poster is still the priority image and is in the server HTML. The opacity fade doesn't change when it's painted for LCP purposes, because the element is rendered and decoded either way. This gets verified with a Lighthouse run before and after.
+### D3. Smooth photo loading: blur-up on every image
+- Every `SanityImage` keeps Next.js's blurred LQIP placeholder and gets `data-blur-up`.
+- A tiny inline script in `<head>` (`lib/blurUpScript.ts`) runs before any image is parsed. It sets `html[data-blur-up-ready]` and listens, in the capture phase, for each image's `load` (or `error`), marking the image `data-loaded`.
+- CSS keeps a photo at `blur(14px) scale(1.06)` until it's marked loaded, then transitions to sharp over 700ms. The placeholder and the arriving photo blend into each other, with no swap or flash. That was the cause of the hero and Location flashes.
+- The transition doesn't wait for hydration, and the image is never hidden, so Chrome's LCP counts exactly what it did before. Two rejected variants are recorded here. An opacity fade from 0 removed the images from LCP and made mobile LCP up to 2s worse. A separate placeholder layer was ignored by LCP as too low-detail at full size.
+- Without JavaScript, the attribute is never set and photos behave as before.
+- **Hero video** (`HeroMedia`): it stays invisible until the `playing` event, then fades in over `--duration-cinematic` (2.8s).
+- Hero text and booking bar: a one-time `animate-rise` with staggered delays, disabled under reduced motion.
 
 ### D4. Page header entrance
 `PageHeader` uses the same idea without JavaScript: the photo plays a one-time `animate-settle` (from `scale(1.06)` to `1`), and the title block an `animate-rise`. Because the photo already has a blur placeholder, a CSS-only settle is enough here; there's no video to sequence.

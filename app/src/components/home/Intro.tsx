@@ -20,7 +20,7 @@ export function Intro({ eyebrow, title, lead, body, link, house, detail }: Intro
         <div className="lg:w-[520px] lg:shrink-0">
           <SectionHeading eyebrow={eyebrow} title={title} />
         </div>
-        <div className="reveal reveal-delay-1 flex flex-col gap-5 lg:gap-[22px] lg:pt-2.5">
+        <div className="reveal-right reveal-delay-1 flex flex-col gap-5 lg:gap-[22px] lg:pt-2.5">
           <p className="font-body text-[17px] leading-normal text-text-primary lg:text-[19px]">
             {lead}
           </p>
@@ -34,23 +34,11 @@ export function Intro({ eyebrow, title, lead, body, link, house, detail }: Intro
       </div>
 
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:gap-6">
-        <div className="relative h-[280px] overflow-hidden bg-line lg:h-[560px] lg:flex-1">
-          {house && (
-            <SanityImage
-              photo={house}
-              sizes="(min-width: 1024px) 60vw, 100vw"
-              className="reveal-media"
-            />
-          )}
+        <div className="reveal-left relative h-[280px] overflow-hidden bg-line lg:h-[560px] lg:flex-1">
+          {house && <SanityImage photo={house} sizes="(min-width: 1024px) 60vw, 100vw" />}
         </div>
-        <div className="relative h-[280px] overflow-hidden bg-line lg:h-[450px] lg:w-[380px]">
-          {detail && (
-            <SanityImage
-              photo={detail}
-              sizes="(min-width: 1024px) 380px, 100vw"
-              className="reveal-media"
-            />
-          )}
+        <div className="reveal-right reveal-delay-1 relative h-[280px] overflow-hidden bg-line lg:h-[450px] lg:w-[380px]">
+          {detail && <SanityImage photo={detail} sizes="(min-width: 1024px) 380px, 100vw" />}
         </div>
       </div>
 

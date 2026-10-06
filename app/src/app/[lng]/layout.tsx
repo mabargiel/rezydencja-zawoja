@@ -6,8 +6,10 @@ import type { ReactNode } from 'react'
 
 import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
+import { RevealObserver } from '@/components/RevealObserver'
 import { languages } from '@/i18n/config'
 import { getLanguage, getT } from '@/i18n/server'
+import { blurUpScript } from '@/lib/blurUpScript'
 import { metadataBase } from '@/lib/metadata'
 import { SanityLive } from '@/sanity/live'
 
@@ -48,12 +50,17 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       lang={language}
       data-scroll-behavior="smooth"
       className={`${cormorant.variable} ${jost.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: blurUpScript }} />
+      </head>
       <body className="relative">
         <Navbar />
         {children}
         <Footer />
         <SanityLive />
+        <RevealObserver />
       </body>
     </html>
   )
