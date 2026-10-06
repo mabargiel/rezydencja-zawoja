@@ -6,6 +6,7 @@ import { Intro } from '@/components/home/Intro'
 import { Location } from '@/components/home/Location'
 import { Pricing } from '@/components/home/Pricing'
 import { Spa } from '@/components/home/Spa'
+import { localizedHref, pagePaths } from '@/config/site'
 import { getLanguage, getT } from '@/i18n/server'
 import { pageMetadata } from '@/lib/metadata'
 import { sanityFetch } from '@/sanity/live'
@@ -21,7 +22,6 @@ export default async function HomePage() {
     stega: false,
   })
   const { home, pricing } = data
-  const href = (path: string) => `/${language}${path}`
 
   return (
     <main>
@@ -32,7 +32,7 @@ export default async function HomePage() {
         poster={home?.hero?.poster?.photo}
         videoUrl={home?.hero?.videoUrl}
         booking={{
-          action: href('/contact'),
+          action: localizedHref(language, pagePaths.contact),
           labels: {
             arrival: t('home.booking.arrival'),
             departure: t('home.booking.departure'),
@@ -48,7 +48,7 @@ export default async function HomePage() {
         title={t('home.intro.title')}
         lead={t('home.intro.lead')}
         body={t('home.intro.body')}
-        link={{ href: href('/interiors'), label: t('home.intro.link') }}
+        link={{ href: localizedHref(language, pagePaths.interiors), label: t('home.intro.link') }}
         house={home?.intro?.house?.photo}
         detail={home?.intro?.detail?.photo}
       />
@@ -94,7 +94,10 @@ export default async function HomePage() {
             title: t('home.interiors.bedrooms.title'),
           },
         ]}
-        link={{ href: href('/interiors'), label: t('home.interiors.link') }}
+        link={{
+          href: localizedHref(language, pagePaths.interiors),
+          label: t('home.interiors.link'),
+        }}
         photo={home?.interiors?.photo}
       />
       <Location
@@ -130,7 +133,7 @@ export default async function HomePage() {
       <GalleryPreview
         eyebrow={t('home.gallery.eyebrow')}
         title={t('home.gallery.title')}
-        link={{ href: href('/gallery'), label: t('home.gallery.link') }}
+        link={{ href: localizedHref(language, pagePaths.gallery), label: t('home.gallery.link') }}
         photos={home?.galleryPreview ?? []}
       />
       {pricing && (
@@ -160,8 +163,11 @@ export default async function HomePage() {
         eyebrow={t('home.cta.eyebrow')}
         title={t('home.cta.title')}
         body={t('home.cta.body')}
-        primary={{ href: href('/contact'), label: t('home.cta.primary') }}
-        secondary={{ href: href('/contact'), label: t('home.cta.secondary') }}
+        primary={{ href: localizedHref(language, pagePaths.contact), label: t('home.cta.primary') }}
+        secondary={{
+          href: localizedHref(language, pagePaths.contact),
+          label: t('home.cta.secondary'),
+        }}
       />
     </main>
   )

@@ -1,7 +1,7 @@
 import { Clock4, Mail, MapPin, Phone } from 'lucide-react'
 import type { ReactNode } from 'react'
 
-import { phoneHref, site } from '@/config/site'
+import { emailHref, phoneHref, site } from '@/config/site'
 import { getT } from '@/i18n/server'
 
 export async function ContactCard() {
@@ -35,10 +35,7 @@ export async function ContactCard() {
           </a>
         </InfoRow>
         <InfoRow icon={<Mail size={17} strokeWidth={1.5} />} label={t('pages.contact.card.email')}>
-          <a
-            href={`mailto:${site.email}`}
-            className="break-all transition-colors hover:text-accent-warm"
-          >
+          <a href={emailHref} className="break-all transition-colors hover:text-accent-warm">
             {site.email}
           </a>
         </InfoRow>

@@ -1,5 +1,4 @@
-type Localized = { pl: string; en: string; de: string }
-type Category = 'interiors' | 'spa' | 'terraceGarden' | 'surroundings'
+import { type Category, type Localized, photoId } from './localized'
 
 export type LegacyPhoto = {
   id: string
@@ -319,18 +318,13 @@ export const legacyPhotos: LegacyPhoto[] = [
   ),
 ]
 
-const photoId = (id: string) => `photo-${id}`
-const existing = (file: string) =>
-  `photo-${file
-    .replace(/\.[^.]+$/, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')}`
+const legacyId = (id: string) => `photo-${id}`
 
 export const roomsLayout: { type: string; photos: string[] }[] = [
   {
     type: 'salon',
     photos: [
-      existing('salon-widok2-2048x1152.jpg'),
+      photoId('salon-widok2-2048x1152.jpg'),
       ...[
         'salon-fireplace',
         'salon-wide',
@@ -346,12 +340,12 @@ export const roomsLayout: { type: string; photos: string[] }[] = [
         'salon-dinner',
         'salon-costume',
         'salon-autumn-view-2',
-      ].map(photoId),
+      ].map(legacyId),
     ],
   },
   {
     type: 'kitchen',
-    photos: ['kitchen-island', 'kitchen-counter', 'kitchen-hob', 'kitchen-dresser'].map(photoId),
+    photos: ['kitchen-island', 'kitchen-counter', 'kitchen-hob', 'kitchen-dresser'].map(legacyId),
   },
   {
     type: 'bedrooms',
@@ -361,33 +355,33 @@ export const roomsLayout: { type: string; photos: string[] }[] = [
       'bedroom-3-beds',
       'bedroom-4-beds',
       'bedroom-5-bed',
-    ].map(photoId),
+    ].map(legacyId),
   },
   {
     type: 'recreation',
     photos: [
-      existing('IMG_1798-480x650.jpg'),
-      photoId('recreation-billiards'),
-      photoId('recreation-trophies'),
-      photoId('recreation-corner'),
-      photoId('recreation-lounge'),
-      existing('IMG_2239.jpg'),
-      existing('silownia2.jpeg'),
-      photoId('recreation-relax-room'),
+      photoId('IMG_1798-480x650.jpg'),
+      legacyId('recreation-billiards'),
+      legacyId('recreation-trophies'),
+      legacyId('recreation-corner'),
+      legacyId('recreation-lounge'),
+      photoId('IMG_2239.jpg'),
+      photoId('silownia2.jpeg'),
+      legacyId('recreation-relax-room'),
     ],
   },
   {
     type: 'bathrooms',
     photos: [
-      photoId('bathroom-bath'),
-      existing('lazienka-pietro1.jpg'),
-      photoId('bathroom-ground-floor'),
-      photoId('bathroom-upstairs'),
-      photoId('bathroom-bath-sauna'),
-      existing('lazienkadolna1.jpeg'),
-      photoId('bathroom-shower'),
-      photoId('bathroom-toilet'),
-      photoId('bathroom-laundry'),
+      legacyId('bathroom-bath'),
+      photoId('lazienka-pietro1.jpg'),
+      legacyId('bathroom-ground-floor'),
+      legacyId('bathroom-upstairs'),
+      legacyId('bathroom-bath-sauna'),
+      photoId('lazienkadolna1.jpeg'),
+      legacyId('bathroom-shower'),
+      legacyId('bathroom-toilet'),
+      legacyId('bathroom-laundry'),
     ],
   },
 ]
@@ -407,13 +401,13 @@ export const bedroomsLayout: {
     guests: 2,
     name: { de: 'Apartment', en: 'Apartment', pl: 'Apartament' },
     photos: [
-      photoId('apartament-sitting'),
-      photoId('apartament-bed'),
-      photoId('apartament-lounge'),
-      photoId('apartament-bedroom'),
-      existing('apartament-zabytkowy-kredens5.jpg'),
-      existing('apartament-zabytkowa-lampa2.jpg'),
-      existing('apartament-zabytkowy-kufer.jpeg'),
+      legacyId('apartament-sitting'),
+      legacyId('apartament-bed'),
+      legacyId('apartament-lounge'),
+      legacyId('apartament-bedroom'),
+      photoId('apartament-zabytkowy-kredens5.jpg'),
+      photoId('apartament-zabytkowa-lampa2.jpg'),
+      photoId('apartament-zabytkowy-kufer.jpeg'),
     ],
   },
   {
@@ -421,32 +415,32 @@ export const bedroomsLayout: {
     guests: 2,
     name: { de: 'Schlafzimmer 2', en: 'Bedroom 2', pl: 'Sypialnia 2' },
     photos: [
-      existing('IMG_7886.jpeg'),
-      photoId('bedroom-2-wardrobe'),
-      existing('sypialnia2-dekoracja5.jpg'),
+      photoId('IMG_7886.jpeg'),
+      legacyId('bedroom-2-wardrobe'),
+      photoId('sypialnia2-dekoracja5.jpg'),
     ],
   },
   {
     beds: { de: 'Zwei Einzelbetten', en: 'Two single beds', pl: 'Dwa łóżka pojedyncze' },
     guests: 2,
     name: { de: 'Schlafzimmer 3', en: 'Bedroom 3', pl: 'Sypialnia 3' },
-    photos: ['bedroom-3-beds', 'bedroom-3-room', 'bedroom-3-pillows'].map(photoId),
+    photos: ['bedroom-3-beds', 'bedroom-3-room', 'bedroom-3-pillows'].map(legacyId),
   },
   {
     beds: { de: 'Zwei Einzelbetten', en: 'Two single beds', pl: 'Dwa łóżka pojedyncze' },
     guests: 2,
     name: { de: 'Schlafzimmer 4', en: 'Bedroom 4', pl: 'Sypialnia 4' },
     photos: [
-      photoId('bedroom-4-beds'),
-      photoId('bedroom-4-dresser'),
-      existing('Sypialnia406.jpg'),
-      photoId('bedroom-4-window'),
+      legacyId('bedroom-4-beds'),
+      legacyId('bedroom-4-dresser'),
+      photoId('Sypialnia406.jpg'),
+      legacyId('bedroom-4-window'),
     ],
   },
   {
     beds: { de: 'Doppelbett, TV', en: 'Double bed, TV', pl: 'Łóżko podwójne, TV' },
     guests: 2,
     name: { de: 'Schlafzimmer 5', en: 'Bedroom 5', pl: 'Sypialnia 5' },
-    photos: [photoId('bedroom-5-bed'), existing('sypialnia513.jpeg')],
+    photos: [legacyId('bedroom-5-bed'), photoId('sypialnia513.jpeg')],
   },
 ]

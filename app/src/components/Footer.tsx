@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { navItems, pagePaths, phoneHref, site } from '@/config/site'
+import { emailHref, localizedHref, navItems, pagePaths, phoneHref, site } from '@/config/site'
 import { getLanguage, getT } from '@/i18n/server'
 
 const legalPages = ['privacyPolicy', 'rentalTerms'] as const
@@ -29,7 +29,7 @@ export async function Footer() {
             <a href={phoneHref} className="transition-colors hover:text-text-inverse">
               {site.phone}
             </a>
-            <a href={`mailto:${site.email}`} className="transition-colors hover:text-text-inverse">
+            <a href={emailHref} className="transition-colors hover:text-text-inverse">
               {site.email}
             </a>
           </address>
@@ -40,7 +40,7 @@ export async function Footer() {
             {navItems.map(item => (
               <li key={item.key}>
                 <Link
-                  href={`/${language}${item.path}`}
+                  href={localizedHref(language, item.path)}
                   className="transition-colors hover:text-text-inverse"
                 >
                   {t(`nav.${item.key}`)}
@@ -58,7 +58,7 @@ export async function Footer() {
             {legalPages.map(page => (
               <li key={page}>
                 <Link
-                  href={`/${language}${pagePaths[page]}`}
+                  href={localizedHref(language, pagePaths[page])}
                   className="transition-colors hover:text-text-inverse"
                 >
                   {t(`meta.${page}.title`)}

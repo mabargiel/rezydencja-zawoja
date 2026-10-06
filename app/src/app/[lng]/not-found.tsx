@@ -1,5 +1,6 @@
 import { ButtonPrimary } from '@/components/Actions'
 import { PageHeader } from '@/components/PageHeader'
+import { localizedHref } from '@/config/site'
 import { getLanguage, getT } from '@/i18n/server'
 
 export default async function NotFound() {
@@ -13,7 +14,7 @@ export default async function NotFound() {
         intro={t('pages.notFound.intro')}
       />
       <div className="px-5 py-16 lg:px-16">
-        <ButtonPrimary href={`/${language}`}>{t('pages.notFound.back')}</ButtonPrimary>
+        <ButtonPrimary href={localizedHref(language)}>{t('pages.notFound.back')}</ButtonPrimary>
       </div>
     </main>
   )

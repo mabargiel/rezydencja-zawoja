@@ -1,13 +1,13 @@
 import { TextLink } from '@/components/Actions'
 import { SanityImage } from '@/components/SanityImage'
 import { SectionHeading } from '@/components/SectionHeading'
-import type { ResolvedPhoto } from '@/sanity/photo'
+import type { KeyedPhoto } from '@/sanity/photo'
 
 type GalleryPreviewProps = {
   eyebrow: string
   title: string
   link: { href: string; label: string }
-  photos: (ResolvedPhoto & { _key: string })[]
+  photos: KeyedPhoto[]
 }
 
 const tiles = [

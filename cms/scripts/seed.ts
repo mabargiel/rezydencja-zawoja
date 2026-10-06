@@ -5,23 +5,14 @@ import { getCliClient } from 'sanity/cli'
 
 import { seedLegalPages } from './legal/seedLegalPages'
 import { bedroomsLayout, legacyPhotos, legacySource, roomsLayout } from './seed-legacy'
-import { azureMapPhotoId, layout, photoId, photos, pricing } from './seed-map'
-
-type Localized = { pl: string; en: string; de: string }
+import { type Category, type Localized, localizedArray, photoId } from './localized'
+import { azureMapPhotoId, layout, photos, pricing } from './seed-map'
 
 const client = getCliClient({ apiVersion: '2026-09-01' })
 
 type SeedDocument = Parameters<typeof client.createOrReplace>[0]
 
 const imagesDir = resolve(process.cwd(), '../design/images')
-
-const localized = (text: Localized) =>
-  (['pl', 'en', 'de'] as const).map(language => ({
-    _key: language,
-    _type: 'internationalizedArrayStringValue',
-    language,
-    value: text[language],
-  }))
 
 const photoRef = (file: string) => ({ _type: 'reference', _ref: photoId(file) })
 
@@ -30,21 +21,27 @@ const slot = (file: string) => ({ _type: 'mediaSlot', photo: photoRef(file) })
 const photoRefList = (files: string[]) =>
   files.map(file => ({ ...photoRef(file), _key: photoId(file) }))
 
+type PhotoContent = { file: string; category: Category; alt: Localized }
+
+async function upsertPhoto(
+  id: string,
+  source: Buffer | NodeJS.ReadableStream,
+  photo: PhotoContent
+) {
+  const asset = await client.assets.upload('image', source, { filename: photo.file })
+  await client.createOrReplace({
+    _id: id,
+    _type: 'photo',
+    alt: localizedArray(photo.alt),
+    category: photo.category,
+    image: { _type: 'image', asset: { _type: 'reference', _ref: asset._id } },
+  })
+  console.log(`photo ${photo.file}`)
+}
+
 async function seedPhotos() {
   for (const photo of photos) {
-    const asset = await client.assets.upload(
-      'image',
-      createReadStream(resolve(imagesDir, photo.file)),
-      { filename: photo.file }
-    )
-    await client.createOrReplace({
-      _id: photoId(photo.file),
-      _type: 'photo',
-      alt: localized(photo.alt),
-      category: photo.category,
-      image: { _type: 'image', asset: { _type: 'reference', _ref: asset._id } },
-    })
-    console.log(`photo ${photo.file}`)
+    await upsertPhoto(photoId(photo.file), createReadStream(resolve(imagesDir, photo.file)), photo)
   }
 }
 
@@ -52,17 +49,7 @@ async function seedLegacyPhotos() {
   for (const photo of legacyPhotos) {
     const response = await fetch(legacySource + encodeURIComponent(photo.file))
     if (!response.ok) throw new Error(`Could not download ${photo.file}: ${response.status}`)
-    const asset = await client.assets.upload('image', Buffer.from(await response.arrayBuffer()), {
-      filename: photo.file,
-    })
-    await client.createOrReplace({
-      _id: photo.id,
-      _type: 'photo',
-      alt: localized(photo.alt),
-      category: photo.category,
-      image: { _type: 'image', asset: { _type: 'reference', _ref: asset._id } },
-    })
-    console.log(`legacy photo ${photo.file}`)
+    await upsertPhoto(photo.id, Buffer.from(await response.arrayBuffer()), photo)
   }
 }
 
@@ -128,9 +115,9 @@ async function seedPages() {
       bedrooms: bedroomsLayout.map((bedroom, index) => ({
         _key: `bedroom-${index + 1}`,
         _type: 'bedroom',
-        beds: localized(bedroom.beds),
+        beds: localizedArray(bedroom.beds),
         guests: bedroom.guests,
-        name: localized(bedroom.name),
+        name: localizedArray(bedroom.name),
         photos: idRefList(bedroom.photos),
       })),
     },
@@ -162,8 +149,8 @@ async function seedPages() {
       rates: pricing.rates.map((rate, index) => ({
         _key: `rate-${index}`,
         _type: 'rate',
-        period: localized(rate.period),
-        minimumStay: localized(rate.minimumStay),
+        period: localizedArray(rate.period),
+        minimumStay: localizedArray(rate.minimumStay),
         amount: rate.amount,
         unit: rate.unit,
         extraPerson: rate.extraPerson,
@@ -171,16 +158,16 @@ async function seedPages() {
       addOns: pricing.addOns.map((addOn, index) => ({
         _key: `addon-${index}`,
         _type: 'addOn',
-        name: localized(addOn.name),
-        note: localized(addOn.note),
+        name: localizedArray(addOn.name),
+        note: localizedArray(addOn.note),
         amount: addOn.amount,
         unit: addOn.unit,
       })),
       facts: pricing.facts.map((fact, index) => ({
         _key: `fact-${index}`,
         _type: 'fact',
-        label: localized(fact.label),
-        value: localized(fact.value),
+        label: localizedArray(fact.label),
+        value: localizedArray(fact.value),
       })),
     },
   ]

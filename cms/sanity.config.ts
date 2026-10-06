@@ -22,7 +22,7 @@ export default defineConfig({
     plPLLocale(),
     internationalizedArray({
       buttonAddAll: false,
-      defaultLanguages: ['pl', 'en', 'de'],
+      defaultLanguages: languages.map(language => language.id),
       fieldTypes: ['string'],
       languageDisplay: 'titleAndCode',
       languages,

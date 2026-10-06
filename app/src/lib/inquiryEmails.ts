@@ -41,8 +41,7 @@ export function ownerEmail(inquiry: Inquiry, language: Language): EmailContent {
   }
 }
 
-// Only fixed copy, dates and counts: the recipient address is whatever the visitor typed, so
-// echoing their name or message would let the form deliver arbitrary text to strangers.
+// The recipient is whatever address the visitor typed, so never echo their name or message.
 export function guestConfirmation(inquiry: Inquiry, language: Language): EmailContent {
   const t = getTranslator(language)
   const longDate = new Intl.DateTimeFormat(language, { dateStyle: 'long', timeZone: 'UTC' })

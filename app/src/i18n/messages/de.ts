@@ -169,6 +169,7 @@ export const de = {
     previous: 'Vorheriges Foto',
     next: 'Nächstes Foto',
     counter: '{{current}} / {{total}}',
+    openPhoto: 'Foto vergrößern: {{alt}}',
   },
   inquiryEmail: {
     subject: 'Wir haben Ihre Anfrage erhalten — Rezydencja Zawoja',
@@ -199,7 +200,6 @@ export const de = {
         'Ein Blockhaus, in dem antike Möbel auf gehobene Ausstattung treffen. Jeder Raum hat seinen eigenen Charakter.',
       nav: 'Räume',
       guests: 'Anzahl der Gäste',
-      openPhoto: 'Foto vergrößern: {{alt}}',
       rooms: {
         salon: {
           name: 'Wohnzimmer',
@@ -336,7 +336,6 @@ export const de = {
         terraceGarden: 'Terrasse & Garten',
         surroundings: 'Umgebung',
       },
-      openPhoto: 'Foto vergrößern: {{alt}}',
     },
     contact: {
       eyebrow: 'Kontakt',

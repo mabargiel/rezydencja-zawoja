@@ -165,6 +165,7 @@ export const pl = {
     previous: 'Poprzednie zdjęcie',
     next: 'Następne zdjęcie',
     counter: '{{current}} / {{total}}',
+    openPhoto: 'Powiększ zdjęcie: {{alt}}',
   },
   inquiryEmail: {
     subject: 'Otrzymaliśmy Wasze zapytanie — Rezydencja Zawoja',
@@ -194,7 +195,6 @@ export const pl = {
         'Drewniany dom z bali, w którym zabytkowe meble spotykają się z wysokim standardem wyposażenia. Każde wnętrze ma swój własny charakter.',
       nav: 'Pomieszczenia',
       guests: 'Liczba osób',
-      openPhoto: 'Powiększ zdjęcie: {{alt}}',
       rooms: {
         salon: {
           name: 'Salon',
@@ -327,7 +327,6 @@ export const pl = {
         terraceGarden: 'Taras i ogród',
         surroundings: 'Okolica',
       },
-      openPhoto: 'Powiększ zdjęcie: {{alt}}',
     },
     contact: {
       eyebrow: 'Kontakt',

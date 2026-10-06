@@ -1,7 +1,7 @@
 import { TagIcon } from '@sanity/icons/Tag'
 import { defineArrayMember, defineField, defineType } from 'sanity'
 
-import { localizedValidation } from '../localized'
+import { localizedValidation, polishText } from '../localized'
 
 const units = [
   { title: 'za dobę', value: 'night' },
@@ -24,9 +24,6 @@ const unitField = defineField({
   options: { layout: 'radio', direction: 'horizontal', list: units },
   validation: rule => rule.required(),
 })
-
-type LocalizedItem = { language: string; value: string }
-const polish = (items?: LocalizedItem[]) => items?.find(item => item.language === 'pl')?.value
 
 export const pricing = defineType({
   name: 'pricing',
@@ -76,7 +73,7 @@ export const pricing = defineType({
             select: { amount: 'amount', period: 'period', unit: 'unit' },
             prepare: ({ amount, period, unit }) => ({
               subtitle: `${amount} zł ${units.find(item => item.value === unit)?.title ?? ''}`,
-              title: polish(period) ?? 'Stawka',
+              title: polishText(period) ?? 'Stawka',
             }),
           },
         }),
@@ -111,7 +108,7 @@ export const pricing = defineType({
             select: { amount: 'amount', name: 'name' },
             prepare: ({ amount, name }) => ({
               subtitle: `${amount} zł`,
-              title: polish(name) ?? 'Opcja',
+              title: polishText(name) ?? 'Opcja',
             }),
           },
         }),
@@ -142,7 +139,10 @@ export const pricing = defineType({
           ],
           preview: {
             select: { label: 'label', value: 'value' },
-            prepare: ({ label, value }) => ({ subtitle: polish(value), title: polish(label) }),
+            prepare: ({ label, value }) => ({
+              subtitle: polishText(value),
+              title: polishText(label),
+            }),
           },
         }),
       ],

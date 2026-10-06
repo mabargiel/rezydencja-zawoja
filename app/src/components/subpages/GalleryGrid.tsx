@@ -2,20 +2,21 @@
 
 import { useState } from 'react'
 
+import { chipStateClass } from '@/components/chip'
 import { Lightbox, type LightboxLabels } from '@/components/Lightbox'
-import { SanityImage } from '@/components/SanityImage'
-import type { KeyedPhoto } from '@/sanity/photo'
+import { fillTemplate } from '@/lib/template'
+import type { GalleryPageQueryResult } from '@/sanity/types'
 
-type Category = 'interiors' | 'spa' | 'terraceGarden' | 'surroundings'
+import { PhotoTile } from './PhotoTile'
+
+type GalleryPhoto = NonNullable<NonNullable<GalleryPageQueryResult>['photos']>[number]
+type Category = NonNullable<GalleryPhoto['category']>
 type Filter = 'all' | Category
-
-type GalleryPhoto = KeyedPhoto & { category: Category | null }
 
 type GalleryGridProps = {
   photos: GalleryPhoto[]
   labels: {
     filters: string
-    openPhoto: string
     options: Record<Filter, string>
   }
   lightbox: LightboxLabels
@@ -65,11 +66,7 @@ export function GalleryGrid({ photos, labels, lightbox }: GalleryGridProps) {
               type="button"
               aria-pressed={isActive}
               onClick={() => setFilter(option)}
-              className={`shrink-0 px-[22px] py-2.5 font-body text-[13px] tracking-[1px] transition-colors ${
-                isActive
-                  ? 'bg-accent font-medium text-surface'
-                  : 'border border-line text-text-secondary hover:border-accent hover:text-accent'
-              }`}
+              className={`shrink-0 px-[22px] py-2.5 font-body text-[13px] tracking-[1px] transition-colors ${chipStateClass(isActive)}`}
             >
               {labels.options[option]}
             </button>
@@ -80,18 +77,13 @@ export function GalleryGrid({ photos, labels, lightbox }: GalleryGridProps) {
       <ul className="columns-2 gap-3 lg:columns-4 lg:gap-5">
         {visible.map((photo, index) => (
           <li key={photo._key} className="mb-3 break-inside-avoid lg:mb-5">
-            <button
-              type="button"
-              aria-label={labels.openPhoto.replace('{{alt}}', photo.alt ?? '')}
-              onClick={() => setOpenIndex(index)}
-              className={`group relative block w-full overflow-hidden bg-line ${tileHeights[index % tileHeights.length]}`}
-            >
-              <SanityImage
-                photo={photo}
-                sizes="(min-width: 1024px) 25vw, 50vw"
-                className="transition-transform duration-500 group-hover:scale-[1.03]"
-              />
-            </button>
+            <PhotoTile
+              photo={photo}
+              label={fillTemplate(lightbox.openPhoto, { alt: photo.alt ?? '' })}
+              sizes="(min-width: 1024px) 25vw, 50vw"
+              className={`w-full ${tileHeights[index % tileHeights.length]}`}
+              onOpen={() => setOpenIndex(index)}
+            />
           </li>
         ))}
       </ul>

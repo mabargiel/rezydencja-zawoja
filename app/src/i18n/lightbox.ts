@@ -9,6 +9,7 @@ export async function getLightboxLabels(): Promise<LightboxLabels> {
     counter: t('lightbox.counter', { current: '{{current}}', total: '{{total}}' }),
     label: t('lightbox.label'),
     next: t('lightbox.next'),
+    openPhoto: t('lightbox.openPhoto', { alt: '{{alt}}' }),
     previous: t('lightbox.previous'),
   }
 }

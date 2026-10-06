@@ -2,7 +2,7 @@ import { Mail, Phone } from 'lucide-react'
 
 import { ButtonOutline, ButtonPrimary } from '@/components/Actions'
 import { SectionHeading } from '@/components/SectionHeading'
-import { phoneHref, site } from '@/config/site'
+import { emailHref, phoneHref, site } from '@/config/site'
 
 type BookingCtaProps = {
   eyebrow: string
@@ -35,7 +35,7 @@ export function BookingCta({ eyebrow, title, body, primary, secondary }: Booking
             <Phone aria-hidden size={15} strokeWidth={1.75} className="text-accent-warm-deep" />
             {site.phone}
           </a>
-          <a href={`mailto:${site.email}`} className="flex items-center gap-2 hover:text-accent">
+          <a href={emailHref} className="flex items-center gap-2 hover:text-accent">
             <Mail aria-hidden size={15} strokeWidth={1.75} className="text-accent-warm-deep" />
             {site.email}
           </a>

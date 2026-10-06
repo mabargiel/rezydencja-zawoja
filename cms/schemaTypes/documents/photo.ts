@@ -3,6 +3,8 @@ import { defineField, defineType } from 'sanity'
 
 import { localizedValidation } from '../localized'
 
+import { polishText } from '../localized'
+
 export const photoCategories = [
   { title: 'Wnętrza', value: 'interiors' },
   { title: 'Strefa SPA', value: 'spa' },
@@ -43,10 +45,7 @@ export const photo = defineType({
     prepare: ({ alt, category, media }) => ({
       media,
       subtitle: photoCategories.find(item => item.value === category)?.title,
-      title:
-        (alt as { language: string; value: string }[] | undefined)?.find(
-          item => item.language === 'pl'
-        )?.value ?? 'Bez opisu',
+      title: polishText(alt) ?? 'Bez opisu',
     }),
   },
 })

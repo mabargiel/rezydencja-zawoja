@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { type PointerEvent, useEffect, useRef } from 'react'
 
 import { SanityImage } from '@/components/SanityImage'
+import { fillTemplate } from '@/lib/template'
 import type { KeyedPhoto } from '@/sanity/photo'
 
 export type LightboxLabels = {
@@ -12,6 +13,7 @@ export type LightboxLabels = {
   previous: string
   next: string
   counter: string
+  openPhoto: string
 }
 
 type LightboxProps = {
@@ -23,9 +25,6 @@ type LightboxProps = {
 }
 
 const swipeThreshold = 40
-
-const navButton =
-  'flex size-12 shrink-0 items-center justify-center border border-line-inverse-strong text-text-inverse transition-colors hover:bg-text-inverse/10 lg:size-[52px]'
 
 export function Lightbox({ photos, index, labels, onIndexChange, onClose }: LightboxProps) {
   const dialog = useRef<HTMLDialogElement>(null)
@@ -69,7 +68,6 @@ export function Lightbox({ photos, index, labels, onIndexChange, onClose }: Ligh
       onKeyDown={event => {
         if (event.key === 'ArrowRight') step(1)
         if (event.key === 'ArrowLeft') step(-1)
-        if (event.key === 'Escape') onClose()
       }}
       className="m-0 h-dvh max-h-none w-full max-w-none bg-scrim-lightbox text-text-inverse backdrop:bg-transparent"
     >
@@ -80,9 +78,7 @@ export function Lightbox({ photos, index, labels, onIndexChange, onClose }: Ligh
               aria-live="polite"
               className="font-body text-[12.5px] tracking-[2px] text-text-inverse-dim lg:text-[13px]"
             >
-              {labels.counter
-                .replace('{{current}}', String((index ?? 0) + 1))
-                .replace('{{total}}', String(count))}
+              {fillTemplate(labels.counter, { current: (index ?? 0) + 1, total: count })}
             </p>
             <button type="button" aria-label={labels.close} onClick={onClose}>
               <X aria-hidden size={26} strokeWidth={1.5} />
@@ -90,14 +86,12 @@ export function Lightbox({ photos, index, labels, onIndexChange, onClose }: Ligh
           </div>
 
           <div className="flex min-h-0 flex-1 items-center gap-8 lg:px-10">
-            <button
-              type="button"
-              aria-label={labels.previous}
+            <StepButton
+              direction="previous"
+              label={labels.previous}
               onClick={() => step(-1)}
-              className={`${navButton} max-lg:hidden`}
-            >
-              <ChevronLeft aria-hidden size={22} strokeWidth={1.5} />
-            </button>
+              className="max-lg:hidden"
+            />
             <div
               className="relative h-full flex-1 touch-pan-y"
               onPointerDown={event => {
@@ -123,14 +117,12 @@ export function Lightbox({ photos, index, labels, onIndexChange, onClose }: Ligh
                 )
               })}
             </div>
-            <button
-              type="button"
-              aria-label={labels.next}
+            <StepButton
+              direction="next"
+              label={labels.next}
               onClick={() => step(1)}
-              className={`${navButton} max-lg:hidden`}
-            >
-              <ChevronRight aria-hidden size={22} strokeWidth={1.5} />
-            </button>
+              className="max-lg:hidden"
+            />
           </div>
 
           <div className="flex flex-col gap-4 px-5 pt-5 pb-8 lg:items-center lg:px-10 lg:pt-6">
@@ -138,26 +130,33 @@ export function Lightbox({ photos, index, labels, onIndexChange, onClose }: Ligh
               {current.alt}
             </p>
             <div className="flex justify-between lg:hidden">
-              <button
-                type="button"
-                aria-label={labels.previous}
-                onClick={() => step(-1)}
-                className={navButton}
-              >
-                <ChevronLeft aria-hidden size={20} strokeWidth={1.5} />
-              </button>
-              <button
-                type="button"
-                aria-label={labels.next}
-                onClick={() => step(1)}
-                className={navButton}
-              >
-                <ChevronRight aria-hidden size={20} strokeWidth={1.5} />
-              </button>
+              <StepButton direction="previous" label={labels.previous} onClick={() => step(-1)} />
+              <StepButton direction="next" label={labels.next} onClick={() => step(1)} />
             </div>
           </div>
         </div>
       )}
     </dialog>
+  )
+}
+
+type StepButtonProps = {
+  direction: 'previous' | 'next'
+  label: string
+  onClick: () => void
+  className?: string
+}
+
+function StepButton({ direction, label, onClick, className = '' }: StepButtonProps) {
+  const Icon = direction === 'previous' ? ChevronLeft : ChevronRight
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      onClick={onClick}
+      className={`flex size-12 shrink-0 items-center justify-center border border-line-inverse-strong text-text-inverse transition-colors hover:bg-text-inverse/10 lg:size-[52px] ${className}`}
+    >
+      <Icon aria-hidden strokeWidth={1.5} className="size-5 lg:size-[22px]" />
+    </button>
   )
 }

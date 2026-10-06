@@ -1,7 +1,5 @@
-import { h2, link, nested, ol, p } from '../portableText'
-
-const email = link('biuro@rezydencjazawoja.pl', 'mailto:biuro@rezydencjazawoja.pl')
-const phone = link('+48 500 290 390', 'tel:+48500290390')
+import { h2, nested, ol, p } from '../portableText'
+import { email, phone } from './contact'
 
 export const rentalTerms = {
   title: {

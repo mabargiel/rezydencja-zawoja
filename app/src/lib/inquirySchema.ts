@@ -6,18 +6,17 @@ import {
   type InquiryField,
   inquiryFields,
   type InquiryValues,
-  isoDatePattern,
+  isIsoDate,
   maxGuests,
   maxMessageLength,
+  maxNameLength,
   today,
 } from './inquiry'
 
 const phonePattern = /^[\d\s+()-]{6,30}$/
 
-const isDate = (value: string) => isoDatePattern.test(value) && !Number.isNaN(Date.parse(value))
-
 const optionalDate = (code: ErrorCode) =>
-  z.string().refine(value => value === '' || isDate(value), code)
+  z.string().refine(value => value === '' || isIsoDate(value), code)
 
 const inquirySchema = z.object({
   adults: z.coerce.number('guests').int('guests').min(1, 'guests').max(maxGuests, 'guests'),
@@ -27,7 +26,7 @@ const inquirySchema = z.object({
   departure: optionalDate('dateOrder'),
   email: z.email('email'),
   message: z.string().trim().max(maxMessageLength, 'tooLong'),
-  name: z.string().trim().min(2, 'name').max(100, 'name'),
+  name: z.string().trim().min(2, 'name').max(maxNameLength, 'name'),
   phone: z
     .string()
     .trim()
@@ -63,8 +62,9 @@ function crossFieldErrors(values: InquiryValues): InquiryErrors {
   const { adults = '', arrival = '', children = '', departure = '' } = values
   const errors: InquiryErrors = {}
   if (Number(adults) + Number(children) > maxGuests) errors.children = 'guests'
-  if (isDate(arrival) && arrival < today()) errors.arrival = 'datePast'
-  if (isDate(arrival) && isDate(departure) && departure <= arrival) errors.departure = 'dateOrder'
+  if (isIsoDate(arrival) && arrival < today()) errors.arrival = 'datePast'
+  if (isIsoDate(arrival) && isIsoDate(departure) && departure <= arrival)
+    errors.departure = 'dateOrder'
   return errors
 }
 

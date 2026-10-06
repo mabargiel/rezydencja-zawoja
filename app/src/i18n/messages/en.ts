@@ -166,6 +166,7 @@ export const en = {
     previous: 'Previous photo',
     next: 'Next photo',
     counter: '{{current}} / {{total}}',
+    openPhoto: 'Enlarge photo: {{alt}}',
   },
   inquiryEmail: {
     subject: 'We have received your inquiry — Rezydencja Zawoja',
@@ -196,7 +197,6 @@ export const en = {
         'A log house where antique furniture meets modern comfort. Every room has a character of its own.',
       nav: 'Rooms',
       guests: 'Number of guests',
-      openPhoto: 'Enlarge photo: {{alt}}',
       rooms: {
         salon: {
           name: 'Living room',
@@ -333,7 +333,6 @@ export const en = {
         terraceGarden: 'Terrace & garden',
         surroundings: 'Surroundings',
       },
-      openPhoto: 'Enlarge photo: {{alt}}',
     },
     contact: {
       eyebrow: 'Contact',

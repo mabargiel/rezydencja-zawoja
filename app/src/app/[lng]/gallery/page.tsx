@@ -29,7 +29,6 @@ export default async function GalleryPage() {
         lightbox={lightbox}
         labels={{
           filters: t('pages.gallery.filters.label'),
-          openPhoto: t('pages.gallery.openPhoto', { alt: '{{alt}}' }),
           options: {
             all: t('pages.gallery.filters.all'),
             interiors: t('pages.gallery.filters.interiors'),

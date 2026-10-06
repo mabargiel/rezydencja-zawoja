@@ -10,9 +10,7 @@ import type { InquiryState } from '@/lib/inquiry'
 import { guestConfirmation, ownerEmail } from '@/lib/inquiryEmails'
 import { readValues, validateInquiry } from '@/lib/inquirySchema'
 
-// Fails open: a missing rule, a timeout or running outside Vercel must never stop a real guest
-// from sending an inquiry, so only a definite answer from the firewall blocks the submission.
-async function isRateLimited() {
+async function isDefinitelyRateLimited() {
   if (!process.env.VERCEL) return false
   try {
     const { rateLimited, error } = await checkRateLimit('contact-inquiry', {
@@ -32,7 +30,7 @@ export async function sendInquiry(
   formData: FormData
 ): Promise<InquiryState> {
   const values = readValues(formData)
-  if (await isRateLimited()) return { status: 'limited', values }
+  if (await isDefinitelyRateLimited()) return { status: 'limited', values }
   if (formData.get('website')) return { status: 'sent' }
 
   const result = validateInquiry(values)

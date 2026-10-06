@@ -24,7 +24,6 @@ export default async function InteriorsPage() {
     room.type && room.photos?.length ? [{ ...room, photos: room.photos, type: room.type }] : []
   )
   const bedrooms = data?.bedrooms ?? []
-  const openPhoto = t('pages.interiors.openPhoto')
 
   return (
     <main>
@@ -52,13 +51,12 @@ export default async function InteriorsPage() {
             body={t(`pages.interiors.rooms.${room.type}.body`)}
             facts={t(`pages.interiors.rooms.${room.type}.facts`, { returnObjects: true })}
             photos={room.photos}
-            openPhoto={openPhoto}
             lightbox={lightbox}
           >
             {room.type === 'bedrooms' && bedrooms.length > 0 && (
               <BedroomCards
                 bedrooms={bedrooms}
-                labels={{ guests: t('pages.interiors.guests'), openPhoto }}
+                guestsLabel={t('pages.interiors.guests')}
                 lightbox={lightbox}
               />
             )}

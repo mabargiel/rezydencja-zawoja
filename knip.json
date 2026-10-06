@@ -1,0 +1,14 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "workspaces": {
+    "app": {
+      "entry": ["src/sanity/imageLoader.ts"],
+      "project": ["src/**/*.{ts,tsx,css}"],
+      "ignore": ["src/sanity/types.ts"]
+    },
+    "cms": {
+      "entry": ["scripts/*.ts"],
+      "project": ["**/*.{ts,tsx}"]
+    }
+  }
+}

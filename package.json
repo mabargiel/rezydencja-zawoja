@@ -17,11 +17,13 @@
     "typecheck": "npm run typecheck --workspaces --if-present",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "knip": "knip",
     "lint:styles": "npm run lint:styles --workspaces --if-present",
     "typegen": "npm run typegen -w cms && prettier --write app/src/sanity/types.ts"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
+    "knip": "^6.39.0",
     "prettier": "^3.6.2"
   },
   "allowScripts": {

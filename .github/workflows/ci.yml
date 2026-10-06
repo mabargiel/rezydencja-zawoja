@@ -30,5 +30,6 @@ jobs:
       - run: npm run format:check
       - run: npm run lint
       - run: npm run lint:styles
+      - run: npm run knip
       - run: npm run typecheck
       - run: npm run build

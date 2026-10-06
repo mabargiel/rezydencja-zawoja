@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { type PageKey, pagePaths } from '@/config/site'
+import { localizedHref, type PageKey, pagePaths } from '@/config/site'
 import { defaultLanguage, languages } from '@/i18n/config'
 import { getLanguage, getT } from '@/i18n/server'
 
@@ -17,10 +17,10 @@ export async function pageMetadata(page: PageKey): Promise<Metadata> {
 
   return {
     alternates: {
-      canonical: `/${language}${path}`,
+      canonical: localizedHref(language, path),
       languages: {
-        ...Object.fromEntries(languages.map(code => [code, `/${code}${path}`])),
-        'x-default': `/${defaultLanguage}${path}`,
+        ...Object.fromEntries(languages.map(code => [code, localizedHref(code, path)])),
+        'x-default': localizedHref(defaultLanguage, path),
       },
     },
     description: t(`meta.${page}.description`),

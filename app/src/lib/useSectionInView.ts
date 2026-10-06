@@ -14,25 +14,23 @@ export function useSectionInView(
       const element = id && enabled ? document.getElementById(id) : null
       if (!id || !element) return () => {}
 
+      const key = `${id}|${rootMargin}`
       const observer = new IntersectionObserver(
         ([entry]) => {
-          visibility.set(id, entry.isIntersecting)
+          visibility.set(key, entry.isIntersecting)
           onChange()
         },
         { rootMargin }
       )
       observer.observe(element)
-      return () => {
-        observer.disconnect()
-        visibility.delete(id)
-      }
+      return () => observer.disconnect()
     },
     [id, enabled, rootMargin]
   )
 
   return useSyncExternalStore(
     subscribe,
-    () => (id && enabled ? (visibility.get(id) ?? false) : false),
+    () => (id && enabled ? (visibility.get(`${id}|${rootMargin}`) ?? false) : false),
     () => false
   )
 }

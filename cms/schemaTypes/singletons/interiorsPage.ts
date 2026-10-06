@@ -1,19 +1,16 @@
 import { BlockContentIcon } from '@sanity/icons/BlockContent'
 import { defineArrayMember, defineField, defineType } from 'sanity'
 
-import { localizedValidation } from '../localized'
-import { header } from './fields'
+import { localizedValidation, polishText } from '../localized'
+import { header, photoList } from './fields'
 
-export const roomTypes = [
+const roomTypes = [
   { title: 'Salon', value: 'salon' },
   { title: 'Kuchnia', value: 'kitchen' },
   { title: 'Sypialnie', value: 'bedrooms' },
   { title: 'Rozrywka i fitness', value: 'recreation' },
   { title: 'Łazienki', value: 'bathrooms' },
 ]
-
-type LocalizedItem = { language: string; value: string }
-const polish = (items?: LocalizedItem[]) => items?.find(item => item.language === 'pl')?.value
 
 export const interiorsPage = defineType({
   name: 'interiorsPage',
@@ -40,14 +37,7 @@ export const interiorsPage = defineType({
               options: { list: roomTypes },
               validation: rule => rule.required(),
             }),
-            defineField({
-              name: 'photos',
-              title: 'Zdjęcia',
-              type: 'array',
-              of: [defineArrayMember({ type: 'reference', to: [{ type: 'photo' }] })],
-              options: { layout: 'grid' },
-              validation: rule => rule.required().min(1).max(16).unique(),
-            }),
+            photoList('photos', 'Zdjęcia', 16),
           ],
           preview: {
             select: { count: 'photos.length', media: 'photos.0.image', type: 'type' },
@@ -112,7 +102,7 @@ export const interiorsPage = defineType({
             prepare: ({ guests, media, name }) => ({
               media,
               subtitle: guests ? `${guests} os.` : undefined,
-              title: polish(name) ?? 'Sypialnia',
+              title: polishText(name) ?? 'Sypialnia',
             }),
           },
         }),

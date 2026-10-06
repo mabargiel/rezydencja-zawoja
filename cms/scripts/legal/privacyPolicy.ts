@@ -1,7 +1,6 @@
 import { h2, link, p, ul } from '../portableText'
+import { email, phone } from './contact'
 
-const email = link('biuro@rezydencjazawoja.pl', 'mailto:biuro@rezydencjazawoja.pl')
-const phone = link('+48 500 290 390', 'tel:+48500290390')
 const uodo = link('uodo.gov.pl', 'https://uodo.gov.pl')
 
 export const privacyPolicy = {
