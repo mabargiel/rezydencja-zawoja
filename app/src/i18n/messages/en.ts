@@ -27,6 +27,15 @@ export const en = {
       title: 'Contact',
       description: 'Ask about availability at Rezydencja Zawoja. We reply the same day.',
     },
+    privacyPolicy: {
+      title: 'Privacy policy',
+      description: 'How Rezydencja Zawoja processes personal data from inquiries and bookings.',
+    },
+    rentalTerms: {
+      title: 'Rental terms',
+      description:
+        'Booking and stay rules at Rezydencja Zawoja: advance payment, security deposit, cancellation, arrival and departure.',
+    },
   },
   nav: {
     label: 'Main navigation',
@@ -47,6 +56,7 @@ export const en = {
     navigation: 'Footer navigation',
     address: 'Zawoja, Beskid Mountains, at the foot of Babia Góra',
     copyright: '© {{year}} Rezydencja Zawoja. All rights reserved.',
+    legal: 'Legal',
   },
   home: {
     hero: {
@@ -169,6 +179,14 @@ export const en = {
     children: 'Children: {{count}}',
     closing: 'If you have any questions, reply to this email or call us on {{phone}}.',
     signature: 'Kind regards\nRezydencja Zawoja\n{{email}}',
+  },
+  legal: {
+    eyebrow: 'Documents',
+    updated: 'Last updated: {{date}}',
+    translationNote:
+      'This is a translation for your convenience. The Polish version is legally binding.',
+    translationLink: 'Read the Polish version',
+    fallbackNote: 'This document is only available in Polish.',
   },
   pages: {
     interiors: {
@@ -337,7 +355,8 @@ export const en = {
         children: 'Children',
         message: 'Message (optional)',
         messagePlaceholder: 'Questions, special requests, arrival time…',
-        consent: 'I agree to the processing of my data for the booking process.',
+        consent: 'I agree to the {{link}} for the booking process.',
+        consentLink: 'processing of my data',
         submit: 'Send inquiry',
         sending: 'Sending…',
         honeypot: 'Leave this field empty',

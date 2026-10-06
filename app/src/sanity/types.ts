@@ -15,6 +15,78 @@
 export declare const internalGroqTypeReferenceTo: unique symbol
 
 // Source: schema.json
+export type LegalPage = {
+  _id: string
+  _type: 'legalPage'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title?: InternationalizedArrayString
+  updatedAt?: string
+  body?: {
+    pl?: Array<{
+      children?: Array<{
+        marks?: Array<string>
+        text?: string
+        _type: 'span'
+        _key: string
+      }>
+      style?: 'normal' | 'h2' | 'h3'
+      listItem?: 'bullet' | 'number'
+      markDefs?: Array<{
+        href?: string
+        _type: 'link'
+        _key: string
+      }>
+      level?: number
+      _type: 'block'
+      _key: string
+    }>
+    en?: Array<{
+      children?: Array<{
+        marks?: Array<string>
+        text?: string
+        _type: 'span'
+        _key: string
+      }>
+      style?: 'normal' | 'h2' | 'h3'
+      listItem?: 'bullet' | 'number'
+      markDefs?: Array<{
+        href?: string
+        _type: 'link'
+        _key: string
+      }>
+      level?: number
+      _type: 'block'
+      _key: string
+    }>
+    de?: Array<{
+      children?: Array<{
+        marks?: Array<string>
+        text?: string
+        _type: 'span'
+        _key: string
+      }>
+      style?: 'normal' | 'h2' | 'h3'
+      listItem?: 'bullet' | 'number'
+      markDefs?: Array<{
+        href?: string
+        _type: 'link'
+        _key: string
+      }>
+      level?: number
+      _type: 'block'
+      _key: string
+    }>
+  }
+}
+
+export type InternationalizedArrayString = Array<
+  {
+    _key: string
+  } & InternationalizedArrayStringValue
+>
+
 export type ContactPage = {
   _id: string
   _type: 'contactPage'
@@ -95,12 +167,6 @@ export type InteriorsPage = {
     _key: string
   }>
 }
-
-export type InternationalizedArrayString = Array<
-  {
-    _key: string
-  } & InternationalizedArrayStringValue
->
 
 export type HomePage = {
   _id: string
@@ -343,13 +409,14 @@ export type Slug = {
 }
 
 export type AllSanitySchemaTypes =
+  | LegalPage
+  | InternationalizedArrayString
   | ContactPage
   | PhotoReference
   | MediaSlot
   | GalleryPage
   | SurroundingsPage
   | InteriorsPage
-  | InternationalizedArrayString
   | HomePage
   | SanityFileAssetReference
   | VideoSlot
@@ -979,6 +1046,41 @@ export type ContactPageQueryResult =
     }
   | null
 
+// Source: ../app/src/sanity/queries.ts
+// Variable: legalPageQuery
+// Query: *[_id == $id][0]{  "title": coalesce(title[language == $lng][0].value, title[language == "pl"][0].value),  updatedAt,  "isPolishFallback": $lng != "pl" && !(($lng == "en" && count(body.en) > 0) || ($lng == "de" && count(body.de) > 0)),  "body": select(    $lng == "en" && count(body.en) > 0 => body.en,    $lng == "de" && count(body.de) > 0 => body.de,    body.pl  )}
+export type LegalPageQueryResult =
+  | {
+      title: null
+      updatedAt: null
+      isPolishFallback: boolean | false | null
+      body: null
+    }
+  | {
+      title: string | null
+      updatedAt: string | null
+      isPolishFallback: boolean | false | null
+      body: Array<{
+        children?: Array<{
+          marks?: Array<string>
+          text?: string
+          _type: 'span'
+          _key: string
+        }>
+        style?: 'h2' | 'h3' | 'normal'
+        listItem?: 'bullet' | 'number'
+        markDefs?: Array<{
+          href?: string
+          _type: 'link'
+          _key: string
+        }>
+        level?: number
+        _type: 'block'
+        _key: string
+      }> | null
+    }
+  | null
+
 // Query TypeMap
 declare global {
   interface SanityQueries {
@@ -987,6 +1089,7 @@ declare global {
     '*[_id == "surroundingsPage"][0]{\n  header{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  babiaGora{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  slopes{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  trails{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  waterfalls{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} }\n}': SurroundingsPageQueryResult
     '*[_id == "galleryPage"][0]{\n  header{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  "photos": photos[]->{ "_key": _id, category, \n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  } }\n}': GalleryPageQueryResult
     '*[_id == "contactPage"][0]{\n  header{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  map{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} }\n}': ContactPageQueryResult
+    '*[_id == $id][0]{\n  "title": coalesce(title[language == $lng][0].value, title[language == "pl"][0].value),\n  updatedAt,\n  "isPolishFallback": $lng != "pl" && !(($lng == "en" && count(body.en) > 0) || ($lng == "de" && count(body.de) > 0)),\n  "body": select(\n    $lng == "en" && count(body.en) > 0 => body.en,\n    $lng == "de" && count(body.de) > 0 => body.de,\n    body.pl\n  )\n}': LegalPageQueryResult
   }
 }
 // Lets @sanity/client releases that predate the global registry read it too

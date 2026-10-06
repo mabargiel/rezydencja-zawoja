@@ -28,6 +28,16 @@ export const de = {
       description:
         'Fragen Sie nach freien Terminen in der Rezydencja Zawoja. Wir antworten noch am selben Tag.',
     },
+    privacyPolicy: {
+      title: 'Datenschutzerklärung',
+      description:
+        'Wie die Rezydencja Zawoja personenbezogene Daten aus Anfragen und Buchungen verarbeitet.',
+    },
+    rentalTerms: {
+      title: 'Mietbedingungen',
+      description:
+        'Buchungs- und Aufenthaltsregeln der Rezydencja Zawoja: Anzahlung, Kaution, Stornierung, An- und Abreise.',
+    },
   },
   nav: {
     label: 'Hauptnavigation',
@@ -48,6 +58,7 @@ export const de = {
     navigation: 'Navigation in der Fußzeile',
     address: 'Zawoja, Beskiden, am Fuß der Babia Góra',
     copyright: '© {{year}} Rezydencja Zawoja. Alle Rechte vorbehalten.',
+    legal: 'Rechtliches',
   },
   home: {
     hero: {
@@ -171,6 +182,14 @@ export const de = {
     children: 'Kinder: {{count}}',
     closing: 'Bei Fragen antworten Sie einfach auf diese E-Mail oder rufen Sie uns an: {{phone}}.',
     signature: 'Herzliche Grüße\nRezydencja Zawoja\n{{email}}',
+  },
+  legal: {
+    eyebrow: 'Dokumente',
+    updated: 'Zuletzt aktualisiert: {{date}}',
+    translationNote:
+      'Dies ist eine Übersetzung zu Ihrer Information. Rechtlich verbindlich ist die polnische Fassung.',
+    translationLink: 'Polnische Fassung lesen',
+    fallbackNote: 'Dieses Dokument ist nur auf Polnisch verfügbar.',
   },
   pages: {
     interiors: {
@@ -339,7 +358,8 @@ export const de = {
         children: 'Kinder',
         message: 'Nachricht (optional)',
         messagePlaceholder: 'Fragen, besondere Wünsche, Ankunftszeit…',
-        consent: 'Ich stimme der Verarbeitung meiner Daten für den Buchungsprozess zu.',
+        consent: 'Ich stimme der {{link}} für den Buchungsprozess zu.',
+        consentLink: 'Verarbeitung meiner Daten',
         submit: 'Anfrage senden',
         sending: 'Wird gesendet…',
         honeypot: 'Dieses Feld leer lassen',

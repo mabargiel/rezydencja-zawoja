@@ -11,15 +11,15 @@
 
 ## 3. App
 
-- [ ] 3.1 `legalPageQuery` (title, `updatedAt`, body in `$lng` with PL fallback, and whether it fell back); run typegen
-- [ ] 3.2 A `LegalPage` component and the two routes with `generateMetadata`; Portable Text components styled per the design; the binding-language note on EN/DE and on fallback
-- [ ] 3.3 Catalog keys: page titles, metadata, eyebrow, "last updated", the binding-language note, and footer link labels in PL/EN/DE
-- [ ] 3.4 Footer legal links next to the copyright, desktop and mobile
-- [ ] 3.5 The consent label links to the privacy policy (new tab, the click doesn't toggle the checkbox)
+- [x] 3.1 `legalPageQuery` (title, `updatedAt`, body in `$lng` with PL fallback, and whether it fell back); run typegen
+- [x] 3.2 A `LegalPage` component and the two routes with `generateMetadata`; Portable Text components styled per the design; the binding-language note on EN/DE and on fallback
+- [x] 3.3 Catalog keys: page titles, metadata, eyebrow, "last updated", the binding-language note, and footer link labels in PL/EN/DE
+- [x] 3.4 Footer legal links next to the copyright, desktop and mobile
+- [x] 3.5 The consent label links to the privacy policy (new tab, the click doesn't toggle the checkbox)
 
 ## 4. Verification
 
-- [ ] 4.1 Compare both pages with the approved design at 1440px and 390px in PL, EN and DE
-- [ ] 4.2 Check that cookies match the policy (only `lng`), the footer links work on every page, the consent link works, and a Studio edit shows up after publishing
+- [x] 4.1 Compare both pages with the approved design at 1440px and 390px in PL, EN and DE
+- [x] 4.2 Check that cookies match the policy (only `lng`), the footer links work on every page, the consent link works, and a Studio edit shows up after publishing
 - [ ] 4.3 Run format:check, lint, lint:styles, typecheck, typegen freshness, `sanity schema validate` and build; scan for comments; open a PR; confirm CI and the Vercel preview are green
 - [ ] 4.4 Send the privacy policy and the EN/DE texts to the owner for review

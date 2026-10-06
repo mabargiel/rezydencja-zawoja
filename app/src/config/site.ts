@@ -12,18 +12,21 @@ export const phoneHref = `tel:${site.phone.replaceAll(' ', '')}`
 
 export const mapsHref = `https://www.google.com/maps/search/?api=1&query=${site.coordinates.lat},${site.coordinates.lng}`
 
-export type PageKey = 'home' | 'interiors' | 'surroundings' | 'gallery' | 'contact'
+export type PageKey =
+  'home' | 'interiors' | 'surroundings' | 'gallery' | 'contact' | 'privacyPolicy' | 'rentalTerms'
 
 export const pagePaths: Record<PageKey, string> = {
   contact: '/contact',
   gallery: '/gallery',
   home: '',
   interiors: '/interiors',
+  privacyPolicy: '/privacy-policy',
+  rentalTerms: '/rental-terms',
   surroundings: '/surroundings',
 }
 
 type NavItem = {
-  key: PageKey | 'pricing'
+  key: Exclude<PageKey, 'privacyPolicy' | 'rentalTerms'> | 'pricing'
   path: string
   segment?: string | null
   section?: string

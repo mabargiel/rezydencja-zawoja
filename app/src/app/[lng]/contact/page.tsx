@@ -29,6 +29,7 @@ export default async function ContactPage() {
       sent: t('pages.contact.sent', { returnObjects: true }),
     },
     language,
+    privacyHref: `/${language}${pagePaths.privacyPolicy}`,
   }
 
   return (

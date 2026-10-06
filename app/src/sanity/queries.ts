@@ -73,3 +73,16 @@ export const contactPageQuery = defineQuery(`*[_id == "contactPage"][0]{
   header{ ${resolvedSlot} },
   map{ ${resolvedSlot} }
 }`)
+
+const hasTranslation = `($lng == "en" && count(body.en) > 0) || ($lng == "de" && count(body.de) > 0)`
+
+export const legalPageQuery = defineQuery(`*[_id == $id][0]{
+  "title": coalesce(title[language == $lng][0].value, title[language == "pl"][0].value),
+  updatedAt,
+  "isPolishFallback": $lng != "pl" && !(${hasTranslation}),
+  "body": select(
+    $lng == "en" && count(body.en) > 0 => body.en,
+    $lng == "de" && count(body.de) > 0 => body.de,
+    body.pl
+  )
+}`)
