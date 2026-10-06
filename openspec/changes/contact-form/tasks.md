@@ -27,7 +27,7 @@
 ## 5. Verification
 
 - [x] 5.1 Compare with the approved design at 1440px and 390px in PL, EN and DE
-- [ ] 5.2 Behaviour:
+- [x] 5.2 Behaviour:
   - prefill from the booking bar;
   - each validation error;
   - success and failure (missing key);
