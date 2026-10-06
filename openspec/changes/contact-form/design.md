@@ -110,7 +110,7 @@ PL is the source; EN and DE are drafted for review.
 
 Rollback: revert the PR. Contact goes back to the header-only stub, and nothing else depends on it.
 
-## Open Questions
+## Resolved Questions
 
-- Which address should receive inquiries in production: `biuro@rezydencjazawoja.pl` (the default) or another one?
-- Who manages DNS for `rezydencjazawoja.pl` (needed for the Resend verification)?
+- Inquiries go to `biuro@rezydencjazawoja.pl` in production (`site.email`).
+- The owner manages DNS for `rezydencjazawoja.pl` and adds the Resend records (task 5.3).
