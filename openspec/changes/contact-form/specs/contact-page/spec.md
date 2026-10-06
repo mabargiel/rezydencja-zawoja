@@ -1,0 +1,38 @@
+## ADDED Requirements
+
+### Requirement: Kontakt layout
+Below its Page Header, the Kontakt page SHALL show the inquiry form and the contact card side by side on desktop, with the form filling the remaining width and the card 440px wide. On mobile, the card comes first and the form follows it. A directions section SHALL come after them. The layout SHALL match `McNXT` at 1440px and `a7yX5j` at 390px, and the page SHALL stay statically prerendered in every language.
+
+#### Scenario: Desktop order
+- **WHEN** `/pl/contact` renders at 1440px
+- **THEN** the form is on the left, the dark contact card on the right, and the directions section below both
+
+#### Scenario: Mobile order
+- **WHEN** `/pl/contact` renders at 390px
+- **THEN** the contact card comes before the form
+
+#### Scenario: Static output
+- **WHEN** the app is built
+- **THEN** `/pl/contact`, `/en/contact` and `/de/contact` are prerendered
+
+### Requirement: Contact card
+The contact card SHALL show the house name, then the address, phone, email and stay times ("Przyjazd od 16:00", "Wyjazd do 10:00"), each with an icon and a translated label, and a "Zadzwoń teraz" button. The phone SHALL be a `tel:` link, the email a `mailto:` link, and the button SHALL call the phone number. Phone, email, address and times SHALL come from `app/src/config/site.ts`.
+
+#### Scenario: Call button
+- **WHEN** a visitor activates "Zadzwoń teraz"
+- **THEN** the browser opens `tel:+48500290390`
+
+#### Scenario: Translated labels
+- **WHEN** the card renders in German
+- **THEN** the labels and stay times are in German, and the phone, email and address are unchanged
+
+### Requirement: Directions with map
+The directions section SHALL show an eyebrow, a title and the coordinates as a link that opens the location in Google Maps in a new tab, followed by the `contactPage.map` image from the CMS with a "Rezydencja Zawoja" marker centred on it. The map image SHALL also link to the same location and have translated alt text.
+
+#### Scenario: Open in maps
+- **WHEN** a visitor activates the coordinates link or the map image
+- **THEN** Google Maps opens at 49.6405, 19.5586 in a new tab
+
+#### Scenario: Map comes from the CMS
+- **WHEN** an editor replaces the map photo in `contactPage.map`
+- **THEN** the page shows the new image after revalidation
