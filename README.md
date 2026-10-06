@@ -1,6 +1,6 @@
 # Rezydencja Zawoja
 
-Website for [Rezydencja Zawoja](https://rezydencjazawoja.pl), a guesthouse at the foot of Babia Góra. It's a brochure site in Polish, English and German. Bookings happen off-site, by phone, the contact form, Booking.com or Airbnb.
+Website for [Rezydencja Zawoja](https://rezydencjazawoja.pl), a guesthouse at the foot of Babia Góra. It's a brochure site in Polish, English and German. Guests book directly, through the contact form, phone or email; the site deliberately doesn't link to Booking.com or Airbnb.
 
 - **Site:** https://rezydencja-zawoja-chi.vercel.app
 - **Studio:** https://rezydencja-zawoja.sanity.studio
