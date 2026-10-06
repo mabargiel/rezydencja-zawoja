@@ -8,6 +8,6 @@
 ## 2. Verification
 
 - [x] 2.1 Locally: the inquiry still sends (the check is skipped); the limited banner renders in all three languages (forced state)
-- [ ] 2.2 Run format:check, lint, lint:styles, typecheck and build; scan for comments; open a PR; confirm CI and the Vercel preview are green, and a preview inquiry still sends (fail-open)
-- [ ] 2.3 Owner checkpoint: create and publish the `contact-inquiry` Firewall rule (D4)
-- [ ] 2.4 After merge, in production: 6 honeypot submissions from one IP (no emails), and the 6th shows the limited message; a normal inquiry from another network still sends
+- [x] 2.2 Run format:check, lint, lint:styles, typecheck and build; scan for comments; open a PR; confirm CI and the Vercel preview are green, and a preview inquiry still sends (fail-open)
+- [x] 2.3 Owner checkpoint: create and publish the `contact-inquiry` Firewall rule (D4)
+- [x] 2.4 After merge, in production: 6 honeypot submissions from one IP (no emails), and the 6th shows the limited message; a normal inquiry from another network still sends
