@@ -60,11 +60,15 @@ The Navbar and mobile menu SHALL include a PL / EN / DE switcher that matches th
 - **THEN** they land on `/de/surroundings`
 
 ### Requirement: Footer
-Every page SHALL end with the Footer from design node `vgRjs` (desktop) and `O6EcDO` (mobile). It has the logo, translated address, the phone as a `tel:` link, the email as a `mailto:` link, the nav links, and a copyright line with the current year. Links to pages that don't exist yet SHALL be left out.
+Every page SHALL end with the Footer from design node `vgRjs` (desktop) and `O6EcDO` (mobile). It has the logo, translated address, the phone as a `tel:` link, the email as a `mailto:` link, the nav links, a copyright line with the current year, and translated links to the privacy policy and the rental terms next to the copyright. Links to pages that don't exist yet SHALL be left out.
 
 #### Scenario: Contact links
 - **WHEN** the footer renders
 - **THEN** "+48 500 290 390" links to `tel:+48500290390` and "biuro@rezydencjazawoja.pl" links to `mailto:biuro@rezydencjazawoja.pl`
+
+#### Scenario: Legal links
+- **WHEN** the footer renders on `/en/gallery`
+- **THEN** it links to `/en/privacy-policy` and `/en/rental-terms` with English labels
 
 ### Requirement: Page Header
 Subpages SHALL open with the Page Header from design node `E3j9wx` (460px tall on desktop) and `V8PYt` (400px on mobile). It shows a translated eyebrow, title and intro over the page's header photo from the CMS, resolved for the current season, under the design's dark gradient. It SHALL fall back to `bg-dark` only when the page's header slot is empty.

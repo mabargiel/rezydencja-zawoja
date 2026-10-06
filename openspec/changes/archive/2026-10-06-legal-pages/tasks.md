@@ -21,5 +21,5 @@
 
 - [x] 4.1 Compare both pages with the approved design at 1440px and 390px in PL, EN and DE
 - [x] 4.2 Check that cookies match the policy (only `lng`), the footer links work on every page, the consent link works, and a Studio edit shows up after publishing
-- [ ] 4.3 Run format:check, lint, lint:styles, typecheck, typegen freshness, `sanity schema validate` and build; scan for comments; open a PR; confirm CI and the Vercel preview are green
-- [ ] 4.4 Send the privacy policy and the EN/DE texts to the owner for review
+- [x] 4.3 Run format:check, lint, lint:styles, typecheck, typegen freshness, `sanity schema validate` and build; scan for comments; open a PR; confirm CI and the Vercel preview are green
+- [x] 4.4 Send the privacy policy and the EN/DE texts to the owner for review
