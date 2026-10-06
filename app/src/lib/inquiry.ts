@@ -1,4 +1,5 @@
 export const maxGuests = 10
+export const maxNameLength = 100
 export const maxMessageLength = 2000
 
 export const errorCodes = [
@@ -36,7 +37,10 @@ export type InquiryState = {
   values?: InquiryValues
 }
 
-export const isoDatePattern = /^\d{4}-\d{2}-\d{2}$/
+const isoDatePattern = /^\d{4}-\d{2}-\d{2}$/
+
+export const isIsoDate = (value: string) =>
+  isoDatePattern.test(value) && !Number.isNaN(Date.parse(value))
 
 // Poland is ahead of UTC, so a guest's local "today" is never earlier than the UTC date.
 export const today = () => new Date().toISOString().slice(0, 10)

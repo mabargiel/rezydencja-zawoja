@@ -3,26 +3,26 @@
 import { useState } from 'react'
 
 import { Lightbox, type LightboxLabels } from '@/components/Lightbox'
+import { fillTemplate } from '@/lib/template'
 import type { KeyedPhoto } from '@/sanity/photo'
 
 import { PhotoTile } from './PhotoTile'
 
 type RoomMosaicProps = {
   photos: KeyedPhoto[]
-  openPhoto: string
   lightbox: LightboxLabels
 }
 
 const maxTiles = 3
 
-export function RoomMosaic({ photos, openPhoto, lightbox }: RoomMosaicProps) {
+export function RoomMosaic({ photos, lightbox }: RoomMosaicProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [large, ...rest] = photos
   if (!large) return null
 
   const smalls = rest.slice(0, maxTiles - 1)
   const hiddenCount = photos.length - maxTiles
-  const labelFor = (photo: KeyedPhoto) => openPhoto.replace('{{alt}}', photo.alt ?? '')
+  const labelFor = (photo: KeyedPhoto) => fillTemplate(lightbox.openPhoto, { alt: photo.alt ?? '' })
 
   return (
     <div className="flex flex-col gap-2.5 pt-2 lg:flex-row lg:gap-4 lg:pt-0">

@@ -4,6 +4,7 @@ import { User } from 'lucide-react'
 import { useState } from 'react'
 
 import { Lightbox, type LightboxLabels } from '@/components/Lightbox'
+import { fillTemplate } from '@/lib/template'
 import type { KeyedPhoto } from '@/sanity/photo'
 import type { InteriorsPageQueryResult } from '@/sanity/types'
 
@@ -13,13 +14,13 @@ type Bedroom = NonNullable<NonNullable<InteriorsPageQueryResult>['bedrooms']>[nu
 
 type BedroomCardsProps = {
   bedrooms: Bedroom[]
-  labels: { guests: string; openPhoto: string }
+  guestsLabel: string
   lightbox: LightboxLabels
 }
 
 type OpenState = { photos: KeyedPhoto[]; index: number } | null
 
-export function BedroomCards({ bedrooms, labels, lightbox }: BedroomCardsProps) {
+export function BedroomCards({ bedrooms, guestsLabel, lightbox }: BedroomCardsProps) {
   const [open, setOpen] = useState<OpenState>(null)
 
   return (
@@ -36,7 +37,7 @@ export function BedroomCards({ bedrooms, labels, lightbox }: BedroomCardsProps) 
               {cover ? (
                 <PhotoTile
                   photo={cover}
-                  label={labels.openPhoto.replace('{{alt}}', cover.alt ?? bedroom.name ?? '')}
+                  label={fillTemplate(lightbox.openPhoto, { alt: cover.alt ?? bedroom.name ?? '' })}
                   sizes="(min-width: 1024px) 20vw, 200px"
                   className="h-[150px] w-full lg:h-[200px]"
                   onOpen={() => setOpen({ index: 0, photos })}
@@ -59,7 +60,7 @@ export function BedroomCards({ bedrooms, labels, lightbox }: BedroomCardsProps) 
                       strokeWidth={1.75}
                       className="shrink-0 text-accent-warm-deep"
                     />
-                    <span className="sr-only">{labels.guests}:</span>
+                    <span className="sr-only">{guestsLabel}:</span>
                     {bedroom.guests}
                   </p>
                 )}

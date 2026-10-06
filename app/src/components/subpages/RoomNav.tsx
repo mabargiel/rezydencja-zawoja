@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 
+import { chipStateClass } from '@/components/chip'
 import { useSectionInView } from '@/lib/useSectionInView'
 
 type Room = { id: string; label: string }
@@ -14,9 +15,7 @@ type RoomNavProps = {
 
 const topRowId = 'room-nav'
 
-// The top row counts as gone once it slides under the fixed navbar. The rooms count as over once
-// their end rises above the lowest quarter of the viewport: the footer is shorter than half a
-// screen, so a mid-screen threshold would never be crossed.
+// The footer is shorter than half a screen, so the rooms' end never crosses mid-screen.
 const belowNavbar = '-96px 0px 0px 0px'
 const lowestQuarter = '-75% 0px 0px 0px'
 
@@ -78,11 +77,7 @@ function RoomChip({ room }: { room: Room }) {
       ref={chip}
       href={`#${room.id}`}
       aria-current={isActive ? 'location' : undefined}
-      className={`block px-4 py-2 font-body text-[12.5px] tracking-[0.5px] transition-colors lg:px-[22px] lg:py-2.5 lg:text-[13px] lg:tracking-[1px] ${
-        isActive
-          ? 'bg-accent font-medium text-surface'
-          : 'border border-line text-text-secondary hover:border-accent hover:text-accent'
-      }`}
+      className={`block px-4 py-2 font-body text-[12.5px] tracking-[0.5px] transition-colors lg:px-[22px] lg:py-2.5 lg:text-[13px] lg:tracking-[1px] ${chipStateClass(isActive)}`}
     >
       {room.label}
     </a>

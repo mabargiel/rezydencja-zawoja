@@ -2,14 +2,14 @@
 
 import { useSearchParams } from 'next/navigation'
 
-import { type InquiryValues, isoDatePattern, maxGuests, today } from '@/lib/inquiry'
+import { type InquiryValues, isIsoDate, maxGuests, today } from '@/lib/inquiry'
 
 import { ContactForm, type ContactFormProps } from './ContactForm'
 
 type SearchParams = ReturnType<typeof useSearchParams>
 
 function upcomingDate(value: string | null) {
-  if (!value || !isoDatePattern.test(value) || Number.isNaN(Date.parse(value))) return undefined
+  if (!value || !isIsoDate(value)) return undefined
   return value >= today() ? value : undefined
 }
 

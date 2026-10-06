@@ -1,6 +1,7 @@
-import { Minus } from 'lucide-react'
 import type { ReactNode } from 'react'
 
+import { DashList } from '@/components/DashList'
+import { Eyebrow } from '@/components/Eyebrow'
 import type { LightboxLabels } from '@/components/Lightbox'
 import type { KeyedPhoto } from '@/sanity/photo'
 
@@ -13,7 +14,6 @@ type RoomSectionProps = {
   body: string
   facts: readonly string[]
   photos: KeyedPhoto[]
-  openPhoto: string
   lightbox: LightboxLabels
   children?: ReactNode
 }
@@ -25,7 +25,6 @@ export function RoomSection({
   body,
   facts,
   photos,
-  openPhoto,
   lightbox,
   children,
 }: RoomSectionProps) {
@@ -37,10 +36,7 @@ export function RoomSection({
     >
       <div className="flex flex-col gap-3.5 lg:flex-row lg:gap-20">
         <div className="flex flex-col gap-3.5 lg:w-[420px] lg:shrink-0 lg:gap-[18px]">
-          <p className="flex items-center gap-2.5 font-body text-[10.5px] tracking-[3px] text-accent-warm-deep uppercase lg:gap-3 lg:text-xs lg:tracking-[5px]">
-            <span aria-hidden className="h-0.5 w-[22px] bg-accent-warm lg:w-[26px]" />
-            {eyebrow}
-          </p>
+          <Eyebrow>{eyebrow}</Eyebrow>
           <h2
             id={`${id}-title`}
             className="font-display text-[28px] leading-[1.05] text-text-primary lg:text-[40px]"
@@ -50,25 +46,10 @@ export function RoomSection({
           <p className="font-body text-[14.5px] leading-[1.6] text-text-secondary lg:text-base lg:leading-[1.65]">
             {body}
           </p>
-          <ul className="flex flex-col gap-2 lg:gap-2.5 lg:pt-1.5">
-            {facts.map(fact => (
-              <li
-                key={fact}
-                className="flex items-center gap-2.5 font-body text-[13.5px] text-text-secondary lg:gap-3 lg:text-[14.5px]"
-              >
-                <Minus
-                  aria-hidden
-                  size={14}
-                  strokeWidth={1.75}
-                  className="shrink-0 text-accent-warm-deep"
-                />
-                {fact}
-              </li>
-            ))}
-          </ul>
+          <DashList items={facts} className="gap-2 lg:gap-2.5 lg:pt-1.5" />
         </div>
         <div className="lg:min-w-0 lg:flex-1">
-          <RoomMosaic photos={photos} openPhoto={openPhoto} lightbox={lightbox} />
+          <RoomMosaic photos={photos} lightbox={lightbox} />
         </div>
       </div>
       {children}

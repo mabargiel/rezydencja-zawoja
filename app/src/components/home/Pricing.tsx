@@ -1,13 +1,13 @@
 import { Clock4, Info, Mail, PawPrint, Phone, ShieldCheck, Wifi } from 'lucide-react'
 
 import { SectionHeading } from '@/components/SectionHeading'
-import { phoneHref, site } from '@/config/site'
+import { emailHref, phoneHref, site } from '@/config/site'
 import type { Language } from '@/i18n/config'
 import { formatPrice } from '@/lib/formatPrice'
 import type { HomePageQueryResult } from '@/sanity/types'
 
 type PricingData = NonNullable<HomePageQueryResult['pricing']>
-type Unit = 'night' | 'stay' | 'week' | 'weekend'
+type Unit = NonNullable<NonNullable<PricingData['rates']>[number]['unit']>
 
 type PricingProps = {
   language: Language
@@ -168,10 +168,7 @@ export function Pricing({ language, pricing, labels }: PricingProps) {
             <Phone aria-hidden size={16} strokeWidth={1.75} className="text-accent-warm" />
             {site.phone}
           </a>
-          <a
-            href={`mailto:${site.email}`}
-            className="flex items-center gap-2.5 hover:text-accent-warm"
-          >
+          <a href={emailHref} className="flex items-center gap-2.5 hover:text-accent-warm">
             <Mail aria-hidden size={16} strokeWidth={1.75} className="text-accent-warm" />
             {site.email}
           </a>

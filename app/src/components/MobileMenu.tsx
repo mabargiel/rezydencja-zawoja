@@ -8,7 +8,7 @@ import { useRef } from 'react'
 import { ButtonOutline } from '@/components/Actions'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 import { NavLink } from '@/components/NavLink'
-import { phoneHref, site } from '@/config/site'
+import { emailHref, phoneHref, site } from '@/config/site'
 import type { Language } from '@/i18n/config'
 
 type MenuLink = {
@@ -21,6 +21,8 @@ type MenuLink = {
 
 type MobileMenuProps = {
   language: Language
+  homeHref: string
+  bookHref: string
   links: MenuLink[]
   labels: {
     open: string
@@ -32,7 +34,7 @@ type MobileMenuProps = {
   }
 }
 
-export function MobileMenu({ language, links, labels }: MobileMenuProps) {
+export function MobileMenu({ language, homeHref, bookHref, links, labels }: MobileMenuProps) {
   const dialog = useRef<HTMLDialogElement>(null)
   const close = () => dialog.current?.close()
 
@@ -55,7 +57,7 @@ export function MobileMenu({ language, links, labels }: MobileMenuProps) {
       >
         <div className="flex min-h-full flex-col px-5 pt-[22px] pb-10">
           <div className="flex items-center justify-between">
-            <Link href={`/${language}`} aria-label={labels.homeLink} onClick={close}>
+            <Link href={homeHref} aria-label={labels.homeLink} onClick={close}>
               <Image src="/brand/logo-light.svg" unoptimized alt="" width={63} height={40} />
             </Link>
             <button type="button" aria-label={labels.close} onClick={close}>
@@ -89,12 +91,12 @@ export function MobileMenu({ language, links, labels }: MobileMenuProps) {
               size="menu"
               onNavigate={close}
             />
-            <ButtonOutline href={`/${language}/contact`} className="w-full">
+            <ButtonOutline href={bookHref} className="w-full">
               {labels.book}
             </ButtonOutline>
             <address className="flex flex-col gap-1.5 font-body text-[13.5px] tracking-[1px] text-text-inverse-dim not-italic">
               <a href={phoneHref}>{site.phone}</a>
-              <a href={`mailto:${site.email}`}>{site.email}</a>
+              <a href={emailHref}>{site.email}</a>
             </address>
           </div>
         </div>

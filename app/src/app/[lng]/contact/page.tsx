@@ -5,7 +5,7 @@ import { ContactForm, type ContactFormProps } from '@/components/contact/Contact
 import { Directions } from '@/components/contact/Directions'
 import { PrefilledContactForm } from '@/components/contact/PrefilledContactForm'
 import { PageHeader } from '@/components/PageHeader'
-import { pagePaths } from '@/config/site'
+import { localizedHref, pagePaths } from '@/config/site'
 import { getLanguage, getT } from '@/i18n/server'
 import { pageMetadata } from '@/lib/metadata'
 import { sanityFetch } from '@/sanity/live'
@@ -22,14 +22,14 @@ export default async function ContactPage() {
   })
 
   const formProps: ContactFormProps = {
-    contactHref: `/${language}${pagePaths.contact}`,
+    contactHref: localizedHref(language, pagePaths.contact),
     copy: {
       errors: t('pages.contact.errors', { returnObjects: true }),
       form: t('pages.contact.form', { returnObjects: true }),
       sent: t('pages.contact.sent', { returnObjects: true }),
     },
     language,
-    privacyHref: `/${language}${pagePaths.privacyPolicy}`,
+    privacyHref: localizedHref(language, pagePaths.privacyPolicy),
   }
 
   return (

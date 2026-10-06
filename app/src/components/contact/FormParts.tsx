@@ -4,7 +4,7 @@ import { ArrowRight, CircleAlert, LoaderCircle } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { useFormStatus } from 'react-dom'
 
-import { phoneHref, site } from '@/config/site'
+import { emailHref, phoneHref, site } from '@/config/site'
 import type { InquiryField } from '@/lib/inquiry'
 
 export function Row({ children, isPaired }: { children: ReactNode; isPaired?: boolean }) {
@@ -100,10 +100,7 @@ export function SendError({ title, body }: SendErrorProps) {
             {site.phone}
           </a>
           {' · '}
-          <a
-            href={`mailto:${site.email}`}
-            className="underline underline-offset-2 hover:text-accent"
-          >
+          <a href={emailHref} className="underline underline-offset-2 hover:text-accent">
             {site.email}
           </a>
         </p>

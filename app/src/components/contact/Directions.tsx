@@ -1,5 +1,6 @@
 import { MapPin } from 'lucide-react'
 
+import { Eyebrow } from '@/components/Eyebrow'
 import { SanityImage } from '@/components/SanityImage'
 import { mapsHref, site } from '@/config/site'
 import { getT } from '@/i18n/server'
@@ -19,10 +20,7 @@ export async function Directions({ map }: DirectionsProps) {
     <section aria-labelledby="directions-title">
       <div className="flex flex-col gap-2.5 border-t border-line px-5 py-9 lg:flex-row lg:items-center lg:justify-between lg:px-[120px] lg:py-11">
         <div className="flex flex-col gap-2.5 lg:gap-3">
-          <p className="flex items-center gap-2.5 font-body text-[10.5px] tracking-[3px] text-accent-warm-deep uppercase lg:gap-3 lg:text-xs lg:tracking-[5px]">
-            <span aria-hidden className="h-0.5 w-[22px] bg-accent-warm lg:w-[26px]" />
-            {t('pages.contact.directions.eyebrow')}
-          </p>
+          <Eyebrow>{t('pages.contact.directions.eyebrow')}</Eyebrow>
           <h2
             id="directions-title"
             className="font-display text-2xl leading-[1.15] text-text-primary lg:text-[34px]"

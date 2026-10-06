@@ -2,7 +2,8 @@ import { Languages } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import { pagePaths } from '@/config/site'
+import { Eyebrow } from '@/components/Eyebrow'
+import { localizedHref, pagePaths } from '@/config/site'
 import { getLanguage, getT } from '@/i18n/server'
 import { sanityFetch } from '@/sanity/live'
 import { legalPageQuery } from '@/sanity/queries'
@@ -31,10 +32,9 @@ export async function LegalPage({ page }: LegalPageProps) {
   return (
     <main>
       <header className="flex flex-col gap-3 bg-bg-dark px-5 pt-[124px] pb-9 lg:gap-4 lg:px-16 lg:pt-[178px] lg:pb-16">
-        <p className="flex items-center gap-2.5 font-body text-[10.5px] tracking-[3px] text-accent-warm uppercase lg:gap-3 lg:text-[13px] lg:tracking-[6px]">
-          <span aria-hidden className="h-0.5 w-[22px] bg-accent-warm lg:w-[26px]" />
+        <Eyebrow tone="dark" size="header">
           {t('legal.eyebrow')}
-        </p>
+        </Eyebrow>
         <h1 className="font-display text-4xl leading-[1.05] text-text-inverse lg:text-[56px]">
           {data.title ?? t(`meta.${page}.title`)}
         </h1>
@@ -64,7 +64,7 @@ export async function LegalPage({ page }: LegalPageProps) {
                 </span>
                 {!data.isPolishFallback && (
                   <Link
-                    href={`/pl${pagePaths[page]}`}
+                    href={localizedHref('pl', pagePaths[page])}
                     hrefLang="pl"
                     className="self-start font-medium text-accent underline underline-offset-2 hover:text-bg-dark"
                   >

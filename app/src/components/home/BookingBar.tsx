@@ -3,6 +3,8 @@
 import { ArrowRight, Calendar, User } from 'lucide-react'
 import { type ReactNode, useState } from 'react'
 
+import { maxGuests, today } from '@/lib/inquiry'
+
 type BookingBarProps = {
   action: string
   labels: {
@@ -15,14 +17,10 @@ type BookingBarProps = {
   }
 }
 
-const guestOptions = Array.from({ length: 10 }, (_, index) => index + 1)
+const guestOptions = Array.from({ length: maxGuests }, (_, index) => index + 1)
 
 const inputClass =
   'w-full min-w-0 bg-transparent font-body text-sm font-medium text-text-primary outline-none lg:text-[15px]'
-
-function today() {
-  return new Date().toISOString().slice(0, 10)
-}
 
 function Field({ label, icon, children }: { label: string; icon: ReactNode; children: ReactNode }) {
   return (

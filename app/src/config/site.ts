@@ -1,3 +1,5 @@
+import type { Language } from '@/i18n/config'
+
 export const site = {
   address: ['Zawoja Mosorne 2853', '34-222 Zawoja'],
   checkIn: '16:00',
@@ -9,6 +11,8 @@ export const site = {
 } as const
 
 export const phoneHref = `tel:${site.phone.replaceAll(' ', '')}`
+
+export const emailHref = `mailto:${site.email}`
 
 export const mapsHref = `https://www.google.com/maps/search/?api=1&query=${site.coordinates.lat},${site.coordinates.lng}`
 
@@ -41,3 +45,5 @@ export const navItems: readonly NavItem[] = [
   { key: 'pricing', path: '#pricing', section: 'pricing' },
   { key: 'contact', path: pagePaths.contact, segment: 'contact' },
 ]
+
+export const localizedHref = (language: Language, path = '') => `/${language}${path}`

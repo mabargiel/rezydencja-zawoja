@@ -3,6 +3,7 @@
 import { useActionState } from 'react'
 
 import { sendInquiry } from '@/app/[lng]/contact/actions'
+import { Eyebrow } from '@/components/Eyebrow'
 import type { Language } from '@/i18n/config'
 import type { Messages } from '@/i18n/types'
 import {
@@ -11,6 +12,7 @@ import {
   type InquiryValues,
   maxGuests,
   maxMessageLength,
+  maxNameLength,
   today,
 } from '@/lib/inquiry'
 
@@ -65,10 +67,7 @@ export function ContactForm({
 
   return (
     <form action={formAction} className="flex flex-col gap-[18px] lg:gap-5">
-      <p className="flex items-center gap-2.5 font-body text-[10.5px] tracking-[3px] text-accent-warm-deep uppercase lg:gap-3 lg:text-xs lg:tracking-[5px]">
-        <span aria-hidden className="h-0.5 w-[22px] bg-accent-warm lg:w-[26px]" />
-        {form.eyebrow}
-      </p>
+      <Eyebrow>{form.eyebrow}</Eyebrow>
       <h2 className="font-display text-[28px] leading-[1.1] text-text-primary lg:text-[38px]">
         {form.title}
       </h2>
@@ -85,7 +84,7 @@ export function ContactForm({
           type="text"
           autoComplete="name"
           required
-          maxLength={100}
+          maxLength={maxNameLength}
           placeholder={form.namePlaceholder}
         />
       </Field>

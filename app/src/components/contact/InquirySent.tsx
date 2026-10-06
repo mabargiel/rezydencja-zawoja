@@ -2,6 +2,7 @@
 
 import { ArrowRight, Check } from 'lucide-react'
 
+import { Eyebrow } from '@/components/Eyebrow'
 import { phoneHref, site } from '@/config/site'
 import type { Messages } from '@/i18n/types'
 
@@ -21,10 +22,7 @@ export function InquirySent({ copy, contactHref }: InquirySentProps) {
       <span className="flex size-11 items-center justify-center bg-bg-dark text-accent-warm lg:size-[52px]">
         <Check aria-hidden size={22} strokeWidth={1.75} />
       </span>
-      <p className="flex items-center gap-2.5 font-body text-[10.5px] tracking-[3px] text-accent-warm-deep uppercase lg:gap-3 lg:text-xs lg:tracking-[5px]">
-        <span aria-hidden className="h-0.5 w-[22px] bg-accent-warm lg:w-[26px]" />
-        {copy.eyebrow}
-      </p>
+      <Eyebrow>{copy.eyebrow}</Eyebrow>
       <h2 className="font-display text-[28px] leading-[1.1] text-text-primary lg:text-[38px]">
         {copy.title}
       </h2>
