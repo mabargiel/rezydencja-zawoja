@@ -3,6 +3,7 @@ import { basename, resolve } from 'node:path'
 
 import { getCliClient } from 'sanity/cli'
 
+import { bedroomsLayout, legacyPhotos, legacySource, roomsLayout } from './seed-legacy'
 import { layout, photoId, photos, pricing } from './seed-map'
 
 type Localized = { pl: string; en: string; de: string }
@@ -25,9 +26,6 @@ const photoRef = (file: string) => ({ _type: 'reference', _ref: photoId(file) })
 
 const slot = (file: string) => ({ _type: 'mediaSlot', photo: photoRef(file) })
 
-const slotList = (files: string[]) =>
-  files.map((file, index) => ({ ...slot(file), _key: `slot-${index}` }))
-
 const photoRefList = (files: string[]) =>
   files.map(file => ({ ...photoRef(file), _key: photoId(file) }))
 
@@ -48,6 +46,26 @@ async function seedPhotos() {
     console.log(`photo ${photo.file}`)
   }
 }
+
+async function seedLegacyPhotos() {
+  for (const photo of legacyPhotos) {
+    const response = await fetch(legacySource + encodeURIComponent(photo.file))
+    if (!response.ok) throw new Error(`Could not download ${photo.file}: ${response.status}`)
+    const asset = await client.assets.upload('image', Buffer.from(await response.arrayBuffer()), {
+      filename: photo.file,
+    })
+    await client.createOrReplace({
+      _id: photo.id,
+      _type: 'photo',
+      alt: localized(photo.alt),
+      category: photo.category,
+      image: { _type: 'image', asset: { _type: 'reference', _ref: asset._id } },
+    })
+    console.log(`legacy photo ${photo.file}`)
+  }
+}
+
+const idRefList = (ids: string[]) => ids.map(id => ({ _key: id, _ref: id, _type: 'reference' }))
 
 async function heroVideoRef() {
   const path = process.env.HERO_VIDEO
@@ -93,12 +111,20 @@ async function seedPages() {
       _id: 'interiorsPage',
       _type: 'interiorsPage',
       header: slot(interiorsPage.header),
-      livingRoom: slot(interiorsPage.livingRoom),
-      antiques: slot(interiorsPage.antiques),
-      bedrooms: slot(interiorsPage.bedrooms),
-      comfort: slot(interiorsPage.comfort),
-      relaxation: slotList(interiorsPage.relaxation),
-      details: slotList(interiorsPage.details),
+      rooms: roomsLayout.map(room => ({
+        _key: room.type,
+        _type: 'room',
+        photos: idRefList(room.photos),
+        type: room.type,
+      })),
+      bedrooms: bedroomsLayout.map((bedroom, index) => ({
+        _key: `bedroom-${index + 1}`,
+        _type: 'bedroom',
+        beds: localized(bedroom.beds),
+        guests: bedroom.guests,
+        name: localized(bedroom.name),
+        photos: idRefList(bedroom.photos),
+      })),
     },
     {
       _id: 'surroundingsPage',
@@ -158,4 +184,5 @@ async function seedPages() {
 }
 
 await seedPhotos()
+await seedLegacyPhotos()
 await seedPages()

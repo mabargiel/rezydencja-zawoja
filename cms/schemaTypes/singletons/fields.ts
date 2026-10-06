@@ -3,15 +3,6 @@ import { defineArrayMember, defineField } from 'sanity'
 export const slot = (name: string, title: string) =>
   defineField({ name, title, type: 'mediaSlot', validation: rule => rule.required() })
 
-export const slotList = (name: string, title: string, count: number) =>
-  defineField({
-    name,
-    title,
-    type: 'array',
-    of: [defineArrayMember({ type: 'mediaSlot' })],
-    validation: rule => rule.required().length(count).error(`Dodaj dokładnie ${count} zdjęcia`),
-  })
-
 export const photoList = (name: string, title: string, max?: number) =>
   defineField({
     name,

@@ -320,17 +320,6 @@ export const layout = {
   },
   interiorsPage: {
     header: 'apartament-zabytkowy-kredens5.jpg',
-    livingRoom: 'salon-widok2-2048x1152.jpg',
-    antiques: 'apartament-zabytkowy-kredens5.jpg',
-    bedrooms: 'Sypialnia406.jpg',
-    comfort: 'lazienka-pietro1.jpg',
-    relaxation: ['IMG_1798-480x650.jpg', 'silownia2.jpeg'],
-    details: [
-      'apartament-zabytkowa-lampa2.jpg',
-      'Ekspres.jpeg',
-      'apartament-zabytkowy-kufer.jpeg',
-      'sypialnia2-dekoracja5.jpg',
-    ],
   },
   surroundingsPage: {
     header: 'zimowy-widok2-800x800.jpg',
@@ -358,6 +347,10 @@ export const layout = {
       'sypialnia2-dekoracja5.jpg',
       'IMG_3178-480x650.jpeg',
       'silownia2.jpeg',
+      'zimowy-spacer3.jpg',
+      'wyciag-krzeselkowy.jpeg',
+      'babia-gora-trails.jpg',
+      'okolica-promo.jpeg',
     ],
   },
   contactPage: {
