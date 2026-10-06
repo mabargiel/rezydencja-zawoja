@@ -21,6 +21,7 @@
 
 - [x] 4.1 The zod schema and the `sendInquiry` server action: validation codes, the honeypot, the plain-text email through Resend with Reply-To and the site language, and a `failed` result when the key is missing or Resend errors
 - [x] 4.2 `ContactForm` (client): `useActionState`, `useFormStatus` pending button, translated field errors, values kept after errors, the sent state with focus, and native constraint attributes
+- [x] 4.4 Guest confirmation: `getTranslator(language)` in `@/i18n/server`, `inquiryEmail` copy in PL/EN/DE, both emails sent with `resend.batch.send`, the confirmation without visitor text, and updated sent-state copy that mentions it
 - [x] 4.3 Prefill from `useSearchParams()` inside `<Suspense>`, with the empty form as fallback; ignore invalid values
 
 ## 5. Verification
@@ -33,7 +34,7 @@
   - the honeypot;
   - no request to Azure from the page;
   - without JavaScript;
-  - a real send to a test inbox through Resend
+  - a real send through Resend: the owner email arrives at biuro@ (or `CONTACT_TO_EMAIL`), and the confirmation arrives in the guest's language with Reply-To biuro@
 - [ ] 5.3 Owner checkpoint: create the Resend account, verify `rezydencjazawoja.pl`, and add `RESEND_API_KEY`, `CONTACT_FROM_EMAIL` (and `CONTACT_TO_EMAIL` for Preview) in Vercel
 - [ ] 5.4 Run format:check, lint, lint:styles, typecheck, typegen freshness and build; scan for comments; open a PR from `feat/contact-form`; confirm CI and the Vercel preview are green, and send one inquiry from the preview
 - [ ] 5.5 Send the new EN/DE copy for review

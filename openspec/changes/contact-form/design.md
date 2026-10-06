@@ -19,7 +19,6 @@
 - The form works without JavaScript, including the server-side error and success states.
 
 **Non-Goals:**
-- A confirmation email to the guest.
 - Availability checks or a booking calendar.
 - Legal pages: the consent text gets its privacy link when they exist.
 - Captcha.
@@ -54,23 +53,32 @@ Reading `searchParams` in the page would make Kontakt dynamic. Instead:
 
 Without JavaScript the fields start empty, and the guest retypes the dates. That's acceptable, because the form itself still works.
 
-### D4. Delivery through Resend
-- `resend.emails.send` with:
+### D4. Delivery through Resend: owner details and guest confirmation
+- Both emails go out in one `resend.batch.send` call, so the owner never gets an inquiry whose guest confirmation failed (or the reverse). If the batch fails, the form shows the failure state.
+- **Owner email**, with:
   - `from: CONTACT_FROM_EMAIL`, e.g. `Rezydencja Zawoja <formularz@rezydencjazawoja.pl>`;
   - `to: CONTACT_TO_EMAIL ?? site.email`;
   - `replyTo`: the guest's email;
   - a subject like `Zapytanie: 12.12–16.12.2026, 6 os. — Jan Kowalski`;
   - a plain-text body: Polish labels, every field, and the site language (PL/EN/DE), so the owner knows which language to reply in.
+- **Guest confirmation**, with:
+  - `from: CONTACT_FROM_EMAIL`;
+  - `to`: the guest's email;
+  - `replyTo: site.email`, so a reply from the guest lands in biuro@;
+  - subject and body in the page's language (from the form's hidden `language` field), from the `inquiryEmail` catalog keys;
+  - the body thanks them, says availability is confirmed the same day, repeats the dates and guest counts, and gives the phone and email.
 - Plain text avoids an HTML template dependency and renders everywhere.
+- **Translations in the action:** `next/root-params` isn't guaranteed inside a server action, so `@/i18n/server` gets a `getTranslator(language)` helper (the same cached i18next instance `getT()` uses), called with the validated hidden `language` value.
 - `RESEND_API_KEY` is read only in the server action. A missing key or a Resend error returns `failed`, and the UI shows the phone and email as a fallback. The error is logged with `console.error`, so it shows in the Vercel logs.
 - `CONTACT_TO_EMAIL` lets Preview deployments send to a test inbox.
 - *Alternative: an SMTP/nodemailer setup.* Resend is the user's choice, has a small SDK and handles SPF/DKIM through domain verification.
 
-### D5. Spam protection: a honeypot
+### D5. Spam protection: a honeypot, and no guest text in the confirmation
 - A visually hidden `website` input (`tabIndex={-1}`, `autoComplete="off"`, `aria-hidden`) is part of the form.
 - If it's filled, the action returns `sent` without sending anything, so bots get no signal.
+- **Sending to an address someone types in is an abuse risk:** a bot could use the form to send our emails to strangers. So the guest confirmation contains **no free text the visitor typed**: no name and no message, only fixed copy, the dates and the guest counts. Abusing it can't deliver anyone else's content. The greeting is generic.
 - Combined with server validation, this is enough for a small guesthouse site.
-- If spam appears, a rate limit (Vercel firewall rule on the action's POST) or Turnstile can be added later.
+- If spam or confirmation abuse appears, add a Vercel Firewall rate-limit rule on `POST /*/contact` (e.g. 5 per IP per 10 minutes) or Turnstile.
 
 ### D6. Page structure and data
 - `contactPageQuery` returns `header{ ${resolvedSlot} }` and `map{ ${resolvedSlot} }`.
@@ -105,7 +113,8 @@ Without JavaScript the fields start empty, and the guest retypes the dates. That
 - `errors.{required,email,phone,dateOrder,datePast,guests,consent,tooLong,failed}`;
 - `sent.{title,body,again}`;
 - `card.{address,phone,email,stay,checkIn,checkOut,call}`;
-- `directions.{eyebrow,title,open}`.
+- `directions.{eyebrow,title,open}`;
+- a top-level `inquiryEmail.{subject,greeting,body,summary,dates,datesOpen,guests,closing,signature}` for the guest confirmation.
 
 PL is the source; EN and DE are drafted for review.
 

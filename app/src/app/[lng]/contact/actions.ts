@@ -3,42 +3,10 @@
 import { Resend } from 'resend'
 
 import { site } from '@/config/site'
-import { isLanguage, type Language } from '@/i18n/config'
+import { isLanguage } from '@/i18n/config'
 import type { InquiryState } from '@/lib/inquiry'
-import { type Inquiry, readValues, validateInquiry } from '@/lib/inquirySchema'
-
-const siteVersion: Record<Language, string> = {
-  de: 'niemiecka (odpowiedz po niemiecku)',
-  en: 'angielska (odpowiedz po angielsku)',
-  pl: 'polska',
-}
-
-const polishDate = (iso: string) => iso.split('-').reverse().join('.')
-
-function subject(inquiry: Inquiry) {
-  const guests = inquiry.adults + inquiry.children
-  const dates =
-    inquiry.arrival && inquiry.departure
-      ? `${polishDate(inquiry.arrival)}–${polishDate(inquiry.departure)}`
-      : 'termin do ustalenia'
-  return `Zapytanie: ${dates}, ${guests} os. — ${inquiry.name}`
-}
-
-function body(inquiry: Inquiry, language: Language) {
-  const lines = [
-    `Nowe zapytanie ze strony, wersja ${siteVersion[language]}.`,
-    '',
-    `Imię i nazwisko: ${inquiry.name}`,
-    `E-mail: ${inquiry.email}`,
-    `Telefon: ${inquiry.phone || '—'}`,
-    `Przyjazd: ${inquiry.arrival ? polishDate(inquiry.arrival) : '—'}`,
-    `Wyjazd: ${inquiry.departure ? polishDate(inquiry.departure) : '—'}`,
-    `Dorośli: ${inquiry.adults}`,
-    `Dzieci: ${inquiry.children}`,
-  ]
-  if (inquiry.message) lines.push('', 'Wiadomość:', inquiry.message)
-  return lines.join('\n')
-}
+import { guestConfirmation, ownerEmail } from '@/lib/inquiryEmails'
+import { readValues, validateInquiry } from '@/lib/inquirySchema'
 
 export async function sendInquiry(
   _previous: InquiryState,
@@ -58,14 +26,17 @@ export async function sendInquiry(
     return { status: 'failed', values }
   }
 
-  const language = formData.get('language')?.toString()
-  const { error } = await new Resend(apiKey).emails.send({
-    from,
-    replyTo: inquiry.email,
-    subject: subject(inquiry),
-    text: body(inquiry, isLanguage(language) ? language : 'pl'),
-    to: process.env.CONTACT_TO_EMAIL || site.email,
-  })
+  const formLanguage = formData.get('language')?.toString()
+  const language = isLanguage(formLanguage) ? formLanguage : 'pl'
+  const { error } = await new Resend(apiKey).batch.send([
+    {
+      from,
+      replyTo: inquiry.email,
+      to: process.env.CONTACT_TO_EMAIL || site.email,
+      ...ownerEmail(inquiry, language),
+    },
+    { from, replyTo: site.email, to: inquiry.email, ...guestConfirmation(inquiry, language) },
+  ])
   if (error) {
     console.error('Inquiry not sent:', error)
     return { status: 'failed', values }

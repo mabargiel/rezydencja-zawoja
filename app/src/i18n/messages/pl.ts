@@ -155,6 +155,19 @@ export const pl = {
     next: 'Następne zdjęcie',
     counter: '{{current}} / {{total}}',
   },
+  inquiryEmail: {
+    subject: 'Otrzymaliśmy Wasze zapytanie — Rezydencja Zawoja',
+    greeting: 'Dzień dobry,',
+    body: 'dziękujemy za zapytanie o pobyt w Rezydencji Zawoja. Dostępność terminu potwierdzimy jeszcze dziś w odpowiedzi na tę wiadomość.',
+    summary: 'Szczegóły zapytania:',
+    arrival: 'Przyjazd: {{date}}',
+    departure: 'Wyjazd: {{date}}',
+    datesOpen: 'Termin: do ustalenia',
+    adults: 'Dorośli: {{count}}',
+    children: 'Dzieci: {{count}}',
+    closing: 'W razie pytań odpowiedzcie na tę wiadomość lub zadzwońcie: {{phone}}.',
+    signature: 'Pozdrawiamy serdecznie\nRezydencja Zawoja\n{{email}}',
+  },
   pages: {
     interiors: {
       eyebrow: 'Wnętrza',
@@ -338,7 +351,7 @@ export const pl = {
       sent: {
         eyebrow: 'Zapytanie wysłane',
         title: 'Dziękujemy, odezwiemy się wkrótce',
-        body: 'Potwierdzimy dostępność terminu jeszcze dziś. Odpowiedź wyślemy na podany adres e-mail. W pilnych sprawach zadzwońcie:',
+        body: 'Potwierdzenie wysłaliśmy na podany adres e-mail. Dostępność terminu potwierdzimy jeszcze dziś. W pilnych sprawach zadzwońcie:',
         again: 'Wyślij kolejne zapytanie',
       },
       card: {

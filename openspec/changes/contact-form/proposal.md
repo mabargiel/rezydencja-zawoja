@@ -14,7 +14,11 @@ Kontakt is the only way to book: the Home booking bar and every "Napisz do nas" 
   - validated on the server, with field errors and a form-level error that points to phone and email;
   - a confirmation state after sending;
   - works without JavaScript.
-- **Delivery through Resend**: a server action sends a plain-text email in Polish to the owner, with the guest's email as Reply-To and the site language noted. A honeypot field filters bots.
+- **Delivery through Resend**: a server action sends two emails in one batch.
+  - **To the owner** (biuro@rezydencjazawoja.pl): every detail in Polish, the guest's email as Reply-To, and the site language noted.
+  - **To the guest**: a confirmation in the language of the page, with Reply-To set to biuro@, so their reply reaches the owner.
+
+  A honeypot field filters bots.
 - **Design first**: the design has no message field, error states or success state yet. They're added in pen.dev and approved before code.
 - **Map generation**: a CMS script fetches the static map from the Azure Maps Render API and uploads it as the `contactPage.map` photo, so the Azure key never reaches the browser. The seed reuses that photo instead of the design's map screenshot.
 - **Config**: address, check-in times and map coordinates go to `app/src/config/site.ts`. New env vars are `RESEND_API_KEY`, `CONTACT_FROM_EMAIL` and an optional `CONTACT_TO_EMAIL` override in `app/`, and `AZURE_MAPS_KEY` in `cms/`.
@@ -42,4 +46,4 @@ None. The booking bar already hands off the query parameters, and the `contactPa
 - **Vercel**: `RESEND_API_KEY` and `CONTACT_FROM_EMAIL` for Production and Preview.
 - **Resend / DNS** (owner): a Resend account and verification of `rezydencjazawoja.pl` (SPF/DKIM records) so mail can be sent from the site's domain.
 - **design/rezydencja.pen**: the message field, error and success states at 1440px and 390px.
-- **Out of scope**: legal pages (the consent text links to the privacy policy once that page exists), a confirmation email to the guest, and booking or availability calendars.
+- **Out of scope**: legal pages (the consent text links to the privacy policy once that page exists), and booking or availability calendars.

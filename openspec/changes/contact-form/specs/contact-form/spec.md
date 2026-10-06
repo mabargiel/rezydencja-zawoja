@@ -48,12 +48,22 @@ The form SHALL show each error next to its field in the current language, and SH
 - **THEN** the departure field shows a date-order error
 
 ### Requirement: Delivery by email through Resend
-A valid submission SHALL send one plain-text email through Resend:
+A valid submission SHALL send two plain-text emails through Resend in one batch: the inquiry to the owner and a confirmation to the guest. If the batch fails, neither counts as sent and the form shows the failure state.
+
+The owner email SHALL be sent:
 - **from** the configured `CONTACT_FROM_EMAIL`;
 - **to** `CONTACT_TO_EMAIL` when set, otherwise the site email;
 - **reply-to** the guest's email;
 - **subject** with the dates, the guest count and the name;
 - **body** listing every field with Polish labels and the language of the page it was sent from.
+
+The guest confirmation SHALL be sent:
+- **from** `CONTACT_FROM_EMAIL`;
+- **to** the email the guest entered;
+- **reply-to** the site email (`biuro@rezydencjazawoja.pl`);
+- **subject and body** in the language of the page the form was sent from.
+
+The body SHALL thank the guest, say availability is confirmed the same day, repeat the dates and the guest counts, and give the phone and email.
 
 The API key SHALL only be read on the server.
 
@@ -63,7 +73,15 @@ The API key SHALL only be read on the server.
 
 #### Scenario: Language noted
 - **WHEN** a guest sends the form from `/en/contact`
-- **THEN** the email body states that the inquiry came from the English site
+- **THEN** the owner email states that the inquiry came from the English site
+
+#### Scenario: Guest confirmation
+- **WHEN** a guest sends an inquiry from `/de/contact` for 12.12–16.12.2026, 4 adults and 1 child
+- **THEN** they receive a German confirmation listing those dates and guests, and replying to it addresses `biuro@rezydencjazawoja.pl`
+
+#### Scenario: No visitor text in the confirmation
+- **WHEN** someone submits a stranger's address with a link in the name and message fields
+- **THEN** the confirmation contains neither the name nor the message, only fixed copy, dates and guest counts
 
 ### Requirement: Sent and failed states
 After a successful send, the form SHALL be replaced by a translated confirmation with a way to send another inquiry, and the confirmation SHALL be announced to screen readers. If sending fails or the email service isn't configured, the form SHALL keep the values and show an error that offers the phone number and email as alternatives. The submit button SHALL show a sending state and SHALL be disabled while a submission is in progress.
