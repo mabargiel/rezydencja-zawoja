@@ -35,7 +35,7 @@ knip reports one real undeclared dependency (`@sanity/image-url`) and false posi
 
 ### D1. Small presentational components, not variants of large ones
 - `Eyebrow({ tone: 'light' | 'dark', size?: 'section' | 'header', children })` renders the rule and the uppercase label.
-- `DashList({ items })` renders the minus-icon list. Mobile size differences become a `size` prop only if they are real; RoomSection uses 13.5px and FeatureRow 14px, which are unified to the design's value per breakpoint.
+- `DashList({ items, className })` renders the minus-icon list. The parent passes the list spacing, which differs per design frame. The item text is 13.5px on mobile and 14.5px on desktop in both designs. FeatureRow's 14px on mobile was a mismatch, and is now corrected to 13.5px.
 - `StepButton({ direction, onClick, label, size })` sits inside `Lightbox.tsx`, since it isn't reused elsewhere.
 - `chipClass(isActive)` lives in `components/chip.ts`.
 - **Why**: each is a leaf with one job. They follow the existing `PhotoTile` and `SectionHeading` pattern, and keep the Server and Client split intact, because none needs state.
@@ -62,7 +62,7 @@ knip reports one real undeclared dependency (`@sanity/image-url`) and false posi
 - Typecheck guards each swap.
 
 ### D6. `useSectionInView` cache key
-The module-level map is keyed by `${id}|${rootMargin}`. Today two subscribers watching `pricing` with the same margin can delete each other's entry on cleanup; this makes each margin's state independent. There's no behaviour change in today's usage.
+The module-level map is keyed by `${id}|${rootMargin}`, and cleanup no longer deletes the entry. The desktop and mobile "Cennik" links watch the same id with the same margin, so a per-key delete would still let one unmount wipe the other's state. A new observer reports the current intersection straight away, so a kept entry can't go stale. There's no behaviour change in today's usage.
 
 ### D7. Comments
 For each of the six:
