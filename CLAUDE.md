@@ -1,6 +1,6 @@
 # Rezydencja Zawoja
 
-Marketing site for a guesthouse in Zawoja (Babia Góra, Poland). No on-site booking: guests reach out via the contact form, phone, Booking.com or Airbnb. Trilingual: PL, EN, DE.
+Marketing site for a guesthouse in Zawoja (Babia Góra, Poland). No on-site booking: guests book directly through the contact form, phone or email. Every booking call to action leads to Kontakt; the site never links to Booking.com or Airbnb. Trilingual: PL, EN, DE.
 
 ## Project map
 
