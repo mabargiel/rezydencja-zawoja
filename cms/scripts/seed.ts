@@ -4,7 +4,7 @@ import { basename, resolve } from 'node:path'
 import { getCliClient } from 'sanity/cli'
 
 import { bedroomsLayout, legacyPhotos, legacySource, roomsLayout } from './seed-legacy'
-import { layout, photoId, photos, pricing } from './seed-map'
+import { azureMapPhotoId, layout, photoId, photos, pricing } from './seed-map'
 
 type Localized = { pl: string; en: string; de: string }
 
@@ -83,9 +83,16 @@ async function heroVideoRef() {
   return existing
 }
 
+async function contactMapRef() {
+  const hasAzureMap = await client.fetch<boolean>('defined(*[_id == $id][0]._id)', {
+    id: azureMapPhotoId,
+  })
+  return hasAzureMap ? azureMapPhotoId : photoId(layout.contactPage.map)
+}
+
 async function seedPages() {
   const { contactPage, galleryPage, homePage, interiorsPage, surroundingsPage } = layout
-  const videoRef = await heroVideoRef()
+  const [videoRef, mapRef] = await Promise.all([heroVideoRef(), contactMapRef()])
 
   const documents: SeedDocument[] = [
     { _id: 'siteSettings', _type: 'siteSettings', season: 'summer' },
@@ -145,7 +152,7 @@ async function seedPages() {
       _id: 'contactPage',
       _type: 'contactPage',
       header: slot(contactPage.header),
-      map: slot(contactPage.map),
+      map: { _type: 'mediaSlot', photo: { _type: 'reference', _ref: mapRef } },
     },
     {
       _id: 'pricing',

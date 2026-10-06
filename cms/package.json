@@ -12,7 +12,8 @@
     "deploy-graphql": "sanity graphql deploy",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "typegen": "sanity schema extract --force && sanity typegen generate"
+    "typegen": "sanity schema extract --force && sanity typegen generate",
+    "map": "sanity exec scripts/map.ts --with-user-token"
   },
   "keywords": [
     "sanity"

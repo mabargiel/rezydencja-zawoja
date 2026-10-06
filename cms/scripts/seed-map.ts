@@ -294,6 +294,8 @@ export const photos: PhotoSeed[] = [
   },
 ]
 
+export const azureMapPhotoId = 'photo-azure-map'
+
 export const photoId = (file: string) =>
   `photo-${file
     .replace(/\.[^.]+$/, '')

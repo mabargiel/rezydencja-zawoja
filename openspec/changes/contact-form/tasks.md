@@ -1,6 +1,6 @@
 ## 1. Design (approval gate)
 
-- [ ] 1.0 Map script `cms/scripts/map.ts`: fetch the Azure Maps static image centred on 49.64051614064316, 19.558586753262016, upload it as `photo-azure-map` (hotspot centred, PL/EN/DE alt), point `contactPage.map` at it, and make `seed.ts` reuse it. Add `AZURE_MAPS_KEY` to `cms/.env.example`. Needs the key from the owner. Put the generated map into the Kontakt frames in pen.dev
+- [x] 1.0 Map script `cms/scripts/map.ts`: fetch the Azure Maps static image centred on 49.64051614064316, 19.558586753262016, upload it as `photo-azure-map` (hotspot centred, PL/EN/DE alt), point `contactPage.map` at it, and make `seed.ts` reuse it. Add `AZURE_MAPS_KEY` to `cms/.env.example`. Needs the key from the owner. Put the generated map into the Kontakt frames in pen.dev
 - [ ] 1.1 In pen.dev, add to Kontakt at 1440px and 390px: an optional message textarea, field error states, the form-level failure message (with the phone and email), the sending button state and the sent confirmation. Reuse the tokens, fonts and icons, and screenshot everything for approval
 - [ ] 1.2 Get the user's approval, apply feedback, and copy the design into `design/`
 
