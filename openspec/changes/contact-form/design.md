@@ -78,11 +78,25 @@ Without JavaScript the fields start empty, and the guest retypes the dates. That
 - New `site.ts` entries:
   - `address` (two lines);
   - `checkIn: '16:00'` and `checkOut: '10:00'`;
-  - `coordinates: { lat: 49.6405, lng: 19.5586 }`;
+  - `coordinates: { lat: 49.64051614064316, lng: 19.558586753262016 }`;
   - `mapsHref`, a Google Maps search URL built from the coordinates.
 - Translated labels come from the catalogs: "Przyjazd od {{time}}".
-- The map is the CMS image (`SanityImage`, cover). The marker is markup on top of it, and the whole image links to `mapsHref` in a new tab.
-- *Alternative: an embedded map iframe.* It needs third-party cookies and a consent decision, and it's heavier. The static image matches the design.
+- The map is the CMS image (`SanityImage`, cover; D8). The marker is markup on top of it, and the whole image links to `mapsHref` in a new tab.
+
+### D8. Map: an Azure Maps static image, generated once and stored in the CMS
+- `cms/scripts/map.ts` (`npm run map -w cms`) calls the Azure Maps Render API (`GET https://atlas.microsoft.com/map/static`, current `api-version`):
+  - centre at 19.558586753262016, 49.64051614064316 (lng, lat), so the house is exactly in the middle;
+  - a zoom that shows Zawoja and Babia Góra, picked while building;
+  - the road style, with labels in Polish;
+  - the widest size the API allows, at the design's 1440×560 aspect ratio;
+  - no pin drawn by Azure, because the design's marker is markup.
+- The script uploads the PNG as a `photo` document (`photo-azure-map`, category surroundings, PL/EN/DE alt text) with the hotspot at the centre. It then points `contactPage.map.photo` at it. Running it again replaces the image in place.
+- `seed.ts` uses `photo-azure-map` for `contactPage.map` when it exists, and falls back to the design screenshot `map-zawoja-2.png`, so the seed stays runnable without an Azure key.
+- Because the hotspot is centred, the 390×320 mobile crop of the wide image keeps the house in the middle, under the marker.
+- **Key:** `AZURE_MAPS_KEY` is in `cms/.env` only, sent as the `subscription-key` header. Nothing on the site calls Azure at runtime: no key in the browser, no per-visit cost, and the image is served and resized by the Sanity CDN like every other photo.
+- **Attribution:** Azure Maps' terms require the copyright notice. If the returned image doesn't already include it, `Directions` shows a small "© Microsoft, © TomTom" caption in the corner of the map.
+- *Alternative: a route handler proxying Azure on each request.* It keeps the image always current, but adds a runtime dependency and cost for a map that never changes.
+- *Alternative: an embedded interactive map.* It needs third-party cookies and a consent decision, and it's heavier. The static image matches the design.
 
 ### D7. Copy structure
 `pages.contact` gains:
@@ -96,6 +110,8 @@ PL is the source; EN and DE are drafted for review.
 
 ## Risks / Trade-offs
 
+- [Azure's static image size limit is below 2× of 1440px] → On high-density desktop screens the map is slightly upscaled. That's acceptable for a map; if it looks soft, render two halves and stitch them in the script.
+
 - [Domain not verified in Resend at launch] → Resend only sends from verified domains. Until the owner adds the DNS records, Preview can use `onboarding@resend.dev` with `CONTACT_TO_EMAIL` set to the Resend account's own address. Production waits for verification, which is a task with an owner checkpoint.
 - [Prefill needs JavaScript] → Accepted (D3). The form is fully usable without it.
 - [The honeypot doesn't stop targeted spam] → Server validation limits payload size. Escalation paths are listed in D5.
@@ -103,10 +119,11 @@ PL is the source; EN and DE are drafted for review.
 
 ## Migration Plan
 
-1. Design the message field and the error and success states in pen.dev, and get approval.
-2. Build the page and the form with the action. Test locally with a Resend test key and `CONTACT_TO_EMAIL`.
-3. The owner creates the Resend account and verifies the domain. Add the env vars in Vercel (Production + Preview).
-4. Open a PR from `feat/contact-form`, and send a real inquiry from the Vercel preview before merging.
+1. Generate the Azure map (owner provides `AZURE_MAPS_KEY`) and put it into the design.
+2. Design the message field and the error and success states in pen.dev, and get approval.
+3. Build the page and the form with the action. Test locally with a Resend test key and `CONTACT_TO_EMAIL`.
+4. The owner creates the Resend account and verifies the domain. Add the env vars in Vercel (Production + Preview).
+5. Open a PR from `feat/contact-form`, and send a real inquiry from the Vercel preview before merging.
 
 Rollback: revert the PR. Contact goes back to the header-only stub, and nothing else depends on it.
 

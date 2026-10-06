@@ -7,7 +7,7 @@ Kontakt is the only way to book: the Home booking bar and every "Napisz do nas" 
 - **Kontakt page body** (`McNXT` / `a7yX5j`):
   - the inquiry form next to a dark contact card on desktop; the card comes first on mobile;
   - the contact card: address, phone, email, check-in and check-out hours, and a "Zadzwoń teraz" button;
-  - a directions section: eyebrow, title, coordinates linking to Google Maps, and the CMS map image (`contactPage.map`) with the "Rezydencja Zawoja" marker.
+  - a directions section: eyebrow, title, coordinates linking to Google Maps, and a map with the "Rezydencja Zawoja" marker. The map is a static image generated from **Azure Maps**, centred on 49.64051614064316, 19.558586753262016, and stored in the CMS as `contactPage.map`.
 - **Inquiry form**:
   - fields: name, phone, email, arrival, departure, adults, children, an optional message, and a required consent checkbox;
   - prefilled from the booking bar's `?arrival=&departure=&guests=` (guests go to adults);
@@ -16,16 +16,17 @@ Kontakt is the only way to book: the Home booking bar and every "Napisz do nas" 
   - works without JavaScript.
 - **Delivery through Resend**: a server action sends a plain-text email in Polish to the owner, with the guest's email as Reply-To and the site language noted. A honeypot field filters bots.
 - **Design first**: the design has no message field, error states or success state yet. They're added in pen.dev and approved before code.
-- **Config**: address, check-in times and map coordinates go to `app/src/config/site.ts`. New env vars are `RESEND_API_KEY`, `CONTACT_FROM_EMAIL` and an optional `CONTACT_TO_EMAIL` override.
+- **Map generation**: a CMS script fetches the static map from the Azure Maps Render API and uploads it as the `contactPage.map` photo, so the Azure key never reaches the browser. The seed reuses that photo instead of the design's map screenshot.
+- **Config**: address, check-in times and map coordinates go to `app/src/config/site.ts`. New env vars are `RESEND_API_KEY`, `CONTACT_FROM_EMAIL` and an optional `CONTACT_TO_EMAIL` override in `app/`, and `AZURE_MAPS_KEY` in `cms/`.
 
 ## Capabilities
 
 ### New Capabilities
-- `contact-page`: Kontakt layout, contact card, call button and directions with the map.
+- `contact-page`: Kontakt layout, contact card, call button, and directions with the Azure Maps image.
 - `contact-form`: inquiry fields, prefill from the booking bar, validation, Resend delivery, spam protection, and the sent and error states.
 
 ### Modified Capabilities
-None. The booking bar already hands off the query parameters, and `contactPage.map` already exists in the CMS.
+None. The booking bar already hands off the query parameters, and the `contactPage.map` slot already exists in the CMS. Only its seeded content changes.
 
 ## Impact
 
@@ -36,6 +37,8 @@ None. The booking bar already hands off the query parameters, and `contactPage.m
   - a `contactPageQuery`;
   - new catalog keys in PL/EN/DE;
   - new dependencies `resend` and `zod`.
+- **cms/**: a `map` script that generates and uploads the Azure Maps image; the seed points `contactPage.map` at it.
+- **Azure** (owner): an Azure Maps account key for the map script. It's only needed when the map is regenerated, not at runtime.
 - **Vercel**: `RESEND_API_KEY` and `CONTACT_FROM_EMAIL` for Production and Preview.
 - **Resend / DNS** (owner): a Resend account and verification of `rezydencjazawoja.pl` (SPF/DKIM records) so mail can be sent from the site's domain.
 - **design/rezydencja.pen**: the message field, error and success states at 1440px and 390px.

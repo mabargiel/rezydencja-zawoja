@@ -1,5 +1,6 @@
 ## 1. Design (approval gate)
 
+- [ ] 1.0 Map script `cms/scripts/map.ts`: fetch the Azure Maps static image centred on 49.64051614064316, 19.558586753262016, upload it as `photo-azure-map` (hotspot centred, PL/EN/DE alt), point `contactPage.map` at it, and make `seed.ts` reuse it. Add `AZURE_MAPS_KEY` to `cms/.env.example`. Needs the key from the owner. Put the generated map into the Kontakt frames in pen.dev
 - [ ] 1.1 In pen.dev, add to Kontakt at 1440px and 390px: an optional message textarea, field error states, the form-level failure message (with the phone and email), the sending button state and the sent confirmation. Reuse the tokens, fonts and icons, and screenshot everything for approval
 - [ ] 1.2 Get the user's approval, apply feedback, and copy the design into `design/`
 
@@ -14,7 +15,7 @@
 
 - [ ] 3.1 Move the contact page off `SubPage`. Render `PageHeader`, the content row and `Directions`
 - [ ] 3.2 `ContactCard`: the info rows with icons, `tel:` and `mailto:` links, and "Zadzwoń teraz"
-- [ ] 3.3 `Directions`: the caption with the coordinates link, and the CMS map image with the marker, linking to Google Maps
+- [ ] 3.3 `Directions`: the caption with the coordinates link, and the CMS map image with the marker and attribution, linking to Google Maps
 
 ## 4. Form and delivery
 
@@ -30,6 +31,7 @@
   - each validation error;
   - success and failure (missing key);
   - the honeypot;
+  - no request to Azure from the page;
   - without JavaScript;
   - a real send to a test inbox through Resend
 - [ ] 5.3 Owner checkpoint: create the Resend account, verify `rezydencjazawoja.pl`, and add `RESEND_API_KEY`, `CONTACT_FROM_EMAIL` (and `CONTACT_TO_EMAIL` for Preview) in Vercel
