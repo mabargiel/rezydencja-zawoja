@@ -3,6 +3,18 @@ import Image from 'next/image'
 import { urlFor } from '@/sanity/image'
 import type { ResolvedPhoto } from '@/sanity/photo'
 
+export function sanityImageSource(image: NonNullable<ResolvedPhoto['image']>) {
+  const hotspot = image.hotspot
+  return {
+    lqip: image.asset?.metadata?.lqip ?? undefined,
+    objectPosition:
+      hotspot?.x !== undefined && hotspot?.y !== undefined
+        ? `${hotspot.x * 100}% ${hotspot.y * 100}%`
+        : undefined,
+    src: urlFor(image).url(),
+  }
+}
+
 type SanityImageProps = {
   photo: ResolvedPhoto
   sizes: string
@@ -23,16 +35,11 @@ export function SanityImage({
   const { image, alt } = photo
   if (!image?.asset) return null
 
-  const hotspot = image.hotspot
-  const objectPosition =
-    hotspot?.x !== undefined && hotspot?.y !== undefined
-      ? `${hotspot.x * 100}% ${hotspot.y * 100}%`
-      : undefined
-  const lqip = image.asset.metadata?.lqip ?? undefined
+  const { src, objectPosition, lqip } = sanityImageSource(image)
 
   return (
     <Image
-      src={urlFor(image).url()}
+      src={src}
       alt={alt ?? ''}
       fill
       sizes={sizes}

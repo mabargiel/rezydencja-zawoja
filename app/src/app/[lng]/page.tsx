@@ -29,8 +29,8 @@ export default async function HomePage() {
         eyebrow={t('home.hero.eyebrow')}
         title={t('home.hero.title')}
         intro={t('home.hero.intro')}
-        poster={home?.hero?.poster?.photo}
-        videoUrl={home?.hero?.videoUrl}
+        desktopPhoto={home?.heroDesktop?.photo}
+        mobilePhoto={home?.heroMobile?.photo}
         booking={{
           action: localizedHref(language, pagePaths.contact),
           labels: {
