@@ -28,4 +28,4 @@
 - [x] 5.1 Chrome and Safari: reveals, hero sequence on a throttled connection (no flash), dialogs, hovers; Firefox (or an unsupported browser) shows all content
 - [x] 5.2 Reduced motion: nothing moves, all content visible, no video
 - [x] 5.3 Lighthouse after: LCP and CLS not worse than the baseline; poster still the LCP element
-- [ ] 5.4 Run format:check, lint, lint:styles, typecheck and build; scan for comments; open a PR; confirm CI and the Vercel preview are green
+- [x] 5.4 Run format:check, lint, lint:styles, typecheck and build; scan for comments; open a PR; confirm CI and the Vercel preview are green
