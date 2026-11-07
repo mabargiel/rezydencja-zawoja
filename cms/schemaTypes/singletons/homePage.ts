@@ -9,12 +9,8 @@ export const homePage = defineType({
   type: 'document',
   icon: HomeIcon,
   fields: [
-    defineField({
-      name: 'hero',
-      title: 'Wideo powitalne',
-      type: 'videoSlot',
-      validation: rule => rule.required(),
-    }),
+    slot('heroDesktop', 'Zdjęcie powitalne (komputer)'),
+    slot('heroMobile', 'Zdjęcie powitalne (telefon)'),
     defineField({
       name: 'intro',
       title: 'O rezydencji',

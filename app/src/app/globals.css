@@ -24,6 +24,7 @@
   --color-scrim-bottom: #0a0e08d9;
   --color-scrim-hero-top: #0d120db3;
   --color-scrim-hero-lower: #0d120d8c;
+  --color-scrim-hero-focus: #0d120d73;
   --color-scrim-panorama-top: #0d120d59;
   --color-scrim-panorama-bottom: #0a0e08e6;
   --font-display: var(--font-cormorant), 'Times New Roman', serif;
@@ -32,7 +33,6 @@
   --duration-fast: 200ms;
   --duration-base: 450ms;
   --duration-slow: 900ms;
-  --duration-cinematic: 2800ms;
   --animate-rise: rise var(--duration-slow) var(--ease-out-soft) both;
   --animate-settle: settle 1600ms var(--ease-out-soft) both;
   --animate-fade: fade var(--duration-base) var(--ease-out-soft) both;
@@ -67,13 +67,19 @@
 }
 
 @utility bg-hero-scrim {
-  background-image: linear-gradient(
-    180deg,
-    var(--color-scrim-hero-top) 0%,
-    var(--color-scrim-middle) 32%,
-    var(--color-scrim-hero-lower) 60%,
-    var(--color-scrim-bottom) 100%
-  );
+  background-image:
+    radial-gradient(
+      ellipse 62% 42% at 50% 46%,
+      var(--color-scrim-hero-focus) 45%,
+      transparent 100%
+    ),
+    linear-gradient(
+      180deg,
+      var(--color-scrim-hero-top) 0%,
+      var(--color-scrim-middle) 32%,
+      var(--color-scrim-hero-lower) 60%,
+      var(--color-scrim-bottom) 100%
+    );
 }
 
 @utility bg-panorama-scrim {

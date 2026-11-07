@@ -7,15 +7,15 @@ type HeroProps = {
   eyebrow: string
   title: string
   intro: string
-  poster?: ResolvedPhoto | null
-  videoUrl?: string | null
+  desktopPhoto?: ResolvedPhoto | null
+  mobilePhoto?: ResolvedPhoto | null
   booking: Parameters<typeof BookingBar>[0]
 }
 
-export function Hero({ eyebrow, title, intro, poster, videoUrl, booking }: HeroProps) {
+export function Hero({ eyebrow, title, intro, desktopPhoto, mobilePhoto, booking }: HeroProps) {
   return (
     <header className="relative isolate flex h-[640px] flex-col bg-bg-dark lg:h-[900px]">
-      <HeroMedia poster={poster} videoUrl={videoUrl} />
+      <HeroMedia desktopPhoto={desktopPhoto} mobilePhoto={mobilePhoto} />
       <div aria-hidden className="absolute inset-0 -z-10 bg-hero-scrim" />
 
       <div className="flex flex-1 flex-col justify-center gap-[18px] px-6 pt-20 lg:items-center lg:gap-7 lg:pt-24 lg:text-center">

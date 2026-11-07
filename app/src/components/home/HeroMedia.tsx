@@ -1,47 +1,79 @@
-'use client'
+import { getImageProps } from 'next/image'
+import type { CSSProperties } from 'react'
+import { preload } from 'react-dom'
 
-import { useState, useSyncExternalStore } from 'react'
-
-import { SanityImage } from '@/components/SanityImage'
+import { SanityImage, sanityImageSource } from '@/components/SanityImage'
 import type { ResolvedPhoto } from '@/sanity/photo'
 
 type HeroMediaProps = {
-  poster?: ResolvedPhoto | null
-  videoUrl?: string | null
+  desktopPhoto?: ResolvedPhoto | null
+  mobilePhoto?: ResolvedPhoto | null
 }
 
-const reducedMotion = '(prefers-reduced-motion: reduce)'
+const desktopQuery = '(min-width: 1024px)'
+const mobileQuery = '(max-width: 1023.98px)'
 
-function subscribe(onChange: () => void) {
-  const query = window.matchMedia(reducedMotion)
-  query.addEventListener('change', onChange)
-  return () => query.removeEventListener('change', onChange)
+function pictureSource(photo: ResolvedPhoto) {
+  if (!photo.image?.asset) return null
+
+  const { src, objectPosition, lqip } = sanityImageSource(photo.image)
+  const { props } = getImageProps({ alt: photo.alt ?? '', fill: true, sizes: '100vw', src })
+  return { lqip, objectPosition, props }
 }
 
-export function HeroMedia({ poster, videoUrl }: HeroMediaProps) {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
-  const prefersReducedMotion = useSyncExternalStore(
-    subscribe,
-    () => window.matchMedia(reducedMotion).matches,
-    () => true
-  )
+export function HeroMedia({ desktopPhoto, mobilePhoto }: HeroMediaProps) {
+  const desktop = desktopPhoto && pictureSource(desktopPhoto)
+  const mobile = mobilePhoto && pictureSource(mobilePhoto)
+
+  if (!desktop || !mobile) {
+    const photo = desktop ? desktopPhoto : mobilePhoto
+    return photo ? <SanityImage photo={photo} sizes="100vw" priority className="-z-20" /> : null
+  }
+
+  // <picture> gets no automatic preload from next/image; media keeps each browser to one download
+  for (const [source, media] of [
+    [desktop, desktopQuery],
+    [mobile, mobileQuery],
+  ] as const) {
+    preload(source.props.src, {
+      as: 'image',
+      fetchPriority: 'high',
+      imageSizes: source.props.sizes,
+      imageSrcSet: source.props.srcSet,
+      media,
+    })
+  }
+
+  const positions = {
+    '--hero-position': mobile.objectPosition,
+    '--hero-position-desktop': desktop.objectPosition,
+  } as CSSProperties
 
   return (
     <div className="absolute inset-0 -z-20 overflow-hidden">
-      {poster && <SanityImage photo={poster} sizes="100vw" priority />}
-      {videoUrl && !prefersReducedMotion && (
-        <video
-          src={videoUrl}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-hidden
-          onPlaying={() => setIsVideoPlaying(true)}
-          className={`absolute inset-0 size-full object-cover transition-opacity duration-(--duration-cinematic) ease-out-soft ${isVideoPlaying ? 'opacity-100' : 'opacity-0'}`}
+      <div
+        aria-hidden
+        className="absolute inset-0 scale-110 bg-cover bg-center blur-2xl lg:hidden"
+        style={{ backgroundImage: `url(${mobile.lqip})` }}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 hidden scale-110 bg-cover bg-center blur-2xl lg:block"
+        style={{ backgroundImage: `url(${desktop.lqip})` }}
+      />
+      <picture>
+        <source media={desktopQuery} srcSet={desktop.props.srcSet} sizes={desktop.props.sizes} />
+        <source srcSet={mobile.props.srcSet} sizes={mobile.props.sizes} />
+        <img
+          {...mobile.props}
+          alt={desktop.props.alt}
+          fetchPriority="high"
+          loading="eager"
+          data-blur-up=""
+          style={{ ...mobile.props.style, ...positions }}
+          className="object-cover object-(--hero-position) lg:object-(--hero-position-desktop)"
         />
-      )}
+      </picture>
     </div>
   )
 }
