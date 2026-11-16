@@ -108,7 +108,10 @@
 }
 
 @utility mask-hero-fade {
-  mask-image: linear-gradient(90deg, transparent 0%, black 22%);
+  mask-image:
+    linear-gradient(90deg, transparent 0%, black 22%),
+    linear-gradient(180deg, transparent 0%, black 10%);
+  mask-composite: intersect;
 }
 
 /* lets the hot tub in the lower left of the photo show through */
