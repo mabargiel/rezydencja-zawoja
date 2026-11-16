@@ -208,6 +208,8 @@
 
 @layer base {
   html {
+    --promo-height: 0px;
+
     scroll-behavior: smooth;
     scrollbar-width: none;
   }

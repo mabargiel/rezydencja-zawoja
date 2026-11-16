@@ -29,7 +29,7 @@ export function RoomNav({ rooms, label, roomsId }: RoomNavProps) {
       <nav
         id={topRowId}
         aria-label={label}
-        className="sticky top-[68px] z-20 border-b border-line bg-bg/95 lg:static lg:border-0 lg:bg-transparent"
+        className="sticky top-[calc(68px+var(--promo-height))] z-20 border-b border-line bg-bg/95 lg:static lg:border-0 lg:bg-transparent"
       >
         <ul className="flex gap-2.5 overflow-x-auto px-5 scrollbar-none py-3.5 lg:gap-3 lg:px-[120px] lg:pt-10 lg:pb-2">
           {rooms.map(room => (

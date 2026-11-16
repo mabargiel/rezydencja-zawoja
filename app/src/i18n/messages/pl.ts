@@ -57,6 +57,11 @@ export const pl = {
     copyright: '© {{year}} Rezydencja Zawoja. Wszelkie prawa zastrzeżone.',
     legal: 'Dokumenty',
   },
+  promo: {
+    close: 'Zamknij pasek',
+    call: 'Zadzwoń',
+    write: 'Napisz do nas',
+  },
   cookies: {
     label: 'Ustawienia plików cookies',
     title: 'Pliki cookies',

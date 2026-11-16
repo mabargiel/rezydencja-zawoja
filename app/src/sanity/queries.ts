@@ -92,3 +92,20 @@ export const trackingQuery = defineQuery(`*[_id == "tracking"][0]{
   activeUntil,
   consentMonths
 }`)
+
+const promoLabel = `coalesce(label[language == $lng][0].value, label[language == "pl"][0].value)`
+const promoText = `coalesce(text[language == $lng][0].value, text[language == "pl"][0].value)`
+const promoShortText = `coalesce(shortText[language == $lng][0].value, shortText[language == "pl"][0].value)`
+
+export const promoBarQuery = defineQuery(`*[_id == "promoBar" && enabled][0]{
+  _updatedAt,
+  "messages": messages[]{
+    _key,
+    "label": ${promoLabel},
+    "text": ${promoText},
+    "shortText": ${promoShortText},
+    showFrom,
+    showUntil,
+    action
+  }
+}`)
