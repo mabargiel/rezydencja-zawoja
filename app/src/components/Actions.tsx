@@ -8,7 +8,7 @@ type ActionProps = {
   className?: string
 }
 
-const label = 'font-body text-[13px] font-medium uppercase'
+const label = 'rounded-button font-body text-[13px] font-medium uppercase'
 
 const primaryTones = {
   accent: 'bg-accent text-surface hover:bg-bg-dark',
