@@ -25,6 +25,7 @@ export const structure: StructureResolver = S =>
     .title('Treści')
     .items([
       singleton(S, 'siteSettings'),
+      singleton(S, 'promoBar'),
       singleton(S, 'tracking'),
       S.divider(),
       S.listItem()

@@ -60,6 +60,11 @@ export const de = {
     copyright: '© {{year}} Rezydencja Zawoja. Alle Rechte vorbehalten.',
     legal: 'Rechtliches',
   },
+  promo: {
+    close: 'Banner schließen',
+    call: 'Anrufen',
+    write: 'Schreiben Sie uns',
+  },
   cookies: {
     label: 'Cookie-Einstellungen',
     title: 'Cookies',

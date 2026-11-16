@@ -6,11 +6,32 @@ import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 import { MobileMenu } from '@/components/MobileMenu'
 import { NavbarFrame } from '@/components/NavbarFrame'
 import { NavLink } from '@/components/NavLink'
+import { PromoBar } from '@/components/PromoBar'
 import { localizedHref, navItems, pagePaths } from '@/config/site'
 import { getLanguage, getT } from '@/i18n/server'
+import type { PromoMessage } from '@/lib/promo'
+import { sanityFetch } from '@/sanity/live'
+import { promoBarQuery } from '@/sanity/queries'
+
+async function getPromoBar(language: string) {
+  const { data } = await sanityFetch({
+    params: { lng: language },
+    query: promoBarQuery,
+    stega: false,
+  })
+  if (!data?.messages) return null
+  const messages = data.messages.flatMap<PromoMessage>(
+    ({ _key, label, text, shortText, showFrom, showUntil, action }) =>
+      label && text
+        ? [{ action: action ?? 'call', key: _key, label, shortText, showFrom, showUntil, text }]
+        : []
+  )
+  return messages.length > 0 ? { messages, version: data._updatedAt } : null
+}
 
 export async function Navbar() {
   const [language, t] = await Promise.all([getLanguage(), getT()])
+  const promo = await getPromoBar(language)
   const homeHref = localizedHref(language)
   const bookHref = localizedHref(language, pagePaths.contact)
   const links = navItems.map(item => ({
@@ -22,7 +43,18 @@ export async function Navbar() {
   }))
 
   return (
-    <NavbarFrame>
+    <NavbarFrame
+      promo={
+        promo && (
+          <PromoBar
+            messages={promo.messages}
+            version={promo.version}
+            contactHref={bookHref}
+            labels={t('promo', { returnObjects: true })}
+          />
+        )
+      }
+    >
       <Link href={homeHref} aria-label={t('nav.homeLink')}>
         <Image
           src="/brand/logo-light.svg"

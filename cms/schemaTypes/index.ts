@@ -8,6 +8,7 @@ import { galleryPage } from './singletons/galleryPage'
 import { homePage } from './singletons/homePage'
 import { interiorsPage } from './singletons/interiorsPage'
 import { pricing } from './singletons/pricing'
+import { promoBar } from './singletons/promoBar'
 import { siteSettings } from './singletons/siteSettings'
 import { surroundingsPage } from './singletons/surroundingsPage'
 import { tracking } from './singletons/tracking'
@@ -16,6 +17,7 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   mediaSlot,
   photo,
   siteSettings,
+  promoBar,
   tracking,
   pricing,
   homePage,
