@@ -35,7 +35,7 @@ export function Hero({
         className="absolute inset-0 -z-10 bg-hero-scrim lg:bg-hero-scrim-side lg:mask-hero-scrim-side"
       />
 
-      <div className="flex flex-1 flex-col items-start gap-4 px-6 pt-28 lg:justify-center lg:gap-6 lg:px-16 lg:pt-24 lg:pb-16">
+      <div className="flex flex-1 flex-col items-start gap-4 px-6 pt-[calc(7rem+var(--promo-height))] lg:justify-center lg:gap-6 lg:px-16 lg:pt-[calc(6rem+var(--promo-height))] lg:pb-16">
         <p className="motion-safe:animate-rise motion-safe:[animation-delay:100ms] font-body text-[10.5px] tracking-[3px] text-accent-warm-light uppercase lg:text-[13px] lg:tracking-[5px]">
           {eyebrow}
         </p>

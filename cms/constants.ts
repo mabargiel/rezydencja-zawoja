@@ -10,6 +10,7 @@ export const singletons = {
   homePage: 'Strona główna',
   interiorsPage: 'Wnętrza',
   pricing: 'Cennik',
+  promoBar: 'Pasek promocyjny',
   siteSettings: 'Sezon',
   surroundingsPage: 'Okolica',
   tracking: 'Pliki cookies i Piksel Meta',

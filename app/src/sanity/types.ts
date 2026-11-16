@@ -242,6 +242,25 @@ export type Tracking = {
   consentMonths?: number
 }
 
+export type PromoBar = {
+  _id: string
+  _type: 'promoBar'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  enabled?: boolean
+  messages?: Array<{
+    label?: InternationalizedArrayString
+    text?: InternationalizedArrayString
+    shortText?: InternationalizedArrayString
+    showFrom?: string
+    showUntil?: string
+    action?: 'call' | 'contact' | 'none'
+    _type: 'promoMessage'
+    _key: string
+  }>
+}
+
 export type SiteSettings = {
   _id: string
   _type: 'siteSettings'
@@ -412,6 +431,7 @@ export type AllSanitySchemaTypes =
   | HomePage
   | Pricing
   | Tracking
+  | PromoBar
   | SiteSettings
   | SanityImageAssetReference
   | Photo
@@ -1102,10 +1122,39 @@ export type TrackingQueryResult =
     }
   | {
       enabled: boolean | null
+      pixelId: null
+      activeFrom: null
+      activeUntil: null
+      consentMonths: null
+    }
+  | {
+      enabled: boolean | null
       pixelId: string | null
       activeFrom: string | null
       activeUntil: string | null
       consentMonths: number | null
+    }
+  | null
+
+// Source: ../app/src/sanity/queries.ts
+// Variable: promoBarQuery
+// Query: *[_id == "promoBar" && enabled][0]{  _updatedAt,  "messages": messages[]{    _key,    "label": coalesce(label[language == $lng][0].value, label[language == "pl"][0].value),    "text": coalesce(text[language == $lng][0].value, text[language == "pl"][0].value),    "shortText": coalesce(shortText[language == $lng][0].value, shortText[language == "pl"][0].value),    showFrom,    showUntil,    action  }}
+export type PromoBarQueryResult =
+  | {
+      _updatedAt: string
+      messages: null
+    }
+  | {
+      _updatedAt: string
+      messages: Array<{
+        _key: string
+        label: string | null
+        text: string | null
+        shortText: string | null
+        showFrom: string | null
+        showUntil: string | null
+        action: 'call' | 'contact' | 'none' | null
+      }> | null
     }
   | null
 
@@ -1119,6 +1168,7 @@ declare global {
     '*[_id == "contactPage"][0]{\n  header{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  map{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} }\n}': ContactPageQueryResult
     '*[_id == $id][0]{\n  "title": coalesce(title[language == $lng][0].value, title[language == "pl"][0].value),\n  updatedAt,\n  "isPolishFallback": $lng != "pl" && !(($lng == "en" && count(body.en) > 0) || ($lng == "de" && count(body.de) > 0)),\n  "body": select(\n    $lng == "en" && count(body.en) > 0 => body.en,\n    $lng == "de" && count(body.de) > 0 => body.de,\n    body.pl\n  )\n}': LegalPageQueryResult
     '*[_id == "tracking"][0]{\n  enabled,\n  pixelId,\n  activeFrom,\n  activeUntil,\n  consentMonths\n}': TrackingQueryResult
+    '*[_id == "promoBar" && enabled][0]{\n  _updatedAt,\n  "messages": messages[]{\n    _key,\n    "label": coalesce(label[language == $lng][0].value, label[language == "pl"][0].value),\n    "text": coalesce(text[language == $lng][0].value, text[language == "pl"][0].value),\n    "shortText": coalesce(shortText[language == $lng][0].value, shortText[language == "pl"][0].value),\n    showFrom,\n    showUntil,\n    action\n  }\n}': PromoBarQueryResult
   }
 }
 // Lets @sanity/client releases that predate the global registry read it too

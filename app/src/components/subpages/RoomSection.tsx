@@ -32,7 +32,7 @@ export function RoomSection({
     <section
       id={id}
       aria-labelledby={`${id}-title`}
-      className="flex scroll-mt-32 flex-col gap-3.5 px-5 py-9 lg:scroll-mt-20 lg:gap-10 lg:px-[120px] lg:py-16"
+      className="flex scroll-mt-[calc(8rem+var(--promo-height))] flex-col gap-3.5 px-5 py-9 lg:scroll-mt-[calc(5rem+var(--promo-height))] lg:gap-10 lg:px-[120px] lg:py-16"
     >
       <div className="flex flex-col gap-3.5 lg:flex-row lg:gap-20">
         <div className="reveal-left flex flex-col gap-3.5 lg:w-[420px] lg:shrink-0 lg:gap-[18px]">

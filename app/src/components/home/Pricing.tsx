@@ -55,7 +55,7 @@ export function Pricing({ language, pricing, labels }: PricingProps) {
   return (
     <section
       id="pricing"
-      className="flex scroll-mt-24 flex-col gap-8 bg-surface px-5 py-14 lg:gap-16 lg:px-[120px] lg:pt-[120px] lg:pb-[110px]"
+      className="flex scroll-mt-[calc(6rem+var(--promo-height))] flex-col gap-8 bg-surface px-5 py-14 lg:gap-16 lg:px-[120px] lg:pt-[120px] lg:pb-[110px]"
     >
       <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:gap-[110px]">
         <div className="lg:w-[560px] lg:shrink-0">
