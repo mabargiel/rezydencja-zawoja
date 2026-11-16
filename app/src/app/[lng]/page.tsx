@@ -28,20 +28,12 @@ export default async function HomePage() {
       <Hero
         eyebrow={t('home.hero.eyebrow')}
         title={t('home.hero.title')}
-        intro={t('home.hero.intro')}
-        poster={home?.hero?.poster?.photo}
-        videoUrl={home?.hero?.videoUrl}
-        booking={{
-          action: localizedHref(language, pagePaths.contact),
-          labels: {
-            arrival: t('home.booking.arrival'),
-            departure: t('home.booking.departure'),
-            form: t('home.booking.label'),
-            guests: t('home.booking.guests'),
-            guestsAny: t('home.booking.guestsAny'),
-            submit: t('home.booking.submit'),
-          },
-        }}
+        facts={t('home.hero.facts')}
+        callLabel={t('home.hero.call')}
+        writeLabel={t('home.hero.write')}
+        desktopPhoto={home?.heroDesktop?.photo}
+        mobilePhoto={home?.heroMobile?.photo}
+        contactHref={localizedHref(language, pagePaths.contact)}
       />
       <Intro
         eyebrow={t('home.intro.eyebrow')}

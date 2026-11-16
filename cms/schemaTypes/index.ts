@@ -3,7 +3,6 @@ import type { SchemaTypeDefinition } from 'sanity'
 import { legalPage } from './documents/legalPage'
 import { photo } from './documents/photo'
 import { mediaSlot } from './objects/mediaSlot'
-import { videoSlot } from './objects/videoSlot'
 import { contactPage } from './singletons/contactPage'
 import { galleryPage } from './singletons/galleryPage'
 import { homePage } from './singletons/homePage'
@@ -14,7 +13,6 @@ import { surroundingsPage } from './singletons/surroundingsPage'
 
 export const schemaTypes: SchemaTypeDefinition[] = [
   mediaSlot,
-  videoSlot,
   photo,
   siteSettings,
   pricing,

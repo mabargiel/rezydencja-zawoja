@@ -58,7 +58,7 @@ export function SubmitButton({ label, pendingLabel }: { label: string; pendingLa
     <button
       type="submit"
       disabled={pending}
-      className="flex items-center justify-center gap-2.5 bg-accent px-10 py-4 font-body text-[13px] font-medium tracking-[2px] text-surface uppercase transition-colors hover:bg-bg-dark disabled:opacity-75 lg:py-[17px]"
+      className="flex items-center justify-center gap-2.5 rounded-button bg-accent px-10 py-4 font-body text-[13px] font-medium tracking-[2px] text-surface uppercase transition-colors hover:bg-bg-dark disabled:opacity-75 lg:py-[17px]"
     >
       {pending ? (
         <>

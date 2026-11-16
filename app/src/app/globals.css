@@ -10,6 +10,7 @@
   --color-text-inverse-dim: #f7f5efc7;
   --color-accent: #3e4f41;
   --color-accent-warm: #b99a5f;
+  --color-accent-warm-light: #d9bf8c;
   --color-accent-warm-deep: #7a5d2e;
   --color-line: #ddd8cc;
   --color-error: #9b3b2b;
@@ -22,17 +23,21 @@
   --color-scrim-top: #0d120d80;
   --color-scrim-middle: #0d120d66;
   --color-scrim-bottom: #0a0e08d9;
-  --color-scrim-hero-top: #0d120db3;
-  --color-scrim-hero-lower: #0d120d8c;
+  --color-hero-sky: #5392f9;
+  --color-hero-sky-low: #5b93e7;
+  --color-hero-ground: #3e4f48;
+  --color-scrim-hero-strong: #0d120db8;
+  --color-scrim-hero-soft: #0d120d73;
+  --color-scrim-hero-faint: #0d120d26;
   --color-scrim-panorama-top: #0d120d59;
   --color-scrim-panorama-bottom: #0a0e08e6;
+  --radius-button: 6px;
   --font-display: var(--font-cormorant), 'Times New Roman', serif;
   --font-body: var(--font-jost), system-ui, sans-serif;
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-fast: 200ms;
   --duration-base: 450ms;
   --duration-slow: 900ms;
-  --duration-cinematic: 2800ms;
   --animate-rise: rise var(--duration-slow) var(--ease-out-soft) both;
   --animate-settle: settle 1600ms var(--ease-out-soft) both;
   --animate-fade: fade var(--duration-base) var(--ease-out-soft) both;
@@ -66,14 +71,49 @@
   );
 }
 
+/* text sits top-left on phones and left on desktop, over sky; the dark falls off before the house */
 @utility bg-hero-scrim {
   background-image: linear-gradient(
     180deg,
-    var(--color-scrim-hero-top) 0%,
-    var(--color-scrim-middle) 32%,
-    var(--color-scrim-hero-lower) 60%,
-    var(--color-scrim-bottom) 100%
+    var(--color-scrim-hero-strong) 0%,
+    var(--color-scrim-hero-soft) 40%,
+    transparent 62%
   );
+}
+
+@utility bg-hero-scrim-side {
+  background-image:
+    linear-gradient(180deg, var(--color-scrim-hero-soft) 0%, transparent 18%),
+    linear-gradient(
+      90deg,
+      var(--color-scrim-hero-strong) 0%,
+      var(--color-scrim-hero-soft) 28%,
+      var(--color-scrim-hero-faint) 42%,
+      transparent 54%
+    );
+}
+
+@utility bg-hero-sky {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-hero-sky) 0%,
+    var(--color-hero-sky-low) 46%,
+    var(--color-hero-ground) 66%,
+    var(--color-bg-dark) 100%
+  );
+}
+
+@utility mask-hero-fade-up {
+  mask-image: linear-gradient(180deg, transparent 0%, black 24%);
+}
+
+@utility mask-hero-fade {
+  mask-image: linear-gradient(90deg, transparent 0%, black 22%);
+}
+
+/* lets the hot tub in the lower left of the photo show through */
+@utility mask-hero-scrim-side {
+  mask-image: linear-gradient(180deg, black 55%, transparent 85%);
 }
 
 @utility bg-panorama-scrim {
@@ -168,16 +208,19 @@
 
 @layer base {
   html {
-    overflow-x: clip;
     scroll-behavior: smooth;
+    scrollbar-width: none;
   }
 
   html:has(dialog[open]) {
     overflow: hidden;
   }
 
-  body {
+  main {
     overflow-x: clip;
+  }
+
+  body {
     background-color: var(--color-bg);
     color: var(--color-text-primary);
     font-family: var(--font-body);

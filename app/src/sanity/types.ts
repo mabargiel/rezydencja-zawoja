@@ -174,7 +174,8 @@ export type HomePage = {
   _createdAt: string
   _updatedAt: string
   _rev: string
-  hero?: VideoSlot
+  heroDesktop?: MediaSlot
+  heroMobile?: MediaSlot
   intro?: {
     house?: MediaSlot
     detail?: MediaSlot
@@ -191,28 +192,6 @@ export type HomePage = {
       _key: string
     } & PhotoReference
   >
-}
-
-export type SanityFileAssetReference = {
-  _ref: string
-  _type: 'reference'
-  _weak?: boolean
-  [internalGroqTypeReferenceTo]?: 'sanity.fileAsset'
-}
-
-export type VideoSlot = {
-  _type: 'videoSlot'
-  video?: {
-    asset?: SanityFileAssetReference
-    media?: unknown
-    _type: 'file'
-  }
-  winterVideo?: {
-    asset?: SanityFileAssetReference
-    media?: unknown
-    _type: 'file'
-  }
-  poster?: MediaSlot
 }
 
 export type Pricing = {
@@ -418,8 +397,6 @@ export type AllSanitySchemaTypes =
   | SurroundingsPage
   | InteriorsPage
   | HomePage
-  | SanityFileAssetReference
-  | VideoSlot
   | Pricing
   | SiteSettings
   | SanityImageAssetReference
@@ -439,11 +416,12 @@ export type AllSanitySchemaTypes =
 
 // Source: ../app/src/sanity/queries.ts
 // Variable: homePageQuery
-// Query: {  "home": *[_id == "homePage"][0]{    hero{      "videoUrl": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterVideo) => winterVideo.asset->url, video.asset->url),      poster{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} }    },    intro{ house{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} }, detail{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} } },    spa{ saltGrotto{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} }, hotTub{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} }, sauna{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} } },    interiors{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} },    location{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} },    "galleryPreview": galleryPreview[]->{ "_key": _id,   "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  } }  },  "pricing": *[_id == "pricing"][0]{    year,    rates[]{ _key, "period": coalesce(period[language == $lng][0].value, period[language == "pl"][0].value), "minimumStay": coalesce(minimumStay[language == $lng][0].value, minimumStay[language == "pl"][0].value), amount, unit, extraPerson },    addOns[]{ _key, "name": coalesce(name[language == $lng][0].value, name[language == "pl"][0].value), "note": coalesce(note[language == $lng][0].value, note[language == "pl"][0].value), amount, unit },    facts[]{ _key, "label": coalesce(label[language == $lng][0].value, label[language == "pl"][0].value), "value": coalesce(value[language == $lng][0].value, value[language == "pl"][0].value) }  }}
+// Query: {  "home": *[_id == "homePage"][0]{    heroDesktop{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} },    heroMobile{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} },    intro{ house{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} }, detail{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} } },    spa{ saltGrotto{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} }, hotTub{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} }, sauna{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} } },    interiors{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} },    location{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  }} },    "galleryPreview": galleryPreview[]->{ "_key": _id,   "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),  "image": image{    hotspot,    crop,    asset->{ _id, metadata { lqip, dimensions { width, height } } }  } }  },  "pricing": *[_id == "pricing"][0]{    year,    rates[]{ _key, "period": coalesce(period[language == $lng][0].value, period[language == "pl"][0].value), "minimumStay": coalesce(minimumStay[language == $lng][0].value, minimumStay[language == "pl"][0].value), amount, unit, extraPerson },    addOns[]{ _key, "name": coalesce(name[language == $lng][0].value, name[language == "pl"][0].value), "note": coalesce(note[language == $lng][0].value, note[language == "pl"][0].value), amount, unit },    facts[]{ _key, "label": coalesce(label[language == $lng][0].value, label[language == "pl"][0].value), "value": coalesce(value[language == $lng][0].value, value[language == "pl"][0].value) }  }}
 export type HomePageQueryResult = {
   home:
     | {
-        hero: null
+        heroDesktop: null
+        heroMobile: null
         intro: null
         spa: null
         interiors: null
@@ -451,22 +429,38 @@ export type HomePageQueryResult = {
         galleryPreview: null
       }
     | {
-        hero: {
-          videoUrl: string | null
-          poster: {
-            photo: {
-              alt: string | null
-              image: {
-                hotspot: SanityImageHotspot | null
-                crop: SanityImageCrop | null
-                asset: {
-                  _id: string
-                  metadata: {
-                    lqip: string | null
-                    dimensions: {
-                      width: number | null
-                      height: number | null
-                    } | null
+        heroDesktop: {
+          photo: {
+            alt: string | null
+            image: {
+              hotspot: SanityImageHotspot | null
+              crop: SanityImageCrop | null
+              asset: {
+                _id: string
+                metadata: {
+                  lqip: string | null
+                  dimensions: {
+                    width: number | null
+                    height: number | null
+                  } | null
+                } | null
+              } | null
+            } | null
+          } | null
+        } | null
+        heroMobile: {
+          photo: {
+            alt: string | null
+            image: {
+              hotspot: SanityImageHotspot | null
+              crop: SanityImageCrop | null
+              asset: {
+                _id: string
+                metadata: {
+                  lqip: string | null
+                  dimensions: {
+                    width: number | null
+                    height: number | null
                   } | null
                 } | null
               } | null
@@ -1084,7 +1078,7 @@ export type LegalPageQueryResult =
 // Query TypeMap
 declare global {
   interface SanityQueries {
-    '{\n  "home": *[_id == "homePage"][0]{\n    hero{\n      "videoUrl": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterVideo) => winterVideo.asset->url, video.asset->url),\n      poster{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} }\n    },\n    intro{ house{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} }, detail{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} } },\n    spa{ saltGrotto{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} }, hotTub{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} }, sauna{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} } },\n    interiors{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n    location{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n    "galleryPreview": galleryPreview[]->{ "_key": _id, \n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  } }\n  },\n  "pricing": *[_id == "pricing"][0]{\n    year,\n    rates[]{ _key, "period": coalesce(period[language == $lng][0].value, period[language == "pl"][0].value), "minimumStay": coalesce(minimumStay[language == $lng][0].value, minimumStay[language == "pl"][0].value), amount, unit, extraPerson },\n    addOns[]{ _key, "name": coalesce(name[language == $lng][0].value, name[language == "pl"][0].value), "note": coalesce(note[language == $lng][0].value, note[language == "pl"][0].value), amount, unit },\n    facts[]{ _key, "label": coalesce(label[language == $lng][0].value, label[language == "pl"][0].value), "value": coalesce(value[language == $lng][0].value, value[language == "pl"][0].value) }\n  }\n}': HomePageQueryResult
+    '{\n  "home": *[_id == "homePage"][0]{\n    heroDesktop{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n    heroMobile{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n    intro{ house{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} }, detail{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} } },\n    spa{ saltGrotto{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} }, hotTub{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} }, sauna{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} } },\n    interiors{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n    location{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n    "galleryPreview": galleryPreview[]->{ "_key": _id, \n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  } }\n  },\n  "pricing": *[_id == "pricing"][0]{\n    year,\n    rates[]{ _key, "period": coalesce(period[language == $lng][0].value, period[language == "pl"][0].value), "minimumStay": coalesce(minimumStay[language == $lng][0].value, minimumStay[language == "pl"][0].value), amount, unit, extraPerson },\n    addOns[]{ _key, "name": coalesce(name[language == $lng][0].value, name[language == "pl"][0].value), "note": coalesce(note[language == $lng][0].value, note[language == "pl"][0].value), amount, unit },\n    facts[]{ _key, "label": coalesce(label[language == $lng][0].value, label[language == "pl"][0].value), "value": coalesce(value[language == $lng][0].value, value[language == "pl"][0].value) }\n  }\n}': HomePageQueryResult
     '*[_id == "interiorsPage"][0]{\n  header{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  rooms[]{ _key, type, "photos": photos[]->{ "_key": _id, \n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  } } },\n  bedrooms[]{\n    _key,\n    "name": coalesce(name[language == $lng][0].value, name[language == "pl"][0].value),\n    "beds": coalesce(beds[language == $lng][0].value, beds[language == "pl"][0].value),\n    guests,\n    "photos": photos[]->{ "_key": _id, \n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  } }\n  }\n}': InteriorsPageQueryResult
     '*[_id == "surroundingsPage"][0]{\n  header{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  babiaGora{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  slopes{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  trails{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  waterfalls{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} }\n}': SurroundingsPageQueryResult
     '*[_id == "galleryPage"][0]{\n  header{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  "photos": photos[]->{ "_key": _id, category, \n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  } }\n}': GalleryPageQueryResult

@@ -154,7 +154,7 @@ function StepButton({ direction, label, onClick, className = '' }: StepButtonPro
       type="button"
       aria-label={label}
       onClick={onClick}
-      className={`flex size-12 shrink-0 items-center justify-center border border-line-inverse-strong text-text-inverse transition-colors hover:bg-text-inverse/10 lg:size-[52px] ${className}`}
+      className={`flex size-12 shrink-0 items-center justify-center rounded-button border border-line-inverse-strong text-text-inverse transition-colors hover:bg-text-inverse/10 lg:size-[52px] ${className}`}
     >
       <Icon aria-hidden strokeWidth={1.5} className="size-5 lg:size-[22px]" />
     </button>

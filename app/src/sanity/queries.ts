@@ -23,10 +23,8 @@ const factValue = `coalesce(value[language == $lng][0].value, value[language == 
 
 export const homePageQuery = defineQuery(`{
   "home": *[_id == "homePage"][0]{
-    hero{
-      "videoUrl": select(${isWinter} && defined(winterVideo) => winterVideo.asset->url, video.asset->url),
-      poster{ ${resolvedSlot} }
-    },
+    heroDesktop{ ${resolvedSlot} },
+    heroMobile{ ${resolvedSlot} },
     intro{ house{ ${resolvedSlot} }, detail{ ${resolvedSlot} } },
     spa{ saltGrotto{ ${resolvedSlot} }, hotTub{ ${resolvedSlot} }, sauna{ ${resolvedSlot} } },
     interiors{ ${resolvedSlot} },

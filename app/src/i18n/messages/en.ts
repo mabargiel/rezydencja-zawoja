@@ -60,18 +60,11 @@ export const en = {
   },
   home: {
     hero: {
-      eyebrow: 'Beskid Mountains · at the foot of Babia Góra',
-      title: 'A mountain house\nthat is yours alone',
-      intro:
-        'A luxury residence for exclusive use. Silence, space and a view of Babia Góra from every window.',
-    },
-    booking: {
-      label: 'Check availability',
-      arrival: 'Arrival',
-      departure: 'Departure',
-      guests: 'Guests',
-      guestsAny: 'up to 10',
-      submit: 'Check availability',
+      eyebrow: 'Zawoja · Beskid Mountains · Babia Góra massif',
+      title: 'Premium house\n& spa\nfor exclusive use',
+      facts: '300 m² · 5 bedrooms · up to 10 guests',
+      call: 'Call',
+      write: 'Write to us',
     },
     intro: {
       eyebrow: 'About the residence',
