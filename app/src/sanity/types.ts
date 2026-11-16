@@ -229,6 +229,19 @@ export type Pricing = {
   }>
 }
 
+export type Tracking = {
+  _id: string
+  _type: 'tracking'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  enabled?: boolean
+  pixelId?: string
+  activeFrom?: string
+  activeUntil?: string
+  consentMonths?: number
+}
+
 export type SiteSettings = {
   _id: string
   _type: 'siteSettings'
@@ -398,6 +411,7 @@ export type AllSanitySchemaTypes =
   | InteriorsPage
   | HomePage
   | Pricing
+  | Tracking
   | SiteSettings
   | SanityImageAssetReference
   | Photo
@@ -1075,6 +1089,26 @@ export type LegalPageQueryResult =
     }
   | null
 
+// Source: ../app/src/sanity/queries.ts
+// Variable: trackingQuery
+// Query: *[_id == "tracking"][0]{  enabled,  pixelId,  activeFrom,  activeUntil,  consentMonths}
+export type TrackingQueryResult =
+  | {
+      enabled: null
+      pixelId: null
+      activeFrom: null
+      activeUntil: null
+      consentMonths: null
+    }
+  | {
+      enabled: boolean | null
+      pixelId: string | null
+      activeFrom: string | null
+      activeUntil: string | null
+      consentMonths: number | null
+    }
+  | null
+
 // Query TypeMap
 declare global {
   interface SanityQueries {
@@ -1084,6 +1118,7 @@ declare global {
     '*[_id == "galleryPage"][0]{\n  header{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  "photos": photos[]->{ "_key": _id, category, \n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  } }\n}': GalleryPageQueryResult
     '*[_id == "contactPage"][0]{\n  header{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} },\n  map{ "photo": select(*[_id == "siteSettings"][0].season == "winter" && defined(winterPhoto) => winterPhoto->, photo->){\n  "alt": coalesce(alt[language == $lng][0].value, alt[language == "pl"][0].value),\n  "image": image{\n    hotspot,\n    crop,\n    asset->{ _id, metadata { lqip, dimensions { width, height } } }\n  }} }\n}': ContactPageQueryResult
     '*[_id == $id][0]{\n  "title": coalesce(title[language == $lng][0].value, title[language == "pl"][0].value),\n  updatedAt,\n  "isPolishFallback": $lng != "pl" && !(($lng == "en" && count(body.en) > 0) || ($lng == "de" && count(body.de) > 0)),\n  "body": select(\n    $lng == "en" && count(body.en) > 0 => body.en,\n    $lng == "de" && count(body.de) > 0 => body.de,\n    body.pl\n  )\n}': LegalPageQueryResult
+    '*[_id == "tracking"][0]{\n  enabled,\n  pixelId,\n  activeFrom,\n  activeUntil,\n  consentMonths\n}': TrackingQueryResult
   }
 }
 // Lets @sanity/client releases that predate the global registry read it too

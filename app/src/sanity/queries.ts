@@ -84,3 +84,11 @@ export const legalPageQuery = defineQuery(`*[_id == $id][0]{
     body.pl
   )
 }`)
+
+export const trackingQuery = defineQuery(`*[_id == "tracking"][0]{
+  enabled,
+  pixelId,
+  activeFrom,
+  activeUntil,
+  consentMonths
+}`)

@@ -12,6 +12,7 @@ export const singletons = {
   pricing: 'Cennik',
   siteSettings: 'Sezon',
   surroundingsPage: 'Okolica',
+  tracking: 'Pliki cookies i Piksel Meta',
 } as const
 
 export type SingletonType = keyof typeof singletons

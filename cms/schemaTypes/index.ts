@@ -10,11 +10,13 @@ import { interiorsPage } from './singletons/interiorsPage'
 import { pricing } from './singletons/pricing'
 import { siteSettings } from './singletons/siteSettings'
 import { surroundingsPage } from './singletons/surroundingsPage'
+import { tracking } from './singletons/tracking'
 
 export const schemaTypes: SchemaTypeDefinition[] = [
   mediaSlot,
   photo,
   siteSettings,
+  tracking,
   pricing,
   homePage,
   interiorsPage,

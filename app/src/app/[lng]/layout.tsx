@@ -4,14 +4,18 @@ import type { Metadata } from 'next'
 import { Cormorant_Garamond, Jost } from 'next/font/google'
 import type { ReactNode } from 'react'
 
+import { CookieConsent } from '@/components/CookieConsent'
 import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
 import { RevealObserver } from '@/components/RevealObserver'
+import { localizedHref, pagePaths } from '@/config/site'
 import { languages } from '@/i18n/config'
 import { getLanguage, getT } from '@/i18n/server'
 import { blurUpScript } from '@/lib/blurUpScript'
+import type { TrackingSettings } from '@/lib/consent'
 import { metadataBase } from '@/lib/metadata'
-import { SanityLive } from '@/sanity/live'
+import { sanityFetch, SanityLive } from '@/sanity/live'
+import { trackingQuery } from '@/sanity/queries'
 
 const cormorant = Cormorant_Garamond({
   display: 'swap',
@@ -42,8 +46,19 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
+async function getTrackingSettings(): Promise<TrackingSettings | null> {
+  const { data } = await sanityFetch({ query: trackingQuery, stega: false })
+  if (!data?.enabled || !data.pixelId) return null
+  return {
+    activeFrom: data.activeFrom,
+    activeUntil: data.activeUntil,
+    consentMonths: data.consentMonths ?? 12,
+    pixelId: data.pixelId,
+  }
+}
+
 export default async function RootLayout({ children }: { children: ReactNode }) {
-  const language = await getLanguage()
+  const [language, t, tracking] = await Promise.all([getLanguage(), getT(), getTrackingSettings()])
 
   return (
     <html
@@ -58,9 +73,16 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body className="relative">
         <Navbar />
         {children}
-        <Footer />
+        <Footer tracking={tracking} />
         <SanityLive />
         <RevealObserver />
+        {tracking && (
+          <CookieConsent
+            settings={tracking}
+            labels={t('cookies', { returnObjects: true })}
+            privacyHref={localizedHref(language, pagePaths.privacyPolicy)}
+          />
+        )}
       </body>
     </html>
   )

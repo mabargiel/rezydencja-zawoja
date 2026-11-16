@@ -1,6 +1,6 @@
 'use client'
 
-import { useActionState } from 'react'
+import { useActionState, useEffect } from 'react'
 
 import { sendInquiry } from '@/app/[lng]/contact/actions'
 import { Eyebrow } from '@/components/Eyebrow'
@@ -15,6 +15,7 @@ import {
   maxNameLength,
   today,
 } from '@/lib/inquiry'
+import { trackPixel } from '@/lib/metaPixel'
 
 import { Field, FieldError, Row, SendError, SubmitButton } from './FormParts'
 import { InquirySent } from './InquirySent'
@@ -43,8 +44,13 @@ export function ContactForm({
 }: ContactFormProps) {
   const [state, formAction] = useActionState(sendInquiry, initialState)
   const { form, errors, sent } = copy
+  const isSent = state.status === 'sent'
 
-  if (state.status === 'sent') {
+  useEffect(() => {
+    if (isSent) trackPixel('Lead')
+  }, [isSent])
+
+  if (isSent) {
     return <InquirySent copy={sent} contactHref={contactHref} />
   }
 

@@ -57,6 +57,15 @@ export const pl = {
     copyright: '© {{year}} Rezydencja Zawoja. Wszelkie prawa zastrzeżone.',
     legal: 'Dokumenty',
   },
+  cookies: {
+    label: 'Ustawienia plików cookies',
+    title: 'Pliki cookies',
+    body: 'Używamy Piksela Meta, aby mierzyć skuteczność naszych reklam i pokazywać je osobom, które odwiedziły stronę. Włączymy go tylko za Twoją zgodą, którą zmienisz w każdej chwili w stopce strony.',
+    privacy: 'Polityka prywatności',
+    accept: 'Akceptuję',
+    reject: 'Odrzucam',
+    settings: 'Ustawienia cookies',
+  },
   home: {
     hero: {
       eyebrow: 'Zawoja · Beskidy · Masyw Babiej Góry',
