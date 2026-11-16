@@ -63,21 +63,19 @@ type InfoRowProps = {
 
 function InfoRow({ icon, label, children }: InfoRowProps) {
   return (
-    <div className="flex gap-3.5 lg:gap-4">
-      <span
-        aria-hidden
-        className="flex size-[38px] shrink-0 items-center justify-center bg-text-inverse/8 text-accent-warm lg:size-10"
-      >
-        {icon}
-      </span>
-      <div className="flex min-w-0 flex-col gap-0.5 lg:gap-[3px]">
-        <dt className="font-body text-[10.5px] tracking-[2px] text-accent-warm lg:text-[11px]">
-          {label}
-        </dt>
-        <dd className="font-body text-[14.5px] leading-[1.45] text-text-inverse lg:text-[15.5px]">
-          {children}
-        </dd>
-      </div>
+    <div className="relative flex min-w-0 flex-col gap-0.5 pl-[52px] lg:gap-[3px] lg:pl-14">
+      <dt className="font-body text-[10.5px] tracking-[2px] text-accent-warm lg:text-[11px]">
+        <span
+          aria-hidden
+          className="absolute top-0 left-0 flex size-[38px] items-center justify-center bg-text-inverse/8 text-accent-warm lg:size-10"
+        >
+          {icon}
+        </span>
+        {label}
+      </dt>
+      <dd className="font-body text-[14.5px] leading-[1.45] text-text-inverse lg:text-[15.5px]">
+        {children}
+      </dd>
     </div>
   )
 }
