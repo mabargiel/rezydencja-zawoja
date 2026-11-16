@@ -1,6 +1,6 @@
 ## Context
 
-The hero is 900px tall on desktop and 640px on mobile. On desktop the text sits in the centre; on mobile it's left-aligned, and the booking bar takes y 468–612, so only narrow strips of the photo stay uncovered.
+The hero fills the viewport (at least 640px on phones, 720px on desktop). The owner's photo is 4:3 and the house fills nearly its whole width, so full-bleed on a 16:10 screen the text would sit over the eaves and the roof would be cropped.
 
 ## Decisions
 
@@ -12,11 +12,14 @@ The hero is 900px tall on desktop and 640px on mobile. On desktop the text sits 
 
 Each breakpoint needs its own LQIP and hotspot: the placeholders are background layers toggled by breakpoint, and `object-position` comes from CSS variables. If one slot is empty, the other is used for both.
 
-### D3. Legibility: a focus layer in the scrim, not a darker photo
-A radial layer behind the text darkens the text zone and leaves the edges of the photo bright. Its strength is the lowest that clears the eyebrow target: at 65% the house lost its warm glow, so it's 45%. It's in the scrim, so it holds for any future photo, including a winter one.
+### D3. Legibility: the photo fades into sky, the text sits on the sky
+On desktop the photo starts 18% from the left and its left edge fades out through a mask into a gradient in the photo's own sky colours. On phones it fills the lower 62% and fades out upward. The text sits on that sky, and the whole house stays in frame at 16:10, 16:9 and on phones. A dark scrim on the text side, and a band behind the nav, keep contrast without darkening the house. This replaced an earlier full-bleed layout with a radial focus layer, which made bright photos either too dark or too busy behind the text.
+
+### D5. Conversation instead of a date picker
+Marketing found that returning visitors stall before getting in touch, so the hero offers "Napisz do nas" (contact form) and "Zadzwoń" (phone) instead of the booking bar. On phones the call button shows only its label, so both fit; the number shows from `lg` up.
 
 ### D4. Masters are graded outside the repo
-Photos stay in Sanity. Masters are 3840×2400 and 1440×2361, sRGB JPEG, cropped to the slot shape. The Sanity CDN handles resizing and format.
+Photos stay in Sanity. Masters are the owner's retouched 4032×3024 desktop photo and a 3024×4032 mobile photo, sRGB JPEG. The Sanity CDN handles resizing and format.
 
 ## Risks
 

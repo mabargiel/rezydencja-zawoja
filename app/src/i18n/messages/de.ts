@@ -62,18 +62,11 @@ export const de = {
   },
   home: {
     hero: {
-      eyebrow: 'Beskiden · am Fuß der Babia Góra',
-      title: 'Ein Haus in den Bergen,\nnur für Sie',
-      intro:
-        'Eine luxuriöse Residenz zur Alleinnutzung. Stille, viel Raum und der Blick auf die Babia Góra aus jedem Fenster.',
-    },
-    booking: {
-      label: 'Verfügbarkeit prüfen',
-      arrival: 'Anreise',
-      departure: 'Abreise',
-      guests: 'Gäste',
-      guestsAny: 'bis zu 10',
-      submit: 'Verfügbarkeit prüfen',
+      eyebrow: 'Zawoja · Beskiden · Babia-Góra-Massiv',
+      title: 'Premium-Haus\n& Spa\nzur Alleinnutzung',
+      facts: '300 m² · 5 Schlafzimmer · bis zu 10 Gäste',
+      call: 'Anrufen',
+      write: 'Schreiben Sie uns',
     },
     intro: {
       eyebrow: 'Über die Residenz',

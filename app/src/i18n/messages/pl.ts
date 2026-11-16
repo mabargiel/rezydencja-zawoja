@@ -59,18 +59,11 @@ export const pl = {
   },
   home: {
     hero: {
-      eyebrow: 'Beskidy · u stóp Babiej Góry',
-      title: 'Dom w górach,\nktóry masz tylko dla siebie',
-      intro:
-        'Luksusowa rezydencja na wyłączność. Cisza, przestrzeń i panorama Babiej Góry za każdym oknem.',
-    },
-    booking: {
-      label: 'Sprawdź dostępność terminu',
-      arrival: 'Przyjazd',
-      departure: 'Wyjazd',
-      guests: 'Goście',
-      guestsAny: 'do 10 osób',
-      submit: 'Sprawdź termin',
+      eyebrow: 'Zawoja · Beskidy · Masyw Babiej Góry',
+      title: 'Dom Premium\n& SPA\nna wyłączność',
+      facts: '300 m² · 5 sypialni · do 10 osób',
+      call: 'Zadzwoń',
+      write: 'Napisz do nas',
     },
     intro: {
       eyebrow: 'O rezydencji',

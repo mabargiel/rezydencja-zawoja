@@ -1,41 +1,64 @@
+import { Phone } from 'lucide-react'
+
+import { ButtonOutline, ButtonPrimary } from '@/components/Actions'
+import { phoneHref, site } from '@/config/site'
 import type { ResolvedPhoto } from '@/sanity/photo'
 
-import { BookingBar } from './BookingBar'
 import { HeroMedia } from './HeroMedia'
 
 type HeroProps = {
   eyebrow: string
   title: string
-  intro: string
+  facts: string
+  callLabel: string
+  writeLabel: string
   desktopPhoto?: ResolvedPhoto | null
   mobilePhoto?: ResolvedPhoto | null
-  booking: Parameters<typeof BookingBar>[0]
+  contactHref: string
 }
 
-export function Hero({ eyebrow, title, intro, desktopPhoto, mobilePhoto, booking }: HeroProps) {
+export function Hero({
+  eyebrow,
+  title,
+  facts,
+  callLabel,
+  writeLabel,
+  desktopPhoto,
+  mobilePhoto,
+  contactHref,
+}: HeroProps) {
   return (
-    <header className="relative isolate flex h-[640px] flex-col bg-bg-dark lg:h-[900px]">
+    <header className="relative isolate flex h-svh min-h-[640px] flex-col bg-bg-dark lg:min-h-[720px]">
       <HeroMedia desktopPhoto={desktopPhoto} mobilePhoto={mobilePhoto} />
-      <div aria-hidden className="absolute inset-0 -z-10 bg-hero-scrim" />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-hero-scrim lg:bg-hero-scrim-side lg:mask-hero-scrim-side"
+      />
 
-      <div className="flex flex-1 flex-col justify-center gap-[18px] px-6 pt-20 lg:items-center lg:gap-7 lg:pt-24 lg:text-center">
-        <span
-          aria-hidden
-          className="hidden h-14 w-px bg-accent-warm motion-safe:animate-fade lg:block"
-        />
-        <p className="motion-safe:animate-rise motion-safe:[animation-delay:100ms] font-body text-[10.5px] tracking-[3px] text-accent-warm uppercase lg:text-[13px] lg:tracking-[6px]">
+      <div className="flex flex-1 flex-col items-start gap-4 px-6 pt-28 lg:justify-center lg:gap-6 lg:px-16 lg:pt-24 lg:pb-16">
+        <p className="motion-safe:animate-rise motion-safe:[animation-delay:100ms] font-body text-[10.5px] tracking-[3px] text-accent-warm-light uppercase lg:text-[13px] lg:tracking-[5px]">
           {eyebrow}
         </p>
-        <h1 className="motion-safe:animate-rise motion-safe:[animation-delay:200ms] font-display text-[38px] leading-[1.08] whitespace-pre-line text-text-inverse lg:max-w-[980px] lg:text-[84px] lg:leading-[1.05]">
+        <h1 className="motion-safe:animate-rise motion-safe:[animation-delay:200ms] font-display text-[38px] leading-[1.04] whitespace-pre-line text-text-inverse lg:text-[68px] lg:leading-[1.02]">
           {title}
         </h1>
-        <p className="motion-safe:animate-rise motion-safe:[animation-delay:300ms] font-body text-[14.5px] leading-normal text-text-inverse-dim lg:max-w-[560px] lg:text-[17px] lg:leading-[1.6] lg:font-light lg:tracking-[0.5px]">
-          {intro}
+        <p className="motion-safe:animate-rise motion-safe:[animation-delay:300ms] font-body text-[15px] tracking-[1px] text-text-inverse lg:text-lg lg:font-light lg:tracking-[1.5px]">
+          {facts}
         </p>
-      </div>
-
-      <div className="flex justify-center px-5 pb-7 motion-safe:animate-rise motion-safe:[animation-delay:450ms] lg:px-16 lg:pb-11">
-        <BookingBar {...booking} />
+        <div className="motion-safe:animate-rise motion-safe:[animation-delay:400ms] mt-2 flex w-full flex-wrap gap-3 lg:mt-4 lg:w-auto lg:gap-4">
+          <ButtonPrimary
+            href={contactHref}
+            tone="warm"
+            className="max-lg:w-full lg:px-10 lg:py-5 lg:text-sm"
+          >
+            {writeLabel}
+          </ButtonPrimary>
+          <ButtonOutline href={phoneHref} className="max-lg:w-full lg:py-[19px]">
+            <Phone aria-hidden size={15} strokeWidth={1.75} />
+            {callLabel}
+            <span className="hidden lg:inline">{site.phone}</span>
+          </ButtonOutline>
+        </div>
       </div>
     </header>
   )

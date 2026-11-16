@@ -10,11 +10,21 @@ type ActionProps = {
 
 const label = 'font-body text-[13px] font-medium uppercase'
 
-export function ButtonPrimary({ href, children, className = '' }: ActionProps) {
+const primaryTones = {
+  accent: 'bg-accent text-surface hover:bg-bg-dark',
+  warm: 'bg-accent-warm-light text-bg-dark hover:bg-text-inverse',
+}
+
+export function ButtonPrimary({
+  href,
+  children,
+  className = '',
+  tone = 'accent',
+}: ActionProps & { tone?: keyof typeof primaryTones }) {
   return (
     <Link
       href={href}
-      className={`${label} group inline-flex items-center justify-center gap-2.5 bg-accent px-8 py-4 tracking-[2px] text-surface transition-colors hover:bg-bg-dark ${className}`}
+      className={`${label} group inline-flex items-center justify-center gap-2.5 px-8 py-4 tracking-[2px] transition-colors ${primaryTones[tone]} ${className}`}
     >
       {children}
       <ArrowRight

@@ -12,18 +12,19 @@ type HeroMediaProps = {
 
 const desktopQuery = '(min-width: 1024px)'
 const mobileQuery = '(max-width: 1023.98px)'
+const desktopSizes = '82vw'
 
-function pictureSource(photo: ResolvedPhoto) {
+function pictureSource(photo: ResolvedPhoto, sizes: string) {
   if (!photo.image?.asset) return null
 
   const { src, objectPosition, lqip } = sanityImageSource(photo.image)
-  const { props } = getImageProps({ alt: photo.alt ?? '', fill: true, sizes: '100vw', src })
+  const { props } = getImageProps({ alt: photo.alt ?? '', fill: true, sizes, src })
   return { lqip, objectPosition, props }
 }
 
 export function HeroMedia({ desktopPhoto, mobilePhoto }: HeroMediaProps) {
-  const desktop = desktopPhoto && pictureSource(desktopPhoto)
-  const mobile = mobilePhoto && pictureSource(mobilePhoto)
+  const desktop = desktopPhoto && pictureSource(desktopPhoto, desktopSizes)
+  const mobile = mobilePhoto && pictureSource(mobilePhoto, '100vw')
 
   if (!desktop || !mobile) {
     const photo = desktop ? desktopPhoto : mobilePhoto
@@ -50,30 +51,33 @@ export function HeroMedia({ desktopPhoto, mobilePhoto }: HeroMediaProps) {
   } as CSSProperties
 
   return (
-    <div className="absolute inset-0 -z-20 overflow-hidden">
-      <div
-        aria-hidden
-        className="absolute inset-0 scale-110 bg-cover bg-center blur-2xl lg:hidden"
-        style={{ backgroundImage: `url(${mobile.lqip})` }}
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 hidden scale-110 bg-cover bg-center blur-2xl lg:block"
-        style={{ backgroundImage: `url(${desktop.lqip})` }}
-      />
-      <picture>
-        <source media={desktopQuery} srcSet={desktop.props.srcSet} sizes={desktop.props.sizes} />
-        <source srcSet={mobile.props.srcSet} sizes={mobile.props.sizes} />
-        <img
-          {...mobile.props}
-          alt={desktop.props.alt}
-          fetchPriority="high"
-          loading="eager"
-          data-blur-up=""
-          style={{ ...mobile.props.style, ...positions }}
-          className="object-cover object-(--hero-position) lg:object-(--hero-position-desktop)"
+    <div className="absolute inset-0 -z-20 overflow-hidden bg-hero-sky">
+      {/* the house fades into sky-coloured space that holds the text: below it on phones, beside it on desktop */}
+      <div className="absolute inset-x-0 top-[38%] bottom-0 mask-hero-fade-up lg:top-0 lg:left-[8%] lg:mask-hero-fade">
+        <div
+          aria-hidden
+          className="absolute inset-0 scale-110 bg-cover bg-center blur-2xl lg:hidden"
+          style={{ backgroundImage: `url(${mobile.lqip})` }}
         />
-      </picture>
+        <div
+          aria-hidden
+          className="absolute inset-0 hidden scale-110 bg-cover bg-center blur-2xl lg:block"
+          style={{ backgroundImage: `url(${desktop.lqip})` }}
+        />
+        <picture>
+          <source media={desktopQuery} srcSet={desktop.props.srcSet} sizes={desktop.props.sizes} />
+          <source srcSet={mobile.props.srcSet} sizes={mobile.props.sizes} />
+          <img
+            {...mobile.props}
+            alt={desktop.props.alt}
+            fetchPriority="high"
+            loading="eager"
+            data-blur-up=""
+            style={{ ...mobile.props.style, ...positions }}
+            className="object-cover object-(--hero-position) lg:object-(--hero-position-desktop)"
+          />
+        </picture>
+      </div>
     </div>
   )
 }
