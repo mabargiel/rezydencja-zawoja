@@ -37,6 +37,7 @@
   --font-display: var(--font-cormorant), 'Times New Roman', serif;
   --font-body: var(--font-jost), system-ui, sans-serif;
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.45, 0, 0.25, 1);
   --duration-fast: 200ms;
   --duration-base: 450ms;
   --duration-slow: 900ms;
@@ -157,6 +158,18 @@
     [data-blur-up-ready] img[data-blur-up]:not([data-loaded]) {
       filter: blur(14px);
       transform: scale(1.06);
+    }
+
+    /* a large photo painted mid-download pops in; this one stays hidden over its blurred preview and cross-fades */
+    [data-blur-up-ready] img[data-blur-up='fade'] {
+      transition:
+        opacity 1600ms var(--ease-in-out-soft),
+        filter 1800ms var(--ease-in-out-soft),
+        transform 2200ms var(--ease-out-soft);
+    }
+
+    [data-blur-up-ready] img[data-blur-up='fade']:not([data-loaded]) {
+      opacity: 0;
     }
 
     .reveal,

@@ -73,7 +73,7 @@ export function HeroMedia({ desktopPhoto, mobilePhoto }: HeroMediaProps) {
             alt={desktop.props.alt}
             fetchPriority="high"
             loading="eager"
-            data-blur-up=""
+            data-blur-up="fade"
             style={{ ...mobile.props.style, ...positions }}
             className="object-cover object-(--hero-position) lg:object-(--hero-position-desktop)"
           />
