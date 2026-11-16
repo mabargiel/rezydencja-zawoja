@@ -32,6 +32,8 @@
   --color-scrim-panorama-top: #0d120d59;
   --color-scrim-panorama-bottom: #0a0e08e6;
   --radius-button: 6px;
+  --text-shadow-hero: 0 1px 14px var(--color-scrim-hero-strong);
+  --shadow-hero-button: 0 8px 24px -6px var(--color-scrim-hero-strong);
   --font-display: var(--font-cormorant), 'Times New Roman', serif;
   --font-body: var(--font-jost), system-ui, sans-serif;
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
@@ -82,15 +84,12 @@
 }
 
 @utility bg-hero-scrim-side {
-  background-image:
-    linear-gradient(180deg, var(--color-scrim-hero-soft) 0%, transparent 18%),
-    linear-gradient(
-      90deg,
-      var(--color-scrim-hero-strong) 0%,
-      var(--color-scrim-hero-soft) 28%,
-      var(--color-scrim-hero-faint) 42%,
-      transparent 54%
-    );
+  background-image: linear-gradient(
+    90deg,
+    var(--color-scrim-hero-soft) 0%,
+    var(--color-scrim-hero-faint) 30%,
+    transparent 46%
+  );
 }
 
 @utility bg-hero-sky {
@@ -108,10 +107,7 @@
 }
 
 @utility mask-hero-fade {
-  mask-image:
-    linear-gradient(90deg, transparent 0%, black 22%),
-    linear-gradient(180deg, transparent 0%, black 10%);
-  mask-composite: intersect;
+  mask-image: linear-gradient(90deg, transparent 0%, black 30%);
 }
 
 /* lets the hot tub in the lower left of the photo show through */

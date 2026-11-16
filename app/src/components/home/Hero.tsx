@@ -35,7 +35,7 @@ export function Hero({
         className="absolute inset-0 -z-10 bg-hero-scrim lg:bg-hero-scrim-side lg:mask-hero-scrim-side"
       />
 
-      <div className="flex flex-1 flex-col items-start gap-4 px-6 pt-[calc(7rem+var(--promo-height))] lg:justify-center lg:gap-6 lg:px-16 lg:pt-[calc(6rem+var(--promo-height))] lg:pb-16">
+      <div className="flex flex-1 flex-col items-start gap-4 px-6 lg:text-shadow-hero pt-[calc(7rem+var(--promo-height))] lg:justify-center lg:gap-6 lg:px-16 lg:pt-[calc(6rem+var(--promo-height))] lg:pb-16">
         <p className="motion-safe:animate-rise motion-safe:[animation-delay:100ms] font-body text-[10.5px] tracking-[3px] text-accent-warm-light uppercase lg:text-[13px] lg:tracking-[5px]">
           {eyebrow}
         </p>
@@ -49,11 +49,14 @@ export function Hero({
           <ButtonPrimary
             href={contactHref}
             tone="warm"
-            className="max-lg:w-full lg:px-10 lg:py-5 lg:text-sm"
+            className="max-lg:w-full lg:px-10 lg:py-5 lg:text-sm lg:shadow-hero-button lg:text-shadow-none"
           >
             {writeLabel}
           </ButtonPrimary>
-          <ButtonOutline href={phoneHref} className="max-lg:w-full lg:py-[19px]">
+          <ButtonOutline
+            href={phoneHref}
+            className="max-lg:w-full lg:py-[19px] lg:shadow-hero-button"
+          >
             <Phone aria-hidden size={15} strokeWidth={1.75} />
             {callLabel}
             <span className="hidden lg:inline">{site.phone}</span>
