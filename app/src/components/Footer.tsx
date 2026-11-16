@@ -1,12 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { CookieSettingsButton } from '@/components/CookieSettingsButton'
 import { emailHref, localizedHref, navItems, pagePaths, phoneHref, site } from '@/config/site'
 import { getLanguage, getT } from '@/i18n/server'
+import type { TrackingSettings } from '@/lib/consent'
 
 const legalPages = ['privacyPolicy', 'rentalTerms'] as const
 
-export async function Footer() {
+export async function Footer({ tracking }: { tracking: TrackingSettings | null }) {
   const [language, t] = await Promise.all([getLanguage(), getT()])
 
   return (
@@ -65,6 +67,11 @@ export async function Footer() {
                 </Link>
               </li>
             ))}
+            {tracking && (
+              <li>
+                <CookieSettingsButton settings={tracking} label={t('cookies.settings')} />
+              </li>
+            )}
           </ul>
         </nav>
       </div>

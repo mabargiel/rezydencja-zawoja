@@ -58,6 +58,15 @@ export const en = {
     copyright: '© {{year}} Rezydencja Zawoja. All rights reserved.',
     legal: 'Legal',
   },
+  cookies: {
+    label: 'Cookie settings',
+    title: 'Cookies',
+    body: 'We use the Meta Pixel to measure our ads and to show them to people who have visited this site. We only turn it on with your consent, which you can change at any time in the footer.',
+    privacy: 'Privacy policy',
+    accept: 'Accept',
+    reject: 'Reject',
+    settings: 'Cookie settings',
+  },
   home: {
     hero: {
       eyebrow: 'Zawoja · Beskid Mountains · Babia Góra massif',

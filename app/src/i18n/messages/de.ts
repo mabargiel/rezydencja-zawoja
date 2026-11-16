@@ -60,6 +60,15 @@ export const de = {
     copyright: '© {{year}} Rezydencja Zawoja. Alle Rechte vorbehalten.',
     legal: 'Rechtliches',
   },
+  cookies: {
+    label: 'Cookie-Einstellungen',
+    title: 'Cookies',
+    body: 'Wir verwenden das Meta-Pixel, um unsere Werbung zu messen und sie Menschen zu zeigen, die diese Website besucht haben. Wir aktivieren es nur mit Ihrer Einwilligung, die Sie jederzeit im Footer ändern können.',
+    privacy: 'Datenschutzerklärung',
+    accept: 'Akzeptieren',
+    reject: 'Ablehnen',
+    settings: 'Cookie-Einstellungen',
+  },
   home: {
     hero: {
       eyebrow: 'Zawoja · Beskiden · Babia-Góra-Massiv',
