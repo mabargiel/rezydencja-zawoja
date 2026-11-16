@@ -1,13 +1,15 @@
+import type { ComponentProps } from 'react'
+
 import { Eyebrow } from './Eyebrow'
 
 type SectionHeadingProps = {
   eyebrow: string
   title: string
-  tone?: 'light' | 'dark'
+  tone?: ComponentProps<typeof Eyebrow>['tone']
 }
 
 export function SectionHeading({ eyebrow, title, tone = 'light' }: SectionHeadingProps) {
-  const onDark = tone === 'dark'
+  const onDark = tone !== 'light'
 
   return (
     <div className="reveal-left flex max-w-[560px] flex-col gap-5 lg:gap-6">

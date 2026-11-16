@@ -33,7 +33,7 @@ export default async function ContactPage() {
   }
 
   return (
-    <main>
+    <main id="content">
       <PageHeader
         eyebrow={t('pages.contact.eyebrow')}
         title={t('pages.contact.title')}

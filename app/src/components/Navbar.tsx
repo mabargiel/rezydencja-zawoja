@@ -44,6 +44,14 @@ export async function Navbar() {
 
   return (
     <NavbarFrame
+      skipLink={
+        <a
+          href="#content"
+          className="sr-only z-50 rounded-button bg-surface px-4 py-3 font-body text-sm text-text-primary focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+        >
+          {t('nav.skipToContent')}
+        </a>
+      }
       promo={
         promo && (
           <PromoBar

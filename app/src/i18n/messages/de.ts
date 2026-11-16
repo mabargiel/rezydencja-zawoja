@@ -40,6 +40,7 @@ export const de = {
     },
   },
   nav: {
+    skipToContent: 'Zum Inhalt springen',
     label: 'Hauptnavigation',
     homeLink: 'Rezydencja Zawoja, Startseite',
     home: 'Start',

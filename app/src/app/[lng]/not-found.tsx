@@ -7,7 +7,7 @@ export default async function NotFound() {
   const [language, t] = await Promise.all([getLanguage(), getT()])
 
   return (
-    <main>
+    <main id="content">
       <PageHeader
         eyebrow={t('pages.notFound.eyebrow')}
         title={t('pages.notFound.title')}

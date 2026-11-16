@@ -30,7 +30,7 @@ export async function LegalPage({ page }: LegalPageProps) {
     )
 
   return (
-    <main>
+    <main id="content">
       <header className="flex flex-col gap-3 bg-bg-dark px-5 pt-[124px] pb-9 lg:gap-4 lg:px-16 lg:pt-[178px] lg:pb-16">
         <Eyebrow tone="dark" size="header">
           {t('legal.eyebrow')}

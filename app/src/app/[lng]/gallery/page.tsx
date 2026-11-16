@@ -17,7 +17,7 @@ export default async function GalleryPage() {
   })
 
   return (
-    <main>
+    <main id="content">
       <PageHeader
         eyebrow={t('pages.gallery.eyebrow')}
         title={t('pages.gallery.title')}

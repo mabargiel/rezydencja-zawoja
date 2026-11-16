@@ -19,9 +19,9 @@
   --color-line-inverse: #f7f5ef26;
   --color-line-inverse-strong: #f7f5ef40;
   --color-scrim-lightbox: #0f130ff2;
-  --color-scrim-button: #10160f4d;
+  --color-scrim-button: #10160f80;
   --color-scrim-top: #0d120d80;
-  --color-scrim-middle: #0d120d66;
+  --color-scrim-middle: #0d120d73;
   --color-scrim-bottom: #0a0e08d9;
   --color-hero-sky: #5392f9;
   --color-hero-sky-low: #5b93e7;
@@ -29,7 +29,7 @@
   --color-scrim-hero-strong: #0d120db8;
   --color-scrim-hero-soft: #0d120d73;
   --color-scrim-hero-faint: #0d120d26;
-  --color-scrim-panorama-top: #0d120d59;
+  --color-scrim-panorama-top: #0d120d66;
   --color-scrim-panorama-bottom: #0a0e08e6;
   --radius-button: 6px;
   --text-shadow-hero: 0 1px 14px var(--color-scrim-hero-strong);
@@ -83,12 +83,18 @@
   );
 }
 
-@utility bg-hero-scrim-side {
+/* a soft pool of shade behind the hero copy only, so the photo stays clear elsewhere */
+@utility bg-hero-copy-scrim {
+  background-image: radial-gradient(closest-side, var(--color-scrim-hero-soft) 45%, transparent);
+}
+
+/* keeps the navbar readable over bright sky until it turns solid on scroll */
+@utility bg-nav-scrim {
   background-image: linear-gradient(
-    90deg,
+    180deg,
     var(--color-scrim-hero-soft) 0%,
-    var(--color-scrim-hero-faint) 30%,
-    transparent 46%
+    var(--color-scrim-hero-soft) 45%,
+    transparent 100%
   );
 }
 
@@ -108,11 +114,6 @@
 
 @utility mask-hero-fade {
   mask-image: linear-gradient(90deg, transparent 0%, black 12%);
-}
-
-/* lets the hot tub in the lower left of the photo show through */
-@utility mask-hero-scrim-side {
-  mask-image: linear-gradient(180deg, black 55%, transparent 85%);
 }
 
 @utility bg-panorama-scrim {
@@ -228,8 +229,10 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* light ring on a dark halo stays visible on cream, dark green and photos alike */
   :focus-visible {
-    outline: 2px solid var(--color-accent-warm);
-    outline-offset: 3px;
+    outline: 2px solid var(--color-text-inverse);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--color-bg-dark);
   }
 }

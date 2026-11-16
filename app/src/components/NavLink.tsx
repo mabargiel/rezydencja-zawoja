@@ -39,7 +39,7 @@ export function NavLink({
       href={href}
       aria-current={isSectionActive ? 'location' : isPageActive ? 'page' : undefined}
       onClick={onNavigate}
-      className={`${className} transition-colors hover:text-accent-warm ${isActive ? 'text-accent-warm' : 'text-text-inverse'}`}
+      className={`${className} text-text-inverse decoration-accent-warm-light decoration-2 underline-offset-[7px] transition-colors hover:text-accent-warm-light ${isActive ? 'underline' : ''}`}
     >
       {children}
     </Link>

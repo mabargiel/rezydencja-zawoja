@@ -22,7 +22,7 @@ export function PageHeader({ eyebrow, title, intro, image }: PageHeaderProps) {
       )}
       <div aria-hidden className="absolute inset-0 -z-10 bg-header-scrim" />
       <div className="flex flex-col gap-3.5 px-5 pb-8 motion-safe:animate-rise lg:max-w-[820px] lg:gap-[18px] lg:px-16 lg:pb-14">
-        <Eyebrow tone="dark" size="header">
+        <Eyebrow tone="photo" size="header">
           {eyebrow}
         </Eyebrow>
         <h1 className="font-display text-[38px] leading-[1.05] whitespace-pre-line text-text-inverse lg:text-[64px] lg:leading-[1.04]">

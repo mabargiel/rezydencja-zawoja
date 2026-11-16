@@ -38,6 +38,7 @@ export const en = {
     },
   },
   nav: {
+    skipToContent: 'Skip to content',
     label: 'Main navigation',
     homeLink: 'Rezydencja Zawoja, home page',
     home: 'Home',

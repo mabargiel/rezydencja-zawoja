@@ -19,7 +19,7 @@ export function Location({ eyebrow, title, body, facts, photo }: LocationProps) 
       <div aria-hidden className="absolute inset-0 -z-10 bg-panorama-scrim" />
 
       <div className="flex flex-col gap-5 lg:max-w-[640px]">
-        <SectionHeading eyebrow={eyebrow} title={title} tone="dark" />
+        <SectionHeading eyebrow={eyebrow} title={title} tone="photo" />
         <p className="reveal-left reveal-delay-1 font-body text-[15px] leading-[1.7] text-text-inverse-dim lg:max-w-[520px] lg:text-base">
           {body}
         </p>

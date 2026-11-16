@@ -24,7 +24,7 @@ export default async function HomePage() {
   const { home, pricing } = data
 
   return (
-    <main>
+    <main id="content">
       <Hero
         eyebrow={t('home.hero.eyebrow')}
         title={t('home.hero.title')}

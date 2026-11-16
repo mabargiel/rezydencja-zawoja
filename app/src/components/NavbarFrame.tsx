@@ -10,11 +10,12 @@ function subscribe(onChange: () => void) {
 }
 
 type NavbarFrameProps = {
+  skipLink: ReactNode
   promo?: ReactNode
   children: ReactNode
 }
 
-export function NavbarFrame({ promo, children }: NavbarFrameProps) {
+export function NavbarFrame({ skipLink, promo, children }: NavbarFrameProps) {
   const isScrolled = useSyncExternalStore(
     subscribe,
     () => window.scrollY > scrolledOffset,
@@ -22,18 +23,23 @@ export function NavbarFrame({ promo, children }: NavbarFrameProps) {
   )
 
   return (
-    <div className="fixed inset-x-0 top-0 z-30">
+    <header className="fixed inset-x-0 top-0 z-30">
+      {skipLink}
       {promo}
       <div
         data-scrolled={isScrolled}
-        className={`flex items-center justify-between px-5 transition-[background-color,padding,backdrop-filter] duration-300 lg:px-16 ${
+        className={`relative isolate flex items-center justify-between px-5 transition-[background-color,padding,backdrop-filter] duration-300 lg:px-16 ${
           isScrolled
             ? 'bg-bg-dark/85 py-3.5 backdrop-blur-lg lg:py-4'
             : 'bg-transparent py-[22px] lg:py-7'
         }`}
       >
+        <div
+          aria-hidden
+          className={`pointer-events-none absolute inset-x-0 top-0 -z-10 h-[170%] bg-nav-scrim transition-opacity duration-300 ${isScrolled ? 'opacity-0' : 'opacity-100'}`}
+        />
         {children}
       </div>
-    </div>
+    </header>
   )
 }

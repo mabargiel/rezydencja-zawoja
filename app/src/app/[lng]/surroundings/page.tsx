@@ -20,7 +20,7 @@ export default async function SurroundingsPage() {
   })
 
   return (
-    <main>
+    <main id="content">
       <PageHeader
         eyebrow={t('pages.surroundings.eyebrow')}
         title={t('pages.surroundings.title')}
