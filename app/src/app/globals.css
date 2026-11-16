@@ -19,9 +19,9 @@
   --color-line-inverse: #f7f5ef26;
   --color-line-inverse-strong: #f7f5ef40;
   --color-scrim-lightbox: #0f130ff2;
-  --color-scrim-button: #10160f4d;
+  --color-scrim-button: #10160f80;
   --color-scrim-top: #0d120d80;
-  --color-scrim-middle: #0d120d66;
+  --color-scrim-middle: #0d120d73;
   --color-scrim-bottom: #0a0e08d9;
   --color-hero-sky: #5392f9;
   --color-hero-sky-low: #5b93e7;
@@ -29,12 +29,15 @@
   --color-scrim-hero-strong: #0d120db8;
   --color-scrim-hero-soft: #0d120d73;
   --color-scrim-hero-faint: #0d120d26;
-  --color-scrim-panorama-top: #0d120d59;
+  --color-scrim-panorama-top: #0d120d66;
   --color-scrim-panorama-bottom: #0a0e08e6;
   --radius-button: 6px;
+  --text-shadow-hero: 0 1px 14px var(--color-scrim-hero-strong);
+  --shadow-hero-button: 0 8px 24px -6px var(--color-scrim-hero-strong);
   --font-display: var(--font-cormorant), 'Times New Roman', serif;
   --font-body: var(--font-jost), system-ui, sans-serif;
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.45, 0, 0.25, 1);
   --duration-fast: 200ms;
   --duration-base: 450ms;
   --duration-slow: 900ms;
@@ -81,16 +84,19 @@
   );
 }
 
-@utility bg-hero-scrim-side {
-  background-image:
-    linear-gradient(180deg, var(--color-scrim-hero-soft) 0%, transparent 18%),
-    linear-gradient(
-      90deg,
-      var(--color-scrim-hero-strong) 0%,
-      var(--color-scrim-hero-soft) 28%,
-      var(--color-scrim-hero-faint) 42%,
-      transparent 54%
-    );
+/* a soft pool of shade behind the hero copy only, so the photo stays clear elsewhere */
+@utility bg-hero-copy-scrim {
+  background-image: radial-gradient(closest-side, var(--color-scrim-hero-soft) 45%, transparent);
+}
+
+/* keeps the navbar readable over bright sky until it turns solid on scroll */
+@utility bg-nav-scrim {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-scrim-hero-soft) 0%,
+    var(--color-scrim-hero-soft) 45%,
+    transparent 100%
+  );
 }
 
 @utility bg-hero-sky {
@@ -108,15 +114,7 @@
 }
 
 @utility mask-hero-fade {
-  mask-image:
-    linear-gradient(90deg, transparent 0%, black 22%),
-    linear-gradient(180deg, transparent 0%, black 10%);
-  mask-composite: intersect;
-}
-
-/* lets the hot tub in the lower left of the photo show through */
-@utility mask-hero-scrim-side {
-  mask-image: linear-gradient(180deg, black 55%, transparent 85%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 12%);
 }
 
 @utility bg-panorama-scrim {
@@ -160,6 +158,18 @@
     [data-blur-up-ready] img[data-blur-up]:not([data-loaded]) {
       filter: blur(14px);
       transform: scale(1.06);
+    }
+
+    /* a large photo painted mid-download pops in; this one stays hidden over its blurred preview and cross-fades */
+    [data-blur-up-ready] img[data-blur-up='fade'] {
+      transition:
+        opacity 1600ms var(--ease-in-out-soft),
+        filter 1800ms var(--ease-in-out-soft),
+        transform 2200ms var(--ease-out-soft);
+    }
+
+    [data-blur-up-ready] img[data-blur-up='fade']:not([data-loaded]) {
+      opacity: 0;
     }
 
     .reveal,
@@ -232,8 +242,10 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* light ring on a dark halo stays visible on cream, dark green and photos alike */
   :focus-visible {
-    outline: 2px solid var(--color-accent-warm);
-    outline-offset: 3px;
+    outline: 2px solid var(--color-text-inverse);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--color-bg-dark);
   }
 }

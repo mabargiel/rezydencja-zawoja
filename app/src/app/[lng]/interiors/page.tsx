@@ -26,7 +26,7 @@ export default async function InteriorsPage() {
   const bedrooms = data?.bedrooms ?? []
 
   return (
-    <main>
+    <main id="content">
       <PageHeader
         eyebrow={t('pages.interiors.eyebrow')}
         title={t('pages.interiors.title')}

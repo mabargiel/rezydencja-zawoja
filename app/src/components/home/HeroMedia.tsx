@@ -12,7 +12,7 @@ type HeroMediaProps = {
 
 const desktopQuery = '(min-width: 1024px)'
 const mobileQuery = '(max-width: 1023.98px)'
-const desktopSizes = 'min(92vw, 133svh)'
+const desktopSizes = 'min(82vw, 133svh)'
 
 function pictureSource(photo: ResolvedPhoto, sizes: string) {
   if (!photo.image?.asset) return null
@@ -53,8 +53,8 @@ export function HeroMedia({ desktopPhoto, mobilePhoto }: HeroMediaProps) {
   return (
     <div className="absolute inset-0 -z-20 overflow-hidden bg-hero-sky">
       {/* the house fades into sky-coloured space that holds the text: below it on phones, beside it on desktop.
-          On desktop the whole 4:3 photo sits under the navbar, so wide windows add sky instead of zooming in */}
-      <div className="absolute inset-x-0 top-[38%] bottom-0 mask-hero-fade-up lg:top-[calc(4.5rem+var(--promo-height))] lg:left-auto lg:aspect-[4/3] lg:max-w-[92%] lg:mask-hero-fade">
+          On desktop the photo keeps its 4:3 shape, so wide windows add sky instead of zooming in */}
+      <div className="absolute inset-x-0 top-[38%] bottom-0 mask-hero-fade-up lg:top-0 lg:left-auto lg:aspect-[4/3] lg:max-w-[82%] lg:mask-hero-fade">
         <div
           aria-hidden
           className="absolute inset-0 scale-110 bg-cover bg-center blur-2xl lg:hidden"
@@ -73,7 +73,7 @@ export function HeroMedia({ desktopPhoto, mobilePhoto }: HeroMediaProps) {
             alt={desktop.props.alt}
             fetchPriority="high"
             loading="eager"
-            data-blur-up=""
+            data-blur-up="fade"
             style={{ ...mobile.props.style, ...positions }}
             className="object-cover object-(--hero-position) lg:object-(--hero-position-desktop)"
           />

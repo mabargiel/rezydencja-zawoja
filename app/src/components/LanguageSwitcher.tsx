@@ -27,7 +27,7 @@ export function LanguageSwitcher({ current, label, size, onNavigate }: LanguageS
         {languages.map((language, index) => (
           <Fragment key={language}>
             {index > 0 && (
-              <li aria-hidden className="text-text-inverse-dim">
+              <li aria-hidden className="text-text-inverse">
                 ·
               </li>
             )}
@@ -39,11 +39,7 @@ export function LanguageSwitcher({ current, label, size, onNavigate }: LanguageS
                 aria-label={languageNames[language]}
                 aria-current={language === current ? 'true' : undefined}
                 onClick={onNavigate}
-                className={
-                  language === current
-                    ? 'font-medium text-accent-warm'
-                    : 'text-text-inverse transition-colors hover:text-accent-warm'
-                }
+                className={`text-text-inverse decoration-accent-warm-light decoration-2 underline-offset-[6px] transition-colors hover:text-accent-warm-light ${language === current ? 'font-medium underline' : ''}`}
               >
                 {language}
               </Link>
